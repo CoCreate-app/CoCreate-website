@@ -45,7 +45,6 @@
   }
 
 </style>  
-  <!--<body class="cocreate-scroll">-->
   <body>
     <!-- Navbar  -->
     <div class="display:flex flex-wrap:wrap justify-content:space-between flex-direction:row padding-top:10px padding-bottom:10px width:100% nav"
@@ -184,7 +183,7 @@
       </div>
     </footer>
     
-    <div id="menuL" class="cocreate-sidenav bg-medium-gray" 
+    <div id="menuL" class="cocreate-sidenav background:lightgrey" 
       data-main_content="canvas,navbar" 
       sidenav-default_desktop="offcanvas" 
       sidenav-default_tablet="offcanvas" 
@@ -218,62 +217,11 @@
       }
     </script>
 
-    <script>
-    if(!!window.IntersectionObserver){
-      let videos = document.getElementsByTagName('video');
-      
-      for (var i=0; i < videos.length; i++) {
-      
-        interSectionObserv(videos[i]);
-      }
-    }
-  
-  function interSectionObserv(video)
-  {
-      let isPaused = true; /* flag for auto-pausing of the video */
-      let observer = new IntersectionObserver((entries, observer) => { 
-          entries.forEach(entry => {
-              if(entry.intersectionRatio!=1  && !video.paused){
-                  video.pause(); isPaused = true;
-              }
-              else if(isPaused) 
-              {
-                video.play(); isPaused=false
-              }
-  
-          });
-      }, {threshold: 1});
-      observer.observe(video);
-  }
-  
-  </script>
-  
+
   <!--CoCreateJS-->
-  <script src="https://server.cocreate.app/js/CoCreate.min.js"></script>
+  <script src="https://cdn.cocreate.app/CoCreate.min.js"></script>
   <!--<script src="https://server.cocreate.app/CoCreate-components/CoCreate-overlay-scroll/CoCreate-overlay-scroll.js"></script>-->
 
   </body>
 </html>
-
-<!--<script type="text/javascript">
-  initOverayScroll();
-  
-  function initOverayScroll(){
-    let eles = document.getElementsByClassName('overlay-scroll');
-    for(let el of eles){
-      el.style.overflow = 'overlay';
-      el.addEventListener('mouseover', showScrollThumb);
-      el.addEventListener('mouseleave', hideScrollThumb);
-    }
-    console.log(eles);
-  }
-  
-  function showScrollThumb(e){
-    this.classList.add('overlay-scroll_show');
-  }
-  
-  function hideScrollThumb(e){
-    this.classList.remove('overlay-scroll_show');
-  }
-</script>-->
 
