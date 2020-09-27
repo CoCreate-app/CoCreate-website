@@ -1,4 +1,4 @@
-# CoCreate-website here
+# CoCreate-website
 A simple HTML5 and pure javascript component. Easy configuration using data-attributes and highly styleable.
 
 ![CoCreate](https://cdn.cocreate.app/logo.png)
