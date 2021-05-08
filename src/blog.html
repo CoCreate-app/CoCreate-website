@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Blog | CoCreate</title>
+    	<meta name="description" content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI">
+		<link rel="icon"  sizes="32x32" href="assets/favicon.ico">
+        <meta name="robots" content="index,follow" />
+       	<meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
+
+        <!-- CoCreate CSS -->
+        <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css" type="text/css"/>
+        <link rel="stylesheet" href="./index.css" data-collection="files" data-document_id="6092da6b19ec8e58fc80c94e" name="src" type="text/css" data-save="true"/>
+	  
+		<!--  Custom Style  -->
+		<style type="text/css">
+			.hide-nav ~ #menuR{
+				margin-top:0px;
+				max-height: -moz-available;   
+				max-height: -webkit-fill-available;  
+				max-height: fill-available;
+				will-change: transform;
+				transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+				transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s;
+				transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+				transform: translateY(0);
+				-webkit-transform: translateY(0);
+			}
+		  
+		</style>
+	</head>
+
+	<body>
+		
+	    <!-- Navbar  -->
+		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" data-scroll="sticky-nav,hide-nav" data-scroll_up="10" data-scroll_down="10" data-collection="components" data-document_id="6091b71857a0e06b6d572d5c" name="html">
+		</nav>
+	
+		<!-- SideNav Left-->
+		<sidenav id="menuL" class="cocreate-sidenav background:whitesmoke display:none"  data-collection="components" data-document_id="6090c58598c42a332d21807f" name="html" data-main_content="content" sidenav-default_desktop="offcanvas" sidenav-default_tablet="offcanvas" sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="expanded" sidenav-ontoggle_tablet="expanded" sidenav-ontoggle_phone="expanded">
+		</sidenav>
+	
+		<!-- Main Content -->
+		<main class="padding:20px" data-main_content_id="content">
+		
+			<!--  Blog Header -->
+			<div class="width:100% display:flex flex-wrap:wrap justify-content:space-between background:#F23A2E border-radius:3px padding:10px_0 margin-bottom:20px">
+				<div class="left-text flex-basis:40% margin:0_20px">
+					<h3 class="color:#fff letter-spacing:1.4px font-weight:500 font-size:16px@sm font-size:13px@xs padding:5px font-family:tahoma">LATEST POSTS</h3>
+				</div>
+			</div>
+	
+			<!-- Fetch and Render Blog Posts -->
+			<div class="display:flex flex-wrap:wrap"
+				data-fetch_collection="module_activity"
+				data-fetch_count="12"
+				data-order_by="name" 
+				data-order_type="asc"
+				data-template_id="filter_test"
+				data-search_type="or">
+
+				<!-- Blog Post Template -->
+				<div class="card template position:relative flex-grow:1 margin-bottom:50px height:470px width:300px max-width:600px margin:10px" data-template_id="filter_test">
+					<a class="height:400px overflow:hidden" href="/blog-post">
+						<div class="position:absolute top:20px right:20px background:#e74c3c width:55px height:55px padding:12.5px_0 border-radius:100% color:#ffffff font-weight:700 text-align:center box-sizing:border-box">
+							<div class="font-size:18px">27</div>
+							<div class="font-size:12px text-transform:uppercase">Mar</div>
+						</div>
+						
+						<!-- Image -->
+						<img src="images/main-img.jpg" width="100%" />
+						<!-- Post Content -->
+						<div class="post-content position:absolute bottom:0 background:#ffffff width:100% padding:30px">
+							<div data-hover="display:block" data-hover_target=".description" >
+								<h1 class="font-size:24px margin:0 padding:0_0_10px color:#333333 font-weight:700">City Lights in New York</h1>
+								<h2 class="margin:0 padding:0_0_20px color:#e74c3c font-size:20px font-weight:400">The city that never sleeps.</h2>
+								<p class="description color:#666666 font-size:14px line-height:1.8rem">
+								New York, the largest city in the U.S., is an architectural marvel with plenty of
+								historic monuments, magnificent buildings and countless dazzling skyscrapers.
+								</p>
+							</div>
+							<div class="margin:30px_0_0 color:#999999">
+								<span class="margin:0_16px_0_0">
+									<i class="fa fa-clock-">o</i> 6 mins ago
+								</span>
+								<span class="">
+									<i class="fa fa-comments"></i><a class="color:#999999 color:#999999:hover text-decoration:none:hover" href="#"> 39 comments</a>
+								</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			
+		</main>
+		
+		<!-- SideNav Right -->
+		<sidenav id="menuR" class="cocreate-sidenav sidenav-right overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="offcanvas" sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="offcanvas" sidenav-ontoggle_tablet="expanded" sidenav-expanded_width="300px"  data-collection="components" data-document_id="60930bdb0eb9591afadb95fc" name="html">
+		</sidenav>
+		
+		<!-- SidNav Right Floating toggle Button -->
+		<button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" data-toggle_sidenav="menuR">
+			<i class="fas fa-sliders-h"></i>
+		</button>
+
+		<!-- Footer -->
+		<footer id="spreadtheword" data-main_content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" data-collection="components" data-document_id="6092ebcc19ec8e58fc80c9e3" name="html">
+		</footer>
+
+        <script>
+            var config = {
+                apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
+                organization_Id: '5de0387b12e200ea63204d6c',
+                host: 'wss://ws.cocreate.app'
+            }
+        </script>
+    
+        <!--CoCreateJS-->
+        <script src="https://server.cocreate.app/CoCreateJS/dist/CoCreate.js" ></script>

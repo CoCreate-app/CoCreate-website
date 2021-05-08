@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Product-list | CoCreate</title>
+    	<meta name="description" content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI">
+		<link rel="icon"  sizes="32x32" href="assets/favicon.ico">
+        <meta name="robots" content="index,follow" />
+       	<meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
+
+        <!-- CoCreate CSS -->
+        <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css" type="text/css"/>
+        <link rel="stylesheet" href="./index.css" data-collection="files" data-document_id="6092da6b19ec8e58fc80c94e" name="src" type="text/css" data-save="true"/>
+		
+		<!--  Custom Style  -->
+		<style type="text/css">
+			.hide-nav ~ #menuR{
+				margin-top:0px;
+				max-height: -moz-available;   
+				max-height: -webkit-fill-available;  
+				max-height: fill-available;
+				will-change: transform;
+				transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+				transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s;
+				transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+				transform: translateY(0);
+				-webkit-transform: translateY(0);
+			}
+		</style>
+
+		<!--  Custom Style  -->
+		<style type="text/css">
+			/*Product quick view*/
+			.product-image:hover .quick-view{opacity:1;}
+			/*Favourite icon*/
+			.favourite:hover .f-link{color:#fff;}
+			.product-image:hover .favourite{
+			opacity:1;
+			}
+		</style>
+	</head>
+
+	<body>
+
+	    <!-- Navbar  -->
+		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" data-scroll="sticky-nav,hide-nav" data-scroll_up="10" data-scroll_down="10" data-collection="components" data-document_id="6091b71857a0e06b6d572d5c" name="html">
+		</nav>
+	
+		<!-- SideNav Left-->
+		<sidenav id="menuL" class="cocreate-sidenav background:whitesmoke display:none"  data-collection="components" data-document_id="6090c58598c42a332d21807f" name="html" data-main_content="content" sidenav-default_desktop="offcanvas" sidenav-default_tablet="offcanvas" sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="expanded" sidenav-ontoggle_tablet="expanded" sidenav-ontoggle_phone="expanded">
+		</sidenav>
+
+		<!-- Modal Viewport/Boundaries -->
+		<div class="position:fixed margin-top:50px" data-main_content_id="content" id="modal-viewport"></div>
+	
+		<!-- Main Content -->
+		<main class="padding:20px" data-main_content_id="content">
+
+			<!--  Product Header -->
+			<div class="width:100% display:flex flex-wrap:wrap justify-content:space-between background:#F23A2E border-radius:3px padding:10px_0 margin-bottom:20px">
+				<div class="home-bar padding:0_20px width:100% display:flex flex-wrap:wrap">
+					<i class="color:#fff margin-right:5px margin-top:1px font-size:13px fas fa-home"></i><a class="color:#fff font-size:15px font-weight:600" href="#">Home</a><span class="color:#fff margin:0_15px font-weight:600">></span>
+					<i class="color:#fff margin-right:5px margin-top:2px font-size:13px fas fa-shopping-cart"></i><a class="color:#fff font-size:15px font-weight:600" href="#">shop</a><span class="color:#fff margin:0_15px font-weight:600">></span>
+					<a class="color:#fff font-size:15px font-weight:600" href="#">Product-list</a>
+				</div>
+			</div>
+			
+			<!--  Banner -->
+			<div class="height:330px position:relative margin-top:20px">
+				<img class="" width="100%" height="330px" src="images/product-list/rsz_banner-product-list.jpg"/>
+				<div class="banner-content width:70% display:flex flex-wrap:wrap flex-grow:1 min-width:300px position:absolute top:7% left:5%"> <!-- Banner content start -->
+					<p class="banner-tagline letter-spacing:1.3px font-size:1.6rem margin-bottom:5px">Huge Sale RUNNING</p>
+					<h1 class="banner-header color:#333 font-size:2rem margin-bottom:25px">SAVE UP TO 30% ON YOUR FIRST ORDER</h1>
+					<div class="last-row-content display:flex flex-wrap:wrap flex-grow:1 justify-content:flex-start">
+						<div><h3 class="starting-at starting-at color:#222 font-size:17px margin-top:14px margin-right:15px">STARTING AT</h3></div>
+						<div><h1 class="price-offer padding:0px_15px background:#fff margin-top:7px margin-right:15px">$45</h1></div>
+						<div class="shop-now width:11rem height:58px display:flex">
+							<a href="#" class="shop-now-btn background-color:#F23A2E color:#fff width:100% height:100% display:block text-align:center padding-top:19px font-weight:600 font-size:17px background:#555:hover color:#fff:hover transition:0.4s" title="Add to Cart">BUY NOW</a> <!-- .Shop-Now-button -->
+						</div> <!-- Banner content End -->
+					</div>
+				</div>
+			</div>
+			
+			<!-- filters -->
+			<div class="margin-top:10px display:flex flex-wrap:wrap justify-content:space-between">
+				<div class="filterleft display:flex justify-content:flex-start">
+					<h5 class="color:#222 margin-top:4px margin-right:10px">SORT BY:</h5>
+					<select class="padding:5px_10px border:2px_solid_#000 width:190px" name="product-sorting" id="productsorting">
+						<option value="DEFAULT SORTING">DEFAULT SORTING</option>
+						<option value="SORT BY POPULARITY">SORT BY POPULARITY</option>
+						<option value="SORT BY AVERAGE RATING">SORT BY AVERAGE RATING</option>
+						<option value="SORT BY NEWNESS">SORT BY NEWNESS</option>
+						<option value="SORT BY PRICE: LOW TO HIGH">SORT BY PRICE: LOW TO HIGH</option>
+						<option value="SORT BY PRICE: HIGH TO LOW">SORT BY PRICE: HIGH TO LOW</option>
+					</select>
+				</div>
+				<div class="filterright display:flex justify-content:flex-start">
+					<h5 class="color:#222 margin-top:5px margin-right:10px">SHOW:</h5>
+					<select class="border:2px_solid_#000 margin-right:10px" name="numbersorting" id="numbersorting">
+						<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+					</select>
+					<a class="margin-right:10px" title="Grid" href="#"><i class="font-size:21px color:#222 margin-top:4px fas fa-th"></i></a>
+					<a class="" title="List" href="#"><i class="font-size:21px color:#222 margin-top:4px fas fa-list"></i></a>
+				</div>
+			</div>
+	
+			<!-- Fetch and Render Product list -->
+			<div class="display:flex flex-wrap:wrap"
+				data-fetch_collection="module_activity"
+				data-fetch_count="12"
+				data-order_by="name" 
+				data-order_type="asc"
+				data-template_id="filter_test"
+				data-search_type="or">
+
+				<!-- Product Template -->
+				<div class="card template margin:10px flex-grow:1 min-width:250px" data-template_id="filter_test">
+					<!-- Product Image  --> 
+					<div class="position:relative"> 
+						<img class="cursor:pointer " name="name" data-document_id="" src="http://via.placeholder.com/250x250/BF00FF/ffffff/" width="100%" alt="...">
+						<div class="overflow:hidden display:block opacity:0 width:100% position:absolute transition:0.4s left:0 bottom:3px"> <a href="#" class="color:#fff display:block background:#289DCC background:#000:hover padding:13px_0 text-align:center color:#fff:hover">Quick View</a> </div>
+						<!-- Favourite -->
+						<div class="width:40px cursor:pointer height:40px background:#F23A2E background:#289DCC:hover display:block border:1px_solid_#F23A2E border:1px_solid_#289DCC:hover border-radius:50% position:absolute opacity:0 transition:0.4s right:5% top:5%"> 
+							<a href="#"><i class="f-link display:block margin-top:10px font-size:20px color:#fff text-align:center far fa-heart"></i></a>
+						</div>
+						<!-- flash sale -->
+						<div class="width:80px cursor:grab padding:5px_0 background:#111 border-radius:0_30px_4px_0 display:block border:1px_solid_#222 position:absolute transition:0.4s left:0 top:3%"> 
+							<p class="color:#fff text-align:center font-size:14px">SALE</p>
+						</div>
+					</div>
+					<div class="padding:15px">
+						<h5 class="" data-collection="{{collection}}" data-document_id="{{data._id}}" name="name">Item Name</h5>
+						<!-- ratings-container Start -->
+						<div class="margin:4px_0"> 
+							<span class="color:#555"><i class="fas fa-star"></i></span>
+							<span class="color:#555"><i class="fas fa-star"></i></span>
+							<span class="color:#555"><i class="fas fa-star"></i></span>
+							<span class="color:#555"><i class="fas fa-star"></i></span>
+							<span class="color:#555"><i class="fas fa-star"></i></span>
+						</div>
+						<p class="margin:4px_0" data-collection="{{collection}}" data-document_id="{{data._id}}" name="color">blue</p>
+						<p class="" value="{{data.price}}">$59</p>
+						<p class="" data-document_id="_id" name="description" value="description"></p>
+						
+						<a href="#" class="btn padding:10px_10px border:1px_solid_#0DA9EF background:#0DA9EF:hover color:#0DA9EF color:#fff:hover display:block width:60% margin:auto border-radius:30px margin-top:15px">More details</a>
+					</div>
+				</div>
+
+
+			</div>
+			
+		</main>
+
+		<!-- SideNav Right -->
+		<sidenav id="menuR" class="cocreate-sidenav sidenav-right overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="offcanvas" sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="offcanvas" sidenav-ontoggle_tablet="expanded" sidenav-expanded_width="300px"  data-collection="components" data-document_id="60930bdb0eb9591afadb95fc" name="html">
+		</sidenav>
+
+		<!-- SidNav Right Floating toggle Button -->
+		<button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" data-toggle_sidenav="menuR">
+			<i class="fas fa-sliders-h"></i>
+		</button>
+
+		<!-- Footer -->
+		<footer id="spreadtheword" data-main_content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" data-collection="components" data-document_id="6092ebcc19ec8e58fc80c9e3" name="html">
+		</footer>
+
+        <script>
+            var config = {
+                apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
+                organization_Id: '5de0387b12e200ea63204d6c',
+                host: 'wss://server.cocreate.app:8088'
+            }
+        </script>
+    
+        <!--CoCreateJS-->
+        <script src="https://cdn.cocreate.app/latest/CoCreate.min.js" ></script>
+	
+	</body>
+</html>
