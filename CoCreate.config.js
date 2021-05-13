@@ -22,6 +22,21 @@ module.exports = {
             }
         },
         {
+            "entry": "./src/crm.html",
+            "collection": "files",
+            "document_id": "60997878b9e82141dac9ca90",
+            "key": "src",
+            "data": {
+                "name": "CoCreateJS Website",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/crm"
+            }
+        },
+        {
             "entry": "./src/components/navbar.html",
             "collection": "components",
             "document_id": "6091b71857a0e06b6d572d5c",
