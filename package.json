@@ -1,4 +1,5 @@
 {
+  "name": "@cocreate/website",
   "version": "1.0.0",
   "description": "A simple website-template component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
