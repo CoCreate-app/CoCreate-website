@@ -283,11 +283,9 @@ module.exports = {
             "document_id": "6090bcf298c42a332d218050",
             "key": "src",
             "data": {
-                "name": "googleMaps png",
+                "name": "googleMaps.png",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/googleMaps.png",
                 "directory": "/assets",
@@ -301,11 +299,9 @@ module.exports = {
             "document_id": "6090bcf298c42a332d218051",
             "key": "src",
             "data": {
-                "name": "plaid png",
+                "name": "plaid.png",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/plaid.png",
                 "directory": "/assets",
@@ -319,11 +315,9 @@ module.exports = {
             "document_id": "6090bcf298c42a332d218052",
             "key": "src",
             "data": {
-                "name": "sendgrid png",
+                "name": "sendgrid.png",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/sendgrid.png",
                 "directory": "/assets",
@@ -337,11 +331,9 @@ module.exports = {
             "document_id": "6090bcf298c42a332d218053",
             "key": "src",
             "data": {
-                "name": "shipengine svg",
+                "name": "shipengine.svg",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/shipengine.svg",
                 "directory": "/assets",
@@ -355,11 +347,9 @@ module.exports = {
             "document_id": "6090bcf298c42a332d218054",
             "key": "src",
             "data": {
-                "name": "stripe png",
+                "name": "stripe.png",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/stripe.png",
                 "directory": "/assets",
@@ -373,11 +363,9 @@ module.exports = {
             "document_id": "6090bcf298c42a332d218055",
             "key": "src",
             "data": {
-                "name": "twilio png",
+                "name": "twilio.png",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/twilio.png",
                 "directory": "/assets",
@@ -391,11 +379,9 @@ module.exports = {
             "document_id": "609032ef5ebe934f171b4b7e",
             "key": "src",
             "data": {
-                "name": "dashboard video",
+                "name": "dashboard-video.mp4",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/dashboard-video.mp4",
                 "directory": "/assets",
@@ -409,11 +395,9 @@ module.exports = {
             "document_id": "6090c0db98c42a332d218068",
             "key": "src",
             "data": {
-                "name": "cards webm",
+                "name": "cards.webm",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/cards.webm",
                 "directory": "/assets",
@@ -427,11 +411,9 @@ module.exports = {
             "document_id": "6090c0db98c42a332d218069",
             "key": "src",
             "data": {
-                "name": "on-board-video webm",
+                "name": "on-board-video.webm",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
                 "path": "/assets/on-board-video.webm",
                 "directory": "/assets",
