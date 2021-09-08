@@ -6,22 +6,19 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Discuss | CoCreate</title>
-    	<meta name="description" content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI">
-		<link rel="icon"  sizes="32x32" href="assets/favicon.ico">
-        <meta name="robots" content="index,follow" />
-       	<meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
+		<meta name="description" content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI">
+		<link rel="icon" sizes="16x16" src="/assets/favicon.ico">
+		<meta name="robots" content="index,follow" />
+		<meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
+		<link rel="stylesheet" href="./index.css" collection="files" document_id="611869abc0e9580010ea635f" name="src" type="text/css" />
 
-        <!-- CoCreate CSS -->
-        <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css" type="text/css"/>
-        <link rel="stylesheet" href="./index.css" data-collection="files" data-document_id="6092da6b19ec8e58fc80c94e" name="src" type="text/css" data-save="true" data-parse="true" />
-		
-		
+
 		<!--  Custom Style  -->
 		<style type="text/css">
-			.hide-nav ~ #menuR{
-				margin-top:0px;
-				max-height: -moz-available;   
-				max-height: -webkit-fill-available;  
+			.hide-nav~#menuR {
+				margin-top: 0px;
+				max-height: -moz-available;
+				max-height: -webkit-fill-available;
 				max-height: fill-available;
 				will-change: transform;
 				transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
@@ -30,35 +27,36 @@
 				transform: translateY(0);
 				-webkit-transform: translateY(0);
 			}
-		  
 		</style>
 	</head>
 
 	<body>
-  
-	    <!-- Navbar  -->
-		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" data-scroll="sticky-nav,hide-nav" data-scroll_up="10" data-scroll_down="10" data-collection="components" data-document_id="6091b71857a0e06b6d572d5c" name="html">
+
+		<!-- Navbar  -->
+		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" scroll="sticky-nav,hide-nav" scroll-up="10" scroll-down="10" collection="components" document_id="611aeadec0e9580010eaad98" name="html">
 		</nav>
-	
+
 		<!-- SideNav Left-->
-		<sidenav id="menuL" class="cocreate-sidenav background:whitesmoke display:none"  data-collection="components" data-document_id="6090c58598c42a332d21807f" name="html" data-main_content="content" sidenav-default_desktop="offcanvas" sidenav-default_tablet="offcanvas" sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="expanded" sidenav-ontoggle_tablet="expanded" sidenav-ontoggle_phone="expanded">
+		<sidenav id="menuL" class="cocreate-sidenav background:whitesmoke display:none" collection="components" document_id="611aeadec0e9580010eaad99" name="html" data-main_content="content" sidenav-default_desktop="offcanvas" sidenav-default_tablet="offcanvas"
+		 sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="expanded" sidenav-ontoggle_tablet="expanded" sidenav-ontoggle_phone="expanded">
 		</sidenav>
-		
+
 		<!-- Modal Viewport/Boundaries -->
-		<div class="position:fixed margin-top:50px" data-main_content_id="content" id="modal-viewport"></div>
-	
+		<div class="position:fixed margin-top:50px" main-content_id="content" id="modal-viewport"></div>
+
 		<!-- Main Content -->
-		<main class="padding:20px" data-main_content_id="content">
-		
+		<main class="padding:20px" main-content_id="content">
+
 			<!--  forum Header -->
 			<!--<div class="width:100% display:flex flex-wrap:wrap justify-content:space-between background:#4494f4  border-radius:3px padding:10px_0 margin-bottom:20px">-->
 			<!--    <div class="left-text flex-basis:40% margin:0_20px">-->
 			<!--        <h3 class="color:#fff letter-spacing:1.4px font-weight:500 font-size:16px@sm font-size:13px@xs padding:5px font-family:tahoma">LATEST DISCUSSIONS</h3>-->
 			<!--    </div>-->
 			<!--</div>-->
-	
+
 			<!-- filter -->
-			<div class="display:flex flex-wrap:wrap"><!------  TABS ALL HEADER START ------>
+			<div class="display:flex flex-wrap:wrap">
+				<!------  TABS ALL HEADER START ------>
 				<div class="padding:10px_6px margin-right:2px border-radius:2px_2px_0_0 cursor:pointer  transition:0.4s_all_ease color:#000:hover">
 					<select class="padding:5px_5px border:1px_solid_#000 width:160px" name="product-sorting" id="productsorting">
 						<option>all categories</option>
@@ -69,7 +67,7 @@
 						<option value="SORT BY PRICE: HIGH TO LOW">SORT BY PRICE: HIGH TO LOW</option>
 					</select>
 				</div>
-				<div class="padding:10px_5px margin-right:8px border-radius:2px_2px_0_0 cursor:pointer  transition:0.4s_all_ease color:#000:hover" data-show="#description" data-hide="#more-info,#tags,#reviews"  >
+				<div class="padding:10px_5px margin-right:8px border-radius:2px_2px_0_0 cursor:pointer  transition:0.4s_all_ease color:#000:hover" show="#description" hide="#more-info,#tags,#reviews">
 					<select class="padding:5px_10px border:1px_solid_#000 width:110px" name="product-sorting" id="productsorting">
 						<option>all tags</option>
 						<option value="SORT BY POPULARITY">SORT BY POPULARITY</option>
@@ -79,45 +77,46 @@
 						<option value="SORT BY PRICE: HIGH TO LOW">SORT BY PRICE: HIGH TO LOW</option>
 					</select>
 				</div>
-				<div class="padding:10px_6px margin-right:10px margin-top:6px border-radius:2px_2px_0_0 cursor:pointer  transition:0.4s_all_ease color:#000:hover" data-show="#latest" data-hide="#more-info,#tags,#reviews"  >
+				<div class="padding:10px_6px margin-right:10px margin-top:6px border-radius:2px_2px_0_0 cursor:pointer  transition:0.4s_all_ease color:#000:hover" show="#latest" hide="#more-info,#tags,#reviews">
 					<a class="font-size:16px background:#4494f4  font-weight:500 padding:6px_20px color:#fff color:#fff:hover" href="#">Latest</a>
 				</div>
-				<div class="padding:10px_6px margin-right:10px margin-top:6px border-radius:2px_2px_0_0 cursor:pointer transition:0.4s_all_ease color:#000:hover" data-show="#more-info" data-hide="#latest,#tags,#reviews"  >
-					<a class="font-size:15px background:rgba(242,77,67,0.6):hover font-weight:500 padding:6px_10px color:#fff:hover" href="#" >Top</a>
+				<div class="padding:10px_6px margin-right:10px margin-top:6px border-radius:2px_2px_0_0 cursor:pointer transition:0.4s_all_ease color:#000:hover" show="#more-info" hide="#latest,#tags,#reviews">
+					<a class="font-size:15px background:rgba(242,77,67,0.6):hover font-weight:500 padding:6px_10px color:#fff:hover" href="#">Top</a>
 				</div>
-				<div class="padding:10px_6px margin-right:10px margin-top:6px border-radius:2px_2px_0_0 cursor:pointer transition:0.4s_all_ease color:#000:hover" data-show="#categories" data-hide="#discussions">
-					<a class="font-size:15px background:rgba(242,77,67,0.6):hover font-weight:500 padding:6px_10px color:#fff:hover" href="#" >Categories</a>
+				<div class="padding:10px_6px margin-right:10px margin-top:6px border-radius:2px_2px_0_0 cursor:pointer transition:0.4s_all_ease color:#000:hover" show="#categories" hide="#discussions">
+					<a class="font-size:15px background:rgba(242,77,67,0.6):hover font-weight:500 padding:6px_10px color:#fff:hover" href="#">Categories</a>
 				</div>
 			</div>
-			
+
 			<!-- head bar -->
 			<div class="display:flex border-bottom:3px_solid_#ddd flex-basis:100%">
-			  <div class="flex-grow:1 min-width:300px">
-				<span class="margin-top:15px display:inline-block">Latest Discussion</span>
-			  </div>
-			  <!--<div class="flex-grow:1 min-width:300px display:flex justify-content:flex-end display:none">-->
-			  <!--  <a class="padding:10px_20px background:#ddd:hover transition:0.3s" href="#">Replies</a>-->
-			  <!--  <a class="padding:10px_20px background:#ddd:hover transition:0.3s" href="#">Views</a>-->
-			  <!--  <a class="padding:10px_20px background:#ddd:hover transition:0.3s" href="#">Activity</a>-->
-			  <!--</div>-->
+				<div class="flex-grow:1 min-width:300px">
+					<span class="margin-top:15px display:inline-block">Latest Discussion</span>
+				</div>
+				<!--<div class="flex-grow:1 min-width:300px display:flex justify-content:flex-end display:none">-->
+				<!--  <a class="padding:10px_20px background:#ddd:hover transition:0.3s" href="#">Replies</a>-->
+				<!--  <a class="padding:10px_20px background:#ddd:hover transition:0.3s" href="#">Views</a>-->
+				<!--  <a class="padding:10px_20px background:#ddd:hover transition:0.3s" href="#">Activity</a>-->
+				<!--</div>-->
 			</div>
-		   
+
 			<!-- Pinned Discussion -->
-			<div class="border-bottom:1px_solid_#ddd padding-bottom:10px padding-top:10px"><!------ post item 1 starts ------>
+			<div class="border-bottom:1px_solid_#ddd padding-bottom:10px padding-top:10px">
+				<!------ post item 1 starts ------>
 				<div class="display:flex flex-wrap:wrap">
-				
+
 					<div class="flex-grow:1 width:50% min-width:300px">
 						<div>
-							<a href="./discussion.html" data-collection="{{collection}}" data-document_id="{{data._id}}" name="name" class="margin-top:15px color:#222 display:block width:100% font-size:18px">Welcome to our demo!
+							<a href="./discussion.html" collection="{{collection}}" document_id="{{data._id}}" name="name" class="margin-top:15px color:#222 display:block width:100% font-size:18px">Welcome to our demo!
 			Welcome to our demonstration sandbox! This is a safe place to play. Feel free to experiment, and don't post anything here you wouldn't want lost...</a>
 						</div>
-						
+
 						<div>
 							<a class="color:#777 color:#000:hover display:block width:100% " href="#">
 							<span class="background:#B22222 width:10px height:10px display:inline-block"></span>
 							movies
 							</a>
-						
+
 						</div>
 					</div>
 					<div class="display:flex flex-wrap:wrap flex-grow:1 width:50% min-width:300px align-items:center justify-content:flex-end">
@@ -131,12 +130,12 @@
 								<p class="margin-bottom:3px text-align:center">34</p>
 								<p class="margin-top:3px font-size:14px">Replies</p>
 							</div>
-							
+
 							<div class="padding:5px_10px">
 								<p class="margin-bottom:3px text-align:center">345</p>
 								<p class="margin-top:3px font-size:14px">Views</p>
 							</div>
-							
+
 							<div class="padding:5px_10px">
 								<p class="margin-bottom:3px text-align:center">57</p>
 								<p class="margin-top:3px font-size:14px">users</p>
@@ -147,29 +146,23 @@
 				</div>
 
 			</div>
-			
+
 			<!-- Discussions -->
-			<div id="discussions"
-				data-fetch_collection="module_activity"
-				data-fetch_count="12"
-				data-order_by="name" 
-				data-order_type="asc"
-				data-template_id="filter_test"
-				data-search_type="or">
-			
-				<div class="template border-bottom:1px_solid_#ddd padding-bottom:10px padding-top:10px" data-template_id="filter_test">  
+			<div id="discussions" fetch-collection="module_activity" fetch-count="12" order-by="name" order-type="asc" template_id="filter_test" data-search_type="or">
+
+				<div class="template border-bottom:1px_solid_#ddd padding-bottom:10px padding-top:10px" template_id="filter_test">
 					<div class="display:flex flex-wrap:wrap">
 						<div class="flex-grow:1 width:50% min-width:300px">
 							<div>
-								<a href="/discussion" data-collection="{{collection}}" data-document_id="{{data._id}}" name="name" class="color:#222 font-size:18px">Most inspirational movie you have ever seen?</a>
+								<a href="/discussion" collection="{{collection}}" document_id="{{data._id}}" name="name" class="color:#222 font-size:18px">Most inspirational movie you have ever seen?</a>
 							</div>
-							
+
 							<div>
 								<a class="color:#777 color:#000:hover display:block width:100% " href="#">
 								<span class="background:#B22222 width:10px height:10px display:inline-block"></span>
 								movies
 								</a>
-							
+
 							</div>
 						</div>
 						<div class="display:flex flex-grow:1 width:50% min-width:300px align-items:center justify-content:flex-end">
@@ -183,12 +176,12 @@
 									<p class="margin-bottom:3px text-align:center">34</p>
 									<p class="margin-top:3px font-size:14px">Replies</p>
 								</div>
-								
+
 								<div class="padding:5px_10px">
 									<p class="margin-bottom:3px text-align:center">345</p>
 									<p class="margin-top:3px font-size:14px">Views</p>
 								</div>
-								
+
 								<div class="padding:5px_10px">
 									<p class="margin-bottom:3px text-align:center">57</p>
 									<p class="margin-top:3px font-size:14px">users</p>
@@ -197,13 +190,13 @@
 							</div>
 						</div>
 					</div>
-				</div>    
-			
-			</div>        
-			
+				</div>
+
+			</div>
+
 			<!--  Categories -->
 			<div id="categories" class="padding:10px hidden">
-				
+
 				<div class="display:flex border-bottom:3px_solid_#ddd flex-basis:100%">
 					<div class="flex-grow:1 min-width:300px flex-basis:60%">
 						<span class="margin-top:15px display:inline-block">Categories</span>
@@ -219,226 +212,220 @@
 						<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px"><i class="fas margin-right:5px fa-thumbtack"></i>Uncategorized</a>
 						<a class="color:#000:hover display:block width:100%" href="#">Topics that don't need a category, or don't fit into any other existing category.</a>
 					</div>
-					
+
 					<div class="flex-grow:1 min-width:300px justify-content:flex-end margin-top:20px">
 						<a class="padding:0_20px" href="#">30</a>
 					</div>
 				</div>
-				
+
 				<!-- category item 1 starts -->
 				<div class="display:flex border-bottom:1px_solid_#ddd border-left:7px_solid_#70A0C0 padding-bottom:10px padding-left:10px flex-basis:100%">
 					<div class="flex-grow:1 min-width:300px">
 						<a href="#" class="margin:15px_0 color:#222 display:block width:100% font-size:18px">General</a>
 						<a class="color:#000:hover display:block width:100%" href="#">Topics that don't need a category, or don't fit into any other existing category.</a>
 					</div>
-					
+
 					<div class="flex-grow:1 min-width:300px justify-content:flex-end margin-top:20px">
 						<a class="padding:0_20px" href="#">13</a>
 					</div>
 				</div>
-				
+
 				<!-------------------------------------   category item 3 starts --------------------------------->
 				<div class="display:flex border-bottom:1px_solid_#ddd border-left:7px_solid_#B22222 padding-bottom:10px padding-left:10px flex-basis:100%">
-				  <div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
-					
-					<div class="flex-basis:100%">
-					  <div>
-						<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Movies</a>
-					  </div>
-					  
-					  <div>
-					  <a class="color:#000:hover display:block width:100%" href="#">Topics that don't need a category, or don't fit into any other existing category.
+					<div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
+
+						<div class="flex-basis:100%">
+							<div>
+								<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Movies</a>
+							</div>
+
+							<div>
+								<a class="color:#000:hover display:block width:100%" href="#">Topics that don't need a category, or don't fit into any other existing category.
 					  </a>
-					  </div>
+							</div>
+						</div>
+
+
 					</div>
-					
-					
-				  </div>
-				  
-				  
-				  
-				  <div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
-					<a class="padding:0_20px" href="#">19</a>
-				  </div>
+
+
+
+					<div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
+						<a class="padding:0_20px" href="#">19</a>
+					</div>
 				</div>
-				
+
 				<!-------------------------------------   category item 3 end --------------------------------->
-				
+
 				<!-------------------------------------   category item 4 starts --------------------------------->
-				
+
 				<div class="display:flex border-bottom:1px_solid_#ddd border-left:7px_solid_#258AF1 padding-bottom:10px padding-left:10px flex-basis:100%">
-				  <div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
-					
-					<div class="flex-basis:100%">
-					  <div>
-						<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Videos</a>
-					  </div>
-					  
-					  <div>
-					  <a class="color:#000:hover display:block width:100%" href="#">Topics about any aspect of online video. Discussions about movies and TV should be in the Movies category.
+					<div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
+
+						<div class="flex-basis:100%">
+							<div>
+								<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Videos</a>
+							</div>
+
+							<div>
+								<a class="color:#000:hover display:block width:100%" href="#">Topics about any aspect of online video. Discussions about movies and TV should be in the Movies category.
 					  </a>
-					  </div>
+							</div>
+						</div>
+
+
 					</div>
-					
-					
-				  </div>
-				  
-				  
-				  
-				  <div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
-					<a class="padding:0_20px" href="#">19</a>
-				  </div>
+
+
+
+					<div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
+						<a class="padding:0_20px" href="#">19</a>
+					</div>
 				</div>
-				
+
 				<!-------------------------------------   category item 4 end --------------------------------->
-				
+
 				<!-------------------------------------   category item 5 starts --------------------------------->
-				
+
 				<div class="display:flex border-bottom:1px_solid_#ddd border-left:7px_solid_#444444 padding-bottom:10px padding-left:10px flex-basis:100%">
-				  <div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
-					
-					<div class="flex-basis:100%">
-					  <div>
-						<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Tech</a>
-					  </div>
-					  
-					  <div>
-					  <a class="color:#000:hover display:block width:100%" href="#">Topics about technology: computers, gadgets, phones, cameras, the Intertubes, or any other IT aspects of the world.
+					<div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
+
+						<div class="flex-basis:100%">
+							<div>
+								<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Tech</a>
+							</div>
+
+							<div>
+								<a class="color:#000:hover display:block width:100%" href="#">Topics about technology: computers, gadgets, phones, cameras, the Intertubes, or any other IT aspects of the world.
 					  </a>
-					  </div>
+							</div>
+						</div>
+
+
 					</div>
-					
-					
-				  </div>
-				  
-				  
-				  
-				  <div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
-					<a class="padding:0_20px" href="#">19</a>
-				  </div>
+
+
+
+					<div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
+						<a class="padding:0_20px" href="#">19</a>
+					</div>
 				</div>
-				
+
 				<!-------------------------------------   category item 5 end --------------------------------->
-				
+
 				<!-------------------------------------   category item 6 starts --------------------------------->
-				
+
 				<div class="display:flex border-bottom:1px_solid_#ddd border-left:7px_solid_#800080 padding-bottom:10px padding-left:10px flex-basis:100%">
-				  <div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
-					
-					<div class="flex-basis:100%">
-					  <div>
-						<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Gaming</a>
-					  </div>
-					  
-					  <div>
-					  <a class="color:#000:hover display:block width:100%" href="#">Topics about gaming of any kind: videogames, board games, card games, role playing games, you name it.
+					<div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
+
+						<div class="flex-basis:100%">
+							<div>
+								<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Gaming</a>
+							</div>
+
+							<div>
+								<a class="color:#000:hover display:block width:100%" href="#">Topics about gaming of any kind: videogames, board games, card games, role playing games, you name it.
 					  </a>
-					  </div>
+							</div>
+						</div>
+
+
 					</div>
-					
-					
-				  </div>
-				  
-				  
-				  
-				  <div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
-					<a class="padding:0_20px" href="#">19</a>
-				  </div>
+
+
+
+					<div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
+						<a class="padding:0_20px" href="#">19</a>
+					</div>
 				</div>
-				
+
 				<!-------------------------------------   category item 6 end --------------------------------->
-				
+
 				<!-------------------------------------   category item 7 starts --------------------------------->
-				
+
 				<div class="display:flex border-bottom:1px_solid_#ddd border-left:7px_solid_#D2691E padding-bottom:10px padding-left:10px flex-basis:100%">
-				  <div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
-					
-					<div class="flex-basis:100%">
-					  <div>
-						<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">School</a>
-					  </div>
-					  
-					  <div>
-					  <a class="color:#000:hover display:block width:100%" href="#">Topics about school, learning, and general education. How can you get your pudding if you don't eat any meat?
+					<div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
+
+						<div class="flex-basis:100%">
+							<div>
+								<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">School</a>
+							</div>
+
+							<div>
+								<a class="color:#000:hover display:block width:100%" href="#">Topics about school, learning, and general education. How can you get your pudding if you don't eat any meat?
 					  </a>
-					  </div>
+							</div>
+						</div>
+
+
 					</div>
-					
-					
-				  </div>
-				  
-				  
-				  
-				  <div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
-					<a class="padding:0_20px" href="#">19</a>
-				  </div>
+
+
+
+					<div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
+						<a class="padding:0_20px" href="#">19</a>
+					</div>
 				</div>
-				
+
 				<!-------------------------------------   category item 7 end --------------------------------->
-				
+
 				<!-------------------------------------   category item 8 starts --------------------------------->
-				
+
 				<div class="display:flex border-bottom:1px_solid_#ddd border-left:7px_solid_#0000FF padding-bottom:10px padding-left:10px flex-basis:100%">
-				  <div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
-					
-					<div class="flex-basis:100%">
-					  <div>
-						<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Sports</a>
-					  </div>
-					  
-					  <div>
-					  <a class="color:#000:hover display:block width:100%" href="#">Topics about the wide wide world of sports, professional or amateur, real or fantasy.
+					<div class="flex-grow:1 min-width:300px flex-basis:70% display:flex">
+
+						<div class="flex-basis:100%">
+							<div>
+								<a href="#" class="margin:15px_0 color:#222  display:block width:100% font-size:18px">Sports</a>
+							</div>
+
+							<div>
+								<a class="color:#000:hover display:block width:100%" href="#">Topics about the wide wide world of sports, professional or amateur, real or fantasy.
 					  </a>
-					  </div>
+							</div>
+						</div>
+
+
 					</div>
-					
-					
-				  </div>
-				  
-				  
-				  
-				  <div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
-					<a class="padding:0_20px" href="#">09</a>
-				  </div>
+
+
+
+					<div class="flex-grow:1 min-width:300px flex-basis:20% display:flex justify-content:flex-end margin-top:20px">
+						<a class="padding:0_20px" href="#">09</a>
+					</div>
 				</div>
-				
+
 				<!-------------------------------------   category item 8 end --------------------------------->
-				
-				
- 
-				  
-				  
-				  
-				  
-				  
-			  </div>
-			  
-			
+
+
+
+
+
+
+
+
+			</div>
+
+
 		</main>
-		
+
 		<!-- SideNav Right -->
-		<sidenav id="menuR" class="cocreate-sidenav sidenav-right overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="offcanvas" sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="offcanvas" sidenav-ontoggle_tablet="expanded" sidenav-expanded_width="300px"  data-collection="components" data-document_id="60930bdb0eb9591afadb95fc" name="html">
+		<sidenav id="menuR" class="cocreate-sidenav sidenav-right overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="offcanvas"
+		 sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="offcanvas" sidenav-ontoggle_tablet="expanded" sidenav-expanded_width="300px" collection="components" document_id="611aeadec0e9580010eaad9a" name="html">
 		</sidenav>
 
 		<!-- SidNav Right Floating toggle Button -->
-		<button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" data-toggle_sidenav="menuR">
+		<button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" toggle-sidenav="menuR">
 			<i class="fas fa-sliders-h"></i>
 		</button>
 
 		<!-- Footer -->
-		<footer id="spreadtheword" data-main_content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" data-collection="components" data-document_id="6092ebcc19ec8e58fc80c9e3" name="html">
+		<footer id="spreadtheword" main-content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" collection="components" document_id="611aeadec0e9580010eaad9b" name="html">
 		</footer>
 
-        <script>
-            var config = {
-                apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
-                organization_Id: '5de0387b12e200ea63204d6c',
-                host: 'wss://server.cocreate.app:8088'
-            }
-        </script>
-    
-        <!--CoCreateJS-->
-        <script src="https://cdn.cocreate.app/latest/CoCreate.min.js"></script>
-	
+		<script src="./apikey.js"></script>
+		<script src="https://cdn.cocreate.app/latest/CoCreate.min.js"></script>
+
 	</body>
+
 </html>

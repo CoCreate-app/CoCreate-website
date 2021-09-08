@@ -1,260 +1,442 @@
 module.exports = {
     "config": {
-        "apiKey": "c2b08663-06e3-440c-ef6f-13978b42883a",
-        "securityKey": "f26baf68-e3a9-45fc-effe-502e47116265",
-        "organization_Id": "5de0387b12e200ea63204d6c",
-        "host": "server.cocreate.app:8088"
+        "apiKey": "2061acef-0451-4545-f754-60cf8160",
+        "organization_Id": "5ff747727005da1c272740ab",
+        "host": "general.cocreate.app"
     },
     "sources": [
         {
-            "entry": "./src/index.html",
+            "entry": "./src/apikey.js",
             "collection": "files",
-            "document_id": "6090bd7b98c42a332d218058",
+            "document_id": "611aeed8c0e9580010eaae28",
             "key": "src",
             "data": {
-                "name": "CoCreateJS Website",
+                "name": "apikey.js",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": ""
+                "path": "/apikey.js",
+                "directory": "/",
+                "content-type": "application/javascript",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/index.html",
+            "collection": "files",
+            "document_id": "611acb16c0e9580010eaaa3e",
+            "key": "src",
+            "data": {
+                "name": "index.html",
+                "domains": [
+                    "general.cocreate.app"
+                ],
+                "path": "/index.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/crm.html",
             "collection": "files",
-            "document_id": "60997878b9e82141dac9ca90",
+            "document_id": "611aeadec0e9580010eaad97",
             "key": "src",
             "data": {
-                "name": "CoCreateJS Website",
+                "name": "crm.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/crm"
+                "path": "/crm.html",
+                "directory": "/",
+                "content-type": "txt/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/components/navbar.html",
             "collection": "components",
-            "document_id": "6091b71857a0e06b6d572d5c",
+            "document_id": "611aeadec0e9580010eaad98",
             "key": "html",
             "data": {
                 "name": "website navbar",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ]
             }
         },
         {
             "entry": "./src/components/sidenav.html",
             "collection": "components",
-            "document_id": "6090c58598c42a332d21807f",
+            "document_id": "611aeadec0e9580010eaad99",
             "key": "html",
             "data": {
                 "name": "website sidenav",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ]
             }
         },
         {
             "entry": "./src/components/filters.html",
             "collection": "components",
-            "document_id": "60930bdb0eb9591afadb95fc",
+            "document_id": "611aeadec0e9580010eaad9a",
             "key": "html",
             "data": {
                 "name": "website filters",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ]
             }
         },
         {
             "entry": "./src/components/footer.html",
             "collection": "components",
-            "document_id": "6092ebcc19ec8e58fc80c9e3",
+            "document_id": "611aeadec0e9580010eaad9b",
             "key": "html",
             "data": {
                 "name": "website footer",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ]
             }
         },
         {
             "entry": "./src/assets/logo.png",
             "collection": "files",
-            "document_id": "6091b88557a0e06b6d572d63",
+            "document_id": "611aeadec0e9580010eaad9c",
             "key": "src",
             "data": {
                 "name": "CoCreate Logo",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/assets/logo.png"
+                "path": "/assets/logo.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
             }
         },
         {
             "entry": "./src/assets/icon.png",
             "collection": "files",
-            "document_id": "6091bb4657a0e06b6d572d70",
+            "document_id": "611aeadec0e9580010eaad9d",
             "key": "src",
             "data": {
                 "name": "CoCreate Icon",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/assets/icon.png"
+                "path": "/assets/icon.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
             }
         },
         {
             "entry": "./src/assets/favicon.ico",
             "collection": "files",
-            "document_id": "6091bb4657a0e06b6d572d71",
+            "document_id": "611aeadec0e9580010eaad9e",
             "key": "src",
             "data": {
                 "name": "CoCreate Favicon",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/assets/favicon.ico"
+                "path": "/assets/favicon.ico",
+                "directory": "/assets",
+                "content-type": "image/ico",
+                "public": "true"
             }
         },
         {
             "entry": "./src/blog.html",
             "collection": "files",
-            "document_id": "60887864117c640e7596300c",
+            "document_id": "611acb17c0e9580010eaaa3f",
             "key": "src",
             "data": {
-                "name": "Blog",
+                "name": "blog.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/blog"
+                "path": "/blog.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/blog-post.html",
             "collection": "files",
-            "document_id": "60887864117c640e7596300d",
+            "document_id": "611acb17c0e9580010eaaa40",
             "key": "src",
             "data": {
-                "name": "Blog post",
+                "name": "blog-post.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/blog-post"
+                "path": "/blog-post.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/discuss.html",
             "collection": "files",
-            "document_id": "60887864117c640e7596300e",
+            "document_id": "611acb17c0e9580010eaaa41",
             "key": "src",
             "data": {
-                "name": "Discuss",
+                "name": "discuss.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/discuss"
+                "path": "/discuss.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/discussion.html",
             "collection": "files",
-            "document_id": "60887864117c640e7596300f",
+            "document_id": "611acb17c0e9580010eaaa42",
             "key": "src",
             "data": {
-                "name": "Discussion",
+                "name": "discussion.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/discussion"
+                "path": "/discussion.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/product-list.html",
             "collection": "files",
-            "document_id": "60887864117c640e75963010",
+            "document_id": "611acb18c0e9580010eaaa43",
             "key": "src",
             "data": {
-                "name": "Product List",
+                "name": "product-list.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/product-list"
+                "path": "/product-list.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/product.html",
             "collection": "files",
-            "document_id": "60887864117c640e75963011",
+            "document_id": "611acb18c0e9580010eaaa44",
             "key": "src",
             "data": {
-                "name": "Product",
+                "name": "product.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/product"
+                "path": "/product.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/university.html",
             "collection": "files",
-            "document_id": "60887864117c640e75963012",
+            "document_id": "611acb18c0e9580010eaaa45",
             "key": "src",
             "data": {
-                "name": "University",
+                "name": "university.html",
                 "domains": [
-                    "cocreate.app",
-                    "server.cocreate.app",
-                    "ws.cocreate.app"
+                    "general.cocreate.app"
                 ],
-                "path": "/university"
+                "path": "/university.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/university-item.html",
             "collection": "files",
-            "document_id": "60887864117c640e75963013",
+            "document_id": "611acb18c0e9580010eaaa46",
             "key": "src",
             "data": {
-                "name": "University Item",
+                "name": "university-item.html",
+                "domains": [
+                    "general.cocreate.app"
+                ],
+                "path": "/university-item.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/googleMaps.png",
+            "collection": "files",
+            "document_id": "6090bcf298c42a332d218050",
+            "key": "src",
+            "data": {
+                "name": "googleMaps png",
                 "domains": [
                     "cocreate.app",
                     "server.cocreate.app",
                     "ws.cocreate.app"
                 ],
-                "path": "/university-item"
+                "path": "/assets/googleMaps.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/plaid.png",
+            "collection": "files",
+            "document_id": "6090bcf298c42a332d218051",
+            "key": "src",
+            "data": {
+                "name": "plaid png",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/plaid.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/sendgrid.png",
+            "collection": "files",
+            "document_id": "6090bcf298c42a332d218052",
+            "key": "src",
+            "data": {
+                "name": "sendgrid png",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/sendgrid.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/shipengine.svg",
+            "collection": "files",
+            "document_id": "6090bcf298c42a332d218053",
+            "key": "src",
+            "data": {
+                "name": "shipengine svg",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/shipengine.svg",
+                "directory": "/assets",
+                "content-type": "image/svg+xml",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/stripe.png",
+            "collection": "files",
+            "document_id": "6090bcf298c42a332d218054",
+            "key": "src",
+            "data": {
+                "name": "stripe png",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/stripe.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/twilio.png",
+            "collection": "files",
+            "document_id": "6090bcf298c42a332d218055",
+            "key": "src",
+            "data": {
+                "name": "twilio png",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/twilio.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/dashboard-video.mp4",
+            "collection": "files",
+            "document_id": "609032ef5ebe934f171b4b7e",
+            "key": "src",
+            "data": {
+                "name": "dashboard video",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/dashboard-video.mp4",
+                "directory": "/assets",
+                "content-type": "video/mp4",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/cards.webm",
+            "collection": "files",
+            "document_id": "6090c0db98c42a332d218068",
+            "key": "src",
+            "data": {
+                "name": "cards webm",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/cards.webm",
+                "directory": "/assets",
+                "content-type": "video/webm",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/on-board-video.webm",
+            "collection": "files",
+            "document_id": "6090c0db98c42a332d218069",
+            "key": "src",
+            "data": {
+                "name": "on-board-video webm",
+                "domains": [
+                    "cocreate.app",
+                    "server.cocreate.app",
+                    "ws.cocreate.app"
+                ],
+                "path": "/assets/on-board-video.webm",
+                "directory": "/assets",
+                "content-type": "video/webm",
+                "public": "true"
             }
         }
     ]

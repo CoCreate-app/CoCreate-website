@@ -6,104 +6,103 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Learning-center | CoCreate</title>
-    	<meta name="description" content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI">
-		<link rel="icon"  sizes="32x32" href="assets/favicon.ico">
+        <meta name="description" content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI">
+        <link rel="icon" sizes="16x16" src="/assets/favicon.ico">
         <meta name="robots" content="index,follow" />
-       	<meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
+        <meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
+        <link rel="stylesheet" href="./index.css" collection="files" document_id="611869abc0e9580010ea635f" name="src" type="text/css"/>
 
-        <!-- CoCreate CSS -->
-        <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css" type="text/css"/>
-        <link rel="stylesheet" href="./index.css" data-collection="files" data-document_id="6092da6b19ec8e58fc80c94e" name="src" type="text/css" data-save="true"/>
-        
         <!--  Custom Style  -->
         <style type="text/css">
-            .learning-header-section{
-                background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('images/header-bg.jpg');
+            .learning-header-section {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/header-bg.jpg');
                 background-repeat: no-repeat;
                 background-attachment: fixed;
-                background-size:cover;
+                background-size: cover;
                 background-position: center;
-                
-            }   
+
+            }
         </style>
         <!--  Custom Style  -->
         <style type="text/css">
-    		.hide-nav ~ #menuR{
-    			margin-top:0px;
-    			max-height: -moz-available;   
-    			max-height: -webkit-fill-available;  
-    			max-height: fill-available;
-    			will-change: transform;
-    			transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-    			transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s;
-    			transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-    			transform: translateY(0);
-    			-webkit-transform: translateY(0);
+            .hide-nav~#menuR {
+                margin-top: 0px;
+                max-height: -moz-available;
+                max-height: -webkit-fill-available;
+                max-height: fill-available;
+                will-change: transform;
+                transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s;
+                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+                transform: translateY(0);
+                -webkit-transform: translateY(0);
             }
-            .hide-nav ~ #menuR .syllabus{
-    			padding-bottom:60px;
+
+            .hide-nav~#menuR .syllabus {
+                padding-bottom: 60px;
             }
-          
         </style>
 
     </head>
 
     <body>
 
-	    <!-- Navbar  -->
-		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" data-scroll="sticky-nav,hide-nav" data-scroll_up="10" data-scroll_down="10" data-collection="components" data-document_id="6091b71857a0e06b6d572d5c" name="html">
-		</nav>
-	
-		<!-- SideNav Left-->
-		<sidenav id="menuL" class="cocreate-sidenav background:whitesmoke display:none"  data-collection="components" data-document_id="6090c58598c42a332d21807f" name="html" data-main_content="content" sidenav-default_desktop="offcanvas" sidenav-default_tablet="offcanvas" sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="expanded" sidenav-ontoggle_tablet="expanded" sidenav-ontoggle_phone="expanded">
-		</sidenav>
-		
-		<!-- Modal Viewport/Boundaries -->
-		<div class="position:fixed margin-top:50px" data-main_content_id="content" id="modal-viewport"></div>
-    
+        <!-- Navbar  -->
+        <nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" scroll="sticky-nav,hide-nav" scroll-up="10" scroll-down="10" collection="components" document_id="611aeadec0e9580010eaad98" name="html">
+        </nav>
+
+        <!-- SideNav Left-->
+        <sidenav id="menuL" class="cocreate-sidenav background:whitesmoke display:none" collection="components" document_id="611aeadec0e9580010eaad99" name="html" data-main_content="content" sidenav-default_desktop="offcanvas" sidenav-default_tablet="offcanvas"
+            sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="expanded" sidenav-ontoggle_tablet="expanded" sidenav-ontoggle_phone="expanded">
+        </sidenav>
+
+        <!-- Modal Viewport/Boundaries -->
+        <div class="position:fixed margin-top:50px" main-content_id="content" id="modal-viewport"></div>
+
         <!-- Main Content -->
-        <main class="padding:20px" data-main_content_id="content">
+        <main class="padding:20px" main-content_id="content">
             <!-- Course Content -->
             <div class="background:#039BE5 color:#fff padding:25px_20px margin-bottom:60px">
-                <a href="/university"><i class="fas color:#fff font-size:22px fa-arrow-left"></i></a> 
+                <a href="./university.html"><i class="fas color:#fff font-size:22px fa-arrow-left"></i></a>
                 <span class="font-size:20px margin-left:20px font-weight:500">Web App Basics</span>
             </div>
-        
-            <div class="max-width:800px margin:auto"><!-----------------   Right Course Content box Start   ---------------->
-                
+
+            <div class="max-width:800px margin:auto">
+                <!-----------------   Right Course Content box Start   ---------------->
+
                 <h2 class="color:#000 font-weight:500 font-size:26px margin-bottom:30px">Step 1 - Introduction</h2>
                 <p class="margin-bottom:15px">This is an example step of the course. You can put anything in here from example codes to videos.</p>
                 <p class="margin-bottom:15px">
-                  To install the <b>CLI</b> you need to have installed <b>npm</b> which typically comes with <b>NodeJS</b>.To install or upgrade the CLI run the following npm command:
+                    To install the <b>CLI</b> you need to have installed <b>npm</b> which typically comes with <b>NodeJS</b>.To install or upgrade the CLI run the following npm command:
                 </p>
                 <p class="margin-bottom:15px color:#6CC8E4 background:#eee color:#6CC8E4">npm -g install @angular/cli</p>
                 <p class="margin-bottom:15px width:100%">To verify that the CLI has been installed correctly, open a console and run:</p>
                 <p class="margin-bottom:15px color:#6CC8E4 background:#eee color:#6CC8E4">ng version</p>
                 <h2 class="color:#000 font-weight:500 font-size:24px margin:20px_0 width:100%">Install Procesure</h2>
                 <p class="margin-bottom:15px width:100%">To moderate the images we'll need a few Node.js packages:</p>
-                
+
                 <ul class="margin-left:30px">
-                  <li class="margin:15px_0">
-                    The Google Cloud Vision Client Library for Node.js: @google-cloud/vision to run the image through the Cloud Vision API to detect inappropriate images.
-                  </li>
-                  <li class="margin:15px_0">
-                    The Google Cloud Storage Client Library for Node.js: @google-cloud/storage to download and upload the images from Cloud Storage.
-                  </li>
-                  <li class="margin:15px_0">
-                    A Node.js library allowing us to run processes: child-process-promise to run ImageMagick since the ImageMagick command-line tool comes pre-installed on all Functions instances.
-                  </li>
+                    <li class="margin:15px_0">
+                        The Google Cloud Vision Client Library for Node.js: @google-cloud/vision to run the image through the Cloud Vision API to detect inappropriate images.
+                    </li>
+                    <li class="margin:15px_0">
+                        The Google Cloud Storage Client Library for Node.js: @google-cloud/storage to download and upload the images from Cloud Storage.
+                    </li>
+                    <li class="margin:15px_0">
+                        A Node.js library allowing us to run processes: child-process-promise to run ImageMagick since the ImageMagick command-line tool comes pre-installed on all Functions instances.
+                    </li>
                 </ul>
-                
+
                 <p class="margin:15px_0">
-                  To install these three packages into your Cloud Functions app, run the following npm install --save command. Make sure that you do this from the functions directory.
+                    To install these three packages into your Cloud Functions app, run the following npm install --save command. Make sure that you do this from the functions directory.
                 </p>
                 <p class="margin:15px_0 color:#6CC8E4 background:#eee color:#6CC8E4">
-                  npm install --save @google-cloud/vision @google-cloud/storage child-process-promise
+                    npm install --save @google-cloud/vision @google-cloud/storage child-process-promise
                 </p>
                 <p class="margin:15px_0">
-                  This will install the three packages locally and add them as declared dependencies in your package.js file
+                    This will install the three packages locally and add them as declared dependencies in your package.js file
                 </p>
-            
+
             </div>
             <!--  Pre & Next Article Start  -->
             <div class="post-title padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
@@ -116,20 +115,13 @@
                     <p class="color:#000 margin-top:10px font-size:20px font-size:12px@xs line-height:27px"><a class="color:#1877F2:hover" href="#">How material innovation is changing the world unbelievably</a></p>
                 </div>
             </div>
- 
+
         </main>
 
         <!-- Sidenav Right -->
-        <sidenav id="menuR" class="cocreate-sidenav sidenav-right overflow:hidden margin-top:70px@md@lg@xl background:white z-index:6!important"
-            data-main_content="content"
-            sidenav-default_desktop="expanded"
-            sidenav-default_tablet="collapsed" 
-            sidenav-default_phone="offcanvas"
-            sidenav-ontoggle_desktop="offcanvas"
-            sidenav-ontoggle_tablet="expanded"
-            sidenav-expanded_width="300px"
-            sidenav-collapsed_width="85px">
-            
+        <sidenav id="menuR" class="cocreate-sidenav sidenav-right overflow:hidden margin-top:70px@md@lg@xl background:white z-index:6!important" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="collapsed" sidenav-default_phone="offcanvas"
+            sidenav-ontoggle_desktop="offcanvas" sidenav-ontoggle_tablet="expanded" sidenav-expanded_width="300px" sidenav-collapsed_width="85px">
+
             <div class="width:280px margin-left:25px overflow:overlay height:100vh">
                 <!-- Course Outline Content -->
                 <div class="syllabus position:relative padding-top:10px padding-bottom:120px background:#fff">
@@ -236,26 +228,19 @@
             </div>
             <div class="resizeHandler"></div>
         </sidenav>
-        
+
         <!-- SidNav Right Floating toggle Button -->
-        <button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" data-toggle_sidenav="menuR">
+        <button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" toggle-sidenav="menuR">
         	<i class="fas fa-sliders-h"></i>
         </button>
 
-		<!-- Footer -->
-		<footer id="spreadtheword" data-main_content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" data-collection="components" data-document_id="6092ebcc19ec8e58fc80c9e3" name="html">
-		</footer>
+        <!-- Footer -->
+        <footer id="spreadtheword" main-content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" collection="components" document_id="611aeadec0e9580010eaad9b" name="html">
+        </footer>
 
-        <script>
-            var config = {
-                apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
-                organization_Id: '5de0387b12e200ea63204d6c',
-                host: 'wss://ws.cocreate.app'
-            }
-        </script>
-    
-        <!--CoCreateJS-->
+        <script src="./apikey.js"></script>
         <script src="https://cdn.cocreate.app/latest/CoCreate.min.js"></script>
-    
+
     </body>
+
 </html>
