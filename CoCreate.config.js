@@ -13,6 +13,7 @@ module.exports = {
             "data": {
                 "name": "apikey.js",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/apikey.js",
@@ -29,11 +30,29 @@ module.exports = {
             "data": {
                 "name": "index.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/index.html",
                 "directory": "/",
                 "content-type": "text/html",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/index.css",
+            "collection": "files",
+            "document_id": "611869abc0e9580010ea635f",
+            "key": "src",
+            "data": {
+                "name": "index.css",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "path": "/index.css",
+                "directory": "/",
+                "content-type": "text/css",
                 "public": "true"
             }
         },
@@ -45,60 +64,81 @@ module.exports = {
             "data": {
                 "name": "crm.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/crm.html",
                 "directory": "/",
-                "content-type": "txt/html",
+                "content-type": "text/html",
                 "public": "true"
             }
         },
         {
             "entry": "./src/components/navbar.html",
-            "collection": "components",
+            "collection": "files",
             "document_id": "611aeadec0e9580010eaad98",
-            "key": "html",
+            "key": "src",
             "data": {
-                "name": "website navbar",
+                "name": "navbar.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
-                ]
+                ],
+                "path": "/components/navbar.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/components/sidenav.html",
-            "collection": "components",
+            "collection": "files",
             "document_id": "611aeadec0e9580010eaad99",
-            "key": "html",
+            "key": "src",
             "data": {
-                "name": "website sidenav",
+                "name": "sidenav.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
-                ]
+                ],
+                "path": "/components/sidenav.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/components/filters.html",
-            "collection": "components",
+            "collection": "files",
             "document_id": "611aeadec0e9580010eaad9a",
-            "key": "html",
+            "key": "src",
             "data": {
-                "name": "website filters",
+                "name": "filters.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
-                ]
+                ],
+                "path": "/components/filters.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
             "entry": "./src/components/footer.html",
-            "collection": "components",
+            "collection": "files",
             "document_id": "611aeadec0e9580010eaad9b",
-            "key": "html",
+            "key": "src",
             "data": {
-                "name": "website footer",
+                "name": "footer.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
-                ]
+                ],
+                "path": "/components/footer.html",
+                "directory": "/",
+                "content-type": "text/html",
+                "public": "true"
             }
         },
         {
@@ -109,6 +149,7 @@ module.exports = {
             "data": {
                 "name": "CoCreate Logo",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/logo.png",
@@ -125,6 +166,7 @@ module.exports = {
             "data": {
                 "name": "CoCreate Icon",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/icon.png",
@@ -141,6 +183,7 @@ module.exports = {
             "data": {
                 "name": "CoCreate Favicon",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/favicon.ico",
@@ -150,128 +193,136 @@ module.exports = {
             }
         },
         {
-            "entry": "./src/blog.html",
+            "entry": "./src/blog/index.html",
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa3f",
             "key": "src",
             "data": {
-                "name": "blog.html",
+                "name": "index.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/blog.html",
-                "directory": "/",
+                "path": "/blog/index.html",
+                "directory": "/blog",
                 "content-type": "text/html",
                 "public": "true"
             }
         },
         {
-            "entry": "./src/blog-post.html",
+            "entry": "./src/blog/post.html",
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa40",
             "key": "src",
             "data": {
-                "name": "blog-post.html",
+                "name": "post.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/blog-post.html",
-                "directory": "/",
+                "path": "/blog/post.html",
+                "directory": "/blog",
                 "content-type": "text/html",
                 "public": "true"
             }
         },
         {
-            "entry": "./src/discuss.html",
+            "entry": "./src/discuss/index.html",
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa41",
             "key": "src",
             "data": {
-                "name": "discuss.html",
+                "name": "index.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/discuss.html",
-                "directory": "/",
+                "path": "/discuss/index.html",
+                "directory": "/discuss",
                 "content-type": "text/html",
                 "public": "true"
             }
         },
         {
-            "entry": "./src/discussion.html",
+            "entry": "./src/discuss/discussion.html",
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa42",
             "key": "src",
             "data": {
                 "name": "discussion.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/discussion.html",
-                "directory": "/",
+                "path": "/discuss/discussion.html",
+                "directory": "/discuss",
                 "content-type": "text/html",
                 "public": "true"
             }
         },
         {
-            "entry": "./src/product-list.html",
+            "entry": "./src/product/index.html",
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa43",
             "key": "src",
             "data": {
-                "name": "product-list.html",
+                "name": "index.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/product-list.html",
-                "directory": "/",
+                "path": "/product/index.html",
+                "directory": "/product",
                 "content-type": "text/html",
                 "public": "true"
             }
         },
         {
-            "entry": "./src/product.html",
+            "entry": "./src/shop/product.html",
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa44",
             "key": "src",
             "data": {
                 "name": "product.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/product.html",
-                "directory": "/",
+                "path": "/shop/product.html",
+                "directory": "/shop",
                 "content-type": "text/html",
                 "public": "true"
             }
         },
         {
-            "entry": "./src/university.html",
+            "entry": "./src/university/index.html",
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa45",
             "key": "src",
             "data": {
-                "name": "university.html",
+                "name": "index.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/university.html",
-                "directory": "/",
+                "path": "/university/index.html",
+                "directory": "/university",
                 "content-type": "text/html",
                 "public": "true"
             }
         },
         {
-            "entry": "./src/university-item.html",
+            "entry": "./src/university/course.html",
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa46",
             "key": "src",
             "data": {
-                "name": "university-item.html",
+                "name": "course.html",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "path": "/university-item.html",
+                "path": "/university/course.html",
                 "directory": "/",
                 "content-type": "text/html",
                 "public": "true"
@@ -285,6 +336,7 @@ module.exports = {
             "data": {
                 "name": "googleMaps.png",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/googleMaps.png",
@@ -301,6 +353,7 @@ module.exports = {
             "data": {
                 "name": "plaid.png",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/plaid.png",
@@ -317,6 +370,7 @@ module.exports = {
             "data": {
                 "name": "sendgrid.png",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/sendgrid.png",
@@ -333,6 +387,7 @@ module.exports = {
             "data": {
                 "name": "shipengine.svg",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/shipengine.svg",
@@ -349,6 +404,7 @@ module.exports = {
             "data": {
                 "name": "stripe.png",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/stripe.png",
@@ -365,6 +421,7 @@ module.exports = {
             "data": {
                 "name": "twilio.png",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/twilio.png",
@@ -381,6 +438,7 @@ module.exports = {
             "data": {
                 "name": "dashboard-video.mp4",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/dashboard-video.mp4",
@@ -397,6 +455,7 @@ module.exports = {
             "data": {
                 "name": "cards.webm",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/cards.webm",
@@ -413,6 +472,7 @@ module.exports = {
             "data": {
                 "name": "on-board-video.webm",
                 "domains": [
+                    "cocreate.app",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/on-board-video.webm",

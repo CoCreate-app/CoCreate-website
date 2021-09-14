@@ -45,7 +45,7 @@
   <body>
 
     <nav class="display:flex flex-wrap:wrap justify-content:space-between flex-direction:row padding-top:10px padding-bottom:10px width:100% nav"
-      main-content_id="content"
+      content_id="content"
       scroll=", sticky-nav"
       scroll-up="15"
       scroll-down="5">
@@ -284,13 +284,9 @@
         <p class="text-align:center"><a class="color:white"href="#">CoCreate LLC</a></p>
       </div>
     </footer>
+		
+		<sidenav id="menuL" class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px" resizable resize-target="[content_id='content']" resize-property="margin-left" resize-value="width">
     
-    <sidenav id="menuL" class="cocreate-sidenav background:whitesmoke" 
-      data-main_content="canvas,navbar" 
-      sidenav-default_desktop="offcanvas" 
-      sidenav-default_tablet="offcanvas" 
-      sidenav-default_phone="offcanvas" 
-      sidenav-expanded_width="300px">
       <ul class="overflow:overlay">
         <div class="background:#3690FF:hover transition:0.3s padding:10px_0 margin-bottom:10px ">
           <a class="margin-left:25px color:#fff:hover" href="#">Home</a>
@@ -307,7 +303,7 @@
         <div class=" background:#3690FF:hover transition:0.3s padding:10px_0 margin-bottom:10px ">
           <a class="margin-left:25px color:#fff:hover" href="#">Spread the word</a>
         </div>
-      	  <div class="resizeHandler"></div>
+      	  <div resize="right"></div>
   	  </ul>
     </sidenav>
 

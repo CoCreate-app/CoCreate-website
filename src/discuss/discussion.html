@@ -33,19 +33,17 @@
 	<body>
 
 		<!-- Navbar  -->
-		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" scroll="sticky-nav,hide-nav" scroll-up="10" scroll-down="10" collection="components" document_id="611aeadec0e9580010eaad98" name="html">
+		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" scroll="sticky-nav,hide-nav" scroll-up="10" scroll-down="10" collection="files" document_id="611aeadec0e9580010eaad98" name="src">
 		</nav>
 
 		<!-- SideNav Left-->
-		<sidenav id="menuL" class="cocreate-sidenav background:whitesmoke display:none" collection="components" document_id="611aeadec0e9580010eaad99" name="html" data-main_content="content" sidenav-default_desktop="offcanvas" sidenav-default_tablet="offcanvas"
-		 sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="expanded" sidenav-ontoggle_tablet="expanded" sidenav-ontoggle_phone="expanded">
-		</sidenav>
+		<sidenav id="menuL" class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px" resizable resize-target="[content_id='content']" resize-property="margin-left" resize-value="width" collection="files" document_id="611aeadec0e9580010eaad99" name="src"></sidenav>
 
 		<!-- Modal Viewport/Boundaries -->
-		<div class="position:fixed margin-top:50px" main-content_id="content" id="modal-viewport"></div>
+		<div class="position:fixed margin-top:50px" content_id="content" id="modal-viewport"></div>
 
 		<!-- Main Content -->
-		<main class="padding:15px" main-content_id="content">
+		<main class="padding:15px" content_id="content">
 
 			<!-- Discussion -->
 			<div class="max-width:800px margin:auto">
@@ -453,17 +451,15 @@
 		</main>
 
 		<!-- SideNav Right -->
-		<sidenav id="menuR" class="cocreate-sidenav sidenav-right overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="offcanvas"
-		 sidenav-default_phone="offcanvas" sidenav-ontoggle_desktop="offcanvas" sidenav-ontoggle_tablet="expanded" sidenav-expanded_width="300px" collection="components" document_id="611aeadec0e9580010eaad9a" name="html">
-		</sidenav>
+		<sidenav id="menuR" class="position:fixed top:0px right:0px overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important height:100vh width:300px width:0px@sm@xs" resizable resize-target="[content_id='content']" resize-property="margin-right" resize-value="width" collection="files" document_id="611aeadec0e9580010eaad9a" name="src"></sidenav>
 
 		<!-- SidNav Right Floating toggle Button -->
-		<button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" toggle-sidenav="menuR">
+		<button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover border-radius:50% z-index:10" toggle="width:300px, width:0px" toggle-target="#menuR" toggle-attribute="style">
 			<i class="fas fa-sliders-h"></i>
 		</button>
 
 		<!-- Footer -->
-		<footer id="spreadtheword" main-content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" collection="components" document_id="611aeadec0e9580010eaad9b" name="html">
+		<footer id="spreadtheword" content_id="content" class="padding:100px_0px background-size:cover background-position:center position:relative color:white" style="background-image:url(assets/banner.png)" collection="files" document_id="611aeadec0e9580010eaad9b" name="src">
 		</footer>
 
 		<script src="./apikey.js"></script>
