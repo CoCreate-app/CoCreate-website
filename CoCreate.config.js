@@ -19,7 +19,8 @@ module.exports = {
                 "path": "/apikey.js",
                 "directory": "/",
                 "content-type": "application/javascript",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -36,7 +37,8 @@ module.exports = {
                 "path": "/index.html",
                 "directory": "/",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -53,7 +55,44 @@ module.exports = {
                 "path": "/index.css",
                 "directory": "/",
                 "content-type": "text/css",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
+            }
+        },
+        {
+            "entry": "./src/js/index.html",
+            "collection": "files",
+            "document_id": "614046fe829b690010a56ac6",
+            "key": "src",
+            "data": {
+                "name": "index.html",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "path": "/js/index.html",
+                "directory": "/js",
+                "content-type": "text/html",
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
+            }
+        },
+        {
+            "entry": "./src/css/index.html",
+            "collection": "files",
+            "document_id": "60132e7286c0ba24512cca3c",
+            "key": "src",
+            "data": {
+                "name": "index.html",
+                "path": "/css/index.html",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "directory": "/css",
+                "content-type": "text/html",
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -70,7 +109,8 @@ module.exports = {
                 "path": "/crm.html",
                 "directory": "/",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -87,7 +127,8 @@ module.exports = {
                 "path": "/components/navbar.html",
                 "directory": "/",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -104,7 +145,8 @@ module.exports = {
                 "path": "/components/sidenav.html",
                 "directory": "/",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -121,7 +163,8 @@ module.exports = {
                 "path": "/components/filters.html",
                 "directory": "/",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -138,7 +181,8 @@ module.exports = {
                 "path": "/components/footer.html",
                 "directory": "/",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -206,7 +250,8 @@ module.exports = {
                 "path": "/blog/index.html",
                 "directory": "/blog",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -223,7 +268,8 @@ module.exports = {
                 "path": "/blog/post.html",
                 "directory": "/blog",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -240,7 +286,8 @@ module.exports = {
                 "path": "/discuss/index.html",
                 "directory": "/discuss",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -257,7 +304,8 @@ module.exports = {
                 "path": "/discuss/discussion.html",
                 "directory": "/discuss",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -274,7 +322,8 @@ module.exports = {
                 "path": "/product/index.html",
                 "directory": "/product",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -291,7 +340,8 @@ module.exports = {
                 "path": "/shop/product.html",
                 "directory": "/shop",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -308,7 +358,8 @@ module.exports = {
                 "path": "/university/index.html",
                 "directory": "/university",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -325,7 +376,8 @@ module.exports = {
                 "path": "/university/course.html",
                 "directory": "/",
                 "content-type": "text/html",
-                "public": "true"
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
             }
         },
         {
@@ -425,6 +477,23 @@ module.exports = {
                     "general.cocreate.app"
                 ],
                 "path": "/assets/twilio.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/banner.png",
+            "collection": "files",
+            "document_id": "61404e98829b690010a56bf0",
+            "key": "src",
+            "data": {
+                "name": "banner.png",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "path": "/assets/banner.png",
                 "directory": "/assets",
                 "content-type": "image/png",
                 "public": "true"
