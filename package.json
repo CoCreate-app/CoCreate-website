@@ -29,12 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/CoCreate-website-template.git"
+    "url": "git+https://github.com/CoCreate-app/CoCreate-website.git"
   },
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-website-template/issues"
+    "url": "https://github.com/CoCreate-app/CoCreate-website/issues"
   },
   "homepage": "https://cocreate.app/docs/website-template",
   "funding": {
