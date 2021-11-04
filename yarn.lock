@@ -42,6 +42,14 @@
     "@cocreate/docs" "^1.2.44"
     "@cocreate/socket-client" "^1.3.8"
 
+"@cocreate/crud-client@^1.4.18":
+  version "1.4.20"
+  resolved "https://registry.yarnpkg.com/@cocreate/crud-client/-/crud-client-1.4.20.tgz#f0533c827a64e40fe19722aa2f8199967d8e2f7e"
+  integrity sha512-qDbgNeUvYhCPpJLCeTO8Rg9fU5bsBg58mP5xbvm1c4fpCHKPsIoDhQpK75yABQYRVyh3rgXP7cqfcOyxBdq24w==
+  dependencies:
+    "@cocreate/docs" "^1.2.44"
+    "@cocreate/socket-client" "^1.4.0"
+
 "@cocreate/crud-client@^1.4.3":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@cocreate/crud-client/-/crud-client-1.4.4.tgz#4fa8b682fb95e591983046191d26d1522332a60b"
@@ -162,6 +170,18 @@
     glob "^7.1.6"
     parse-html-comments "^1.3.1"
 
+"@cocreate/docs@^1.2.45":
+  version "1.2.45"
+  resolved "https://registry.yarnpkg.com/@cocreate/docs/-/docs-1.2.45.tgz#505b0310ab4a2a7f48952baf47d74be1a19970f8"
+  integrity sha512-80ZWK5G7ejVzM4BJaQK0qLLHVYZh6eBQHJpzkI+7tlbGRGAn/atRSjRQNC6tSs9iP6UeWy7BhQsubDfbgJWerQ==
+  dependencies:
+    "@cocreate/crud-client" "^1.4.18"
+    "@cocreate/hosting" "^1.2.39"
+    "@cocreate/socket-client" "^1.4.0"
+    extract-comments "^1.1.0"
+    glob "^7.1.6"
+    parse-html-comments "^1.3.1"
+
 "@cocreate/hosting@^1.2.25", "@cocreate/hosting@^1.2.27":
   version "1.2.27"
   resolved "https://registry.yarnpkg.com/@cocreate/hosting/-/hosting-1.2.27.tgz#f1dd49218d02c5a9f2137d1f3ba5cd14374155a4"
@@ -232,6 +252,16 @@
     "@cocreate/socket-client" "^1.3.8"
     mime-types "^2.1.30"
 
+"@cocreate/hosting@^1.2.40":
+  version "1.2.40"
+  resolved "https://registry.yarnpkg.com/@cocreate/hosting/-/hosting-1.2.40.tgz#f08e5e6a517ef6d6745e5412cbabe2852481b294"
+  integrity sha512-9JcsawQ31CA5SbjEr2u0zejHFBAGShOViW0i16qZL76WJRMgtfPtQ/4oOxm6y3wpOn4PCXAlZNJRn2/j7GvQnw==
+  dependencies:
+    "@cocreate/crud-client" "^1.4.18"
+    "@cocreate/docs" "^1.2.44"
+    "@cocreate/socket-client" "^1.4.0"
+    mime-types "^2.1.30"
+
 "@cocreate/socket-client@^1.2.27", "@cocreate/socket-client@^1.2.28":
   version "1.2.28"
   resolved "https://registry.yarnpkg.com/@cocreate/socket-client/-/socket-client-1.2.28.tgz#a7009d44a02bbe433ac5860e45a0ef255058b9e1"
@@ -286,6 +316,15 @@
     "@cocreate/uuid" "^1.1.34"
     ws "^7.4.4"
 
+"@cocreate/socket-client@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@cocreate/socket-client/-/socket-client-1.4.0.tgz#7f975c4defa9f59a7b825986869de1b93dad7779"
+  integrity sha512-iCmVLmJD6HqHxa+tPKHSNiWSmuh7c5pgh7NnxoqKjrRoGAijvlXRz/fH0N2vX9c2ZlrRN8s3uVrgbnSin4wRWA==
+  dependencies:
+    "@cocreate/docs" "^1.2.44"
+    "@cocreate/uuid" "^1.1.35"
+    ws "^7.4.4"
+
 "@cocreate/uuid@^1.1.25":
   version "1.1.26"
   resolved "https://registry.yarnpkg.com/@cocreate/uuid/-/uuid-1.1.26.tgz#f5ecfcc1aaabf73bff3f682621ccce3fdac730f8"
@@ -314,7 +353,7 @@
   dependencies:
     "@cocreate/docs" "^1.2.38"
 
-"@cocreate/uuid@^1.1.34":
+"@cocreate/uuid@^1.1.34", "@cocreate/uuid@^1.1.35":
   version "1.1.35"
   resolved "https://registry.yarnpkg.com/@cocreate/uuid/-/uuid-1.1.35.tgz#fb8ea43001fe5ce2701b5341b0c55f7b29d8fa1e"
   integrity sha512-kJZ0IC73MRrLea+BF+ydX68rMSDtkmYOOQd+6tOqPfoqIhx5ybeDTAe29/um6E/jww/Gkps6vQ9hn98iUQazfw==
