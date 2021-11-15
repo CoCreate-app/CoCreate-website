@@ -549,6 +549,57 @@ module.exports = {
                 "content-type": "video/webm",
                 "public": "true"
             }
+        },
+        {
+            "entry": "./src/assets/collaboration.mp4",
+            "collection": "files",
+            "document_id": "61919764bc45d490f811c204",
+            "key": "src",
+            "data": {
+                "name": "collaboration.mp4",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "path": "/assets/collaboration.mp4",
+                "directory": "/assets",
+                "content-type": "video/mp4",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/admin-panel.mp4",
+            "collection": "files",
+            "document_id": "6191ae52bc45d490f811c666",
+            "key": "src",
+            "data": {
+                "name": "admin-panel.mp4",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "path": "/assets/admin-panel.mp4",
+                "directory": "/assets",
+                "content-type": "video/mp4",
+                "public": "true"
+            }
+        },
+        {
+            "entry": "./src/assets/builder.png",
+            "collection": "files",
+            "document_id": "61918ac1bc45d490f811bf8a",
+            "key": "src",
+            "data": {
+                "name": "builder.png",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "path": "/assets/builder.png",
+                "directory": "/assets",
+                "content-type": "image/png",
+                "public": "true"
+            }
         }
     ]
 }
