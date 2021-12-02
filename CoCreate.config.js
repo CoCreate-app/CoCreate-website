@@ -551,6 +551,23 @@ module.exports = {
             }
         },
         {
+            "entry": "./src/assets/builder-editor-collaboration.mp4",
+            "collection": "files",
+            "document_id": "61a80538a8b6b4001aa16519",
+            "key": "src",
+            "data": {
+                "name": "builder-editor-collaboration.mp4",
+                "domains": [
+                    "cocreate.app",
+                    "general.cocreate.app"
+                ],
+                "path": "/assets/builder-editor-collaboration.mp4",
+                "directory": "/assets",
+                "content-type": "video/mp4",
+                "public": "true"
+            }
+        },
+        {
             "entry": "./src/assets/collaboration.mp4",
             "collection": "files",
             "document_id": "61919764bc45d490f811c204",
