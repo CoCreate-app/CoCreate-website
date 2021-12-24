@@ -49,7 +49,7 @@
 			</div>
 
 			<!-- Fetch and Render Blog Posts -->
-			<div class="display:flex flex-wrap:wrap" fetch-collection="module_activity" fetch-count="12" order-by="name" order-type="asc" template_id="filter_test" data-search_type="or">
+			<div class="display:flex flex-wrap:wrap" fetch-collection="module_activities" fetch-count="12" filter-name="module_id" filter-value="60e7416eb979b40017448c76" order-by="name" order-type="asc" template_id="filter_test" data-search_type="or">
 
 				<!-- Blog Post Template -->
 				<div class="card template position:relative flex-grow:1 margin-bottom:50px height:470px width:300px max-width:600px margin:10px" template_id="filter_test">
@@ -64,7 +64,7 @@
 						<!-- Post Content -->
 						<div class="post-content position:absolute bottom:0 background:#ffffff width:100% padding:30px">
 							<div hover="display:block" hover-target=".description">
-								<h1 class="font-size:24px margin:0 padding:0_0_10px color:#333333 font-weight:700">City Lights in New York</h1>
+								<h1 collection="{{collection}}" document_id="{{data._id}}" name="name" class="font-size:24px margin:0 padding:0_0_10px color:#333333 font-weight:700"></h1>
 								<h2 class="margin:0 padding:0_0_20px color:#e74c3c font-size:20px font-weight:400">The city that never sleeps.</h2>
 								<p class="description color:#666666 font-size:14px line-height:1.8rem">
 									New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.
