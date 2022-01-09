@@ -37,3 +37,7 @@ footer:before {
     background: linear-gradient(to top, #008dd5 0%, #008dd5 100%);
     opacity: 0.95;
 }
+
+#products[seleceted]{
+  display:block;
+}
