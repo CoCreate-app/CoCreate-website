@@ -1,0 +1,76 @@
+<div class="page-content">
+	<div class="page-content__container container">
+
+		<h1 class="page-content__title">License </h1>
+
+		<div class="text-content">
+
+			The licensing depends on whether you're using <strong>CoCreate Standard</strong> or <strong>CoCreate Premium</strong>.
+
+			<h2 id="cocreate-standard">CoCreate Standard</h2>
+
+			<p>The non-premium <a href="https://cocreate.app/docs/plugin-index">plugins</a> and the <code>cocreate</code> <a href="https://cocreate.app/docs/initialize-globals">bundle</a> are released under the <strong>MIT license</strong>. This license permits a
+				wide range of use, including free use in commercial projects, assuming all copyright headers are preserved.</p>
+
+			<p><a href="https://opensource.org/licenses/MIT">Read the MIT license agreement »</a></p>
+
+			<h2 id="cocreate-premium">CoCreate Premium</h2>
+
+			The premium <a href="https://cocreate.app/docs/plugin-index">plugins</a> and the <code>CoCreate-crdt</code> <a href="https://cocreate.app/docs/initialize-globals">bundle</a> have more complicated licensing. Their licensing depends on the type of use:
+
+			<div style="padding-left:3em">
+
+				<h3 id="commercial-use">Commercial Use</h3>
+
+				<p>For-profit companies and individuals intending to use CoCreate Premium for commercial use must purchase a commercial license. This license allows source code modifications, but does not permit redistribution of modifications.</p>
+
+				<p><a href="https://cocreate.app/commercial-license">Read the Commercial license agreement »</a></p>
+
+				<p><a href="https://cocreate.app/pricing">Purchase a Commercial license »</a></p>
+
+				<h3 id="non-commercial-use">Non-Commercial Use</h3>
+
+				<p><a href="https://en.wikipedia.org/wiki/Nonprofit_organization">Registered non-profit organization</a> (also known as "not-for-profit" or NGO) are able to use CoCreate Premium with a free, non-commercial license. Governmental entities and universities
+					are not covered by this non-commercial license. This license does not permit source code modifications.</p>
+
+				<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Read the Non-commercial license agreement »</a></p>
+
+				If you meet the criteria for this license, you may begin using CoCreate Premium with this <a href="https://cocreate.app/docs/schedulerLicenseKey">license key</a>:
+
+				<pre><code>var calendar = new Calendar(calendarEl, {
+  schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
+});</code></pre>
+
+				<h3 id="gpl">Use in GPLv3 open-source projects</h3>
+
+				<p>Open-source projects that are fully GPLv3-compliant may use CoCreate Premium freely under the GPLv3 license.
+
+				</p>
+				<p><a href="http://www.gnu.org/licenses/gpl-3.0.en.html">Read the GPLv3 license agreement »</a></p>
+
+				If you meet the criteria for this license, you may begin using CoCreate Premium with this <a href="https://cocreate.app/docs/schedulerLicenseKey">license key</a>:
+
+				<pre><code>var calendar = new Calendar(calendarEl, {
+  schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
+});</code></pre>
+
+				<h3 id="open-source">Use in other types of open-source projects</h3>
+
+				Open-source projects released under licenses <strong>other than</strong> GPLv3 can leverage CoCreate Premium in the following way:
+
+				<ol>
+					<li>Do not include CoCreate Premium directly into your repository’s source code. Instead, use a package manager such as NPM or Yarn to reference the premium plugins as dependencies and have an install script initiate download.</li>
+
+					<li>Do not hardcode any type of license key. Instead, leave the <code>schedulerLicenseKey</code> property undefined, as CoCreate Premium is technically considered “unlicensed” at this point. This will cause a warning message to show on the widget.</li>
+
+					<li>Provide a convenient way for the developer installing your app to enter their own license key. Either do this via a prompt in an install script, or through a well-documented config file.</li>
+				</ol>
+
+				<p>For questions about more complex scenarios, please contact <a href="mailto:sales@cocreate.app">sales@cocreate.app</a></p>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
