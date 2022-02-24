@@ -13,7 +13,7 @@ module.exports = {
             "data": {
                 "name": "apikey.js",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/apikey.js",
@@ -31,7 +31,7 @@ module.exports = {
             "data": {
                 "name": "index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/index.html",
@@ -49,7 +49,7 @@ module.exports = {
             "data": {
                 "name": "index.css",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/index.css",
@@ -67,7 +67,7 @@ module.exports = {
             "data": {
                 "name": "index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/js/index.html",
@@ -86,7 +86,7 @@ module.exports = {
                 "name": "index.html",
                 "path": "/css/index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "directory": "/css",
@@ -103,7 +103,7 @@ module.exports = {
             "data": {
                 "name": "crm.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/crm.html",
@@ -121,7 +121,7 @@ module.exports = {
             "data": {
                 "name": "navbar.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/components/navbar.html",
@@ -139,7 +139,7 @@ module.exports = {
             "data": {
                 "name": "sidenav.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/components/sidenav.html",
@@ -157,7 +157,7 @@ module.exports = {
             "data": {
                 "name": "filters.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/components/filters.html",
@@ -175,7 +175,7 @@ module.exports = {
             "data": {
                 "name": "footer.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/components/footer.html",
@@ -193,7 +193,7 @@ module.exports = {
             "data": {
                 "name": "CoCreate Logo",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/logo.png",
@@ -210,7 +210,7 @@ module.exports = {
             "data": {
                 "name": "CoCreate Icon",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/icon.png",
@@ -227,7 +227,7 @@ module.exports = {
             "data": {
                 "name": "CoCreate Favicon",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/favicon.ico",
@@ -244,7 +244,7 @@ module.exports = {
             "data": {
                 "name": "index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/blog/index.html",
@@ -262,7 +262,7 @@ module.exports = {
             "data": {
                 "name": "post.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/blog/post.html",
@@ -280,7 +280,7 @@ module.exports = {
             "data": {
                 "name": "index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/discuss/index.html",
@@ -298,7 +298,7 @@ module.exports = {
             "data": {
                 "name": "discussion.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/discuss/discussion.html",
@@ -316,7 +316,7 @@ module.exports = {
             "data": {
                 "name": "index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/product/index.html",
@@ -334,7 +334,7 @@ module.exports = {
             "data": {
                 "name": "product.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/shop/product.html",
@@ -352,7 +352,7 @@ module.exports = {
             "data": {
                 "name": "index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/university/index.html",
@@ -370,7 +370,7 @@ module.exports = {
             "data": {
                 "name": "course.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/university/course.html",
@@ -388,7 +388,7 @@ module.exports = {
             "data": {
                 "name": "googleMaps.png",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/googleMaps.png",
@@ -405,7 +405,7 @@ module.exports = {
             "data": {
                 "name": "plaid.png",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/plaid.png",
@@ -422,7 +422,7 @@ module.exports = {
             "data": {
                 "name": "sendgrid.png",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/sendgrid.png",
@@ -439,7 +439,7 @@ module.exports = {
             "data": {
                 "name": "shipengine.svg",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/shipengine.svg",
@@ -456,7 +456,7 @@ module.exports = {
             "data": {
                 "name": "stripe.png",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/stripe.png",
@@ -473,7 +473,7 @@ module.exports = {
             "data": {
                 "name": "twilio.png",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/twilio.png",
@@ -490,7 +490,7 @@ module.exports = {
             "data": {
                 "name": "banner.png",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/banner.png",
@@ -507,7 +507,7 @@ module.exports = {
             "data": {
                 "name": "dashboard-video.mp4",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/dashboard-video.mp4",
@@ -524,7 +524,7 @@ module.exports = {
             "data": {
                 "name": "cards.webm",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/cards.webm",
@@ -541,7 +541,7 @@ module.exports = {
             "data": {
                 "name": "on-board-video.webm",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/on-board-video.webm",
@@ -558,7 +558,7 @@ module.exports = {
             "data": {
                 "name": "builder-editor-collaboration.mp4",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/builder-editor-collaboration.mp4",
@@ -575,7 +575,7 @@ module.exports = {
             "data": {
                 "name": "collaboration.mp4",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/collaboration.mp4",
@@ -592,7 +592,7 @@ module.exports = {
             "data": {
                 "name": "admin-panel.mp4",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/admin-panel.mp4",
@@ -609,7 +609,7 @@ module.exports = {
             "data": {
                 "name": "builder.png",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "path": "/assets/builder.png",
