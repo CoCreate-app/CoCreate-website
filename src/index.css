@@ -38,6 +38,6 @@ footer:before {
     opacity: 0.95;
 }
 
-#products[seleceted]{
-  display:block;
+.show[selected]{
+  display:block!important;
 }

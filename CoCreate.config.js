@@ -42,6 +42,24 @@ module.exports = {
             }
         },
         {
+            "entry": "./src/business-builder/index.html",
+            "collection": "files",
+            "document_id": "622f754f6fa14f0011c6f40d",
+            "key": "src",
+            "data": {
+                "name": "index.html",
+                "domains": [
+                    "*",
+                    "general.cocreate.app"
+                ],
+                "path": "/business-builder/index.html",
+                "directory": "/business-builder",
+                "content-type": "text/css",
+                "public": "true",
+                "website_id": "61381ed8829b690010a4f2b2"
+            }
+        },
+        {
             "entry": "./src/index.css",
             "collection": "files",
             "document_id": "611869abc0e9580010ea635f",
