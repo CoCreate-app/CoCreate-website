@@ -55,7 +55,7 @@
 				</div>
 				
 				<!-- Fetch and Render Popular -->
-				<div fetch-collection="module_activities" fetch-count="4" order-by="name" order-type="asc" template_id="popular" class="padding:10px margin-top:20px">
+				<div fetch-collection="module_activities" fetch-count="4" filter-order-name="name" filter-order-type="asc" template_id="popular" class="padding:10px margin-top:20px">
 					
 					<!-- Popular Template -->
 					<div class="template margin-bottom:15px display:flex justify-content:space-between" template_id="popular">
@@ -79,17 +79,17 @@
 					</div>
 					<div class="padding:10px">
 						<h3 class="color:#222 margin-bottom:20px margin-top:20px">Browse Categories</h3>
-						<a href="#" class="margin-bottom:15px" name="category_order" order-by="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>Uncategorized</a><br>
+						<a href="#" class="margin-bottom:15px" name="category_order" filter-order-name="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>Uncategorized</a><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
-						<a href="#" class="margin-bottom:15px" name="category_order" order-by="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>General</a><br>
+						<a href="#" class="margin-bottom:15px" name="category_order" filter-order-name="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>General</a><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
-						<a href="#" class="margin-bottom:15px" name="category_order" order-by="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>videos</a><br>
+						<a href="#" class="margin-bottom:15px" name="category_order" filter-order-name="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>videos</a><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
-						<a href="#" class="margin-bottom:15px" name="category_order" order-by="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>Tech</a><br>
+						<a href="#" class="margin-bottom:15px" name="category_order" filter-order-name="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>Tech</a><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
-						<a href="#" class="margin-bottom:15px" name="category_order" order-by="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>Gaming</a><br>
+						<a href="#" class="margin-bottom:15px" name="category_order" filter-order-name="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>Gaming</a><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
-						<a href="#" class="margin-bottom:15px" name="category_order" order-by="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>School</a><br>
+						<a href="#" class="margin-bottom:15px" name="category_order" filter-order-name="category" value="asc" id="category_order_asc"><i class="margin-right:5px font-size:14px fas fa-chevron-right"></i>School</a><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
 					</div>
 				
@@ -105,11 +105,11 @@
 					</div>
 					<div class="padding:10px">
 						<h3 class="color:#222 margin-bottom:20px margin-top:20px">Sort By Name</h3>
-						<input class="" type="radio" name="name_order" order-by="name" value="none"><label class="color:#222 margin-bottom:10px margin-left:5px">None</label><br>
+						<input class="" type="radio" name="name_order" filter-order-name="name" value="none"><label class="color:#222 margin-bottom:10px margin-left:5px">None</label><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
-						<input class="" type="radio" name="name_order" order-by="name" value="asc" ><label class="color:#222 margin-bottom:10px margin-left:5px">Order by ASC</label><br>
+						<input class="" type="radio" name="name_order" filter-order-name="name" value="asc" ><label class="color:#222 margin-bottom:10px margin-left:5px">Order by ASC</label><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
-						<input class="" type="radio" name="name_order" order-by="name" value="desc"><label class="color:#222 margin-bottom:10px margin-left:5px">Order by DESC</label><br>
+						<input class="" type="radio" name="name_order" filter-order-name="name" value="desc"><label class="color:#222 margin-bottom:10px margin-left:5px">Order by DESC</label><br>
 						<div class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
 						
 						<input class="floating-label margin-top:35px margin-bottom:20px" template_id="filter_test" placeholder="Search By Name">
