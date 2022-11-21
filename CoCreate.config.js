@@ -10,7 +10,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeed8c0e9580010eaae28",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "apikey.js",
                 "domains": [
                     "*",
@@ -28,7 +28,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb16c0e9580010eaaa3e",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "domains": [
                     "*",
@@ -46,7 +46,7 @@ module.exports = {
             "collection": "files",
             "document_id": "622f754f6fa14f0011c6f40d",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "domains": [
                     "*",
@@ -64,7 +64,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611869abc0e9580010ea635f",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.css",
                 "domains": [
                     "*",
@@ -82,7 +82,7 @@ module.exports = {
             "collection": "files",
             "document_id": "614046fe829b690010a56ac6",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "domains": [
                     "*",
@@ -100,7 +100,7 @@ module.exports = {
             "collection": "files",
             "document_id": "60132e7286c0ba24512cca3c",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "path": "/css/index.html",
                 "domains": [
@@ -118,7 +118,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad97",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "crm.html",
                 "domains": [
                     "*",
@@ -136,7 +136,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad98",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "navbar.html",
                 "domains": [
                     "*",
@@ -154,7 +154,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad99",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "sidenav.html",
                 "domains": [
                     "*",
@@ -172,7 +172,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad9a",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "filters.html",
                 "domains": [
                     "*",
@@ -190,7 +190,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad9b",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "footer.html",
                 "domains": [
                     "*",
@@ -208,7 +208,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad9c",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "CoCreate Logo",
                 "domains": [
                     "*",
@@ -225,7 +225,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad9d",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "CoCreate Icon",
                 "domains": [
                     "*",
@@ -242,7 +242,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611aeadec0e9580010eaad9e",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "CoCreate Favicon",
                 "domains": [
                     "*",
@@ -259,7 +259,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa3f",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "domains": [
                     "*",
@@ -277,7 +277,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa40",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "post.html",
                 "domains": [
                     "*",
@@ -295,7 +295,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa41",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "domains": [
                     "*",
@@ -313,7 +313,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb17c0e9580010eaaa42",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "discussion.html",
                 "domains": [
                     "*",
@@ -331,7 +331,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa43",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "domains": [
                     "*",
@@ -349,7 +349,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa44",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "product.html",
                 "domains": [
                     "*",
@@ -367,7 +367,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa45",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "index.html",
                 "domains": [
                     "*",
@@ -385,7 +385,7 @@ module.exports = {
             "collection": "files",
             "document_id": "611acb18c0e9580010eaaa46",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "course.html",
                 "domains": [
                     "*",
@@ -403,7 +403,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090bcf298c42a332d218050",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "googleMaps.png",
                 "domains": [
                     "*",
@@ -420,7 +420,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090bcf298c42a332d218051",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "plaid.png",
                 "domains": [
                     "*",
@@ -437,7 +437,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090bcf298c42a332d218052",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "sendgrid.png",
                 "domains": [
                     "*",
@@ -454,7 +454,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090bcf298c42a332d218053",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "shipengine.svg",
                 "domains": [
                     "*",
@@ -471,7 +471,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090bcf298c42a332d218054",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "stripe.png",
                 "domains": [
                     "*",
@@ -488,7 +488,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090bcf298c42a332d218055",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "twilio.png",
                 "domains": [
                     "*",
@@ -505,7 +505,7 @@ module.exports = {
             "collection": "files",
             "document_id": "61404e98829b690010a56bf0",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "banner.png",
                 "domains": [
                     "*",
@@ -522,7 +522,7 @@ module.exports = {
             "collection": "files",
             "document_id": "609032ef5ebe934f171b4b7e",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "dashboard-video.mp4",
                 "domains": [
                     "*",
@@ -539,7 +539,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090c0db98c42a332d218068",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "cards.webm",
                 "domains": [
                     "*",
@@ -556,7 +556,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6090c0db98c42a332d218069",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "on-board-video.webm",
                 "domains": [
                     "*",
@@ -573,7 +573,7 @@ module.exports = {
             "collection": "files",
             "document_id": "61a80538a8b6b4001aa16519",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "builder-editor-collaboration.mp4",
                 "domains": [
                     "*",
@@ -590,7 +590,7 @@ module.exports = {
             "collection": "files",
             "document_id": "61919764bc45d490f811c204",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "collaboration.mp4",
                 "domains": [
                     "*",
@@ -607,7 +607,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6191ae52bc45d490f811c666",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "admin-panel.mp4",
                 "domains": [
                     "*",
@@ -624,7 +624,7 @@ module.exports = {
             "collection": "files",
             "document_id": "61918ac1bc45d490f811bf8a",
             "key": "src",
-            "data": {
+            "document": {
                 "name": "builder.png",
                 "domains": [
                     "*",
