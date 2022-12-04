@@ -600,5 +600,23 @@ module.exports = {
                 "public": "true"
             }
         }
+    ],
+    "crud": [
+        {
+            "collection": "files",
+            "document": {
+                "_id": "6135c2218ed7b00013658b79",
+                "name":"/",
+                "domains": [
+                    "*",
+                    "general.cocreate.app"
+                ],
+                "path": "/",
+                "directory": "",
+                "content-type": "text/directory",
+                "public": "true"
+            }
+        }
     ]
+
 }
