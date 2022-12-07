@@ -485,7 +485,7 @@ module.exports = {
             "entry": "./src/assets/dashboard-video.mp4",
             "collection": "files",
             "document": {
-                "_id": "609032ef5ebe934f171b4b7e",
+                "_id": "611acb18c0e9580010eaaa47",
                 "name": "dashboard-video.mp4",
                 "src": "{{source}}",
                 "domains": [
@@ -606,7 +606,7 @@ module.exports = {
             "collection": "files",
             "document": {
                 "_id": "6135c2218ed7b00013658b79",
-                "name":"/",
+                "name": "/",
                 "domains": [
                     "*",
                     "general.cocreate.app"
@@ -618,5 +618,4 @@ module.exports = {
             }
         }
     ]
-
 }
