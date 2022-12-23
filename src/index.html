@@ -51,9 +51,34 @@
 				<div class="max-width:90% margin:0px_auto">
 					<div class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
 						<div class="flex-grow:1 width:300px">
-							<video loop autoplay muted class="width:100%">
-								<source src="/assets/dashboard-video.mp4" type="video/mp4">
-							</video>
+							
+							<!-- SandBox -->
+							<div class="position:relative overflow:hidden card border-radius:2px width:auto height:330px margin-top:20px" id="collaboration-playground">
+								<div id="collaboration-demo-code" resizable class="position:relative height:50%">
+									<textarea type="code" lang="html" collection="demos" document_id="619d495ca8b6b4001a9e6127" name="collaboration-demo" save="false" id="collaboration-demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
+									<div resize="bottom" class="background:lightgrey"></div>
+								</div>
+
+								<div id="collaboration-demo-preview" class="position:relative height:100% background-color:white">
+									<div class="position:relative height:85px padding:10px" resizable>
+										<iframe get-value="#collaboration-demo" frameBorder="0" height="100%" width="100%"></iframe>
+										<div resize="bottom" class="background:lightgrey"></div>
+									</div>
+									<div class="padding:10px">
+										<iframe get-value="#collaboration-demo" frameBorder="0" height="100%" width="100%"></iframe>
+									</div>
+								</div>
+								
+								<div class="font-size:20px position:absolute top:10px right:10px opacity:0.6">
+									<a class="margin-right:10px" id="collaboration-eye" show="#collaboration-eye-slash" hide="#collaboration-eye, #collaboration-demo-preview" toggle="code-height" toggle-target="#collaboration-demo-code"><i class="far fa-eye"></i></a>
+									<a class="margin-right:10px" hidden id="collaboration-eye-slash" show="#collaboration-eye, #collaboration-demo-preview" hide="#collaboration-eye-slash" toggle="code-height" toggle-target="#collaboration-demo-code"><i class="fas fa-eye-slash"></i></a>
+									<a class="margin-right:10px" id="collaboration-code" show="#collaboration-code-slash" hide="#collaboration-code, #collaboration-demo-code"><i class="fa fa-code"></i></a>
+									<a class="margin-right:10px" hidden id="collaboration-code-slash" show="#collaboration-code, #collaboration-demo-code" hide="#collaboration-code-slash"><i class="fas fa-code"></i></a>
+									<a class="margin-right:5px" fullscreen target="#collaboration-playground"><i class="fas fa-expand"></i></a>
+								</div>
+
+							</div>
+
 						</div>
 						<div class="flex-grow:1 width:300px padding:0px_15px font-size:16px ">
 							<h1 class="font-size:2rem">A Low Code Web App <span class="color:dodgerblue">Framework</span></h1>
@@ -68,10 +93,11 @@
 			<!-- Try It Out SECTION -->
 			<section class="background:whitesmoke padding:30px_15px">
 				<h1 class="font-size:1.5rem text-align:center text-transform:uppercase">Try it out</h1>
+								
 				<div class="position:relative overflow:hidden card border-radius:2px width:auto height:600px margin-top:20px" id="input-playground">
 					<style>.code-height {height:100%!important}</style>
 					<div id="demo-code" resizable class="position:relative height:450px">
-						<textarea type="code" lang="html" collection="demos" document_id="639b325f6f44f0f162f0bcbf" name="demo-code" realtime="false" id="demo" class="height:100% width:100% border:none resize:none padding:5px"></textarea>
+						<textarea type="code" lang="html" collection="demos" document_id="639b325f6f44f0f162f0bcbf" name="demo-code" save="true" id="demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
 						<div resize="bottom"></div>
 					</div>
 
@@ -88,6 +114,7 @@
 					</div>
 
 				</div>
+
 			</section>
 
 
