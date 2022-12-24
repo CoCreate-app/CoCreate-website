@@ -1,23 +1,23 @@
 
-	<form collection="contacts" realtime="false">
-		<input name="name" document_id pass_id="form-fields" pass-refresh placeholder="Name">
-		<button actions="save, reset">Save</button>
-		<button actions="reset">reset</button>
-	</form>
-	
-	<input template_id="grid" filter-name="fullname" placeholder="search">
-	
-	<div template_id="grid" fetch-collection="contacts">
+<form collection="contacts" realtime="false">
+	<input name="name" document_id pass_id="form-fields" pass-refresh placeholder="Name">
+	<button actions="save, reset">Save</button>
+	<button actions="reset">reset</button>
+</form>
 
-		<div template_id="grid" class="template">
-			<a actions="passAttributes" pass_to="form-fields" pass-document_id="{{document._id}}">
-				<span>{{document.name}}</span>
-				<a actions="deleteDocument" collection="{{document.collection}}" document_id="{{document._id}}">
-					<i class="far fa-trash-alt"></i>
-				</a>
+<input template_id="grid" filter-name="fullname" placeholder="search">
+
+<div template_id="grid" fetch-collection="contacts">
+
+	<div template_id="grid" class="template">
+		<a actions="passAttributes" pass_to="form-fields" pass-document_id="{{document._id}}">
+			<span>{{document.name}}</span>
+			<a actions="deleteDocument" collection="{{document.collection}}" document_id="{{document._id}}">
+				<i class="far fa-trash-alt"></i>
 			</a>
-		</div>
-
+		</a>
 	</div>
-	
-	<script src="https://cdn.cocreate.app/1.34.3/CoCreate.min.js"></script>
+
+</div>
+
+<script src="https://cdn.cocreate.app/1.34.4/CoCreate.min.js"></script>
