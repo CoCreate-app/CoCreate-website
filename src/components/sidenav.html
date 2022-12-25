@@ -6,10 +6,10 @@
 			<!-- Search -->
 			<form class="padding:5px">
 				<floating-label class="margin-top:0px">
-					<input type="text" class="floating-label" pass-value_to="results">
+					<input type="text" class="floating-label" pass_to="results">
 				</floating-label>
 				<span class="passValueBtn position:relative bottom:28px right:14px float:right font-size:18px">
-					<a target="modal" pass-to="render" collection="website-pages" document_id="" pass-name="src" modal-width="900px" modal-color="#229954">
+					<a actions="pass, openModal" pass_to="render" collection="website-pages" document_id="" pass-name="src" modal-width="900px" modal-color="#229954">
 						<i class="fas fa-search"></i>
 					</a>
 				</span>

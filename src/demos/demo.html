@@ -10,7 +10,7 @@
 <div template_id="grid" fetch-collection="contacts">
 
 	<div template_id="grid" class="template">
-		<a actions="passAttributes" pass_to="form-fields" pass-document_id="{{document._id}}">
+		<a actions="pass" pass_to="form-fields" pass-document_id="{{document._id}}">
 			<span>{{document.name}}</span>
 			<a actions="deleteDocument" collection="{{document.collection}}" document_id="{{document._id}}">
 				<i class="far fa-trash-alt"></i>
