@@ -9,7 +9,7 @@
 
 <div template_id="grid" fetch-collection="contacts">
 
-	<div template_id="grid" class="template">
+	<div template="grid">
 		<a actions="pass" pass_to="form-fields" pass-document_id="{{document._id}}">
 			<span>{{document.name}}</span>
 			<a actions="deleteDocument" collection="{{document.collection}}" document_id="{{document._id}}">
@@ -20,4 +20,4 @@
 
 </div>
 
-<script src="https://cdn.cocreate.app/1.38.0/CoCreate.min.js"></script>
+<script src="https://cdn.cocreate.app/1.38.1/CoCreate.min.js"></script>

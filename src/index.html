@@ -94,14 +94,14 @@
 				<h1 class="font-size:1.5rem text-align:center text-transform:uppercase">Try it out</h1>
 								
 				<div class="display:flex flex-direction:column position:relative overflow:hidden card border-radius:2px width:auto height:600px margin-top:20px" id="input-playground">
-					<style>.code-height {height:100%!important}</style>
+					<!-- <style>.code-height {height:100%!important}</style> -->
 					<div id="demo-code" resizable class="position:relative height:450px">
 						<textarea type="code" lang="html" collection="demos" document_id="639b325f6f44f0f162f0bcbf" name="demo-code" save="false" id="demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
 						<div resize="bottom"></div>
 					</div>
 
-					<div id="demo-preview" class="position:relative height:100% background-color:white">
-						<iframe get-value="#demo" frameBorder="0" height="100%" width="100%" class="min-width:300px"></iframe>
+					<div id="demo-preview" class="position:relative overflow:auto background-color:white">
+						<iframe get-value="#demo" frameBorder="0" width="100%" class="min-width:300px"></iframe>
 					</div>
 					
 					<div class="font-size:20px position:absolute top:10px right:10px opacity:0.6">
@@ -218,7 +218,7 @@
 		<footer id="spreadtheword" content_id="content" class="background-size:cover background-position:center position:relative" style="background-image:url(/assets/banner.png)" src="./components/footer.html"></footer>
 
 		<script src="./apikey.js"></script>
-        <script src="https://cdn.cocreate.app/1.38.0/CoCreate.min.js"></script>
+        <script src="https://cdn.cocreate.app/1.38.1/CoCreate.min.js"></script>
 
 	</body>
 
