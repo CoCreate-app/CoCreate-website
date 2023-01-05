@@ -12,6 +12,20 @@
 		<meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
         <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css"/>
 		<link rel="stylesheet" href="/index.css" collection="files" document_id="611869abc0e9580010ea635f" name="src" type="text/css"/>
+
+		<meta property="og:title" content="Build a web applicaion using HTML, no javascript required!">
+		<meta property="og:description" content="Offline, collaborative web apps by applying a few HTML5 attributes, no javascript skills required">
+		
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-121709453-1');
+		</script>
+
 	</head>
 
 	<style type="text/css" media="screen">
@@ -54,17 +68,20 @@
 							<!-- SandBox -->
 							<div class="position:relative overflow:hidden card border-radius:2px width:auto height:330px margin-top:20px" id="collaboration-playground">
 								<div id="collaboration-demo-code" resizable class="position:relative height:50%">
-									<textarea type="code" lang="html" collection="demos" document_id="619d495ca8b6b4001a9e6127" name="collaboration-demo" save="false" id="collaboration-demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
+									<textarea type="code" lang="html" collection="demos" document_id="619d495ca8b6b4001a9e6127" name="collaboration-demo" save="true" id="collaboration-demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
 									<div resize="bottom" class="background:lightgrey"></div>
 								</div>
 
 								<div id="collaboration-demo-preview" class="position:relative height:100% background-color:white">
 									<div class="position:relative height:85px padding:10px" resizable>
 										<iframe get-value="#collaboration-demo" frameBorder="0" height="100%" width="100%"></iframe>
+										<!-- <div get-value="#collaboration-demo"></div> -->
 										<div resize="bottom" class="background:lightgrey"></div>
 									</div>
 									<div class="padding:10px">
 										<iframe get-value="#collaboration-demo" frameBorder="0" height="100%" width="100%"></iframe>
+																			<!-- <div get-value="#collaboration-demo"></div> -->
+
 									</div>
 								</div>
 								
@@ -96,12 +113,13 @@
 				<div class="display:flex flex-direction:column position:relative overflow:hidden card border-radius:2px width:auto height:600px margin-top:20px" id="input-playground">
 					<!-- <style>.code-height {height:100%!important}</style> -->
 					<div id="demo-code" resizable class="position:relative height:450px">
-						<textarea type="code" lang="html" collection="demos" document_id="639b325f6f44f0f162f0bcbf" name="demo-code" save="false" id="demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
+						<textarea type="code" lang="html" collection="demos" document_id="639b325f6f44f0f162f0bcbf" name="demo-code" save="true" id="demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
 						<div resize="bottom"></div>
 					</div>
 
 					<div id="demo-preview" class="position:relative overflow:auto background-color:white">
 						<iframe get-value="#demo" frameBorder="0" width="100%" class="min-width:300px"></iframe>
+						<!-- <div get-value="#demo" class="padding:20px"></div> -->
 					</div>
 					
 					<div class="font-size:20px position:absolute top:10px right:10px opacity:0.6">
@@ -218,7 +236,7 @@
 		<footer id="spreadtheword" content_id="content" class="background-size:cover background-position:center position:relative" style="background-image:url(/assets/banner.png)" src="./components/footer.html"></footer>
 
 		<script src="./apikey.js"></script>
-        <script src="https://cdn.cocreate.app/1.39.4/CoCreate.min.js"></script>
+        <script src="https://cdn.cocreate.app/1.40.0/CoCreate.min.js"></script>
 
 	</body>
 
