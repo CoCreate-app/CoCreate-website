@@ -75,19 +75,17 @@
 							<!-- SandBox -->
 							<div class="position:relative overflow:hidden card border-radius:2px width:auto height:330px margin-top:20px" id="collaboration-playground">
 								<div id="collaboration-demo-code" resizable class="position:relative height:50%">
-									<textarea type="code" lang="html" collection="demos" document_id="619d495ca8b6b4001a9e6127" name="collaboration-demo" realtime="false" save="false" id="collaboration-demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
+									<textarea type="code" lang="html" collection="demos" document_id="619d495ca8b6b4001a9e6127" name="collaboration-demo" realtime="false" save="false" id="collaboration-demo" input-target=".collaboration-demo" input-attribute="value" input-events="input, onload" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
 									<div resize="bottom" class="background:lightgrey"></div>
 								</div>
 
 								<div id="collaboration-demo-preview" class="position:relative height:100% background-color:white">
 									<div class="position:relative height:85px padding:10px overflow:auto" resizable>
-										<!-- <iframe get-value="#collaboration-demo" frameBorder="0" height="100%" width="100%"></iframe> -->
-										<div get-value="#collaboration-demo"></div>
+										<div class="collaboration-demo"></div>
 										<div resize="bottom" class="background:lightgrey"></div>
 									</div>
 									<div class="padding:10px">
-										<!-- <iframe get-value="#collaboration-demo" frameBorder="0" height="100%" width="100%"></iframe> -->
-										<div get-value="#collaboration-demo"></div>
+										<div class="collaboration-demo"></div>
 									</div>
 								</div>
 								
@@ -111,15 +109,13 @@
 				<h1 class="font-size:1.5rem text-align:center text-transform:uppercase">Try it out</h1>
 								
 				<div class="display:flex flex-direction:column position:relative overflow:hidden card border-radius:2px width:auto height:600px margin-top:20px" id="input-playground">
-					<!-- <style>.code-height {height:100%!important}</style> -->
 					<div id="demo-code" resizable class="position:relative height:450px">
-						<textarea type="code" lang="html" collection="demos" document_id="639b325f6f44f0f162f0bcbf" name="demo-code" realtime="false" save="false" id="demo" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
+						<textarea type="code" lang="html" collection="demos" document_id="639b325f6f44f0f162f0bcbf" name="demo-code" realtime="false" save="false" id="demo" input-target=".demopreview" input-attribute="value" input-events="input, onload" class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
 						<div resize="bottom"></div>
 					</div>
 
-					<div id="demo-preview" class="position:relative overflow:auto background-color:white">
-						<!-- <iframe get-value="#demo" frameBorder="0" width="100%" class="min-width:300px"></iframe> -->
-						<div get-value="#demo" class="padding:20px"></div>
+					<div id="demo-preview" class="position:relative overflow:auto background-color:white height:100%">
+						<div class="demopreview" class="padding:20px"></div>
 					</div>
 					
 					<div class="font-size:20px position:absolute top:10px right:10px opacity:0.6">
