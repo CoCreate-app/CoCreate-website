@@ -42,7 +42,7 @@
     "url": "https://github.com/sponsors/CoCreate-app"
   },
   "dependencies": {
-    "@cocreate/docs": "^1.6.1",
-    "@cocreate/hosting": "^1.8.1"
+    "@cocreate/docs": "^1.6.2",
+    "@cocreate/hosting": "^1.8.2"
   }
 }
