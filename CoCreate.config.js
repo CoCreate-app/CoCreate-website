@@ -15,7 +15,7 @@ module.exports = {
             "document": {
                 "name": "{{name}}",
                 "src": "{{source}}",
-                "domains": [
+                "hosts": [
                     "*",
                     "general.cocreate.app"
                 ],
