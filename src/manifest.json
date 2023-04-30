@@ -59,8 +59,8 @@
     "start_url": "/",
     "id": "/",
     "background_color": "whitesmoke",
-    "display": "Fullscreen",
-    "theme_color": "blue",
+    "display": "fullscreen",
+    "theme_color": "#c7c7c7",
     "screenshots": [
         {
             "src": "./images/screenshot-1.png",
