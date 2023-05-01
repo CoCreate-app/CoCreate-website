@@ -12,7 +12,7 @@
 		<meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
         <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css"/>
 		<link rel="stylesheet" href="./index.css" collection="files" document_id="611869abc0e9580010ea635f" name="src" type="text/css"/>
-        <link rel="manifest" href="./manifest.json" />
+        <link rel="manifest" href="./manifest.webmanifest" />
 
 		<meta property="og:title" content="Build a web applicaion using HTML, no javascript required!">
 		<meta property="og:description" content="Offline, collaborative web apps by applying a few HTML5 attributes, no javascript skills required">
@@ -51,10 +51,10 @@
 	<body>
 
 		<!-- Navbar  -->
-		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" content_id="content" scroll="sticky-nav,hide-nav" scroll-up="10" scroll-down="10" collection="files" document_id="611aeadec0e9580010eaad98" name="src"></nav>
+		<nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" content_id="content" scroll="sticky-nav,hide-nav" scroll-up="10" scroll-down="10" src="./components/navbar.html"></nav>
 
 		<!-- SideNav Left-->
-		<sidenav id="menuL" class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px" resizable resize-target="[content_id='content']" resize-property="margin-left" resize-value="width" collection="files" document_id="611aeadec0e9580010eaad99" name="src"></sidenav>
+		<sidenav id="menuL" class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px" resizable resize-target="[content_id='content']" resize-property="margin-left" resize-value="width" src="./components/sidenav.html"></sidenav>
 
 		<!-- Modal Viewport/Boundaries -->
 		<div class="position:fixed margin-top:50px" content_id="content" id="modal-viewport"></div>
@@ -91,10 +91,18 @@
 								</div>
 								
 								<div class="font-size:20px position:absolute top:10px right:10px opacity:0.6">
-									<a class="margin-right:10px" id="collaboration-eye" show="#collaboration-eye-slash" hide="#collaboration-eye, #collaboration-demo-preview" toggle="code-height" toggle-target="#collaboration-demo-code"><i class="height:18px fill:#505050" src="/assets/svg/eye.svg"></i></a>
-									<a class="margin-right:10px" hidden id="collaboration-eye-slash" show="#collaboration-eye, #collaboration-demo-preview" hide="#collaboration-eye-slash" toggle="code-height" toggle-target="#collaboration-demo-code"><i class="height:20px fill:#505050" src="/assets/svg/eye-slash.svg"></i></a>
-									<a class="margin-right:10px" id="collaboration-code" show="#collaboration-code-slash" hide="#collaboration-code, #collaboration-demo-code"><i class="height:20px fill:#505050" src="/assets/svg/code.svg"></i></a>
-									<a class="margin-right:10px" hidden id="collaboration-code-slash" show="#collaboration-code, #collaboration-demo-code" hide="#collaboration-code-slash"><i class="display:flex height:18px fill:#505050" src="/assets/svg/code.svg"></i></a>
+									<a class="margin-right:10px" id="collaboration-eye" show="#collaboration-eye-slash" hide="#collaboration-eye, #collaboration-demo-preview" toggle="code-height" toggle-target="#collaboration-demo-code">
+										<i class="height:18px fill:#505050" src="/assets/svg/eye.svg"></i>
+									</a>
+									<a class="margin-right:10px" hidden id="collaboration-eye-slash" show="#collaboration-eye, #collaboration-demo-preview" hide="#collaboration-eye-slash" toggle="code-height" toggle-target="#collaboration-demo-code">
+										<i class="height:20px fill:#505050" src="/assets/svg/eye-slash.svg"></i>
+									</a>
+									<a class="margin-right:10px" id="collaboration-code" show="#collaboration-code-slash" hide="#collaboration-code, #collaboration-demo-code">
+										<i class="height:20px fill:#505050" src="/assets/svg/code.svg"></i>
+									</a>
+									<a class="margin-right:10px" hidden id="collaboration-code-slash" show="#collaboration-code, #collaboration-demo-code" hide="#collaboration-code-slash">
+										<i class="display:flex height:18px fill:#505050" src="/assets/svg/code.svg"></i>
+									</a>
 									<a class="margin-right:5px" fullscreen fullscreen-target="#collaboration-playground"></a>
 								</div>
 
