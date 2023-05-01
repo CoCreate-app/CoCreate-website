@@ -22,7 +22,7 @@ module.exports = {
                 "path": "{{path}}",
                 "content-type": "{{content-type}}",
                 "public": "true",
-                "website_id": "61381ed8829b690010a4f2b2"
+                "website_id": "644d4c4f8036fb9d1d1fd69d"
             }
         }
     ],
