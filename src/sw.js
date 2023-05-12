@@ -2,7 +2,7 @@ const CACHE_DYNAMIC_NAME = "dynamic-v2";
 
 let cacheType = true
 
-// ToDo: use indexeddb to store cache type as localstorage not supported and cocreateConfig does not exist whn service worker runs
+// TODO: use indexeddb to store cache type as localstorage not supported and cocreateConfig does not exist whn service worker runs
 // let cacheType
 // const CoCreateConfig = globalThis['CoCreateConfig']
 // if (CoCreateConfig)
@@ -34,7 +34,7 @@ self.addEventListener("fetch", (e) => {
             if (!navigator.onLine && !!cachesObj)
                 return cachesObj;
             // else 
-                // ToDo: could check indexeddb for file and send to server, server will use file as response
+                // TODO: could check indexeddb for file and send to server, server will use file as response
             
             if (cacheType && cacheType !== 'false' && !!cachesObj) {
                 fetch(e.request).then((newResp) => {
