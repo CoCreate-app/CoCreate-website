@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<form
+    pass_id="form-fields"
+    collection="users"
+    document_id="{{userId}}"
+    autocomplete="off"
+    localstorage-get="user_id"
+    localstorage-key="userId">
+    <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Name"
+        class="floating-label" />
+    <input
+        type="text"
+        name="email"
+        id="email"
+        placeholder="Email"
+        class="floating-label"
+        autocomplete="new-password" />
+    <input
+        type="password"
+        name="password"
+        placeholder="password"
+        class="floating-label"
+        autocomplete="new-password" />
+    <input
+        type="text"
+        name="description"
+        placeholder="Description"
+        class="floating-label" />
+    <input
+        type="text"
+        name="profile_image"
+        placeholder="Profile Image"
+        class="floating-label" />
+
+    <button
+        actions="save"
+        class="position:absolute bottom:15px right:15px padding:15px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4)">
+        <i class="height:20px fill:#505050" src="../assets/svg/save.svg"></i>
+    </button>
+</form>

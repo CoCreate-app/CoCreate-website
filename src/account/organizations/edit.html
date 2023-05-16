@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<form collection="organizations" crdt="false" document_id="" pass_id="form">
+    <input type="text" name="logo" placeholder="Logo" class="floating-label" />
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Organization Name"
+        class="floating-label" />
+
+    <floating-label>
+        <input
+            type="text"
+            collection="organizations"
+            document_id=""
+            name="hosts[0]"
+            placeholder="Hosts"
+            value-suffix=".cocreate.app"
+            unique
+            subdomain
+            required
+            render-key="domain"
+            class="floating-label width:calc(100%_-_90px)!important" />
+    </floating-label>
+    <div
+        class="position:relative top:-34px right:8px float:right padding:5px background:whitesmoke">
+        <span>.cocreate.app</span>
+    </div>
+
+    <input
+        type="text"
+        name="databases.mongodb.name"
+        placeholder="DB Name"
+        class="floating-label" />
+
+    <input
+        type="text"
+        name="databases.mongodb.url"
+        placeholder="DB Url"
+        class="floating-label" />
+
+    <input
+        type="text"
+        name="about"
+        placeholder="About"
+        class="floating-label" />
+
+    <input
+        type="text"
+        name="_id"
+        placeholder="Organization Id"
+        class="floating-label"
+        readonly />
+
+    <input
+        type="text"
+        name="organization_id"
+        placeholder="Platform Id"
+        class="floating-label"
+        readonly />
+
+    <button
+        actions="save"
+        class="position:absolute bottom:15px right:15px background:dodgerblue grow-hover border-radius:50% padding:15px">
+        <i class="height:20px fill:#505050" src="../assets/svg/save.svg"></i>
+    </button>
+</form>

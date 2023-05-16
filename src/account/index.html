@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>admin | CoCreate</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="../assets/favicon.ico" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.cocreate.app/latest/CoCreate.min.css" />
+        <link
+            rel="stylesheet"
+            href="./index.css"
+            collection="files"
+            document_id="637bc8fe91249e639db315d9"
+            name="src"
+            type="text/css" />
+        <link rel="manifest" href="../manifest.webmanifest" />
+    </head>
+
+    <style type="text/css">
+        ul::-webkit-scrollbar-thumb,
+        ul::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.01);
+        }
+    </style>
+
+    <body>
+        <a href="./signin.html" session="false" hidden></a>
+        <!-- Navbar  -->
+        <nav
+            class="nav display:flex align-items:center background:whitesmoke"
+            content_id="content"
+            scroll=", hide-nav"
+            scroll-up="5"
+            scroll-down="5">
+            <!-- Menu Icon -->
+            <a
+                class="menu_icon"
+                click="active"
+                toggle="width:275px,"
+                toggle-target="#menuL"
+                toggle-attribute="style">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <!-- Horizontal Scroll Nav/Tabs -->
+            <ul
+                class="display:inline-flex direction:rtl overflow:auto font-size:20px align-items:center list-style-type:none width:100% height:50px">
+                <!-- Fullscreen toogle -->
+                <li class="margin-right:15px">
+                    <a fullscreen>
+                        <i
+                            class="display:flex height:18px fill:#505050"
+                            src="../assets/svg/expand.svg"></i>
+                        <i
+                            class="display:flex height:18px fill:#505050"
+                            src="../assets/svg/compress.svg"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Avatar -->
+            <div
+                localstorage-get="user_id"
+                localstorage-key="userId"
+                localstorage-target="cocreate-select, .avatar-wrapper"></div>
+            <div class="avatar-wrapper margin:5px">
+                <a
+                    class="avatar round"
+                    actions="pass"
+                    pass-src="./users/form.html"
+                    pass_to="main">
+                    <span
+                        collection="users"
+                        document_id="{{userId}}"
+                        name="name"
+                        class="avatar-name"></span>
+                    <span class="avatar-image">
+                        <img
+                            collection="users"
+                            document_id="{{userId}}"
+                            name="avatar"
+                            onerror="this.style.display='none'"
+                            width="40px" />
+                    </span>
+                </a>
+                <div
+                    class="avatar-status"
+                    collection="users"
+                    document_id="{{userId}}"
+                    user-status="{'name':'status'}"></div>
+            </div>
+        </nav>
+
+        <!-- Modal Viewport  -->
+        <div
+            class="position:fixed margin-top:50px"
+            content_id="content"
+            id="modal-viewport"></div>
+
+        <!-- Main container  -->
+        <main
+            class="height:100vh padding:15px"
+            content_id="content"
+            src="organizations/list.html"
+            pass_id="main"
+            pass-refresh></main>
+
+        <!-- SideNav  -->
+        <sidenav
+            id="menuL"
+            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:50px width:275px:hover width:0px@xs"
+            resizable
+            resize-target="[content_id='content']"
+            resize-property="margin-left"
+            resize-value="width">
+            <div
+                class="display:flex align-items:center height:50px padding:4px_12px background:#cdcdcd">
+                <span class="logo-icon">
+                    <img
+                        src="../assets/icon.png"
+                        height="40px"
+                        alt="..."
+                        class="margin-top:3px" />
+                </span>
+                <span class="margin-left:12px font-size:1.5em">CoCreate</span>
+            </div>
+            <!-- Search -->
+            <form class="padding:5px">
+                <floating-label>
+                    <input
+                        type="text"
+                        class="floating-label"
+                        pass_to="results" />
+                </floating-label>
+                <span
+                    class="passValueBtn position:relative bottom:29px right:11px float:right font-size:18px">
+                    <a
+                        actions="pass, openModal"
+                        pass_to="render"
+                        collection="website-pages"
+                        document_id=""
+                        pass-name="src"
+                        modal-width="900px"
+                        modal-color="#229954">
+                        <i
+                            class="height:20px fill:#505050"
+                            src="../assets/svg/search.svg"></i>
+                    </a>
+                </span>
+            </form>
+
+            <div class="padding-right:5px padding-bottom:5px">
+                <ul
+                    class="overflow:auto display:flex flex-direction:column width:100% height:calc(100vh_-_165px) bottom:10px margin-right:5px">
+                    <li
+                        class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
+                        <a
+                            actions="pass"
+                            pass-src="./users/form.html"
+                            pass_to="main"
+                            class="display:flex align-items:center">
+                            <span
+                                class="display:flex justify-content:center justify-content:center width:50px">
+                                <i
+                                    class="display:flex height:16px fill:#505050"
+                                    src="../assets/svg/user.svg"></i>
+                            </span>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+
+                    <li
+                        class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
+                        <a
+                            actions="pass"
+                            pass-src="./organizations/list.html"
+                            pass_to="main"
+                            class="display:flex align-items:center">
+                            <span
+                                class="display:flex justify-content:center justify-content:center width:50px">
+                                <i
+                                    class="display:flex height:16px fill:#505050"
+                                    src="../assets/svg/city.svg"></i>
+                            </span>
+                            <span>Organizations</span>
+                        </a>
+                        <a
+                            actions="pass"
+                            pass-src="./organizations/create.html"
+                            pass_to="main"
+                            class="display:flex align-items:center justify-content:center width:50px">
+                            <i
+                                class="display:flex height:16px fill:#505050"
+                                src="../assets/svg/plus.svg"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- sidenav Footer -->
+                <div
+                    class="line-height:40px min-height:40px height:40px overflow:hidden white-space:nowrap position:absolute bottom:0px background:gainsboro width:100%">
+                    <a
+                        actions="signOut"
+                        href="./signin.html"
+                        class="display:flex align-items:center">
+                        <span
+                            class="display:flex justify-content:center min-width:50px">
+                            <i
+                                class="display:flex height:16px fill:#505050"
+                                src="../assets/svg/sign-out-alt.svg"></i>
+                        </span>
+                        <span>Sign Out</span>
+                    </a>
+                </div>
+            </div>
+            <div resize="right"></div>
+        </sidenav>
+
+        <div class="position:fixed!important bottom:15px right:15px">
+            <button actions="install" type="button" hidden>Install</button>
+
+            <div
+                template="notification"
+                class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
+                <span class="{{type}}">{{message}}</span
+                ><a actions="remove" remove-closest="[templateid]"> X</a>
+            </div>
+        </div>
+
+        <script src="../../../CoCreateJS/dist/CoCreate.js"></script>
+    </body>
+</html>

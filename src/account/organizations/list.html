@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<div
+    class="display:grid gap:15px grid-template-columns:repeat(auto-fill,minmax(290px,1fr))"
+    template_id="organizations"
+    fetch-collection="organizations"
+    fetch-document
+    filter-sort-name="name"
+    filter-sort-direction="asc">
+    <div
+        class="card align-items:center grid-column-end:span_1 box-shadow-hover"
+        template="organizations"
+        document_id="{{document._id}}"
+        toggle="selected">
+        <div class="position:relative">
+            <span
+                class="width:100% padding:0px_10px font-size:25px box-sizing:border-box">
+                <a
+                    actions="pass"
+                    pass-src="./organizations/edit.html"
+                    pass_to="main">
+                    <span>{{document.name}}</span>
+                    <div
+                        pass-document_id="{{document._id}}"
+                        pass_to="form"></div>
+                </a>
+            </span>
+            <button href="{{document.hosts[0]}}/superadmin/">superadmin</button>
+            <button
+                actions="deleteDocument"
+                collection="{{document.collection}}"
+                document_id="{{document._id}}">
+                <i
+                    class="display:flex height:18px fill:#505050"
+                    src="../assets/svg/trash-alt.svg"></i>
+            </button>
+        </div>
+        <div class="padding:10px">
+            <p>{{document.description}}</p>
+        </div>
+    </div>
+</div>
+
+<button
+    class="position:absolute bottom:15px right:15px line-height:50px width:50px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4)">
+    <a actions="pass" pass-src="./organizations/create.html" pass_to="main">
+        <i class="height:20px fill:#505050" src="../assets/svg/plus.svg"></i>
+    </a>
+</button>
