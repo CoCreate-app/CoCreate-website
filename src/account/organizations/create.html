@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<form collection="organizations" crdt="false" realtime="false" document_id="">
+<form collection="organizations" document_id="" realtime="false">
     <input
         type="text"
         name="name"
@@ -11,18 +11,26 @@
         type="text"
         collection="organizations"
         document_id=""
-        name="hosts[0]"
+        name="hosts"
+        value-type="array"
         placeholder="Domain"
         value-suffix=".cocreate.app"
         unique
         subdomain
         required
         render-key="domain"
-        class="floating-label width:calc(100%_-_90px)!important" />
+        class="floating-label" />
     <div
         class="position:relative top:-34px right:8px float:right padding:5px background:whitesmoke">
         <span>.cocreate.app</span>
     </div>
+
+    <input
+        id="owner"
+        type="hidden"
+        name="owner"
+        localstorage-get="user_id"
+        localstorage-attribute="value" />
 
     <button
         actions="save, pass"
