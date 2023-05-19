@@ -1,6 +1,6 @@
 const CACHE_DYNAMIC_NAME = "dynamic-v2";
-
-let cacheType = true
+let organization_id = ""
+let cacheType = false
 
 // TODO: use indexeddb to store cache type as localstorage not supported and cocreateConfig does not exist whn service worker runs
 // let cacheType
@@ -38,6 +38,8 @@ self.addEventListener("fetch", (e) => {
             
             if (cacheType && cacheType !== 'false' && !!cachesObj) {
                 fetch(e.request).then((newResp) => {
+                    if (!organization_id)
+                        organization_id = newResp.headers.get('organization')
                     caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
                         if (newResp.status !== 206 && newResp.status !== 502)
                             cache.put(e.request, newResp);
@@ -50,16 +52,19 @@ self.addEventListener("fetch", (e) => {
                 return cachesObj;
             } else {
                 return fetch(e.request).then((newResp) => {
-                        caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
-                            if (newResp.status !== 206)
-                                cache.put(e.request, newResp);
-                        }).catch(() => {});
-                        return newResp.clone();
-                    })
-                    .catch(() => {
-                        return caches.match('./offline.html');
-                    })
-                }
+                    if (!organization_id)
+                        organization_id = newResp.headers.get('organization')
+
+                    caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
+                        if (newResp.status !== 206)
+                            cache.put(e.request, newResp);
+                    }).catch(() => {});
+                    return newResp.clone();
+                })
+                .catch(() => {
+                    return caches.match('./offline.html');
+                })
+            }
         })
         .catch(function() {
             console.log('Fetch failed retuned offline page! ')
@@ -68,6 +73,10 @@ self.addEventListener("fetch", (e) => {
     );
 });
 
+self.addEventListener('message', function (event) {
+    if (event.data === 'getOrganization')
+        event.source.postMessage(organization_id);
+});
 
 // self.addEventListener('backgroundfetchsuccess', (event) => {
 //     const bgFetch = event.registration;

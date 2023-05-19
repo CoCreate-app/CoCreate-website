@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Learning-center | CoCreate</title>
-        <meta name="description" content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
+        <meta
+            name="description"
+            content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicon.ico" />
         <meta name="robots" content="index,follow" />
-        <meta property="og:image" content="https://cdn.cocreate.app/docs/action.png">
-        <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css"/>
-        <link rel="stylesheet" href="/index.css" collection="files" document_id="611869abc0e9580010ea635f" name="src" type="text/css"/>
+        <meta
+            property="og:image"
+            content="https://cdn.cocreate.app/docs/action.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.cocreate.app/latest/CoCreate.min.css" />
+        <link
+            rel="stylesheet"
+            href="/index.css"
+            collection="files"
+            document_id="611869abc0e9580010ea635f"
+            name="src"
+            type="text/css" />
 
         <!--  Custom Style  -->
         <style type="text/css">
             .learning-header-section {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/header-bg.jpg');
+                background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.2),
+                        rgba(0, 0, 0, 0.2)
+                    ),
+                    url("images/header-bg.jpg");
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
@@ -26,122 +45,230 @@
 
         <!--  Custom Style  -->
         <style type="text/css">
-            .hide-nav~#menuR {
+            .hide-nav ~ #menuR {
                 margin-top: 0px;
                 max-height: -moz-available;
                 max-height: -webkit-fill-available;
                 max-height: fill-available;
                 will-change: transform;
-                transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s;
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+                transition: background 0.3s,
+                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
+                    background 0.3s;
+                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
+                    background 0.3s,
+                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
                 transform: translateY(0);
                 -webkit-transform: translateY(0);
             }
         </style>
 
-		<link rel="manifest" href="/manifest.webmanifest" />
-	</head>
+        <link rel="manifest" href="/manifest.webmanifest" />
+    </head>
 
     <body>
-
         <!-- Navbar  -->
-        <nav class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px" scroll="sticky-nav,hide-nav" scroll-up="10" scroll-down="10" collection="files" document_id="611aeadec0e9580010eaad98" name="src">
-        </nav>
+        <nav
+            class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px"
+            scroll="sticky-nav,hide-nav"
+            scroll-up="10"
+            scroll-down="10"
+            collection="files"
+            document_id="611aeadec0e9580010eaad98"
+            name="src"></nav>
 
         <!-- SideNav Left-->
-		<sidenav id="menuL" class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px" resizable resize-target="[content_id='content']" resize-property="margin-left" resize-value="width" collection="files" document_id="611aeadec0e9580010eaad99" name="src"></sidenav>
+        <sidenav
+            id="menuL"
+            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+            resizable
+            resize-target="[content_id='content']"
+            resize-property="margin-left"
+            resize-value="width"
+            collection="files"
+            document_id="611aeadec0e9580010eaad99"
+            name="src"></sidenav>
 
         <!-- Modal Viewport/Boundaries -->
-        <div class="position:fixed margin-top:50px" content_id="content" id="modal-viewport"></div>
+        <div
+            class="position:fixed margin-top:50px"
+            content_id="content"
+            id="modal-viewport"></div>
 
         <!-- Main Content -->
         <main content_id="content">
-
             <!-- Header -->
             <div class="learning-header-wrapper">
-                <div class="learning-header-section flex-basis:100% flex-grow:1 color:#fff padding:90px_30px_70px_30px">
-                    <h1 class="text-align:center font-weight:500">Welcome To CoCreate Learning Center</h1>
+                <div
+                    class="learning-header-section flex-basis:100% flex-grow:1 color:#fff padding:90px_30px_70px_30px">
+                    <h1 class="text-align:center font-weight:500">
+                        Welcome To CoCreate Learning Center
+                    </h1>
                     <p class="text-align:center width:50% margin:20px_auto">
-                        Our Courses & Tutorials will help you through the process of building a small business on your own, or adding a new feature to an existing business or application.
+                        Our Courses &amp; Tutorials will help you through the
+                        process of building a small business on your own, or
+                        adding a new feature to an existing business or
+                        application.
                     </p>
                 </div>
             </div>
 
             <!-- FILTER -->
-            <div class="margin:20px display:flex flex-wrap:wrap justify-content:space-between">
-                <div class="filterleft display:flex flex-wrap:wrap justify-content:flex-start">
-                    <h5 class="color:#222 margin-top:4px margin-right:10px">SORT BY:</h5>
-                    <select class="padding:5px_10px border:2px_solid_#000 width:190px" name="product-sorting" id="productsorting">
-                      <option value="DEFAULT SORTING">DEFAULT SORTING</option>
-                      <option value="SORT BY POPULARITY">SORT BY POPULARITY</option>
-                      <option value="SORT BY AVERAGE RATING">SORT BY AVERAGE RATING</option>
-                      <option value="SORT BY NEWNESS">SORT BY NEWNESS</option>
-                      <option value="SORT BY PRICE: LOW TO HIGH">SORT BY PRICE: LOW TO HIGH</option>
-                      <option value="SORT BY PRICE: HIGH TO LOW">SORT BY PRICE: HIGH TO LOW</option>
+            <div
+                class="margin:20px display:flex flex-wrap:wrap justify-content:space-between">
+                <div
+                    class="filterleft display:flex flex-wrap:wrap justify-content:flex-start">
+                    <h5 class="color:#222 margin-top:4px margin-right:10px">
+                        SORT BY:
+                    </h5>
+                    <select
+                        class="padding:5px_10px border:2px_solid_#000 width:190px"
+                        name="product-sorting"
+                        id="productsorting">
+                        <option value="DEFAULT SORTING">DEFAULT SORTING</option>
+                        <option value="SORT BY POPULARITY">
+                            SORT BY POPULARITY
+                        </option>
+                        <option value="SORT BY AVERAGE RATING">
+                            SORT BY AVERAGE RATING
+                        </option>
+                        <option value="SORT BY NEWNESS">SORT BY NEWNESS</option>
+                        <option value="SORT BY PRICE: LOW TO HIGH">
+                            SORT BY PRICE: LOW TO HIGH
+                        </option>
+                        <option value="SORT BY PRICE: HIGH TO LOW">
+                            SORT BY PRICE: HIGH TO LOW
+                        </option>
                     </select>
                 </div>
-                <div class="filterright display:flex flex-wrap:wrap justify-content:flex-start">
-                    <h5 class="color:#222 margin-top:5px margin-right:10px">SHOW:</h5>
-                    <select class="border:2px_solid_#000 margin-right:10px" name="numbersorting" id="numbersorting">
+                <div
+                    class="filterright display:flex flex-wrap:wrap justify-content:flex-start">
+                    <h5 class="color:#222 margin-top:5px margin-right:10px">
+                        SHOW:
+                    </h5>
+                    <select
+                        class="border:2px_solid_#000 margin-right:10px"
+                        name="numbersorting"
+                        id="numbersorting">
                         <option value="20">20</option>
                         <option value="30">30</option>
                         <option value="40">40</option>
                         <option value="50">50</option>
                     </select>
-                    <a class="margin-right:10px" title="Grid" href="#"><i class="font-size:21px color:#222 margin-top:4px fas fa-th"></i></a>
-                    <a class="" title="List" href="#"><i class="font-size:21px color:#222 margin-top:4px fas fa-list"></i></a>
+                    <a class="margin-right:10px" title="Grid" href="#"
+                        ><i
+                            class="font-size:21px color:#222 margin-top:4px fas fa-th"></i
+                    ></a>
+                    <a class="" title="List" href="#"
+                        ><i
+                            class="font-size:21px color:#222 margin-top:4px fas fa-list"></i
+                    ></a>
                 </div>
             </div>
 
             <!-- Fetch and Render Blog Posts -->
-            <div class="display:flex flex-wrap:wrap" fetch-collection="module_activities" fetch-limit="12" filter-name="module_id" filter-value="61c63d63a8b6b4001aaf4dbf" filter-sort-name="name"  filter-sort-name="name" filter-sort-direction="asc" template_id="filter_test">
-
+            <div
+                class="display:flex flex-wrap:wrap"
+                fetch-collection="module_activities"
+                fetch-limit="12"
+                filter-name="module_id"
+                filter-value="61c63d63a8b6b4001aaf4dbf"
+                filter-sort-name="name"
+                filter-sort-direction="asc"
+                template_id="filter_test">
                 <!-- Blog Post Template -->
-                <div class="card template margin:20px flex-grow:1 min-width:250px" template_id="filter_test">
-
+                <div
+                    class="card template margin:20px flex-grow:1 min-width:250px"
+                    template_id="filter_test">
                     <!-- tutorial header -->
-                    <div class="background:#F23A2E color:#fff padding:20px_10px display:flex flex-wrap:wrap justify-content:space-between">
+                    <div
+                        class="background:#F23A2E color:#fff padding:20px_10px display:flex flex-wrap:wrap justify-content:space-between">
                         <h3 class="font-weight:500">Web Programming</h3>
-                        <i class="height:16px fill:#505050" src="/assets/svg/clock.svg"></i><span class="margin-left:5px">59 min</span>
+                        <i
+                            class="height:16px fill:#505050"
+                            src="/assets/svg/clock.svg"></i
+                        ><span class="margin-left:5px">59 min</span>
                     </div>
 
                     <!-- tutorial main area start -->
                     <div class="product-image position:relative">
-                        <img class="cursor:pointer" name="name" document_id="" src="images/tutorial-img.jpg" width="100%" alt="...">
-                        <div class="quick-view overflow:hidden display:block opacity:0 width:100% position:absolute transition:0.4s left:0 bottom:3px"> <a href="#" class="color:#fff display:block background:#289DCC background:#000:hover padding:13px_0 text-align:center color:#fff:hover">Quick View</a> </div>
+                        <img
+                            class="cursor:pointer"
+                            name="name"
+                            document_id=""
+                            src="images/tutorial-img.jpg"
+                            width="100%"
+                            alt="..." />
+                        <div
+                            class="quick-view overflow:hidden display:block opacity:0 width:100% position:absolute transition:0.4s left:0 bottom:3px">
+                            <a
+                                href="#"
+                                class="color:#fff display:block background:#289DCC background:#000:hover padding:13px_0 text-align:center color:#fff:hover"
+                                >Quick View</a
+                            >
+                        </div>
                     </div>
 
-
                     <div hover="display:block" hover-element=".description">
-                        <h3 class="font-size:20px margin:0_5px padding:0_0_5px color:#333333 font-weight:500">Web App basics</h3>
-                        <h2 class="margin:0_5px padding:0_0_20px color:#777777 font-size:15px font-weight:400">Updated Jun 28, 2020</h2>
-                        <p class="description margin:0_5px text-align:justify color:#666666 width:235px font-size:14px line-height:1.8rem display:none">
-                            This Course will help you create a web app on your own.We decorated this course by seperate tutorial which will help learner to learn all things with details.
+                        <h3
+                            class="font-size:20px margin:0_5px padding:0_0_5px color:#333333 font-weight:500">
+                            Web App basics
+                        </h3>
+                        <h2
+                            class="margin:0_5px padding:0_0_20px color:#777777 font-size:15px font-weight:400">
+                            Updated Jun 28, 2020
+                        </h2>
+                        <p
+                            class="description margin:0_5px text-align:justify color:#666666 width:235px font-size:14px line-height:1.8rem display:none">
+                            This Course will help you create a web app on your
+                            own.We decorated this course by seperate tutorial
+                            which will help learner to learn all things with
+                            details.
                         </p>
                     </div>
                     <div class="padding:15px border-top:1px_solid_#ddd">
-                        <a href="/university-item" class="btn padding:10px_10px border:1px_solid_#0DA9EF background:#0DA9EF background:#0DB9FF:hover color:#fff display:block width:60% margin:auto">Enroll Now</a>
+                        <a
+                            href="/university-item"
+                            class="btn padding:10px_10px border:1px_solid_#0DA9EF background:#0DA9EF background:#0DB9FF:hover color:#fff display:block width:60% margin:auto"
+                            >Enroll Now</a
+                        >
                     </div>
                 </div>
             </div>
-
         </main>
 
         <!-- SideNav Right -->
-		<sidenav id="menuR" class="position:fixed top:0px right:0px overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important height:100vh width:300px width:0px@sm@xs" resizable resize-target="[content_id='content']" resize-property="margin-right" resize-value="width" collection="files" document_id="611aeadec0e9580010eaad9a" name="src"></sidenav>
+        <sidenav
+            id="menuR"
+            class="position:fixed top:0px right:0px overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important height:100vh width:300px width:0px@sm@xs"
+            resizable
+            resize-target="[content_id='content']"
+            resize-property="margin-right"
+            resize-value="width"
+            collection="files"
+            document_id="611aeadec0e9580010eaad9a"
+            name="src"></sidenav>
 
         <!-- SidNav Right Floating toggle Button -->
-		<button class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4) z-index:10" toggle="width:300px, width:0px" toggle-target="#menuR" toggle-attribute="style">
-			<i class="height:20px fill:#505050" src="/assets/svg/sliders-h.svg"></i>
-		</button>
+        <button
+            class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4) z-index:10"
+            toggle="width:300px, width:0px"
+            toggle-target="#menuR"
+            toggle-attribute="style">
+            <i
+                class="height:20px fill:#505050"
+                src="/assets/svg/sliders-h.svg"></i>
+        </button>
 
         <!-- Footer -->
-        <footer id="spreadtheword" content_id="content" class="background-size:cover background-position:center position:relative" style="background-image:url(/assets/banner.png)" src="../components/footer.html">
-        </footer>
+        <footer
+            id="spreadtheword"
+            content_id="content"
+            class="background-size:cover background-position:center position:relative"
+            style="background-image: url(/assets/banner.png)"
+            src="../components/footer.html"></footer>
 
         <script src="/apikey.js"></script>
-        <script src="https://cdn.cocreate.app/1.55.1/CoCreate.min.js"></script>
+        <script src="https://cdn.cocreate.app/1.56.1/CoCreate.min.js"></script>
     </body>
-
 </html>
