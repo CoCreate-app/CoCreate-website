@@ -25,7 +25,6 @@
   },
   "scripts": {
     "docs": "node ./node_modules/@cocreate/docs/src/index.js",
-    "hosting": "node ./node_modules/@cocreate/hosting/src/index.js",
     "pwa": "node ./node_modules/@cocreate-cli/src/commands/other/symlinkPwa.js"
   },
   "repository": {
@@ -43,7 +42,6 @@
     "url": "https://github.com/sponsors/CoCreate-app"
   },
   "dependencies": {
-    "@cocreate/docs": "^1.7.15",
-    "@cocreate/hosting": "^1.10.8"
+    "@cocreate/docs": "^1.7.15"
   }
 }
