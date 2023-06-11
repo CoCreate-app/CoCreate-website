@@ -41,6 +41,6 @@
     "url": "https://github.com/sponsors/CoCreate-app"
   },
   "dependencies": {
-    "@cocreate/cli": "^1.33.0"
+    "@cocreate/cli": "^1.33.3"
   }
 }
