@@ -17,9 +17,9 @@
         <link
             rel="stylesheet"
             href="./index.css"
-            collection="files"
-            document_id="637bc8fe91249e639db315d9"
-            name="src"
+            array="files"
+            object="637bc8fe91249e639db315d9"
+            key="src"
             type="text/css" />
         <link rel="manifest" href="../manifest.webmanifest" />
     </head>
@@ -80,23 +80,23 @@
                     pass-src="./users/form.html"
                     pass_to="main">
                     <span
-                        collection="users"
-                        document_id="{{userId}}"
-                        name="firstname"
+                        array="users"
+                        object="{{userId}}"
+                        key="firstname"
                         class="avatar-name"></span>
                     <span class="avatar-image">
                         <img
-                            collection="users"
-                            document_id="{{userId}}"
-                            name="avatar"
+                            array="users"
+                            object="{{userId}}"
+                            key="avatar"
                             onerror="this.style.display='none'"
                             width="40px" />
                     </span>
                 </a>
                 <div
                     class="avatar-status"
-                    collection="users"
-                    document_id="{{userId}}"
+                    array="users"
+                    object="{{userId}}"
                     user-status="{'name':'status'}"></div>
             </div>
         </nav>
@@ -147,9 +147,9 @@
                     <a
                         actions="pass, openModal"
                         pass_to="render"
-                        collection="website-pages"
-                        document_id=""
-                        pass-name="src"
+                        array="website-pages"
+                        object=""
+                        pass-key="src"
                         modal-width="900px"
                         modal-color="#229954">
                         <i
@@ -230,7 +230,7 @@
             <button actions="install" type="button" hidden>Install</button>
 
             <div
-                template="notification"
+                template
                 class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
                 <span class="{{type}}">{{message}}</span
                 ><a actions="remove" remove-closest="[templateid]"> X</a>

@@ -10,10 +10,7 @@
             >
         </div>
         <div class="padding:10px margin-top:20px">
-            <input
-                class="floating-label"
-                template_id="filter_test"
-                placeholder="Search a Post" />
+            <input class="floating-label" placeholder="Search a Post" />
         </div>
     </form>
 </div>
@@ -108,16 +105,16 @@
 
     <!-- Fetch and Render Popular -->
     <div
-        fetch-collection="module_activities"
+        array="module_activities"
         filter-limit="4"
-        filter-sort-name="name"
+        filter-sort-key="name"
         filter-sort-direction="asc"
-        template_id="popular"
+        render-selector="[template]"
         class="padding:10px margin-top:20px">
         <!-- Popular Template -->
         <div
-            class="template margin-bottom:15px display:flex justify-content:space-between"
-            template_id="popular">
+            class="margin-bottom:15px display:flex justify-content:space-between"
+            template>
             <div class="flex-basis:25%">
                 <img class="width:100% height:60px" src="images/blog/g1.jpg" />
             </div>
@@ -134,7 +131,7 @@
 
 <!-- Category Filters -->
 <div class="margin-bottom:60px padding:10px">
-    <form template_id="filter_test">
+    <form>
         <div class="border-bottom:3px_solid_dodgerblue">
             <span
                 class="background:dodgerblue font-weight:500 color:#fff font-size:16px padding:5px_30px_2px_30px letter-spacing:1.3px"
@@ -148,8 +145,8 @@
             <a
                 href="#"
                 class="margin-bottom:15px"
-                name="category_order"
-                filter-sort-name="category"
+                key="category_order"
+                filter-sort-key="category"
                 value="asc"
                 id="category_order_asc"
                 ><i
@@ -161,8 +158,8 @@
             <a
                 href="#"
                 class="margin-bottom:15px"
-                name="category_order"
-                filter-sort-name="category"
+                key="category_order"
+                filter-sort-key="category"
                 value="asc"
                 id="category_order_asc1"
                 ><i
@@ -174,8 +171,8 @@
             <a
                 href="#"
                 class="margin-bottom:15px"
-                name="category_order"
-                filter-sort-name="category"
+                key="category_order"
+                filter-sort-key="category"
                 value="asc"
                 id="category_order_asc2"
                 ><i
@@ -187,8 +184,8 @@
             <a
                 href="#"
                 class="margin-bottom:15px"
-                name="category_order"
-                filter-sort-name="category"
+                key="category_order"
+                filter-sort-key="category"
                 value="asc"
                 id="category_order_asc3"
                 ><i
@@ -200,8 +197,8 @@
             <a
                 href="#"
                 class="margin-bottom:15px"
-                name="category_order"
-                filter-sort-name="category"
+                key="category_order"
+                filter-sort-key="category"
                 value="asc"
                 id="category_order_asc4"
                 ><i
@@ -213,8 +210,8 @@
             <a
                 href="#"
                 class="margin-bottom:15px"
-                name="category_order"
-                filter-sort-name="category"
+                key="category_order"
+                filter-sort-key="category"
                 value="asc"
                 id="category_order_asc5"
                 ><i
@@ -224,14 +221,12 @@
             <div
                 class="border-bottom:1px_solid_#eee margin-top:5px margin-bottom:10px"></div>
         </div>
-
-        <!--<input class="floating-label" template_id="filter_test" placeholder="Search Category" filter-name="category_order" >-->
     </form>
 </div>
 
 <!-- Sorting Filters -->
 <div class="margin-bottom:60px padding:10px">
-    <form template_id="filter_tes">
+    <form>
         <div class="border-bottom:3px_solid_dodgerblue">
             <span
                 class="background:dodgerblue font-weight:500 color:#fff font-size:16px padding:5px_30px_2px_30px letter-spacing:1.3px"
@@ -245,8 +240,8 @@
             <input
                 class=""
                 type="radio"
-                name="name_order"
-                filter-sort-name="name"
+                key="name_order"
+                filter-sort-key="name"
                 value="none" /><label
                 class="color:#222 margin-bottom:10px margin-left:5px"
                 >None</label
@@ -256,8 +251,8 @@
             <input
                 class=""
                 type="radio"
-                name="name_order"
-                filter-sort-name="name"
+                key="name_order"
+                filter-sort-key="name"
                 value="asc" /><label
                 class="color:#222 margin-bottom:10px margin-left:5px"
                 >Order by ASC</label
@@ -267,8 +262,8 @@
             <input
                 class=""
                 type="radio"
-                name="name_order"
-                filter-sort-name="name"
+                key="name_order"
+                filter-sort-key="name"
                 value="desc" /><label
                 class="color:#222 margin-bottom:10px margin-left:5px"
                 >Order by DESC</label
@@ -278,7 +273,8 @@
 
             <input
                 class="floating-label margin-top:35px margin-bottom:20px"
-                template_id="filter_test"
+                filter-search
+                filter-selector=""
                 placeholder="Search By Name" />
 
             <h3 class="color:#222 margin-bottom:20px margin-top:30px">

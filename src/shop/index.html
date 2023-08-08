@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Product-list | CoCreate</title>
         <meta
-            name="description"
+            key="description"
             content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
         <link
             rel="icon"
@@ -23,9 +23,9 @@
         <link
             rel="stylesheet"
             href="/index.css"
-            collection="files"
-            document_id="611869abc0e9580010ea635f"
-            name="src"
+            array="files"
+            object="611869abc0e9580010ea635f"
+            key="src"
             type="text/css" />
 
         <!--  Custom Style  -->
@@ -76,9 +76,9 @@
             scroll="sticky-nav,hide-nav"
             scroll-up="10"
             scroll-down="10"
-            collection="files"
-            document_id="611aeadec0e9580010eaad98"
-            name="src"></nav>
+            array="files"
+            object="611aeadec0e9580010eaad98"
+            key="src"></nav>
 
         <!-- SideNav Left-->
         <sidenav
@@ -88,9 +88,9 @@
             resize-selector="[content_id='content']"
             resize-property="margin-left"
             resize-value="width"
-            collection="files"
-            document_id="611aeadec0e9580010eaad99"
-            name="src"></sidenav>
+            array="files"
+            object="611aeadec0e9580010eaad99"
+            key="src"></sidenav>
 
         <!-- Modal Viewport/Boundaries -->
         <div
@@ -187,7 +187,7 @@
                     </h5>
                     <select
                         class="padding:5px_10px border:2px_solid_#000 width:190px"
-                        name="product-sorting"
+                        key="product-sorting"
                         id="productsorting">
                         <option value="DEFAULT SORTING">DEFAULT SORTING</option>
                         <option value="SORT BY POPULARITY">
@@ -212,7 +212,7 @@
                     </h5>
                     <select
                         class="border:2px_solid_#000 margin-right:10px"
-                        name="numbersorting"
+                        key="numbersorting"
                         id="numbersorting">
                         <option value="20">20</option>
                         <option value="30">30</option>
@@ -233,21 +233,21 @@
             <!-- Fetch and Render Product list -->
             <div
                 class="display:flex flex-wrap:wrap"
-                fetch-collection="module_activities"
+                array="module_activities"
                 filter-limit="12"
-                filter-sort-name="name"
+                filter-sort-key="name"
                 filter-sort-direction="asc"
-                template_id="filter_test">
+                render-selector="[template]">
                 <!-- Product Template -->
                 <div
-                    class="card template margin:10px flex-grow:1 min-width:250px"
-                    template_id="filter_test">
+                    class="card margin:10px flex-grow:1 min-width:250px"
+                    template>
                     <!-- Product Image  -->
                     <div class="position:relative">
                         <img
                             class="cursor:pointer"
-                            name="name"
-                            document_id=""
+                            key="name"
+                            object=""
                             src="http://via.placeholder.com/250x250/BF00FF/ffffff/"
                             width="100%"
                             alt="..." />
@@ -277,7 +277,7 @@
                         </div>
                     </div>
                     <div class="padding:15px">
-                        <h5>{{document.name}}</h5>
+                        <h5>{{object.name}}</h5>
                         <!-- ratings-container Start -->
                         <div class="margin:4px_0">
                             <span class="color:#555"
@@ -308,16 +308,16 @@
                         </div>
                         <p
                             class="margin:4px_0"
-                            collection="{{document.collection}}"
-                            document_id="{{document._id}}"
-                            name="color">
+                            array="{{object.array}}"
+                            object="{{object._id}}"
+                            key="color">
                             blue
                         </p>
-                        <p class="" value="{{document.price}}">$59</p>
+                        <p class="" value="{{object.price}}">$59</p>
                         <p
                             class=""
-                            document_id="_id"
-                            name="description"
+                            object="_id"
+                            key="description"
                             value="description"></p>
 
                         <a
@@ -338,9 +338,9 @@
             resize-selector="[content_id='content']"
             resize-property="margin-right"
             resize-value="width"
-            collection="files"
-            document_id="611aeadec0e9580010eaad9a"
-            name="src"></sidenav>
+            array="files"
+            object="611aeadec0e9580010eaad9a"
+            key="src"></sidenav>
 
         <!-- SidNav Right Floating toggle Button -->
         <button

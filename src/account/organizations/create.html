@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 
-<form collection="organizations" document_id="" realtime="false">
+<form array="organizations" object="" realtime="false">
     <input
         type="text"
-        name="name"
+        key="name"
         placeholder="Organization Name"
         class="floating-label" />
 
     <input
         type="text"
-        collection="organizations"
-        document_id=""
-        name="host"
+        array="organizations"
+        object=""
+        key="host"
         value-type="array"
         placeholder="Domain"
         value-suffix=".cocreate.app"
         unique
         subdomain
         required
-        render-key="domain"
+        render-as="domain"
         class="floating-label" />
     <div
         class="position:relative top:-34px right:8px float:right padding:5px background:whitesmoke">
@@ -28,7 +28,7 @@
     <input
         id="owner"
         type="hidden"
-        name="owner"
+        key="owner"
         localstorage-get="user_id"
         localstorage-attribute="value" />
 
@@ -38,9 +38,6 @@
         pass-src="./organizations/edit.html"
         class="position:absolute bottom:15px right:15px background:dodgerblue grow-hover border-radius:50% padding:15px">
         <i class="height:20px fill:#505050" src="../assets/svg/save.svg"></i>
-        <div
-            collection="organizations"
-            pass-document_id=""
-            pass_to="form"></div>
+        <div array="organizations" pass-object="" pass_to="form"></div>
     </button>
 </form>

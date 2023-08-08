@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Discussion | CoCreate</title>
         <meta
-            name="description"
+            key="description"
             content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
         <link
             rel="icon"
@@ -23,9 +23,9 @@
         <link
             rel="stylesheet"
             href="/index.css"
-            collection="files"
-            document_id="611869abc0e9580010ea635f"
-            name="src"
+            array="files"
+            object="611869abc0e9580010ea635f"
+            key="src"
             type="text/css" />
 
         <!--  Custom Style  -->
@@ -57,9 +57,9 @@
             scroll="sticky-nav,hide-nav"
             scroll-up="10"
             scroll-down="10"
-            collection="files"
-            document_id="611aeadec0e9580010eaad98"
-            name="src"></nav>
+            array="files"
+            object="611aeadec0e9580010eaad98"
+            key="src"></nav>
 
         <!-- SideNav Left-->
         <sidenav
@@ -69,9 +69,9 @@
             resize-selector="[content_id='content']"
             resize-property="margin-left"
             resize-value="width"
-            collection="files"
-            document_id="611aeadec0e9580010eaad99"
-            name="src"></sidenav>
+            array="files"
+            object="611aeadec0e9580010eaad99"
+            key="src"></sidenav>
 
         <!-- Modal Viewport/Boundaries -->
         <div
@@ -721,44 +721,44 @@
             <!--  Post COMMENT Start  -->
             <div
                 class="post-title width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
-                <form collection="module_activities">
+                <form array="module_activities">
                     <h3 class="width:100%">LEAVE A REPLY</h3>
                     <!--  Comment Heading  -->
                     <textarea
                         rows="10"
                         col="30"
                         placeholder="Write Your Comment"
-                        collection="{{document.collection}}"
-                        document_id="{{document._id}}"
-                        name="comment"
+                        array="{{object.array}}"
+                        object="{{object._id}}"
+                        key="comment"
                         class="width:70% padding:5px_10px margin-top:30px margin-bottom:20px border:1px_solid_#ddd"></textarea>
                     <input
                         type="text"
                         placeholder="Enter Your Name"
-                        collection="{{document.collection}}"
-                        document_id="{{document._id}}"
-                        name="name"
+                        array="{{object.array}}"
+                        object="{{object._id}}"
+                        key="name"
                         class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
                     <input
                         type="email"
                         placeholder="Enter Your Email"
-                        collection="{{document.collection}}"
-                        document_id="{{document._id}}"
-                        name="email"
+                        array="{{object.array}}"
+                        object="{{object._id}}"
+                        key="email"
                         class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
                     <input
                         type="text"
                         placeholder="Enter Your Website URL"
-                        collection="{{document.collection}}"
-                        document_id="{{document._id}}"
-                        name="website"
+                        array="{{object.array}}"
+                        object="{{object._id}}"
+                        key="website"
                         class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
 
                     <div class="width:100% margin-bottom:20px">
                         <input
                             class="margin-right:10px"
                             type="checkbox"
-                            name="" /><span class="color:#333"
+                            key="" /><span class="color:#333"
                             >Save my name, email, and website in this browser
                             for the next time I comment</span
                         >
@@ -948,9 +948,9 @@
             resize-selector="[content_id='content']"
             resize-property="margin-right"
             resize-value="width"
-            collection="files"
-            document_id="611aeadec0e9580010eaad9a"
-            name="src"></sidenav>
+            array="files"
+            object="611aeadec0e9580010eaad9a"
+            key="src"></sidenav>
 
         <!-- SidNav Right Floating toggle Button -->
         <button

@@ -2,44 +2,44 @@
 
 <form
     pass_id="form-fields"
-    collection="users"
-    document_id="{{userId}}"
+    array="users"
+    object="{{userId}}"
     autocomplete="off"
     localstorage-get="user_id"
     localstorage-key="userId">
     <input
         type="text"
-        name="firstname"
+        key="firstname"
         id="firstname"
         placeholder="First name"
         class="floating-label" />
     <input
         type="text"
-        name="lastname"
+        key="lastname"
         id="lastname"
         placeholder="Last name"
         class="floating-label" />
     <input
         type="text"
-        name="email"
+        key="email"
         id="email"
         placeholder="Email"
         class="floating-label"
         autocomplete="new-password" />
     <input
         type="password"
-        name="password"
+        key="password"
         placeholder="password"
         class="floating-label"
         autocomplete="new-password" />
     <input
         type="text"
-        name="description"
+        key="description"
         placeholder="Description"
         class="floating-label" />
     <input
         type="text"
-        name="profile_image"
+        key="profile_image"
         placeholder="Profile Image"
         class="floating-label" />
 

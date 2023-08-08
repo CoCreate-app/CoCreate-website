@@ -3,9 +3,9 @@
 <!-- Logo -->
 <a href="/" class="height:50px padding:5px_10px_5px_20px display:none@xs@sm@md">
     <img
-        collection="organizations"
-        document_id=""
-        name="logo"
+        array="organizations"
+        object=""
+        key="logo"
         src="/assets/logo.png"
         height="40px" />
 </a>
@@ -25,9 +25,9 @@
 <!-- Icon Logo -->
 <a href="/" class="height:50px padding:5px_12px display:none@lg@xl">
     <img
-        collection="organizations"
-        document_id=""
-        name="icon-logo"
+        array="organizations"
+        object=""
+        key="icon-logo"
         src="/assets/icon.png"
         height="40px"
         alt="icon logo" />
@@ -116,27 +116,23 @@
 
 <div class="avatar-wrapper margin-right:10px">
     <a class="avatar round" href="/account/signin.html">
-        <span
-            collection="users"
-            document_id="{{userId}}"
-            name="name"
-            class="avatar-name">
+        <span array="users" object="{{userId}}" key="name" class="avatar-name">
             <i
                 class="height:20px fill:#505050"
                 src="/assets/svg/sign-in-alt.svg"></i>
         </span>
         <span class="avatar-image">
             <img
-                collection="users"
-                document_id="{{userId}}"
-                name="avatar"
+                array="users"
+                object="{{userId}}"
+                key="avatar"
                 onerror="this.style.display='none'"
                 width="40px" />
         </span>
     </a>
     <div
         class="avatar-status"
-        collection="users"
-        document_id="{{userId}}"
+        array="users"
+        object="{{userId}}"
         user-status="{'name':'status'}"></div>
 </div>

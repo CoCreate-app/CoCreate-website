@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 
-<form collection="organizations" crdt="false" document_id="" pass_id="form">
-    <input type="text" name="logo" placeholder="Logo" class="floating-label" />
+<form array="organizations" crdt="false" object="" pass_id="form">
+    <input type="text" key="logo" placeholder="Logo" class="floating-label" />
 
     <input
         type="text"
-        name="name"
+        key="name"
         placeholder="Organization Name"
         class="floating-label" />
 
     <floating-label>
         <input
             type="text"
-            collection="organizations"
-            document_id=""
-            name="host[0]"
+            array="organizations"
+            object=""
+            key="host[0]"
             placeholder="host"
             value-suffix=".cocreate.app"
             subdomain
@@ -28,32 +28,28 @@
 
     <input
         type="text"
-        name="databases.mongodb.name"
+        key="databases.mongodb.name"
         placeholder="DB Name"
         class="floating-label" />
 
     <input
         type="text"
-        name="databases.mongodb.url"
+        key="databases.mongodb.url"
         placeholder="DB Url"
         class="floating-label" />
 
-    <input
-        type="text"
-        name="about"
-        placeholder="About"
-        class="floating-label" />
+    <input type="text" key="about" placeholder="About" class="floating-label" />
 
     <input
         type="text"
-        name="_id"
+        key="_id"
         placeholder="Organization Id"
         class="floating-label"
         readonly />
 
     <input
         type="text"
-        name="organization_id"
+        key="organization_id"
         placeholder="Platform Id"
         class="floating-label"
         readonly />

@@ -2,15 +2,15 @@
 
 <div
     class="display:grid gap:15px grid-template-columns:repeat(auto-fill,minmax(290px,1fr))"
-    template_id="organizations"
-    fetch-collection="organizations"
-    fetch-document
-    filter-sort-name="name"
-    filter-sort-direction="asc">
+    array="organizations"
+    object
+    filter-sort-key="name"
+    filter-sort-direction="asc"
+    render-selector="[template]">
     <div
         class="card align-items:center grid-column-end:span_1 box-shadow-hover"
-        template="organizations"
-        document_id="{{document._id}}"
+        template
+        object="{{object._id}}"
         toggle="selected">
         <div class="position:relative">
             <span
@@ -19,26 +19,24 @@
                     actions="pass"
                     pass-src="./organizations/edit.html"
                     pass_to="main">
-                    <span>{{document.name}}</span>
-                    <div
-                        pass-document_id="{{document._id}}"
-                        pass_to="form"></div>
+                    <span>{{object.name}}</span>
+                    <div pass-object="{{object._id}}" pass_to="form"></div>
                 </a>
             </span>
-            <button href="https://{{document.host[0]}}/superadmin/signin.html">
+            <button href="https://{{object.host[0]}}/superadmin/signin.html">
                 superadmin
             </button>
             <button
-                actions="deleteDocument"
-                collection="{{document.collection}}"
-                document_id="{{document._id}}">
+                actions="deleteObject"
+                array="{{object.array}}"
+                object="{{object._id}}">
                 <i
                     class="display:flex height:18px fill:#505050"
                     src="../assets/svg/trash-alt.svg"></i>
             </button>
         </div>
         <div class="padding:10px">
-            <p>{{document.description}}</p>
+            <p>{{object.description}}</p>
         </div>
     </div>
 </div>

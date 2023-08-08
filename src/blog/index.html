@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Blog | CoCreate</title>
         <meta
-            name="description"
+            key="description"
             content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
         <link
             rel="icon"
@@ -23,9 +23,9 @@
         <link
             rel="stylesheet"
             href="/index.css"
-            collection="files"
-            document_id="611869abc0e9580010ea635f"
-            name="src"
+            array="files"
+            object="611869abc0e9580010ea635f"
+            key="src"
             type="text/css" />
 
         <!--  Custom Style  -->
@@ -57,9 +57,9 @@
             scroll="sticky-nav,hide-nav"
             scroll-up="10"
             scroll-down="10"
-            collection="files"
-            document_id="611aeadec0e9580010eaad98"
-            name="src"></nav>
+            array="files"
+            object="611aeadec0e9580010eaad98"
+            key="src"></nav>
 
         <!-- SideNav Left-->
         <sidenav
@@ -69,9 +69,9 @@
             resize-selector="[content_id='content']"
             resize-property="margin-left"
             resize-value="width"
-            collection="files"
-            document_id="611aeadec0e9580010eaad99"
-            name="src"></sidenav>
+            array="files"
+            object="611aeadec0e9580010eaad99"
+            key="src"></sidenav>
 
         <!-- Main Content -->
         <main class="padding:20px" content_id="content">
@@ -89,17 +89,17 @@
             <!-- Fetch and Render Blog Posts -->
             <div
                 class="display:flex flex-wrap:wrap"
-                fetch-collection="module_activities"
+                array="module_activities"
                 filter-limit="12"
-                filter-name="module_id"
+                filter-key="module_id"
                 filter-value="60e7416eb979b40017448c76"
-                filter-sort-name="name"
+                filter-sort-key="name"
                 filter-sort-direction="asc"
-                template_id="filter_test">
+                render-selector="[template]">
                 <!-- Blog Post Template -->
                 <div
-                    class="card template position:relative flex-grow:1 margin-bottom:50px height:470px width:300px max-width:600px margin:10px"
-                    template_id="filter_test">
+                    class="card position:relative flex-grow:1 margin-bottom:50px height:470px width:300px max-width:600px margin:10px"
+                    template>
                     <a
                         class="height:400px overflow:hidden"
                         href="/blog/post.html">
@@ -122,11 +122,11 @@
                                 hover-selector=".description">
                                 <h1
                                     class="font-size:24px margin:0 padding:0_0_10px color:#333333 font-weight:700">
-                                    {{document.name}}
+                                    {{object.name}}
                                 </h1>
                                 <h2
                                     class="margin:0 padding:0_0_20px color:#e74c3c font-size:20px font-weight:400">
-                                    {{document.short_description}}
+                                    {{object.short_description}}
                                 </h2>
                                 <p
                                     class="description color:#666666 font-size:14px line-height:1.8rem">
@@ -168,9 +168,9 @@
             resize-selector="[content_id='content']"
             resize-property="margin-right"
             resize-value="width"
-            collection="files"
-            document_id="611aeadec0e9580010eaad9a"
-            name="src"></sidenav>
+            array="files"
+            object="611aeadec0e9580010eaad9a"
+            key="src"></sidenav>
 
         <!-- SidNav Right Floating toggle Button -->
         <button

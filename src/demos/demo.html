@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<form collection="contacts" realtime="false">
+<form array="contacts" realtime="false">
     <input
-        name="name"
-        document_id
+        key="name"
+        object
         pass_id="form-fields"
         pass-refresh
         placeholder="Name" />
@@ -10,19 +10,16 @@
     <button actions="reset">reset</button>
 </form>
 
-<input template_id="grid" filter-name="name" placeholder="search" />
+<input filter-key="name" filter-next placeholder="search" />
 
-<div template_id="grid" fetch-collection="contacts">
-    <div template="grid">
-        <a
-            actions="pass"
-            pass_to="form-fields"
-            pass-document_id="{{document._id}}">
-            <span>{{document.name}}</span>
+<div array="contacts" render-selector="[template]">
+    <div template>
+        <a actions="pass" pass_to="form-fields" pass-object="{{object._id}}">
+            <span>{{object.name}}</span>
             <a
-                actions="deleteDocument"
-                collection="{{document.collection}}"
-                document_id="{{document._id}}">
+                actions="deleteObject"
+                array="{{object.array}}"
+                object="{{object._id}}">
                 <i
                     class="height:18px fill:#505050"
                     src="/assets/svg/trash-alt.svg"></i>
