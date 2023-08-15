@@ -23,9 +23,6 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "scripts": {
-    "pwa": "node ./node_modules/@cocreate-cli/src/commands/other/symlinkPwa.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CoCreate-app/CoCreate-website.git"
