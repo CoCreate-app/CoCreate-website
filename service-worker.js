@@ -1,0 +1,1 @@
+C:/workspace/CoCreate/CoCreate-components/CoCreate-pwa/dist/service-worker.js
