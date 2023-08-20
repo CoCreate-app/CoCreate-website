@@ -1,7 +1,4 @@
 module.exports = {
-    "organization_id": "5ff747727005da1c272740ab",
-    "key": "2061acef-0451-4545-f754-60cf8161",
-    "host": "cocreate.app",
     "directories": [
         {
             "entry": "./src",
