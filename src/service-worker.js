@@ -38,85 +38,95 @@ self.addEventListener("activate", async (e) => {
 });
 
 self.addEventListener("fetch", async (e) => {
+    if (!(e.request.url.indexOf('http') === 0) || e.request.method === 'POST') return;
+
+    if (!storage) {
+        console.log('storage:', storage);
+
+        const url = new URL(e.request.url);
+        const hostname = url.host;
+        const pathname = url.pathname;
+
+        let file = await readFile({
+            database: '5ff747727005da1c272740ab',
+            array: 'files',
+            filter: {
+                path: hostname,
+                host: '*'
+            }
+        });
+
+        if (file) {
+            console.log('file:', file);
+            console.log('Pathname:', pathname);
+            console.log('file', file)
+        }
+
+        if (file && file.object && file.object[0]) {
+            file = file.object[0]
+
+            const modifiedRequest = new Request(e.request, {
+                headers: new Headers({
+                    'File-Content': file.src,
+                    'Content-Type': file['content-type']
+                })
+            });
+            e.request = modifiedRequest
+        }
+    }
+
     e.respondWith(
         caches
             .match(e.request)
             .then(async (cacheResponse) => {
-                if (!(e.request.url.indexOf('http') === 0) || e.request.method === 'POST') return;
-
-                if (!storage) {
-                    const url = new URL(e.request.url);
-                    const hostname = url.host;
-                    const pathname = url.pathname;
-
-                    let file = await readFile({
-                        database: '5ff747727005da1c272740ab',
-                        array: 'files',
-                        filter: {
-                            path: hostname,
-                            host: '*'
-                        }
-                    });
-
-                    if (file) {
-                        // console.log('Host:', hostname);
-                        console.log('Pathname:', pathname);
-                        console.log('file', file)
-                    }
-
-                    if (file && file.object && file.object[0]) {
-                        file = file.object[0]
-
-                        const modifiedRequest = new Request(e.request, {
-                            headers: new Headers({
-                                'File-Content': file.src,
-                                'Content-Type': file['content-type']
-                            })
-                        });
-                        e.request = modifiedRequest
-                    }
-                }
-
-                if (!navigator.onLine && !!cacheResponse && cacheType !== 'false')
+                if (!navigator.onLine && !!cacheResponse && cacheType !== 'false') {
                     return cacheResponse;
-                else {
-                    fetch(e.request).then((networkResponse) => {
-                        if (!organization_id)
-                            organization_id = networkResponse.headers.get('organization')
+                } else {
+                    const networkResponse = await fetch(e.request);
 
-                        storage = networkResponse.headers.get('storage')
-                        if (cacheType && cacheType !== 'false') {
-                            caches.open(cacheName).then((cache) => {
-                                if (networkResponse.status !== 206 && networkResponse.status !== 502) {
-                                    cache.put(e.request, networkResponse);
-                                    if (cacheType === 'reload' || cacheType === 'prompt') {
-                                        const networkModified = networkResponse.headers.get('last-modified');
-                                        const cacheModified = cacheResponse.headers.get('last-modified');
-                                        if (networkModified !== cacheModified) {
-                                            self.clients.matchAll().then((clients) => {
-                                                clients.forEach((client) => {
-                                                    client.postMessage({ action: 'cacheType', cacheType }); // Send a custom message
-                                                    console.log(`file ${cacheType} has been triggered`)
-                                                });
+                    if (!organization_id)
+                        organization_id = networkResponse.headers.get('organization')
+
+                    let storageHeader = networkResponse.headers.get('storage')
+                    if (storageHeader)
+                        storage = storageHeader
+
+                    if (!cacheResponse || cacheType === 'false' || cacheType === 'offline') {
+                        return networkResponse.clone();
+                    }
+
+                    if (cacheType && cacheType !== 'false') {
+                        console.log('caching')
+
+                        caches.open(cacheName).then((cache) => {
+                            if (networkResponse.status !== 206 && networkResponse.status !== 502) {
+                                cache.put(e.request, networkResponse);
+                                if (cacheType === 'reload' || cacheType === 'prompt') {
+                                    const networkModified = networkResponse.headers.get('last-modified');
+                                    const cacheModified = cacheResponse.headers.get('last-modified');
+                                    if (networkModified !== cacheModified) {
+                                        self.clients.matchAll().then((clients) => {
+                                            clients.forEach((client) => {
+                                                client.postMessage({ action: 'cacheType', cacheType }); // Send a custom message
+                                                console.log(`file ${cacheType} has been triggered`)
                                             });
-                                        }
+                                        });
                                     }
                                 }
-                            }).catch(() => {
+                            }
+                        }).catch(() => {
 
-                            });
-                            if (!cacheResponse || cacheType === 'false' || cacheType === 'offline')
-                                return networkResponse.clone();
-                        }
-                    }).catch(() => {
-                        return caches.match('./offline.html');
-                    })
-                    if (!!cacheResponse && cacheType !== 'false' && cacheType !== 'offline')
-                        return cacheResponse;
+                        });
+                    }
+
                 }
+
+                if (!!cacheResponse && cacheType !== 'false' && cacheType !== 'offline') {
+                    return cacheResponse;
+                }
+
             })
             .catch(function () {
-                console.log('Fetch failed retuned offline page! ')
                 return caches.match('./offline.html');
             })
     );
@@ -129,35 +139,39 @@ function readFile(data) {
 
         request.onsuccess = function () {
             const db = request.result
+            console.log('readFile', data)
+            try {
+                const transaction = db.transaction(data.array, "readonly");
+                const objectStore = transaction.objectStore(data.array);
+                const cursorRequest = objectStore.openCursor();
 
-            const transaction = db.transaction(data.array, "readonly");
-            const objectStore = transaction.objectStore(data.array);
-            const cursorRequest = objectStore.openCursor();
-
-            cursorRequest.onsuccess = function () {
-                const cursor = cursorRequest.result;
-                if (cursor) {
-                    const file = cursor.value;
-                    if (!file || !file.src || !file.path || !file.host)
-                        cursor.continue();
-                    else if (file.path !== data.filter.path || !file.host.includes(data.filter.host))
-                        cursor.continue();
-                    else {
+                cursorRequest.onsuccess = function () {
+                    const cursor = cursorRequest.result;
+                    if (cursor) {
+                        const file = cursor.value;
+                        if (!file || !file.src || !file.path || !file.host)
+                            cursor.continue();
+                        else if (file.path !== data.filter.path || !file.host.includes(data.filter.host))
+                            cursor.continue();
+                        else {
+                            db.close()
+                            return resolve(file);
+                        }
+                    } else {
+                        // Resolve the Promise when cursor is finished
                         db.close()
-                        return resolve(file);
+                        resolve();
                     }
-                } else {
-                    // Resolve the Promise when cursor is finished
+                };
+
+                cursorRequest.onerror = function () {
+                    console.error("Cursor error:", cursorRequest.error);
                     db.close()
                     resolve();
-                }
-            };
+                };
+            } catch (error) {
 
-            cursorRequest.onerror = function () {
-                console.error("Cursor error:", cursorRequest.error);
-                db.close()
-                resolve();
-            };
+            }
 
         };
 
