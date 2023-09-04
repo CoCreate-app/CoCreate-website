@@ -10,8 +10,7 @@ module.exports = {
                 "name": "{{name}}",
                 "src": "{{source}}",
                 "host": [
-                    "*",
-                    "general.cocreate.app"
+                    "*"
                 ],
                 "directory": "/{{directory}}",
                 "path": "{{path}}",
