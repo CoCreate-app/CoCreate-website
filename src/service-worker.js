@@ -46,7 +46,7 @@ self.addEventListener("fetch", async (e) => {
         caches
             .match(e.request)
             .then(async (cacheResponse) => {
-                if (!navigator.onLine && !!cacheResponse && cacheType !== 'false') {
+                if (!navigator.onLine || !!cacheResponse && cacheType !== 'false') {
                     return cacheResponse;
                 } else {
                     const networkResponse = await fetch(e.request);
@@ -57,10 +57,6 @@ self.addEventListener("fetch", async (e) => {
                     let storageHeader = networkResponse.headers.get('storage')
                     if (storageHeader)
                         storage = storageHeader
-
-                    if (!cacheResponse || cacheType === 'false' || cacheType === 'offline') {
-                        return networkResponse.clone();
-                    }
 
                     if (cacheType && cacheType !== 'false') {
                         console.log('caching')
@@ -84,6 +80,10 @@ self.addEventListener("fetch", async (e) => {
                         }).catch(() => {
 
                         });
+                    }
+
+                    if (!cacheResponse || cacheType === 'false' || cacheType === 'offline') {
+                        return networkResponse.clone();
                     }
 
                 }
