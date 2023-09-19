@@ -12,11 +12,11 @@ module.exports = {
                 "host": [
                     "*"
                 ],
-                "directory": "/{{directory}}",
+                "directory": "/",
                 "path": "{{path}}",
+                "pathname": "{{pathname}}",
                 "content-type": "{{content-type}}",
-                "public": "true",
-                "website_id": "644d4c4f8036fb9d1d1fd69d"
+                "public": "true"
             }
         }
     ],
