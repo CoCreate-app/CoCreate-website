@@ -48,8 +48,10 @@ self.addEventListener("fetch", async (e) => {
             .match(e.request)
             .then(async (cacheResponse) => {
                 if (!navigator.onLine || !!cacheResponse && cacheType !== 'false') {
+                    const organization = cacheResponse.headers.get('organization')
                     const lastModified = cacheResponse.headers.get('last-modified')
-                    returnedFromCache[e.request.url] = lastModified
+
+                    returnedFromCache[e.request.url] = { organization, lastModified }
                     return cacheResponse;
                 } else {
                     const networkResponse = await fetch(e.request);
