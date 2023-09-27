@@ -25,6 +25,7 @@
 const cacheName = "dynamic-v2";
 let organization_id = ""
 let storage = true
+let returnedFromCache = {};
 
 const queryString = self.location.search;
 const queryParams = new URLSearchParams(queryString);
@@ -47,6 +48,8 @@ self.addEventListener("fetch", async (e) => {
             .match(e.request)
             .then(async (cacheResponse) => {
                 if (!navigator.onLine || !!cacheResponse && cacheType !== 'false') {
+                    const lastModified = cacheResponse.headers.get('last-modified')
+                    returnedFromCache[e.request.url] = lastModified
                     return cacheResponse;
                 } else {
                     const networkResponse = await fetch(e.request);
@@ -63,9 +66,12 @@ self.addEventListener("fetch", async (e) => {
 
                         caches.open(cacheName).then((cache) => {
                             if (networkResponse.status !== 206 && networkResponse.status !== 502) {
+                                const networkModified = networkResponse.headers.get('last-modified');
+                                // if (!networkModified) {
+                                //     networkResponse.headers.set('Last-Modified', new Date().toISOString());
+                                // }
                                 cache.put(e.request, networkResponse);
                                 if (cacheType === 'reload' || cacheType === 'prompt') {
-                                    const networkModified = networkResponse.headers.get('last-modified');
                                     const cacheModified = cacheResponse.headers.get('last-modified');
                                     if (networkModified !== cacheModified) {
                                         self.clients.matchAll().then((clients) => {
@@ -100,8 +106,56 @@ self.addEventListener("fetch", async (e) => {
 });
 
 self.addEventListener('message', function (event) {
-    if (event.data === 'getOrganization')
-        event.source.postMessage(organization_id);
+    if (event.data.action === 'getOrganization')
+        event.source.postMessage({ action: 'getOrganization', organization_id });
+    else if (event.data.action === 'checkCache') {
+        event.source.postMessage({ action: 'checkCache', returnedFromCache: { ...returnedFromCache } });
+        returnedFromCache = {}
+    }
+});
+
+
+self.addEventListener('push', (event) => {
+    const pushData = event.data.json(); // Assuming the push payload is JSON data
+
+    // Process the push notification data as needed
+    const { socketUrl, _id } = pushData;
+
+    // Establish a WebSocket connection
+    const socket = new WebSocket(socketUrl);
+
+    // Handle WebSocket events
+    socket.addEventListener('open', () => {
+        // The WebSocket connection is open, send the message to the server
+        socket.send(JSON.stringify({ method: 'read.object', array: 'files', object: { _id }, uid: '' }));
+    });
+
+    socket.addEventListener('message', (event) => {
+        // Handle messages received from the server over the WebSocket
+        const serverData = JSON.parse(event.data);
+        if (serverData.uid === uid) {
+            // TODO: add file to cache and close socket
+        }
+    });
+
+    socket.addEventListener('close', () => {
+        // Handle the WebSocket connection being closed
+        console.log('WebSocket connection closed.');
+    });
+
+    socket.addEventListener('error', (error) => {
+        // Handle WebSocket errors
+        console.error('WebSocket error:', error);
+    });
+
+    // Ensure that the service worker stays active until the WebSocket connection is closed
+    event.waitUntil(
+        new Promise((resolve) => {
+            socket.addEventListener('close', () => {
+                resolve();
+            });
+        })
+    );
 });
 
 // self.addEventListener('backgroundfetchsuccess', (event) => {
