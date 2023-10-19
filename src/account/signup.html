@@ -58,7 +58,11 @@
 
                 <div
                     class="flex-grow:1 height:fit-content width:35% min-width:370px max-width:400px margin:10px align-self:flex-end">
-                    <form realtime="false" autocomplete="off">
+                    <form
+                        realtime="false"
+                        autocomplete="off"
+                        array="users"
+                        object="">
                         <!-- <input type="hidden" localstorage-get="user_id" input-attribute="object" input-selector="[array='users']">
 					    <input type="hidden" localstorage-get="organization_id" input-attribute="object" input-selector="[array='organizations']"> -->
 
@@ -81,34 +85,31 @@
                                 <input
                                     id="fistName"
                                     type="text"
-                                    array="users"
-                                    object=""
                                     key="fistName"
                                     placeholder="First name"
                                     autocomplete="off"
                                     render-key="fistName"
+                                    value="test"
                                     required />
                             </floating-label>
                             <floating-label>
                                 <input
                                     id="lastName"
                                     type="text"
-                                    array="users"
-                                    object=""
                                     key="lastName"
                                     placeholder="Last name"
                                     autocomplete="off"
                                     render-key="lastName"
+                                    value="test"
                                     required />
                             </floating-label>
 
                             <floating-label>
                                 <input
                                     type="email"
-                                    array="users"
-                                    object=""
                                     key="email"
                                     placeholder="Email"
+                                    value="test"
                                     required />
                             </floating-label>
 
@@ -116,17 +117,18 @@
                                 <input
                                     type="password"
                                     id="password"
-                                    array="users"
-                                    object=""
                                     key="password"
-                                    placeholder="Password" />
+                                    placeholder="Password"
+                                    value="test"
+                                    required />
                             </floating-label>
 
                             <floating-label>
                                 <input
                                     type="password"
                                     matches="#password"
-                                    placeholder="Confirm Password" />
+                                    placeholder="Confirm Password"
+                                    value="test" />
                             </floating-label>
 
                             <button
