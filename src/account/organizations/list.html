@@ -3,7 +3,6 @@
 <div
     class="display:grid gap:15px grid-template-columns:repeat(auto-fill,minmax(290px,1fr))"
     array="organizations"
-    object
     filter-sort-key="name"
     filter-sort-direction="asc"
     render-selector="[template]">
@@ -27,7 +26,7 @@
                 superadmin
             </button>
             <button
-                actions="deleteObject"
+                actions="delete"
                 array="{{object.array}}"
                 object="{{object._id}}">
                 <i
