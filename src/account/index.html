@@ -229,9 +229,7 @@
         <div class="position:fixed!important bottom:15px right:15px">
             <button actions="install" type="button" hidden>Install</button>
 
-            <div
-                template
-                class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
+            <div template="notification" class="card padding:10px {{status}}">
                 <span class="{{type}}">{{message}}</span
                 ><a actions="remove" remove-closest="[templateid]"> X</a>
             </div>

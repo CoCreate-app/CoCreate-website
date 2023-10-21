@@ -128,14 +128,9 @@
         </div>
 
         <div class="position:fixed!important bottom:15px right:15px">
-            <div template class="card margin:5px padding:10px {{status}}">
-                <span class="{{type}}">{{message}}</span>
-                <a actions="remove"> X</a>
-            </div>
-
             <div
-                template
-                class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
+                template="notification, signIn"
+                class="card padding:10px {{status}}">
                 <span class="{{type}}">{{message}}</span>
                 <a actions="remove"> X</a>
             </div>
