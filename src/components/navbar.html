@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
 <!-- Logo -->
-<a href="/" class="height:50px padding:5px_10px_5px_20px display:none@xs@sm@md">
+<a
+    href="{{path}}"
+    class="height:50px padding:5px_10px_5px_20px display:none@xs@sm@md">
     <img
         array="organizations"
         object=""
         key="logo"
-        src="/assets/logo.png"
+        src="{{path}}assets/logo.png"
         height="40px" />
 </a>
 
@@ -23,12 +25,12 @@
 </a>
 
 <!-- Icon Logo -->
-<a href="/" class="height:50px padding:5px_12px display:none@lg@xl">
+<a href="{{path}}" class="height:50px padding:5px_12px display:none@lg@xl">
     <img
         array="organizations"
         object=""
         key="icon-logo"
-        src="/assets/icon.png"
+        src="{{path}}assets/icon.png"
         height="40px"
         alt="icon logo" />
 </a>
@@ -40,29 +42,31 @@
 				<a class="margin-right:25px color:dodgerblue:hover" toggle="display:block,display:none" toggle-selector="#products">Products</a>
 				<ul id="products" class="card position:absolute padding:10px list-style:none top:50px background:white display:none">
 					<li class="padding:5px">
-						<a href="/business-builder" class="color:dodgerblue:hover">
+						<a href="{{path}}business-builder" class="color:dodgerblue:hover">
 							<p class="font-weight:600">CoCreate</p>
 							<p class="font-size:14px">Business Building Platform</p>
 						</a>
 					</li>
 					<li class="padding:5px">
-						<a href="/" class="color:dodgerblue:hover">
+						<a href="{{path}}" class="color:dodgerblue:hover">
 							<p class="font-weight:600">CoCreateJS</p>
 							<p class="font-size:14px">Collaborative Low Code Framework</p>
 						</a>
 					</li>
 					<li class="padding:5px">
-						<a href="/css" class="color:dodgerblue:hover">
+						<a href="{{path}}css" class="color:dodgerblue:hover">
 							<p class="font-weight:600">CoCreateCSS</p>
 							<p class="font-size:14px">Atomic CSS Framework</p>
 						</a>
 					</li>
 				</ul> -->
 
-    <a href="/docs/" class="margin-right:25px color:dodgerblue:hover">Docs</a>
-    <!-- <a href="/blog/" class="margin-right:25px color:dodgerblue:hover">Blog</a>
-				<a href="/discuss/" class="margin-right:25px color:dodgerblue:hover">Discuss</a>
-				<a href="/university/" class="margin-right:25px color:dodgerblue:hover">University</a> -->
+    <a href="{{path}}docs/" class="margin-right:25px color:dodgerblue:hover"
+        >Docs</a
+    >
+    <!-- <a href="{{path}}blog/" class="margin-right:25px color:dodgerblue:hover">Blog</a>
+				<a href="{{path}}discuss/" class="margin-right:25px color:dodgerblue:hover">Discuss</a>
+				<a href="{{path}}university/" class="margin-right:25px color:dodgerblue:hover">University</a> -->
 </div>
 
 <!-- Horizontal Scroll Nav/Tabs -->
@@ -76,7 +80,7 @@
             class="margin-right:15px">
             <i
                 class="display:flex height:20px fill:#505050"
-                src="/assets/svg/github.svg"></i>
+                src="{{path}}assets/svg/github.svg"></i>
         </a>
         <a
             href="https://twitter.com/CoCreate_App"
@@ -84,7 +88,7 @@
             class="margin-right:15px">
             <i
                 class="display:flex height:20px fill:#505050"
-                src="/assets/svg/twitter.svg"></i>
+                src="{{path}}assets/svg/twitter.svg"></i>
         </a>
         <a
             href="https://www.facebook.com/CoCreate.apps"
@@ -92,7 +96,7 @@
             class="margin-right:15px">
             <i
                 class="display:flex height:20px fill:#505050"
-                src="/assets/svg/facebook.svg"></i>
+                src="{{path}}assets/svg/facebook.svg"></i>
         </a>
         <a
             href="https://www.instagram.com/cocreate_app/"
@@ -100,7 +104,7 @@
             class="margin-right:15px">
             <i
                 class="display:flex height:20px fill:#505050"
-                src="/assets/svg/instagram.svg"></i>
+                src="{{path}}assets/svg/instagram.svg"></i>
         </a>
     </div>
 
@@ -115,11 +119,11 @@
     localstorage-selector=".avatar-wrapper"></div>
 
 <div class="avatar-wrapper margin-right:10px">
-    <a class="avatar round" href="/account/signin.html">
+    <a class="avatar round" href="{{path}}account/signin.html">
         <span array="users" object="{{userId}}" key="name" class="avatar-name">
             <i
                 class="height:20px fill:#505050"
-                src="/assets/svg/sign-in-alt.svg"></i>
+                src="{{path}}assets/svg/sign-in-alt.svg"></i>
         </span>
         <span class="avatar-image">
             <img
