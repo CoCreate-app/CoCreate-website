@@ -20,7 +20,8 @@
             array="files"
             object="637bc8fe91249e639db315d9"
             key="{}"
-            type="text/css" />
+            type="text/css"
+            parse="true" />
         <link rel="manifest" href="../manifest.webmanifest" />
     </head>
 
@@ -28,6 +29,17 @@
         ul::-webkit-scrollbar-thumb,
         ul::-webkit-scrollbar-track {
             background-color: rgba(0, 0, 0, 0.01);
+        }
+
+        @media (min-width: 575px) {
+            sidenav#menuL:hover {
+                width: 275px;
+            }
+        }
+        @media (max-width: 574px) {
+            main[content_id="content"] {
+                margin-left: 0px !important;
+            }
         }
     </style>
 
@@ -72,8 +84,7 @@
             <div
                 localstorage-get="user_id"
                 localstorage-key="userId"
-                localstorage-selector="cocreate-select, .avatar-wrapper"></div>
-            <div class="avatar-wrapper margin:5px">
+                class="avatar-wrapper margin:5px">
                 <a
                     class="avatar round"
                     actions="pass"
@@ -118,7 +129,7 @@
         <!-- SideNav  -->
         <sidenav
             id="menuL"
-            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:50px width:275px:hover width:0px@xs"
+            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:50px width:0px@xs"
             resizable
             resize-selector="[content_id='content']"
             resize-property="margin-left"
@@ -134,34 +145,10 @@
                 </span>
                 <span class="margin-left:12px font-size:1.5em">CoCreate</span>
             </div>
-            <!-- Search -->
-            <form class="padding:5px">
-                <floating-label>
-                    <input
-                        type="text"
-                        class="floating-label"
-                        pass_to="results" />
-                </floating-label>
-                <span
-                    class="passValueBtn position:relative bottom:29px right:11px float:right font-size:18px">
-                    <a
-                        actions="pass, openModal"
-                        pass_to="render"
-                        array="website-pages"
-                        object=""
-                        pass-key="src"
-                        modal-width="900px"
-                        modal-color="#229954">
-                        <i
-                            class="height:20px fill:#505050"
-                            src="../assets/svg/search.svg"></i>
-                    </a>
-                </span>
-            </form>
 
             <div class="padding-right:5px padding-bottom:5px">
                 <ul
-                    class="overflow:auto display:flex flex-direction:column width:100% height:calc(100vh_-_165px) bottom:10px margin-right:5px">
+                    class="overflow:auto display:flex flex-direction:column width:100% height:calc(100vh_-_120px) bottom:10px margin-top:30px margin-right:5px">
                     <li
                         class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
                         <a

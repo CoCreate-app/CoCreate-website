@@ -8,34 +8,48 @@
     filter-sort-direction="asc"
     render-selector="[template]">
     <div
-        class="card align-items:center grid-column-end:span_1 box-shadow-hover"
+        class="card align-items:center grid-column-end:span_1 box-shadow-hover padding:10px"
         template
         object="{{object._id}}"
         toggle="selected">
         <div class="position:relative">
-            <span
-                class="width:100% padding:0px_10px font-size:25px box-sizing:border-box">
+            <div class="width:100% box-sizing:border-box padding:5px">
                 <a
                     actions="pass"
                     pass-src="./organizations/edit.html"
-                    pass_to="main">
+                    pass_to="main"
+                    class="font-size:25px">
                     <span>{{object.name}}</span>
                     <div pass-object="{{object._id}}" pass_to="form"></div>
                 </a>
-            </span>
-            <button href="https://{{object.host[0]}}/superadmin/signin.html">
-                superadmin
-            </button>
-            <button
-                actions="delete"
-                array="{{object.array}}"
-                object="{{object._id}}">
-                <i
-                    class="display:flex height:18px fill:#505050"
-                    src="../assets/svg/trash-alt.svg"></i>
-            </button>
+                <div class="font-size:14px">
+                    <div>Id: {{object._id}}</div>
+                    <div>Balance: ${{object.balance}}</div>
+                </div>
+            </div>
+            <div class="font-size:20px padding:5px">
+                <button
+                    class="padding:5px"
+                    href="https://{{object.host[0]}}/superadmin/signin.html">
+                    Super Admin
+                </button>
+                <button
+                    class="padding:5px margin-left:5px"
+                    href="https://{{object.host[0]}}/superadmin/signin.html">
+                    Billing
+                </button>
+                <button
+                    actions="delete"
+                    array="{{object.array}}"
+                    object="{{object._id}}"
+                    class="padding:4px margin-left:5px">
+                    <i
+                        class="height:14px fill:#505050"
+                        src="../assets/svg/trash-alt.svg"></i>
+                </button>
+            </div>
         </div>
-        <div class="padding:10px">
+        <div>
             <p>{{object.description}}</p>
         </div>
     </div>

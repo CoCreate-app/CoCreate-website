@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 
-<form array="organizations" crdt="false" object="" pass_id="form">
-    <input type="text" key="logo" placeholder="Logo" class="floating-label" />
-
-    <input
-        type="text"
-        key="name"
-        placeholder="Organization Name"
-        class="floating-label" />
+<form array="organizations" realtime="false" object="" pass_id="form">
+    <!-- <input type="text" key="logo" placeholder="Logo" class="floating-label" /> -->
+    <floating-label>
+        <input
+            type="text"
+            key="name"
+            placeholder="Organization Name"
+            class="floating-label" />
+    </floating-label>
 
     <floating-label>
         <input
@@ -20,39 +21,79 @@
             subdomain
             required
             class="floating-label" />
+        <div
+            class="position:absolute top:6px right:8px float:right padding:5px background:whitesmoke">
+            <span>.cocreate.app</span>
+        </div>
     </floating-label>
-    <div
-        class="position:relative top:-34px right:8px float:right padding:5px background:whitesmoke">
-        <span>.cocreate.app</span>
+
+    <floating-label>
+        <input
+            type="text"
+            key="_id"
+            placeholder="Organization Id"
+            class="floating-label"
+            readonly />
+    </floating-label>
+
+    <floating-label>
+        <input
+            type="text"
+            key="organization_id"
+            placeholder="Platform Id"
+            class="floating-label"
+            readonly />
+    </floating-label>
+
+    <div class="storage-container">
+        <div
+            click-value="collapsed"
+            click-parent
+            class="card display:flex padding:10px_15px margin-top:10px">
+            <span class="flex-grow:1">Storages</span>
+
+            <i
+                toggle-attribute="src"
+                toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
+                class="display:flex height:18px fill:#505050"
+                src="../assets/svg/angle-down.svg"></i>
+        </div>
+
+        <div
+            array="organizations"
+            object=""
+            key="storage"
+            render-selector="[template]">
+            <div
+                class="card align-items:center box-shadow-hover margin-top:10px padding:10px"
+                template>
+                <div class="position:relative">
+                    <div class="width:100% box-sizing:border-box padding:5px">
+                        <span>Friendly Name: {{storage.key}}</span>
+                        <form realtime="false">
+                            <floating-label>
+                                <input
+                                    array="organizations"
+                                    object=""
+                                    key="storage.{{storage.key}}.provider"
+                                    placeholder="Provider"
+                                    class="floating-label" />
+                            </floating-label>
+
+                            <floating-label>
+                                <textarea
+                                    array="organizations"
+                                    object=""
+                                    key="storage.{{storage.key}}.url"
+                                    placeholder="Url"
+                                    class="floating-label"></textarea>
+                            </floating-label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <input
-        type="text"
-        key="databases.mongodb.name"
-        placeholder="DB Name"
-        class="floating-label" />
-
-    <input
-        type="text"
-        key="databases.mongodb.url"
-        placeholder="DB Url"
-        class="floating-label" />
-
-    <input type="text" key="about" placeholder="About" class="floating-label" />
-
-    <input
-        type="text"
-        key="_id"
-        placeholder="Organization Id"
-        class="floating-label"
-        readonly />
-
-    <input
-        type="text"
-        key="organization_id"
-        placeholder="Platform Id"
-        class="floating-label"
-        readonly />
 
     <button
         actions="save"
