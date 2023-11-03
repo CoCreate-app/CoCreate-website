@@ -56,6 +56,7 @@
             <a
                 class="menu_icon"
                 click="active"
+                click-attribute="class"
                 toggle="width:275px,"
                 toggle-selector="document; #menuL"
                 toggle-attribute="style">
@@ -81,7 +82,7 @@
             </ul>
 
             <!-- Avatar -->
-            <div
+            <!-- <div
                 localstorage-get="user_id"
                 localstorage-key="userId"
                 class="avatar-wrapper margin:5px">
@@ -109,7 +110,7 @@
                     array="users"
                     object="{{userId}}"
                     user-status="{'name':'status'}"></div>
-            </div>
+            </div> -->
         </nav>
 
         <!-- Modal Viewport  -->
@@ -153,6 +154,7 @@
                         class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
                         <a
                             actions="pass"
+                            click-selector="document; .menu_icon@xs@sm"
                             pass-src="./users/form.html"
                             pass_to="main"
                             class="display:flex align-items:center">
@@ -170,6 +172,7 @@
                         class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
                         <a
                             actions="pass"
+                            click-selector="document; .menu_icon@xs@sm"
                             pass-src="./organizations/list.html"
                             pass_to="main"
                             class="display:flex align-items:center">
@@ -183,6 +186,7 @@
                         </a>
                         <a
                             actions="pass"
+                            click-selector="document; .menu_icon@xs@sm"
                             pass-src="./organizations/create.html"
                             pass_to="main"
                             class="display:flex align-items:center justify-content:center width:50px">
