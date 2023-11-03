@@ -47,8 +47,9 @@
 
     <div class="storage-container">
         <div
-            click-value="collapsed"
-            click-parent
+            click-next
+            click-attribute="class"
+            click-value="display:none"
             class="card display:flex padding:10px_15px margin-top:10px">
             <span class="flex-grow:1">Storages</span>
 
@@ -70,25 +71,23 @@
                 <div class="position:relative">
                     <div class="width:100% box-sizing:border-box padding:5px">
                         <span>Friendly Name: {{storage.key}}</span>
-                        <form realtime="false">
-                            <floating-label>
-                                <input
-                                    array="organizations"
-                                    object=""
-                                    key="storage.{{storage.key}}.provider"
-                                    placeholder="Provider"
-                                    class="floating-label" />
-                            </floating-label>
+                        <floating-label>
+                            <input
+                                array="organizations"
+                                object=""
+                                key="storage.{{storage.key}}.provider"
+                                placeholder="Provider"
+                                class="floating-label" />
+                        </floating-label>
 
-                            <floating-label>
-                                <textarea
-                                    array="organizations"
-                                    object=""
-                                    key="storage.{{storage.key}}.url"
-                                    placeholder="Url"
-                                    class="floating-label"></textarea>
-                            </floating-label>
-                        </form>
+                        <floating-label>
+                            <textarea
+                                array="organizations"
+                                object=""
+                                key="storage.{{storage.key}}.url"
+                                placeholder="Url"
+                                class="floating-label"></textarea>
+                        </floating-label>
                     </div>
                 </div>
             </div>
