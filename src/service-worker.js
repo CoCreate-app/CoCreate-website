@@ -25,7 +25,6 @@
 const cacheName = "dynamic-v2";
 let organization_id = ""
 let storage = true
-let returnedFromCache = {};
 
 const queryString = self.location.search;
 const queryParams = new URLSearchParams(queryString);
@@ -51,7 +50,8 @@ self.addEventListener("fetch", async (e) => {
                     const organization = cacheResponse.headers.get('organization')
                     const lastModified = cacheResponse.headers.get('last-modified')
 
-                    returnedFromCache[e.request.url] = { organization, lastModified }
+                    // returnedFromCache[e.request.url] = { organization, lastModified }
+                    sendCacheUpdate(e.request.url, organization, lastModified);
                     return cacheResponse;
                 } else {
                     const networkResponse = await fetch(e.request);
@@ -159,6 +159,29 @@ self.addEventListener('push', (event) => {
         })
     );
 });
+
+let returnedFromCache = {};
+let fetchTimeout = null;
+const sendCacheUpdate = (url, organization, lastModified) => {
+
+    returnedFromCache[url] = { organization, lastModified };
+
+    if (fetchTimeout) {
+        clearTimeout(fetchTimeout);
+    }
+    const self = this
+    fetchTimeout = setTimeout(() => {
+        self.clients.matchAll().then(clients => {
+            if (clients.length > 0) {
+                clients[0].postMessage({ action: 'checkCache', returnedFromCache: { ...returnedFromCache } });
+                fetchTimeout = null;
+                returnedFromCache = {};
+            }
+        });
+
+    }, 500);
+};
+
 
 // self.addEventListener('backgroundfetchsuccess', (event) => {
 //     const bgFetch = event.registration;
