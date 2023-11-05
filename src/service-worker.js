@@ -64,7 +64,7 @@ self.addEventListener("fetch", async (e) => {
                         storage = storageHeader
 
                     if (cacheType && cacheType !== 'false') {
-                        console.log('caching')
+                        console.log('caching', e.request.url)
 
                         caches.open(cacheName).then((cache) => {
                             if (networkResponse.status !== 206 && networkResponse.status !== 502) {
