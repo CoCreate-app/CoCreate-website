@@ -15,9 +15,17 @@ body {
   font-family: 'Rubik, Open Sans', sans-serif;
   font-size: 1rem;
   color: #505050;
+  fill: #505050;
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+}
+
+svg {
+    height: inherit;
+    width: inherit;
+    fill: inherit;
+    stroke: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,23 +39,30 @@ a {
   color: inherit;
 }
 
-footer:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: -webkit-linear-gradient(top, #008dd5, #008dd5 100%);
-    background: linear-gradient(to top, #008dd5 0%, #008dd5 100%);
-    opacity: 0.95;
+button {
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border 0.3s ease;
+    border: 2px solid #1f99ff;
+    background-color: #f0f0f0;
+    color: #1f99ff;
+    fill: #1f99ff;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #1f99ff;
+    color: #fff;
+    fill: #fff;
 }
 
 footer p {
     color: white;
+    fill: white;
 }
 
 .show[selected]{
   display:block!important;
 }
-
