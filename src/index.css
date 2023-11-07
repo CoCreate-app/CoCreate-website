@@ -5,19 +5,24 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
-  }
+}
   
 body {
   background-color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rubik, Open Sans', sans-serif;
   font-size: 1rem;
   color: #505050;
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+}
   
 a {
   text-decoration: none;
@@ -38,6 +43,11 @@ footer:before {
     opacity: 0.95;
 }
 
+footer p {
+    color: white;
+}
+
 .show[selected]{
   display:block!important;
 }
+
