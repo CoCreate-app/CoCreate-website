@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>CoCreateJS - A Low-code Javascript framework</title>
+
+        <title>CoCreateJS - Build Web Apps in 90% less time</title>
         <meta
-            key="description"
-            content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
+            name="description"
+            content="Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered." />
+        <meta name="keywords" content="web apps, AI, design, development" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="CoCreate" />
+        <meta name="generator" content="CoCreateJS" />
+
+        <!-- Canonical Tag -->
+        <link rel="canonical" href="https://cocreate.app" />
+
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
             href="./assets/favicon.ico" />
-        <meta name="robots" content="index,follow" />
+
+        <!-- Open Graph Tags (Facebook) -->
+        <meta
+            property="og:title"
+            content="CoCreateJS - Build Web Apps in 90% less time" />
+        <meta
+            property="og:description"
+            content="Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered." />
+        <meta property="og:url" content="https://cocreate.app" />
         <meta
             property="og:image"
-            content="https://cdn.cocreate.app/docs/action.png" />
+            content="https://cocreate.app/assets/image.jpg" />
+        <meta property="og:type" content="website" />
+
+        <!-- Twitter Card Tags (Twitter) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="CoCreate_App" />
+        <meta
+            name="twitter:title"
+            content="CoCreateJS - Build Web Apps in 90% less time" />
+        <meta
+            name="twitter:description"
+            content="Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered." />
+        <meta
+            name="twitter:image"
+            content="https://cocreate.app/assets/twitter-image.jpg" />
+
+        <!-- Structured Data (Schema Markup) -->
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebPage",
+                "name": "CoCreateJS - Build Web Apps in 90% less time",
+                "description": "Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered.",
+                "url": "https://cocreate.app",
+                "image": "https://cocreate.app/image.jpg",
+                "author": {
+                    "@type": "Organization",
+                    "name": "CoCreate"
+                }
+            }
+        </script>
+
         <link
             rel="stylesheet"
             href="https://cdn.cocreate.app/latest/CoCreate.min.css" />
@@ -29,13 +77,6 @@
             type="text/css"
             parse="true" />
         <link rel="manifest" href="./manifest.webmanifest" />
-
-        <meta
-            property="og:title"
-            content="Build a web applicaion using HTML, no javascript required!" />
-        <meta
-            property="og:description"
-            content="Offline, collaborative web apps by applying a few HTML5 attributes, no javascript skills required" />
 
         <!-- Google tag (gtag.js) -->
         <script
@@ -73,12 +114,39 @@
         .show[selected] {
             display: block !important;
         }
+        .bg {
+            background: radial-gradient(
+                circle at 50% 50%,
+                rgba(6, 102, 219, 0.07) 0%,
+                rgba(6, 102, 219, 0.07) 33.333%,
+                rgba(6, 102, 219, 0.21) 33.333%,
+                rgba(6, 102, 219, 0.21) 66.666%,
+                rgba(6, 102, 219, 0.35) 66.666%,
+                rgba(6, 102, 219, 0.35) 99.999%
+            );
+        }
+
+        section {
+            padding: 80px 15px;
+        }
+
+        footer p {
+            color: white;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 10px;
+            line-height: 1.6;
+            color: #8a90a2;
+        }
     </style>
 
     <body>
         <!-- Navbar  -->
         <nav
-            class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px"
+            class="nav position:absolute width:100% display:flex align-items:center background:transparent padding-top:10px padding-bottom:10px"
             content_id="content"
             scroll="sticky-nav,hide-nav"
             scroll-up="10"
@@ -105,342 +173,259 @@
 
         <!-- Main Content -->
         <main class="width:auto" content_id="content">
+            <!-- Hero Section -->
             <section
-                class="padding-top:80px padding-bottom:40px"
-                classkey="test">
-                <div class="max-width:90% margin:0px_auto">
-                    <div class="display:flex flex-wrap:wrap align-items:center">
-                        <div
-                            class="flex-grow:1 width:300px padding:0px_15px font-size:16px">
-                            <h1 class="font-size:2rem">
-                                A Low Code Web App
-                                <span class="color:dodgerblue">Framework</span>
-                            </h1>
-                            <span class="font-size:16px margin-top:10px"
-                                >Build Collaborative Apps Using HTML. No
-                                Javascript Required</span
-                            >
-                            <!--<p class="margin-top:10px">HTML and CSS, No JS Required...</p>-->
-                            <!-- <button href="./account/signup.html" class="background-color:dodgerblue color:white border-radius-50px margin-top:20px padding:10px_30px">Get Started</button> -->
-                        </div>
+                id="hero"
+                class="bg display:flex align-items:center height:100vh min-height:400px">
+                <div class="text-align:center width:100%">
+                    <h1 class="font-size:3rem">
+                        Build Web Apps in 90% Less Time
+                    </h1>
+                    <p class="font-size:20px margin-top:25px">
+                        Full-Scale, Full-Featured Web Apps in a Fraction of the
+                        Time, With Zero Lock-In.
+                    </p>
+                    <button
+                        href="./account/signup.html"
+                        class="outline font-size:20px!important">
+                        Try Free
+                    </button>
+                </div>
+            </section>
 
-                        <div class="flex-grow:1 width:300px">
-                            <!-- SandBox -->
-                            <div
-                                class="position:relative overflow:hidden card border-radius:2px width:auto height:330px margin-top:20px"
-                                id="collaboration-playground">
-                                <div
-                                    id="collaboration-demo-code"
-                                    resizable
-                                    class="position:relative height:50%">
-                                    <textarea
-                                        type="code"
-                                        lang="html"
-                                        array="demos"
-                                        object="619d495ca8b6b4001a9e6127"
-                                        key="collaboration-demo"
-                                        realtime="false"
-                                        save="false"
-                                        id="collaboration-demo"
-                                        input-selector=".collaboration-demo"
-                                        input-attribute="value"
-                                        input-events="input, onload"
-                                        class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
-                                    <div
-                                        resize="bottom"
-                                        class="background:lightgrey"></div>
-                                </div>
-
-                                <div
-                                    id="collaboration-demo-preview"
-                                    class="position:relative height:100% background-color:white">
-                                    <div
-                                        class="position:relative height:85px padding:10px overflow:auto"
-                                        resizable>
-                                        <div class="collaboration-demo"></div>
-                                        <div
-                                            resize="bottom"
-                                            class="background:lightgrey"></div>
-                                    </div>
-                                    <div class="padding:10px">
-                                        <div class="collaboration-demo"></div>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="font-size:20px position:absolute top:10px right:10px opacity:0.6">
-                                    <a
-                                        class="margin-right:10px"
-                                        id="collaboration-eye"
-                                        show="#collaboration-eye-slash"
-                                        hide="#collaboration-eye, #collaboration-demo-preview"
-                                        toggle="code-height"
-                                        toggle-selector="#collaboration-demo-code">
-                                        <i
-                                            class="height:18px fill:#505050"
-                                            src="./assets/svg/eye.svg"></i>
-                                    </a>
-                                    <a
-                                        class="margin-right:10px"
-                                        hidden
-                                        id="collaboration-eye-slash"
-                                        show="#collaboration-eye, #collaboration-demo-preview"
-                                        hide="#collaboration-eye-slash"
-                                        toggle="code-height"
-                                        toggle-selector="#collaboration-demo-code">
-                                        <i
-                                            class="height:20px fill:#505050"
-                                            src="./assets/svg/eye-slash.svg"></i>
-                                    </a>
-                                    <a
-                                        class="margin-right:10px"
-                                        id="collaboration-code"
-                                        show="#collaboration-code-slash"
-                                        hide="#collaboration-code, #collaboration-demo-code">
-                                        <i
-                                            class="height:20px fill:#505050"
-                                            src="./assets/svg/code.svg"></i>
-                                    </a>
-                                    <a
-                                        class="margin-right:10px"
-                                        hidden
-                                        id="collaboration-code-slash"
-                                        show="#collaboration-code, #collaboration-demo-code"
-                                        hide="#collaboration-code-slash">
-                                        <i
-                                            class="display:flex height:18px fill:#505050"
-                                            src="./assets/svg/code.svg"></i>
-                                    </a>
-                                    <a
-                                        class="margin-right:5px"
-                                        fullscreen
-                                        fullscreen-selector="#collaboration-playground"></a>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Design to Web App Section -->
+            <section id="design-to-web-app" class="background:whitesmoke">
+                <div class="display:flex flex-wrap:wrap align-items:center">
+                    <!-- <div class="flex-grow:1 width:300px"></div> -->
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Effortlessly go From Design to Web App
+                        </h2>
+                        <p>
+                            Unleash full-scale, full-featured web applications
+                            directly from the design phase using only HTML and
+                            CSS. Our HTML5 API is as potent as any JavaScript
+                            API, enabling the rapid deployment of distributed,
+                            on the edge, offline-first, mobile installable web
+                            apps, eliminating the need for software engineers.
+                            With AI Integration, effortlessly generate design
+                            elements with
+                            <span class="color:dodgerblue">CoCreate</span>
+                            attributes. It offers both designers and
+                            non-designers an efficient way to generate dynamic
+                            web elements.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Try It Out SECTION -->
-            <section class="background:whitesmoke padding:30px_15px">
-                <h1
-                    class="font-size:1.5rem text-align:center text-transform:uppercase">
-                    Try it out
-                </h1>
-
+            <!-- Zero Lock-In Section -->
+            <section id="zero-lock-in">
                 <div
-                    class="display:flex flex-direction:column position:relative overflow:hidden card border-radius:2px width:auto height:600px margin-top:20px"
-                    id="input-playground">
+                    class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
                     <div
-                        id="demo-code"
-                        resizable
-                        class="position:relative height:450px">
-                        <textarea
-                            type="code"
-                            lang="html"
-                            array="demos"
-                            object="639b325f6f44f0f162f0bcbf"
-                            key="demo-code"
-                            realtime="false"
-                            save="false"
-                            id="demo"
-                            input-selector=".demopreview"
-                            input-attribute="value"
-                            input-events="input, onload"
-                            class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
-                        <div resize="bottom"></div>
-                    </div>
-
-                    <div
-                        id="demo-preview"
-                        class="position:relative overflow:auto background-color:white height:100%">
-                        <div class="demopreview padding:20px"></div>
-                    </div>
-
-                    <div
-                        class="font-size:20px position:absolute top:10px right:10px opacity:0.6">
-                        <a
-                            class="margin-right:10px"
-                            id="eye"
-                            show="#eye-slash"
-                            hide="#eye, #demo-preview"
-                            toggle="code-height"
-                            toggle-selector="#demo-code"
-                            ><i
-                                class="height:18px fill:#505050"
-                                src="./assets/svg/eye.svg"></i
-                        ></a>
-                        <a
-                            class="margin-right:10px"
-                            hidden
-                            id="eye-slash"
-                            show="#eye, #demo-preview"
-                            hide="#eye-slash"
-                            toggle="code-height"
-                            toggle-selector="#demo-code"
-                            ><i
-                                class="height:20px fill:#505050"
-                                src="./assets/svg/eye-slash.svg"></i
-                        ></a>
-                        <a
-                            class="margin-right:10px"
-                            id="code"
-                            show="#code-slash"
-                            hide="#code, #demo-code"
-                            ><i
-                                class="height:20px fill:#505050"
-                                src="./assets/svg/code.svg"></i
-                        ></a>
-                        <a
-                            class="margin-right:10px"
-                            hidden
-                            id="code-slash"
-                            show="#code, #demo-code"
-                            hide="#code-slash"
-                            ><i
-                                class="display:flex height:18px fill:#505050"
-                                src="./assets/svg/code.svg"></i
-                        ></a>
-                        <a
-                            class="margin-right:5px"
-                            fullscreen
-                            fullscreen-selector="#input-playground"></a>
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Own Your Data and Designs, Zero Lock-In
+                        </h2>
+                        <p>
+                            With CoCreate, you're in full control of your data
+                            and designs. Your data where you want it, and how
+                            you want it structured. Remove CoCreate attributes
+                            anytime to repurpose your design and database for
+                            custom software, utilizing your original CoCreate
+                            design as an interactive fully functional blueprint.
+                            Alternatively, you can continue to use CoCreate for
+                            production, maintaining the lowest possible
+                            overhead.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Micro Component Architecture -->
-            <section class="padding-top:80px padding-bottom:40px" id="features">
-                <div class="max-width:90% margin:0px_auto">
-                    <div class="display:flex flex-wrap:wrap align-items:center">
-                        <div class="flex-grow:1 width:300px">
-                            <video
-                                loop
-                                autoplay
-                                muted
-                                class="width:100%"
-                                loading="lazy">
-                                <source
-                                    type="video/mp4"
-                                    src="./assets/on-board-video.webm" />
-                            </video>
-                        </div>
-                        <div
-                            class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
-                            <h1
-                                class="font-size:1.5rem text-transform:uppercase">
-                                Micro Component Architecture
-                            </h1>
-                            <p class="margin-top:10px line-height:1.5">
-                                Vanilla javascript, lightweight, single purpose
-                                micro components. Easily modify, remove and/or
-                                replace components. Highly configuarable using
-                                HTML5 attributes. HTML5 developers can use a
-                                combination of attributes to create a dynamic
-                                experience. Javascript developers still have
-                                access to API, callbacks and events.
-                            </p>
-                            <p></p>
-                            <!--<a class="text-decoration-underline padding:10px_30px background:#3690FF background:#3790FF:hover min-width:30% text-align:center color:#fff color:#ddd:hover transition:0.4s margin-top:30px display:inline-block">Sign Up Now</a>-->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Collaborative Headless CMS -->
-            <section
-                class="background:whitesmoke padding-top:80px padding-bottom:40px">
-                <div class="max-width:90% margin:0px_auto">
+            <!-- Flexibility Section -->
+            <section id="flexibility" class="background:whitesmoke">
+                <div class="display:flex flex-wrap:wrap align-items:center">
                     <div
-                        class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
-                        <div class="flex-grow:1 width:300px">
-                            <video
-                                loop
-                                autoplay
-                                muted
-                                class="width:100%"
-                                loading="lazy">
-                                <source
-                                    type="video/mp4"
-                                    src="./assets/collaboration.mp4" />
-                            </video>
-                        </div>
-                        <div
-                            class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
-                            <h1
-                                class="font-size:1.5rem text-transform:uppercase">
-                                Collaborative Headless CMS
-                            </h1>
-                            <p class="margin-top:10px line-height:1.5">
-                                A lighting fast headless CMS over websocket,
-                                providing CRUD and CRDT functionality. Create,
-                                Read, Update, Delete and Filter lists.
-                                Collaborate on Text, DOM and Objects. Configure
-                                using HTML5 data-attibutes. Supports offline
-                                editing and user cursor positions in Inputs,
-                                Textareas, Rich Text Editors and Code Editors.
-                                But of course... Javascript developers still
-                                have access to API, callbacks and events.
-                            </p>
-                            <!-- <a class="text-decoration-underline padding:10px_30px background:#3690FF background:#3790FF:hover min-width:30% text-align:center color:#fff color:#ddd:hover transition:0.4s margin-top:30px display:inline-block">Get Your API Key</a> -->
-                        </div>
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Pivot, Add Features, without Costly Rewrites
+                        </h2>
+                        <p>
+                            In the ever-evolving world of software, CoCreate
+                            empowers you to adapt seamlessly. Say goodbye to
+                            expensive rewrites and time-consuming overhauls.
+                            When changes are needed, simply update your design,
+                            add a few attributes, and your pivot or new feature
+                            is complete. CoCreate enables you to keep your web
+                            app agile and responsive to evolving needs without
+                            the headache of major software overhauls. It's the
+                            smart choice for staying ahead in a fast-paced
+                            digital landscape.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Fully Customizable Admin Panel -->
-            <!-- <section class="padding-top:80px padding-bottom:40px">
-				<div class="max-width:90% margin:0px_auto">
-					<div class="display:flex flex-wrap:wrap align-items:center">
-						<div class="flex-grow:1 width:300px">
-							<video loop autoplay muted class="width:100%" loading="lazy">
-				              	<source type="video/mp4" src="./assets/admin-panel.mp4">
-				            </video>
-						</div>
-						<div class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
-							<h1 class="font-size:1.5rem text-transform:uppercase">Fully Customizable Admin Panel</h1>
-							<p class="margin-top:10px line-height:1.5">HTML5 Admin dashboard UI powered by CoCreateJS. It is 100% editable and used to manage and create views for your data and content. Use it as a Collaborative CRM, CMS and ERP. Can be modified, replaced or used as an example to build your own custom
-								HTML5 admin dashboard.</p>
-							<p></p>
-						</div>
-					</div>
-				</div>
-			</section> -->
+            <!-- Mobile Integration Section -->
+            <section id="mobile-integration">
+                <div
+                    class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Seamless Mobile API Integration and PWA Support
+                        </h2>
+                        <p>
+                            Easily configure and access mobile APIs directly
+                            through the power of HTML5 attributes. Our platform
+                            enables web apps to seamlessly utilize push
+                            notifications, contacts, and geolocation, all by
+                            applying the necessary attributes. Plus, with
+                            CoCreate, you can easily transform your web app into
+                            a Progressive Web App (PWA) for enhanced
+                            accessibility. Users can add it to their home screen
+                            for quick and convenient access, just like a native
+                            app. If you're unsure of the process, simply ask the
+                            AI for guidance on applying the necessary
+                            attributes.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-            <!-- Collaborative Builder -->
-            <!-- <section class="background:whitesmoke padding-top:80px padding-bottom:40px">
-				<div class="max-width:90% margin:0px_auto">
-					<div class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
-						<div class="flex-grow:1 width:300px">
-				             <img src="./assets/builder.png" class="max-width:100%">
-						</div>
-						<div class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
-							<h1 class="font-size:1.5rem text-transform:uppercase">Collaborative Drag-n-Drop Builder</h1>
-							<p class="margin-top:10px line-height:1.5">Using CoCreateJS HTML5 API to create an NO Code expereince. Every page of the adminUI can be edited in the drag and drop builder. CoCreate builder UI is completely customizable and supports editing of any html5 template. Can be modified, replaced or used as an example to build your own custom drag and drop app builder.</p>
-						</div>
-					</div>
-				</div>
-			</section> -->
+            <!-- Collaborative Editing Section -->
+            <section id="collaborative-editing" class="background:whitesmoke">
+                <div class="display:flex flex-wrap:wrap align-items:center">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Make it Collaborative, Display Editing Users Cursors
+                        </h2>
+                        <p>
+                            Unlock the potential of collaborative web
+                            applications with real-time user cursors, apply a
+                            few attributes to transform your web application
+                            into a collaborative platform. Empower your end
+                            users to engage and co-edit content in real-time,
+                            revolutionizing their interactive experience.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-            <!-- Thirdparty API Intergration -->
-            <!-- <section class="padding-top:80px padding-bottom:40px">
-				<div class="max-width:90% margin:0px_auto">
-					<div class="display:flex flex-wrap:wrap align-items:center">
-						<div class="flex-grow:1 width:300px">
-							<video loop autoplay muted class="width:100%">
-				             	 <source type="video/mp4" src="./assets/on-board-video.webm">
-				            </video>
-						</div>
-						<div class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
-							<h1 class="font-size:1.5rem text-transform:uppercase">Thirdparty API Intergration</h1>
-							<p class="margin-top:10px line-height:1.5">We have put together a few thirdparty APIs and developed them to be used and configured with HTML5 attributes. Build custom flows and logic without ever leaving the html page... The CoCreate Way... Almost forgot, Javascript developers still
-								have access to API, callbacks and events.</p>
-							<p></p>
-						</div>
-					</div>
-				</div>
-			</section> -->
+            <!-- AI Assistance Section -->
+            <section id="ai-assistance">
+                <div
+                    class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Empower Your Web App with AI Capabilities
+                        </h2>
+                        <p>
+                            AI is just a few HTML5 attributes away. Transform
+                            your applications and empower end users with smart
+                            AI enhancements. Whether it's predictive
+                            suggestions, automation, or personalization, it's
+                            all within reach. CoCreate makes AI accessible and
+                            user-friendly, no complex coding required. Elevate
+                            your end user's experience.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ecosystem -->
+            <section id="ecosystem" class="background:whitesmoke">
+                <div class="display:flex flex-wrap:wrap align-items:center">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Access a Vast HTML Ecosystem
+                        </h2>
+                        <p>
+                            CoCreateJS opens the door to a vast and diverse
+                            ecosystem of HTML templates, designs, and
+                            components. Explore a world of pre-existing
+                            resources that can seamlessly enhance your web
+                            projects. With CoCreateJS, you can effortlessly
+                            integrate these elements, streamlining your
+                            development process.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Any Framework -->
+            <section id="any-framework">
+                <div
+                    class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Works with Any Framework
+                        </h2>
+                        <p>
+                            CoCreateJS's unique approach of working with HTML
+                            using the HTML5 attribute API enables seamless
+                            integration with any frontend framework. Whether
+                            you're using popular frameworks like React, Angular,
+                            or Vue.js, or you have your own custom frontend
+                            solution, CoCreateJS can adapt and enhance your
+                            development experience. Explore the possibilities of
+                            combining the flexibility of CoCreateJS with your
+                            preferred frontend framework to create outstanding
+                            web applications in record time.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dual API Section -->
+            <section id="dual-api" class="background:whitesmoke">
+                <div class="display:flex flex-wrap:wrap align-items:center">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Dual API - HTML5 and JavaScript
+                        </h2>
+                        <p>
+                            CoCreate offers a Dual API, with HTML5 for designers
+                            and JavaScript for seasoned developers. Both APIs
+                            are equally powerful and can be used together or
+                            interchangeably based on your skills, experience,
+                            and preferences. If you're not a designer or a
+                            developer, the AI has you covered.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section id="call-to-action">
+                <div
+                    class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Join the CoCreate Revolution
+                        </h2>
+                        <p>
+                            Be part of the CoCreate revolution in web
+                            development. From rapid design to powerful AI
+                            assistance, we offer the tools to redefine your web
+                            app creation process. Experience the freedom to
+                            pivot and adapt without costly rewrites. Seamlessly
+                            integrate mobile APIs and embrace Progressive Web
+                            Apps with ease. Collaborative editing and dual API
+                            options are at your fingertips. Unlock the future of
+                            web development with CoCreate.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
             <button
                 href="https://github.com/CoCreate-app/CoCreate-website/tree/master/src/index.html?message=docs%3A%20describe%20your%20change..."
