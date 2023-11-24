@@ -88,9 +88,9 @@
                 class="avatar-wrapper margin:5px">
                 <a
                     class="avatar round"
-                    actions="pass"
-                    pass-src="./users/form.html"
-                    pass_to="main">
+                    actions="state"
+                    state-src="./users/form.html"
+                    state_to="main">
                     <span
                         array="users"
                         object="{{userId}}"
@@ -124,8 +124,8 @@
             class="height:100vh padding:15px"
             content_id="content"
             src="organizations/list.html"
-            pass_id="main"
-            pass-overwrite></main>
+            state_id="main"
+            state-overwrite></main>
 
         <!-- SideNav  -->
         <sidenav
@@ -153,10 +153,10 @@
                     <li
                         class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
                         <a
-                            actions="pass"
+                            actions="state"
                             click-selector="document; .menu_icon@xs@sm"
-                            pass-src="./users/form.html"
-                            pass_to="main"
+                            state-src="./users/form.html"
+                            state_to="main"
                             class="display:flex align-items:center">
                             <span
                                 class="display:flex justify-content:center justify-content:center width:50px">
@@ -171,10 +171,10 @@
                     <li
                         class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
                         <a
-                            actions="pass"
+                            actions="state"
                             click-selector="document; .menu_icon@xs@sm"
-                            pass-src="./organizations/list.html"
-                            pass_to="main"
+                            state-src="./organizations/list.html"
+                            state_to="main"
                             class="display:flex align-items:center">
                             <span
                                 class="display:flex justify-content:center justify-content:center width:50px">
@@ -185,10 +185,10 @@
                             <span>Organizations</span>
                         </a>
                         <a
-                            actions="pass"
+                            actions="state"
                             click-selector="document; .menu_icon@xs@sm"
-                            pass-src="./organizations/create.html"
-                            pass_to="main"
+                            state-src="./organizations/create.html"
+                            state_to="main"
                             class="display:flex align-items:center justify-content:center width:50px">
                             <i
                                 class="display:flex height:16px fill:#505050"

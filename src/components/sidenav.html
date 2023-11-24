@@ -7,16 +7,16 @@
 <!-- Search -->
 <form class="padding:5px">
     <floating-label class="margin-top:0px">
-        <input type="text" class="floating-label" pass_to="results" />
+        <input type="text" class="floating-label" state_to="results" />
     </floating-label>
     <span
-        class="passValueBtn position:relative bottom:28px right:14px float:right font-size:18px">
+        class="position:relative bottom:28px right:14px float:right font-size:18px">
         <a
-            actions="pass, openModal"
-            pass_to="render"
+            actions="state, openModal"
+            state_to="render"
             array="website-pages"
             object=""
-            pass-key="src"
+            state-key="src"
             modal-width="900px"
             modal-color="#229954">
             <i

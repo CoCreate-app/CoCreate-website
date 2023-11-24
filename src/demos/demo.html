@@ -3,8 +3,8 @@
     <input
         key="name"
         object
-        pass_id="form-fields"
-        pass-overwrite
+        state_id="form-fields"
+        state-overwrite
         placeholder="Name" />
     <button actions="save, reset">Save</button>
     <button actions="reset">reset</button>
@@ -14,7 +14,7 @@
 
 <div array="contacts" render-selector="[template]">
     <div template>
-        <a actions="pass" pass_to="form-fields" pass-object="{{object._id}}">
+        <a actions="state" state_to="form-fields" state-object="{{object._id}}">
             <span>{{object.name}}</span>
             <a
                 actions="deleteObject"
