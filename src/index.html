@@ -119,6 +119,28 @@
             line-height: 1.6;
             color: #8a90a2;
         }
+
+        .pricing-table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        .pricing-table th,
+        .pricing-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .pricing-table th {
+            background-color: #f4f4f4;
+        }
+        .pricing-table td {
+            background-color: #fafafa;
+        }
+        .pricing-table tr:nth-child(even) td {
+            background-color: #eee;
+        }
     </style>
 
     <body>
@@ -199,7 +221,64 @@
             </section>
 
             <!-- Zero Lock-In Section -->
-            <section id="zero-lock-in">
+            <section id="pricing">
+                <div
+                    class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
+                    <div
+                        class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
+                        <h2 class="font-size:1.5rem">
+                            Flexible Pay-As-You-Go Tiered Pricing
+                        </h2>
+                        <p>
+                            Discover simplicity and efficiency with our
+                            single-plan, tiered bandwidth pricing model. As your
+                            usage increases, the cost per unit decreases,
+                            offering you better rates at higher volumes.
+                        </p>
+                        <div class="margin-top:50px"></div>
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Bandwidth Range (GB)</th>
+                                    <th>Rate ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0 - 1</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>2 - 10</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>11 - 100</td>
+                                    <td>2.5</td>
+                                </tr>
+                                <tr>
+                                    <td>101 - 1000</td>
+                                    <td>1.125</td>
+                                </tr>
+                                <tr>
+                                    <td>1001 - 10000</td>
+                                    <td>0.562</td>
+                                </tr>
+                                <tr>
+                                    <td>10001 - 100000</td>
+                                    <td>0.281</td>
+                                </tr>
+                                <tr>
+                                    <td>100001 - 1000000</td>
+                                    <td>0.145</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="zero-lock-in" class="background:whitesmoke">
                 <div
                     class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
                     <div
@@ -223,7 +302,7 @@
             </section>
 
             <!-- Flexibility Section -->
-            <section id="flexibility" class="background:whitesmoke">
+            <section id="flexibility">
                 <div class="display:flex flex-wrap:wrap align-items:center">
                     <div
                         class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
@@ -247,7 +326,7 @@
             </section>
 
             <!-- Mobile Integration Section -->
-            <section id="mobile-integration">
+            <section id="mobile-integration" class="background:whitesmoke">
                 <div
                     class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
                     <div
@@ -274,7 +353,7 @@
             </section>
 
             <!-- Collaborative Editing Section -->
-            <section id="collaborative-editing" class="background:whitesmoke">
+            <section id="collaborative-editing">
                 <div class="display:flex flex-wrap:wrap align-items:center">
                     <div
                         class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
@@ -294,7 +373,7 @@
             </section>
 
             <!-- AI Assistance Section -->
-            <section id="ai-assistance">
+            <section id="ai-assistance" class="background:whitesmoke">
                 <div
                     class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
                     <div
@@ -316,7 +395,7 @@
             </section>
 
             <!-- Ecosystem -->
-            <section id="ecosystem" class="background:whitesmoke">
+            <section id="ecosystem">
                 <div class="display:flex flex-wrap:wrap align-items:center">
                     <div
                         class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
@@ -337,7 +416,7 @@
             </section>
 
             <!-- Any Framework -->
-            <section id="any-framework">
+            <section id="any-framework" class="background:whitesmoke">
                 <div
                     class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
                     <div
@@ -362,7 +441,7 @@
             </section>
 
             <!-- Dual API Section -->
-            <section id="dual-api" class="background:whitesmoke">
+            <section id="dual-api">
                 <div class="display:flex flex-wrap:wrap align-items:center">
                     <div
                         class="flex-grow:1 width:300px padding-left:15px padding-right:15px text-align:center">
@@ -382,7 +461,7 @@
             </section>
 
             <!-- Call to Action Section -->
-            <section id="call-to-action">
+            <section id="call-to-action" class="background:whitesmoke">
                 <div
                     class="display:flex flex-wrap:wrap align-items:center flex-direction:row-reverse">
                     <div

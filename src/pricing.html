@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bandwidth Pricing Table</title>
+        <style>
+            .pricing-table {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+            .pricing-table th,
+            .pricing-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            .pricing-table th {
+                background-color: #f4f4f4;
+            }
+            .pricing-table td {
+                background-color: #fafafa;
+            }
+            .pricing-table tr:nth-child(even) td {
+                background-color: #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Bandwidth Range (GB)</th>
+                    <th>Rate ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0 - 1</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>2 - 10</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>11 - 100</td>
+                    <td>2.5</td>
+                </tr>
+                <tr>
+                    <td>101 - 1000</td>
+                    <td>1.125</td>
+                </tr>
+                <tr>
+                    <td>1001 - 10000</td>
+                    <td>0.562</td>
+                </tr>
+                <tr>
+                    <td>10001 - 100000</td>
+                    <td>0.281</td>
+                </tr>
+                <tr>
+                    <td>100001 - 1000000</td>
+                    <td>0.145</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
