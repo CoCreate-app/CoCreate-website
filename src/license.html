@@ -1,76 +1,228 @@
-<div class="page-content">
-	<div class="page-content__container container">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-		<h1 class="page-content__title">License </h1>
+        <title>CoCreateJS - Build Web Apps in 90% less time</title>
+        <meta
+            name="description"
+            content="Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered." />
+        <meta name="keywords" content="web apps, AI, design, development" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="CoCreate" />
+        <meta name="generator" content="CoCreateJS" />
 
-		<div class="text-content">
+        <!-- Canonical Tag -->
+        <link rel="canonical" href="https://cocreate.app" />
 
-			The licensing depends on whether you're using <strong>CoCreate Standard</strong> or <strong>CoCreate Premium</strong>.
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon.ico" />
 
-			<h2 id="cocreate-standard">CoCreate Standard</h2>
+        <!-- Open Graph Tags (Facebook) -->
+        <meta
+            property="og:title"
+            content="CoCreateJS - Build Web Apps in 90% less time" />
+        <meta
+            property="og:description"
+            content="Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered." />
+        <meta property="og:url" content="https://cocreate.app" />
+        <meta
+            property="og:image"
+            content="https://cocreate.app/assets/image.jpg" />
+        <meta property="og:type" content="website" />
 
-			<p>The non-premium <a href="https://cocreate.app/docs/plugin-index">plugins</a> and the <code>cocreate</code> <a href="https://cocreate.app/docs/initialize-globals">bundle</a> are released under the <strong>MIT license</strong>. This license permits a
-				wide range of use, including free use in commercial projects, assuming all copyright headers are preserved.</p>
+        <!-- Twitter Card Tags (Twitter) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="CoCreate_App" />
+        <meta
+            name="twitter:title"
+            content="CoCreateJS - Build Web Apps in 90% less time" />
+        <meta
+            name="twitter:description"
+            content="Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered." />
+        <meta
+            name="twitter:image"
+            content="https://cocreate.app/assets/twitter-image.jpg" />
 
-			<p><a href="https://opensource.org/licenses/MIT">Read the MIT license agreement »</a></p>
+        <!-- Structured Data (Schema Markup) -->
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebPage",
+                "name": "CoCreateJS - Build Web Apps in 90% less time",
+                "description": "Full-Featured Web Apps in a Fraction of the Time, With Zero Lock-In directly from the design phase. Not a designer or a developer, AI has you covered.",
+                "url": "https://cocreate.app",
+                "image": "https://cocreate.app/image.jpg",
+                "author": {
+                    "@type": "Organization",
+                    "name": "CoCreate"
+                }
+            }
+        </script>
 
-			<h2 id="cocreate-premium">CoCreate Premium</h2>
+        <link rel="stylesheet" href="./dist/CoCreate.css" />
+        <link
+            rel="stylesheet"
+            href="./index.css"
+            array="files"
+            object="611869abc0e9580010ea635f"
+            key="{}"
+            type="text/css"
+            parse="true" />
+        <link rel="manifest" href="./manifest.webmanifest" />
 
-			The premium <a href="https://cocreate.app/docs/plugin-index">plugins</a> and the <code>CoCreate-crdt</code> <a href="https://cocreate.app/docs/initialize-globals">bundle</a> have more complicated licensing. Their licensing depends on the type of use:
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-			<div style="padding-left:3em">
+            gtag("config", "UA-121709453-1");
+        </script>
+    </head>
 
-				<h3 id="commercial-use">Commercial Use</h3>
+    <style type="text/css" media="screen">
+        .show[selected] {
+            display: block !important;
+        }
 
-				<p>For-profit companies and individuals intending to use CoCreate Premium for commercial use must purchase a commercial license. This license allows source code modifications, but does not permit redistribution of modifications.</p>
+        .bg {
+            background: radial-gradient(
+                circle at 50% 50%,
+                rgba(6, 102, 219, 0.07) 0%,
+                rgba(6, 102, 219, 0.07) 33.333%,
+                rgba(6, 102, 219, 0.21) 33.333%,
+                rgba(6, 102, 219, 0.21) 66.666%,
+                rgba(6, 102, 219, 0.35) 66.666%,
+                rgba(6, 102, 219, 0.35) 99.999%
+            );
+        }
 
-				<p><a href="https://cocreate.app/commercial-license">Read the Commercial license agreement »</a></p>
+        section {
+            padding: 80px 15px;
+        }
 
-				<p><a href="https://cocreate.app/pricing">Purchase a Commercial license »</a></p>
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 10px;
+            line-height: 1.6;
+            color: #8a90a2;
+        }
 
-				<h3 id="non-commercial-use">Non-Commercial Use</h3>
+        h3 {
+            margin-top: 30px;
+        }
+    </style>
 
-				<p><a href="https://en.wikipedia.org/wiki/Nonprofit_organization">Registered non-profit organization</a> (also known as "not-for-profit" or NGO) are able to use CoCreate Premium with a free, non-commercial license. Governmental entities and universities
-					are not covered by this non-commercial license. This license does not permit source code modifications.</p>
+    <body>
+        <!-- Navbar  -->
+        <nav
+            class="position:absolute width:100% display:flex align-items:center background:transparent padding-top:10px padding-bottom:10px"
+            content_id="content"
+            scroll="sticky-nav,"
+            scroll-up="5"
+            scroll-down="5"
+            path="./"
+            src="./components/navbar.html"></nav>
 
-				<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Read the Non-commercial license agreement »</a></p>
+        <!-- SideNav Left-->
+        <sidenav
+            id="menuL"
+            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+            resizable
+            resize-selector="[content_id='content']"
+            resize-property="margin-left"
+            resize-value="width"
+            path="./"
+            src="./components/sidenav.html"></sidenav>
 
-				If you meet the criteria for this license, you may begin using CoCreate Premium with this <a href="https://cocreate.app/docs/schedulerLicenseKey">license key</a>:
+        <!-- Modal Viewport/Boundaries -->
+        <div
+            class="position:fixed margin-top:50px"
+            content_id="content"
+            id="modal-viewport"></div>
 
-				<pre><code>var calendar = new Calendar(calendarEl, {
-  schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
-});</code></pre>
+        <!-- Main Content -->
+        <main
+            class="width:auto padding-top:80px padding-bottom:80px"
+            content_id="content">
+            <section id="licensing" class="padding:20px">
+                <h2>Software Licensing Terms</h2>
+                <p>
+                    For-profit companies and individuals intending to use our
+                    software for commercial purposes are required to obtain a
+                    commercial license.
+                </p>
 
-				<h3 id="gpl">Use in GPLv3 open-source projects</h3>
+                <h3>Commercial License</h3>
+                <p>The commercial license permits:</p>
+                <ul class="padding:20px">
+                    <li>Source code modifications.</li>
+                    <li>Proprietary use of the software.</li>
+                    <li>
+                        Exemption from the copyleft provisions of the GNU Affero
+                        General Public License version 3 (AGPLv3).
+                    </li>
+                </ul>
+                <p>
+                    This license is ideal for using our software in commercial
+                    products and applications, allowing you to keep your code
+                    proprietary. It offers an alternative to the AGPLv3, which
+                    is applicable for non-commercial projects.
+                </p>
 
-				<p>Open-source projects that are fully GPLv3-compliant may use CoCreate Premium freely under the GPLv3 license.
+                <h3>GNU Affero General Public License version 3 (AGPLv3)</h3>
+                <p>
+                    If you have not purchased a commercial license, your use of
+                    this software for non-commercial purposes is governed by the
+                    AGPLv3. This includes the rights to use, modify, and
+                    distribute the software while adhering to its copyleft
+                    provisions.
+                </p>
 
-				</p>
-				<p><a href="http://www.gnu.org/licenses/gpl-3.0.en.html">Read the GPLv3 license agreement »</a></p>
+                <h3>Agreement Terms</h3>
+                <p>
+                    This Software License Agreement ('Agreement') is between
+                    CoCreate LLC ('CoCreate') and you (including your agents and
+                    affiliates), as a commercial licensee of CoCreate's
+                    software.
+                </p>
 
-				If you meet the criteria for this license, you may begin using CoCreate Premium with this <a href="https://cocreate.app/docs/schedulerLicenseKey">license key</a>:
+                <h3>License Acquisition</h3>
+                <p>
+                    If you intend to use this software for commercial purposes,
+                    you must obtain a commercial license from CoCreate. Use of
+                    this software for commercial purposes without a commercial
+                    license is prohibited.
+                </p>
+            </section>
+        </main>
 
-				<pre><code>var calendar = new Calendar(calendarEl, {
-  schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
-});</code></pre>
+        <!-- Footer -->
+        <footer
+            id="spreadtheword"
+            content_id="content"
+            path="./"
+            src="./components/footer.html"></footer>
 
-				<h3 id="open-source">Use in other types of open-source projects</h3>
+        <button
+            href="https://github.com/CoCreate-app/CoCreate-website/tree/master/src/index.html?message=docs%3A%20describe%20your%20change..."
+            target="_blank"
+            class="display:flex justify-content:center align-items:center position:fixed bottom:15px right:15px height:50px width:50px border-radius:50% box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4)">
+            <i class="height:20px" src="./assets/svg/pencil-alt.svg"></i>
+        </button>
 
-				Open-source projects released under licenses <strong>other than</strong> GPLv3 can leverage CoCreate Premium in the following way:
-
-				<ol>
-					<li>Do not include CoCreate Premium directly into your repository’s source code. Instead, use a package manager such as NPM or Yarn to reference the premium plugins as dependencies and have an install script initiate download.</li>
-
-					<li>Do not hardcode any type of license key. Instead, leave the <code>schedulerLicenseKey</code> property undefined, as CoCreate Premium is technically considered “unlicensed” at this point. This will cause a warning message to show on the widget.</li>
-
-					<li>Provide a convenient way for the developer installing your app to enter their own license key. Either do this via a prompt in an install script, or through a well-documented config file.</li>
-				</ol>
-
-				<p>For questions about more complex scenarios, please contact <a href="mailto:sales@cocreate.app">sales@cocreate.app</a></p>
-
-			</div>
-
-		</div>
-
-	</div>
-</div>
+        <script src="./dist/CoCreate.js" async></script>
+    </body>
+</html>
