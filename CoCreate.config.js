@@ -1,4 +1,10 @@
 module.exports = {
+    "host": {
+        "$branch": {
+            "main": "wss://cocreate.app",
+            "dev": "wss://dev.cocreate.app"
+        }
+    },
     "directories": [
         {
             "entry": "./src",
