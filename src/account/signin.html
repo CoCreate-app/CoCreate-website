@@ -12,10 +12,6 @@
             href="../assets/favicon.ico" />
         <link
             rel="stylesheet"
-            type="text/css"
-            href="https://cdn.cocreate.app/latest/CoCreate.min.css" />
-        <link
-            rel="stylesheet"
             href="./index.css"
             array="files"
             object="637bc8fe91249e639db315d9"
@@ -114,12 +110,37 @@
                                 type="email"
                                 key="email"
                                 id="email"
+                                name="email"
+                                autocomplete="email"
                                 placeholder="Email"
                                 class="floating-label" />
                         </floating-label>
-
+                        <input
+                            type="hidden"
+                            key="from"
+                            id="from"
+                            name="from"
+                            value="passwordRecovery@cocreate.app" />
+                        <input
+                            type="hidden"
+                            key="origin"
+                            id="origin"
+                            name="origin"
+                            value="https://cocreate.app" />
+                        <input
+                            type="hidden"
+                            key="hostname"
+                            id="hostname"
+                            name="hostname"
+                            value="cocreate.app" />
+                        <input
+                            type="hidden"
+                            key="path"
+                            id="path"
+                            name="path"
+                            value="/reset-password.html" />
                         <button class="outline">
-                            <a>Send Email</a>
+                            <a actions="forgotPassword">Send Email</a>
                         </button>
 
                         <a show="#signin" hide="#forgotpass">Sign In</a>
@@ -130,10 +151,10 @@
 
         <div class="position:fixed!important bottom:15px right:15px">
             <div
-                template="notification, signIn"
-                class="card padding:10px {{status}}">
-                <span class="{{type}}">{{message}}</span>
-                <a actions="remove"> X</a>
+                template="signIn, validate, forgotPassword"
+                class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
+                <span class="{{type}}">{{message}}</span
+                ><a actions="remove"> X</a>
             </div>
         </div>
 
