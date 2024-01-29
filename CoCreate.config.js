@@ -9,8 +9,7 @@ module.exports = {
         {
             "entry": "./src",
             "exclude": [
-                "demos",
-                ".txt"
+                "demos"
             ],
             "array": "files",
             "object": {
