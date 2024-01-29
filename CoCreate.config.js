@@ -1,7 +1,7 @@
 module.exports = {
     "host": {
         "$branch": {
-            "main": "wss://cocreate.app",
+            "master": "wss://cocreate.app",
             "dev": "wss://dev.cocreate.app"
         }
     },
