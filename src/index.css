@@ -149,3 +149,34 @@ nav {
 .avatar-status.off {
     background-color: #f44336;
 }
+
+[menu-icon] {
+    display: block;
+    min-width: 30px;
+    cursor: pointer;
+    margin: 0px 15px;
+
+}
+
+[menu-icon] span {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    transition: all .25s;
+    background-color: #000;
+}
+
+[menu-icon="active"] span:first-child {
+    transform: rotate(45deg) translate(-1px, 6px);
+}
+
+[menu-icon="active"] span:nth-child(2) {
+    display: none;
+}
+
+[menu-icon="active"] span:last-child {
+    transform: rotate(-45deg) translate(-1px, -6px);
+}
