@@ -23,6 +23,8 @@
  */
 
 const cacheName = "dynamic-v2";
+const updatedOn = new Date('2024-04-28T02:04:04.061Z');
+
 let organization_id = ""
 let storage = true
 
@@ -46,14 +48,25 @@ self.addEventListener("fetch", async (e) => {
         caches
             .match(e.request)
             .then(async (cacheResponse) => {
-                if (!navigator.onLine || !!cacheResponse && cacheType !== 'false') {
-                    const organization = cacheResponse.headers.get('organization')
-                    const lastModified = cacheResponse.headers.get('last-modified')
+                let fetchedOn
+                if (cacheResponse && cacheType !== 'false') {
+                    fetchedOn = cacheResponse.headers.get('fetched-on')
+                    if (fetchedOn)
+                        fetchedOn = new Date(fetchedOn)
+                }
 
-                    // returnedFromCache[e.request.url] = { organization, lastModified }
-                    sendCacheUpdate(e.request.url, organization, lastModified);
+                const organization = cacheResponse.headers.get('organization')
+
+                if (!navigator.onLine || !!cacheResponse && cacheType !== 'false' && (!fetchedOn && !organization || fetchedOn > updatedOn)) {
+                    console.log('servering cache fetchOn greater', fetchedOn > updatedOn, organization)
+                    // const organization = cacheResponse.headers.get('organization')
+                    // const lastModified = cacheResponse.headers.get('last-modified')
+
+                    // sendCacheUpdate(e.request.url, organization, lastModified);
                     return cacheResponse;
                 } else {
+                    console.log('fetching fetchOn less', fetchedOn > updatedOn)
+
                     const networkResponse = await fetch(e.request);
 
                     if (!organization_id)
@@ -64,7 +77,7 @@ self.addEventListener("fetch", async (e) => {
                         storage = storageHeader
 
                     if (cacheType && cacheType !== 'false' && networkResponse.status === 200) {
-                        console.log('caching', e.request.url)
+                        console.log('caching')
 
                         caches.open(cacheName).then((cache) => {
                             if (networkResponse.status !== 206) {
@@ -173,15 +186,14 @@ const sendCacheUpdate = (url, organization, lastModified) => {
     fetchTimeout = setTimeout(() => {
         self.clients.matchAll().then(clients => {
             if (clients.length > 0) {
-                clients[0].postMessage({ action: 'checkCache', returnedFromCache: { ...returnedFromCache } });
-                fetchTimeout = null;
-                returnedFromCache = {};
+                clients[0].postMessage({ action: 'checkCache', returnedFromCache });
             }
         });
 
+        fetchTimeout = null;
+        // returnedFromCache = {};
     }, 500);
 };
-
 
 // self.addEventListener('backgroundfetchsuccess', (event) => {
 //     const bgFetch = event.registration;
