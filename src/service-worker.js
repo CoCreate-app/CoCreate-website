@@ -23,7 +23,7 @@
  */
 
 const cacheName = "dynamic-v2";
-const updatedOn = new Date('2024-04-28T02:04:04.061Z');
+const updatedOn = new Date('2024-04-28T03:15:28.668Z');
 
 let organization_id = ""
 let storage = true
@@ -59,10 +59,8 @@ self.addEventListener("fetch", async (e) => {
 
                 if (!navigator.onLine || !!cacheResponse && cacheType !== 'false' && (!fetchedOn && !organization || fetchedOn > updatedOn)) {
                     console.log('servering cache fetchOn greater', fetchedOn > updatedOn, organization)
-                    // const organization = cacheResponse.headers.get('organization')
-                    // const lastModified = cacheResponse.headers.get('last-modified')
-
-                    // sendCacheUpdate(e.request.url, organization, lastModified);
+                    const lastModified = cacheResponse.headers.get('last-modified')
+                    sendCacheUpdate(e.request.url, organization, lastModified);
                     return cacheResponse;
                 } else {
                     console.log('fetching fetchOn less', fetchedOn > updatedOn)
