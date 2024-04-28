@@ -55,9 +55,9 @@ self.addEventListener("fetch", async (e) => {
                         fetchedOn = new Date(fetchedOn)
                 }
 
-                const organization = cacheResponse.headers.get('organization')
 
-                if (!navigator.onLine || !!cacheResponse && cacheType !== 'false' && (!fetchedOn && !organization || fetchedOn > updatedOn)) {
+                if (!navigator.onLine || !!cacheResponse && cacheType !== 'false' && (!fetchedOn || fetchedOn > updatedOn)) {
+                    const organization = cacheResponse.headers.get('organization')
                     console.log('servering cache fetchOn greater', fetchedOn > updatedOn, organization)
                     const lastModified = cacheResponse.headers.get('last-modified')
                     sendCacheUpdate(e.request.url, organization, lastModified);
