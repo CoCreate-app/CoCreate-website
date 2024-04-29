@@ -23,7 +23,7 @@
  */
 
 const cacheName = "dynamic-v2";
-const updatedOn = new Date('2024-04-28T03:15:28.668Z');
+const updatedOn = new Date('2024-04-29T14:05:43.414Z');
 
 let organization_id = ""
 let storage = true
@@ -37,8 +37,18 @@ self.addEventListener("install", (e) => {
     self.skipWaiting();
 });
 
-self.addEventListener("activate", async (e) => {
-    e.waitUntil(clients.claim());
+// self.addEventListener("activate", async (e) => {
+//     e.waitUntil(clients.claim());
+// });
+
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        clients.claim().then(() => {
+            return clients.matchAll({ type: 'window' }).then(clients => {
+                clients.forEach(client => client.navigate(client.url));
+            });
+        })
+    );
 });
 
 self.addEventListener("fetch", async (e) => {
