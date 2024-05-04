@@ -150,3 +150,11 @@ margin-bottom: 15px
 [menu-icon="active"] span:last-child {
     transform: rotate(-45deg) translate(-1px, -6px);
 }
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+}
