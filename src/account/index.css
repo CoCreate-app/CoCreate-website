@@ -158,3 +158,32 @@ margin-bottom: 15px
     padding: 20px;
     background-color: #ffffff;
 }
+
+.button-round {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border: 2px solid #1f99ff;
+    background-color: #f0f0f0;
+    color: #1f99ff;
+    border-radius: 50%;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+.button-round:hover {
+    background-color: #1f99ff;
+    color: #000;
+    fill: #1f99ff;
+}
+
+.button-round i {
+    height: 20px;
+    fill: #1f99ff;
+}
+
+.button-round:hover i {
+    fill: #000;
+}
