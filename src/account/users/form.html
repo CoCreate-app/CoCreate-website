@@ -2,7 +2,7 @@
 
 <form
     array="users"
-    object="{{userId}}"
+    object="$user_id"
     realtime="false"
     autocomplete="off"
     localstorage-get="user_id"
@@ -31,7 +31,7 @@
             id="email"
             placeholder="Email"
             class="floating-label"
-            autocomplete="new-password" />
+            autocomplete="email" />
     </floating-label>
 
     <floating-label>
@@ -41,14 +41,6 @@
             placeholder="password"
             class="floating-label"
             autocomplete="new-password" />
-    </floating-label>
-
-    <floating-label>
-        <input
-            type="text"
-            key="description"
-            placeholder="Description"
-            class="floating-label" />
     </floating-label>
 
     <floating-label>
