@@ -20,6 +20,7 @@
             type="text/css"
             parse="true" />
         <link rel="manifest" href="../manifest.webmanifest" />
+        <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
     </head>
 
     <style type="text/css">
@@ -88,13 +89,13 @@
                     state_to="main">
                     <span
                         array="users"
-                        object="{{userId}}"
+                        object="$user_id"
                         key="firstname"
                         class="avatar-name"></span>
                     <span class="avatar-image">
                         <img
                             array="users"
-                            object="{{userId}}"
+                            object="$user_id"
                             key="avatar"
                             onerror="this.style.display='none'"
                             width="40px" />
@@ -103,7 +104,7 @@
                 <div
                     class="avatar-status"
                     array="users"
-                    object="{{userId}}"
+                    object="$user_id"
                     user-status="{'name':'status'}"></div>
             </div>
         </nav>
@@ -171,6 +172,11 @@
                             click-selector="document; .menu_icon@xs@sm"
                             state-src="./users/form.html"
                             state_to="main"
+                            click-closest="sidenav"
+                            click-attribute="style"
+                            click-value="width:0px"
+                            click-if="<=993px"
+                            click-if-value="$innerWidth"
                             class="display:flex align-items:center">
                             <span
                                 class="display:flex justify-content:center justify-content:center width:50px">
@@ -189,6 +195,11 @@
                             click-selector="document; .menu_icon@xs@sm"
                             state-src="./organizations/list.html"
                             state_to="main"
+                            click-closest="sidenav"
+                            click-attribute="style"
+                            click-value="width:0px"
+                            click-if="<=993px"
+                            click-if-value="$innerWidth"
                             class="display:flex align-items:center">
                             <span
                                 class="display:flex justify-content:center justify-content:center width:50px">
