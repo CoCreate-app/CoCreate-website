@@ -125,18 +125,15 @@
 </div>
 
 <!-- Avatar -->
-<div
-    localstorage-get="user_id"
-    localstorage-key="userId"
-    class="avatar-wrapper margin-right:10px">
+<div class="avatar-wrapper margin-right:10px">
     <a class="avatar round" href="{{path}}account/signin.html">
-        <span array="users" object="{{userId}}" key="name" class="avatar-name">
+        <span array="users" object="$user_id" key="name" class="avatar-name">
             <i class="height:20px" src="{{path}}assets/svg/sign-in-alt.svg"></i>
         </span>
         <span class="avatar-image">
             <img
                 array="users"
-                object="{{userId}}"
+                object="$user_id"
                 key="avatar"
                 onerror="this.style.display='none'"
                 width="40px" />
@@ -145,6 +142,6 @@
     <div
         class="avatar-status"
         array="users"
-        object="{{userId}}"
+        object="$user_id"
         user-status="{'name':'status'}"></div>
 </div>
