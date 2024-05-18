@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 
 <form array="organizations" object="" realtime="false">
-    <input
-        type="text"
-        key="_id"
-        placeholder="organization_id"
-        class="floating-label" />
-
-    <input
-        type="text"
-        key="name"
-        placeholder="Organization Name"
-        class="floating-label" />
-
-    <input
-        type="text"
-        array="organizations"
-        object=""
-        key="host"
-        value-type="array"
-        placeholder="Domain"
-        value-suffix=".cocreate.app"
-        unique
-        subdomain
-        required
-        render-as="domain"
-        class="floating-label" />
-    <div
-        class="position:relative top:-34px right:8px float:right padding:5px background:whitesmoke">
-        <span>.cocreate.app</span>
-    </div>
+    <floating-label>
+        <input
+            type="text"
+            key="_id"
+            placeholder="organization_id"
+            class="floating-label" />
+    </floating-label>
+    <floating-label>
+        <input
+            type="text"
+            key="name"
+            placeholder="Organization Name"
+            class="floating-label" />
+    </floating-label>
+    <floating-label>
+        <input
+            type="text"
+            array="organizations"
+            object=""
+            key="host"
+            value-type="array"
+            placeholder="Domain"
+            value-suffix=".cocreate.app"
+            unique
+            subdomain
+            required
+            render-as="domain"
+            class="floating-label" />
+        <div
+            class="position:relative top:-34px right:8px float:right padding:5px background:whitesmoke">
+            <span>.cocreate.app</span>
+        </div>
+    </floating-label>
 
     <input
         id="owner"
