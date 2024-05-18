@@ -45,7 +45,72 @@
             readonly />
     </floating-label>
 
-    <div class="storage-container">
+    <div class="Domains-container">
+        <div
+            click-next
+            click-attribute="class"
+            click-value="display:none"
+            class="card display:flex padding:10px_15px margin-top:10px">
+            <span class="flex-grow:1">Domains</span>
+
+            <i
+                toggle-attribute="src"
+                toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
+                class="display:flex height:18px fill:#505050"
+                src="../assets/svg/angle-down.svg"></i>
+        </div>
+
+        <div
+            array="organizations"
+            object=""
+            key="host"
+            render-selector="[template]"
+            class="display:none">
+            <div
+                class="card align-items:center box-shadow-hover margin-top:10px padding:10px"
+                template>
+                <div class="position:relative">
+                    <div class="width:100% box-sizing:border-box padding:5px">
+                        <floating-label>
+                            <input
+                                array="organizations"
+                                object=""
+                                key="{{index}}"
+                                placeholder="Domain"
+                                class="floating-label" />
+                        </floating-label>
+
+                        <!-- <floating-label>
+                            <input
+                                array="organizations"
+                                object=""
+                                key="host[{{host.key}}].storage"
+                                placeholder="Storage"
+                                class="floating-label" />
+                        </floating-label>
+                        <floating-label>
+                            <input
+                                array="organizations"
+                                object=""
+                                key="host[{{host.key}}].database"
+                                placeholder="Database"
+                                class="floating-label" />
+                        </floating-label>
+                        <floating-label>
+                            <input
+                                array="organizations"
+                                object=""
+                                key="host[{{host.key}}].array"
+                                placeholder="Array"
+                                class="floating-label" />
+                        </floating-label> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="storage-container">
         <div
             click-next
             click-attribute="class"
@@ -64,7 +129,8 @@
             array="organizations"
             object=""
             key="storage"
-            render-selector="[template]">
+            render-selector="[template]"
+            class="display:none">
             <div
                 class="card align-items:center box-shadow-hover margin-top:10px padding:10px"
                 template>
@@ -92,7 +158,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <button actions="save" class="button-round">
         <i class="height:20px fill:#505050" src="../assets/svg/save.svg"></i>
