@@ -106,6 +106,7 @@
                                     type="email"
                                     key="email"
                                     placeholder="Email"
+                                    unique
                                     required />
                             </floating-label>
 
@@ -114,6 +115,8 @@
                                     type="password"
                                     id="password"
                                     key="password"
+                                    name="password"
+                                    autocomplete="new-password"
                                     placeholder="Password"
                                     required />
                             </floating-label>
@@ -122,7 +125,11 @@
                                 <input
                                     type="password"
                                     matches="#password"
-                                    placeholder="Confirm Password" />
+                                    placeholder="Confirm Password"
+                                    id="confirm-password"
+                                    name="confirm-password"
+                                    autocomplete="new-password"
+                                    required />
                             </floating-label>
 
                             <button
