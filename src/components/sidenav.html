@@ -19,10 +19,28 @@
     resize-if="0px"
     resize-selector="document; [menu-icon][]"></div>
 
-<!-- Logo -->
-<a href="{{path}}" class="display:block padding:13px background:gainsboro">
-    <img src="{{path}}assets/logo.png" height="40px" />
-</a>
+<div
+    class="display:flex justify-content:space-between align-items:center padding:13px background:gainsboro">
+    <!-- Logo -->
+    <a href="{{path}}" class="display:flex">
+        <img src="{{path}}assets/icon.png" height="40px" alt="icon logo" />
+        <span class="font-size:28px font-weight:bold">Co</span>
+        <span class="font-size:28px font-weight:bold color:#1e90ff"
+            >Create</span
+        >
+    </a>
+
+    <!-- Menu Icon -->
+    <a
+        menu-icon
+        toggle="width:0px,"
+        toggle-selector="document; #menuL"
+        toggle-attribute="style">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+</div>
 
 <!-- Search -->
 <form class="padding:5px">
