@@ -14,6 +14,27 @@
         object="{{object._id}}"
         toggle="selected">
         <div class="position:relative">
+            <div
+                class="display:flex position:absolute right:-15px top:-15px align-items:center transition:0.3s"
+                hover-selector=".options"
+                hover-attribute="class"
+                hover-value="display:flex!important">
+                <div class="display:none options">
+                    <div
+                        actions="delete"
+                        array="{{object.array}}"
+                        object="{{object._id}}"
+                        class="padding:10px">
+                        <i src="../assets/svg/trash-alt.svg"></i>
+                    </div>
+                </div>
+                <div class="padding:10px">
+                    <i
+                        class="width:8px display:block"
+                        src="../assets/svg/ellipsis-v.svg"></i>
+                </div>
+            </div>
+
             <div class="width:100% box-sizing:border-box padding:5px">
                 <a
                     actions="state"
@@ -28,11 +49,17 @@
                     <div>Balance: ${{object.balance}}</div>
                 </div>
             </div>
-            <div class="font-size:20px padding:5px">
+            <div class="display:flex gap:10px font-size:20px padding:5px">
                 <button
                     class="padding:10px"
                     href="https://{{object.host[0]}}/superadmin/signin.html">
                     Super Admin
+                </button>
+
+                <button
+                    class="padding:10px margin-left:5px"
+                    onclick="openTopUpCheckout()">
+                    Add Funds
                 </button>
                 <button
                     class="padding:10px margin-left:5px"
@@ -44,15 +71,6 @@
                     href="https://{{object.host[0]}}/superadmin/signin.html">
                     Invite
                 </button> -->
-                <button
-                    actions="delete"
-                    array="{{object.array}}"
-                    object="{{object._id}}"
-                    class="padding:10px margin-left:5px">
-                    <i
-                        class="height:14px fill:#505050"
-                        src="../assets/svg/trash-alt.svg"></i>
-                </button>
             </div>
         </div>
         <div>
@@ -66,3 +84,77 @@
         <i class="height:20px fill:#505050" src="../assets/svg/plus.svg"></i>
     </a>
 </button>
+
+<script type="text/javascript">
+    Paddle.Environment.set("sandbox");
+    Paddle.Initialize({
+        token: "test_a2311fb79f18067408db808e40d", // replace with a client-side token
+        // prints events to console for debugging
+        eventCallback: function (data) {
+            console.log(data);
+        },
+    });
+
+    // define customer details
+
+    // open checkout
+    function openTopUpCheckout() {
+        let customer = {
+            email: "sam@example.com",
+            address: {
+                countryCode: "US",
+                postalCode: "10021",
+            },
+        };
+
+        Paddle.Checkout.open({
+            items: [
+                {
+                    priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
+                    quantity: 1,
+                },
+            ],
+            customer,
+        });
+
+        // let amount = document.getElementById("customAmount").value;
+        // if (amount) {
+        //     Paddle.Checkout.open({
+        //         items: [
+        //             {
+        //                 priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
+        //                 price: {
+        //                     unit_price: amount,
+        //                     quantity: 1,
+        //                     product_id: "pro_01hxscnt9dng3c207a10gcfasy",
+        //                     rice: amount,
+        //                 },
+        //             },
+        //         ],
+        //         customer,
+        //     });
+        // } else {
+        //     alert("Please enter a valid amount.");
+        // }
+    }
+
+    function openDomainCheckout() {
+        let customer = {
+            email: "sam@example.com",
+            address: {
+                countryCode: "US",
+                postalCode: "10021",
+            },
+        };
+
+        Paddle.Checkout.open({
+            items: [
+                {
+                    priceId: "pri_01hxs52mg8v24kz5myf4mz3hnn",
+                    quantity: 1,
+                },
+            ],
+            customer,
+        });
+    }
+</script>
