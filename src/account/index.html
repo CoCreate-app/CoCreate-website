@@ -67,12 +67,8 @@
                 <!-- Fullscreen toogle -->
                 <li class="margin-right:15px">
                     <a fullscreen>
-                        <i
-                            class="display:flex height:18px fill:#505050"
-                            src="../assets/svg/expand.svg"></i>
-                        <i
-                            class="display:flex height:18px fill:#505050"
-                            src="../assets/svg/compress.svg"></i>
+                        <i src="../assets/svg/expand.svg"></i>
+                        <i src="../assets/svg/compress.svg"></i>
                     </a>
                 </li>
             </ul>
@@ -180,9 +176,7 @@
                             class="display:flex align-items:center">
                             <span
                                 class="display:flex justify-content:center justify-content:center width:50px">
-                                <i
-                                    class="display:flex height:16px fill:#505050"
-                                    src="../assets/svg/user.svg"></i>
+                                <i src="../assets/svg/user.svg"></i>
                             </span>
                             <span>My Profile</span>
                         </a>
@@ -203,9 +197,7 @@
                             class="display:flex align-items:center">
                             <span
                                 class="display:flex justify-content:center justify-content:center width:50px">
-                                <i
-                                    class="display:flex height:16px fill:#505050"
-                                    src="../assets/svg/city.svg"></i>
+                                <i src="../assets/svg/city.svg"></i>
                             </span>
                             <span>Organizations</span>
                         </a>
@@ -215,9 +207,7 @@
                             state-src="./organizations/create.html"
                             state_to="main"
                             class="display:flex align-items:center justify-content:center width:50px">
-                            <i
-                                class="display:flex height:16px fill:#505050"
-                                src="../assets/svg/plus.svg"></i>
+                            <i src="../assets/svg/plus.svg"></i>
                         </a>
                     </li>
                 </ul>
@@ -231,9 +221,7 @@
                         class="display:flex align-items:center">
                         <span
                             class="display:flex justify-content:center min-width:50px">
-                            <i
-                                class="display:flex height:16px fill:#505050"
-                                src="../assets/svg/sign-out-alt.svg"></i>
+                            <i src="../assets/svg/sign-out-alt.svg"></i>
                         </span>
                         <span>Sign Out</span>
                     </a>
@@ -242,12 +230,16 @@
             <div resize="right"></div>
         </sidenav>
 
-        <div class="position:fixed!important bottom:15px right:80px">
+        <div class="position:fixed!important bottom:15px right:15px">
             <!-- <button actions="install" type="button" hidden>Install</button> -->
 
-            <div template="notification" class="card padding:10px {{status}}">
-                <span class="{{type}}">{{message}}</span
-                ><a actions="remove" remove-closest="[templateid]"> X</a>
+            <div
+                template="notification"
+                class="card position:relative margin-top:10px padding:10px {{status}}">
+                <span class="{{type}}">{{message}}</span>
+                <a actions="remove" class="position:absolute top:5px right:8px">
+                    <i src="../assets/svg/times.svg"></i>
+                </a>
             </div>
         </div>
 

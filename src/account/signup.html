@@ -72,10 +72,7 @@
                                 class="float:right width:25% padding-top:5px font-size:70px line-height:100px text-align:right color:very-light-gray"></div>
                             <div
                                 class="float:right width:25% padding-top:5px font-size:70px line-height:100px text-align:right color:very-light-gray">
-                                <i
-                                    class="fill:#505050"
-                                    src="../assets/svg/key.svg">
-                                </i>
+                                <i src="../assets/svg/key.svg"> </i>
                             </div>
                         </div>
                         <div
@@ -147,10 +144,12 @@
 
         <div class="position:fixed!important bottom:15px right:15px">
             <div
-                template="signUp, validate"
-                class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
-                <span class="{{type}}">{{message}}</span
-                ><a actions="remove"> X</a>
+                template="validate, signUp"
+                class="card position:relative margin-top:10px padding:10px {{status}}">
+                <span class="{{type}}">{{message}}</span>
+                <a actions="remove" class="position:absolute top:5px right:8px">
+                    <i src="../assets/svg/times.svg"></i>
+                </a>
             </div>
         </div>
 
