@@ -91,41 +91,16 @@
     </head>
 
     <style type="text/css" media="screen">
-        .show[selected] {
-            display: block !important;
-        }
-
-        .bg {
-            background: radial-gradient(
-                circle at 50% 50%,
-                rgba(6, 102, 219, 0.07) 0%,
-                rgba(6, 102, 219, 0.07) 33.333%,
-                rgba(6, 102, 219, 0.21) 33.333%,
-                rgba(6, 102, 219, 0.21) 66.666%,
-                rgba(6, 102, 219, 0.35) 66.666%,
-                rgba(6, 102, 219, 0.35) 99.999%
-            );
-        }
-
         section {
             padding: 80px 15px;
-        }
-
-        p {
-            font-size: 18px;
-            font-weight: 400;
-            margin-top: 10px;
-            line-height: 1.6;
-            color: #8a90a2;
         }
     </style>
 
     <body>
         <!-- Navbar  -->
         <nav
-            class="position:absolute width:100% display:flex align-items:center background:transparent padding-top:10px padding-bottom:10px"
             content_id="content"
-            scroll="sticky-nav,"
+            scroll="sticky-nav, hide"
             scroll-up="5"
             scroll-down="5"
             path="./"
@@ -474,7 +449,7 @@
         <button
             href="https://github.com/CoCreate-app/CoCreate-website/tree/master/src/index.html?message=docs%3A%20describe%20your%20change..."
             target="_blank"
-            class="display:flex justify-content:center align-items:center position:fixed bottom:15px right:15px height:50px width:50px border-radius:50% box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4)">
+            class="button-round">
             <i class="height:20px" src="./assets/svg/pencil-alt.svg"></i>
         </button>
 

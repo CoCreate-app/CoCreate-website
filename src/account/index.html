@@ -19,7 +19,11 @@
             key="{}"
             type="text/css"
             parse="true" />
+
+        <link rel="stylesheet" href="../index.css" type="text/css" />
+
         <link rel="manifest" href="../manifest.webmanifest" />
+
         <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
     </head>
 
@@ -45,7 +49,6 @@
         <a href="./signin.html" session="false" hidden></a>
         <!-- Navbar  -->
         <nav
-            class="nav display:flex align-items:center background:whitesmoke"
             content_id="content"
             scroll=", hide-nav"
             scroll-up="5"
@@ -55,7 +58,8 @@
                 menu-icon
                 toggle="width:275px,"
                 toggle-selector="document; #menuL"
-                toggle-attribute="style">
+                toggle-attribute="style"
+                class="margin-left:20px">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -122,11 +126,11 @@
         <!-- SideNav  -->
         <sidenav
             id="menuL"
-            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:50px width:0px@xs"
+            class="top:0px left:0px width:50px width:0px@xs"
             resizable
             resize-selector="document; main, document; nav"
             resize-attribute="style"
-            resize-property="margin-left">
+            resize-property="padding-left">
             <div
                 class="width:100%"
                 resize-attribute="menu-icon"
@@ -146,15 +150,8 @@
                 resize-if="0px"
                 resize-selector="document; [menu-icon][]"></div>
 
-            <div
-                class="display:flex align-items:center height:50px padding:4px_12px background:#cdcdcd">
-                <span class="logo-icon">
-                    <img
-                        src="../assets/icon.png"
-                        height="40px"
-                        alt="..."
-                        class="margin-top:3px" />
-                </span>
+            <div class="display:flex align-items:center padding:10px_12px">
+                <img src="../assets/icon.png" height="40px" alt="..." />
                 <span class="margin-left:12px font-size:1.5em">CoCreate</span>
             </div>
 
@@ -214,7 +211,7 @@
 
                 <!-- sidenav Footer -->
                 <div
-                    class="line-height:40px min-height:40px height:40px overflow:hidden white-space:nowrap position:absolute bottom:0px background:gainsboro width:100%">
+                    class="line-height:40px min-height:40px height:40px overflow:hidden white-space:nowrap position:absolute bottom:0px width:100%">
                     <a
                         actions="signOut"
                         href="./signin.html"

@@ -91,33 +91,10 @@
     </head>
 
     <style type="text/css" media="screen">
-        .show[selected] {
-            display: block !important;
-        }
-
-        .bg {
-            background: radial-gradient(
-                circle at 50% 50%,
-                rgba(6, 102, 219, 0.07) 0%,
-                rgba(6, 102, 219, 0.07) 33.333%,
-                rgba(6, 102, 219, 0.21) 33.333%,
-                rgba(6, 102, 219, 0.21) 66.666%,
-                rgba(6, 102, 219, 0.35) 66.666%,
-                rgba(6, 102, 219, 0.35) 99.999%
-            );
-        }
-
         section {
             padding: 80px 15px;
         }
 
-        p {
-            font-size: 18px;
-            font-weight: 400;
-            margin-top: 10px;
-            line-height: 1.6;
-            color: #8a90a2;
-        }
         h3 {
             margin-top: 30px;
         }
@@ -126,9 +103,8 @@
     <body>
         <!-- Navbar  -->
         <nav
-            class="position:absolute width:100% display:flex align-items:center background:transparent padding-top:10px padding-bottom:10px"
             content_id="content"
-            scroll="sticky-nav,"
+            scroll="sticky-nav, hide"
             scroll-up="5"
             scroll-down="5"
             path="./"
