@@ -31,17 +31,33 @@ svg {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Poppins", sans-serif;
 }
-  
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #666;
+    fill: #666;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
-  align-items: center;
   color: inherit;
+}
+
+i {
+    display: flex;
+}
+
+floating-label {
+    margin-bottom: 15px
 }
 
 button {
     font-weight: bold;
-    font-size: 16px;
+    font-size:16px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease,
         border 0.3s ease;
@@ -56,6 +72,37 @@ button:hover {
     background-color: #1f99ff;
     color: #fff;
     fill: #fff;
+}
+
+.button-round {
+    position: fixed;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 15px;
+    right: 15px;
+    border: 2px solid #1f99ff;
+    background-color: #f0f0f0;
+    color: #1f99ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+.button-round:hover {
+    background-color: #1f99ff;
+    color: #000;
+    fill: #1f99ff;
+}
+
+.button-round i {
+    height: 20px;
+    fill: #1f99ff;
+}
+
+.button-round:hover i {
+    fill: #000;
 }
 
 .alt-section:nth-of-type(even) {
@@ -76,13 +123,23 @@ footer p {
 }
 
 nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background:transparent;
+    padding: 10px 15px;
     /* z-index: 7; */
     will-change: transform;
-    transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s;
-    transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
+    transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+    /* transform: translateY(-100%); */
+        transform: translateY(0);
+}
+
+nav.hide {
+    transform: translateY(-100%);
+    /* transform: translateY(0); */
 }
 
 .sticky-nav {
@@ -92,6 +149,7 @@ nav {
     height: auto;
     right: 0;
     top: 0;
+    transform: translateY(0);
 }
 
 sidenav {
@@ -207,6 +265,16 @@ sidenav .nav {
     transform: rotate(-45deg) translate(-1px, -6px);
 }
 
+.bg {
+    background: radial-gradient(circle at 50% 50%,
+    rgba(6, 102, 219, 0.07) 0%,
+    rgba(6, 102, 219, 0.07) 33.333%,
+    rgba(6, 102, 219, 0.21) 33.333%,
+    rgba(6, 102, 219, 0.21) 66.666%,
+    rgba(6, 102, 219, 0.35) 66.666%,
+    rgba(6, 102, 219, 0.35) 99.999%);
+}
+
 .pricing-table {
     width: 100%;
     max-width: 600px;
@@ -245,7 +313,7 @@ sidenav .nav {
     }
 
     sidenav {
-        background-color: #333;
+        background-color: #222;
     }
 
     sidenav .nav {
@@ -254,6 +322,11 @@ sidenav .nav {
 
     header {
         background-color: #333;
+    }
+
+    p {
+        color: #999;
+        fill: #999;
     }
 
     footer {
