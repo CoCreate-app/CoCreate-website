@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 
-<form array="organizations" object="" realtime="false">
-    <floating-label>
-        <input
-            type="text"
-            key="_id"
-            placeholder="organization_id"
-            class="floating-label" />
-    </floating-label>
+<form
+    array="organizations"
+    object=""
+    realtime="false"
+    class="max-width:800px margin:0px_auto padding:80px_15px">
     <floating-label>
         <input
             type="text"
@@ -27,12 +24,19 @@
             unique
             subdomain
             required
-            render-as="domain"
             class="floating-label" />
         <div
-            class="position:relative top:-34px right:8px float:right padding:5px background:whitesmoke">
+            class="position:absolute top:6px right:8px float:right padding:5px background:whitesmoke background:#222@dark">
             <span>.cocreate.app</span>
         </div>
+    </floating-label>
+
+    <floating-label>
+        <input
+            type="text"
+            key="_id"
+            placeholder="organization_id"
+            class="floating-label" />
     </floating-label>
 
     <input

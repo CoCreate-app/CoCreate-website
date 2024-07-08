@@ -91,23 +91,24 @@
 </div>
 
 <!-- Avatar -->
-<div class="avatar-wrapper">
-    <a class="avatar round" href="{{path}}account/signin.html">
-        <span array="users" object="$user_id" key="name" class="avatar-name">
-            <i class="height:20px" src="{{path}}assets/svg/sign-in-alt.svg"></i>
-        </span>
-        <span class="avatar-image">
-            <img
-                array="users"
-                object="$user_id"
-                key="avatar"
-                onerror="this.style.display='none'"
-                width="40px" />
-        </span>
-    </a>
+<a
+    class="avatar round"
+    href="{{path}}account/"
+    state_to="main"
+    state-src="{{path}}profile/">
+    <div array="users" object="$user_id" key="firstname" class="avatar-name">
+        <i class="height:20px" src="{{path}}assets/svg/sign-in-alt.svg"></i>
+    </div>
+    <div class="avatar-image">
+        <img
+            array="users"
+            object="$user_id"
+            key="avatar[0].src"
+            onerror="this.style.display='none'" />
+    </div>
     <div
         class="avatar-status"
         array="users"
         object="$user_id"
         user-status="{'name':'status'}"></div>
-</div>
+</a>

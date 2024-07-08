@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<section class="centered">
+    <a href="./signin.html" session="false" hidden></a>
+    <div class="margin:auto">
+        <input
+            id="test"
+            type="hidden"
+            array="users"
+            object="$user_id"
+            key="subscription"
+            input-next
+            input-if="false"
+            input-attribute="$click" />
+        <a actions="state" state_to="mainView" state-src="./checkout/"></a>
+
+        <style>
+            [subscribed="false"] {
+                display: none;
+            }
+        </style>
+
+        <input
+            id="test"
+            type="hidden"
+            array="users"
+            object="$user_id"
+            key="subscription"
+            input-next
+            input-if="true"
+            input-attribute="subscribed" />
+
+        <div
+            class="width:100% max-width:600px"
+            module="stripe"
+            subscribed="false">
+            <form
+                realtime="false"
+                array="users"
+                object="$user_id"
+                class="margin-bottom:20px width:300px width:100%@xs@sm margin-left:auto">
+                <input type="hidden" key="name" />
+                <input
+                    id="subscriptionItemId"
+                    type="hidden"
+                    key="subscriptionItemId"
+                    stripe="subscriptionItems.update"
+                    stripe-key="$param[0]"
+                    required />
+
+                <input
+                    id="members"
+                    type="number"
+                    key="members.$length"
+                    hidden />
+
+                <input
+                    type="number"
+                    stripe="subscriptionItems.update"
+                    stripe-key="quantity"
+                    calculate="{(#members)} + 1"
+                    required
+                    hidden />
+
+                <input type="hidden" key="name" />
+                <input
+                    type="hidden"
+                    key="from"
+                    value="invite@yelloworacle.com" />
+                <input type="hidden" key="origin" value="$origin" />
+                <input type="hidden" key="hostname" value="yelloworacle.com" />
+                <input type="hidden" key="path" value="/invite.html" />
+
+                <div class="position:relative margin-top:5px">
+                    <floating-label>
+                        <input
+                            type="email"
+                            placeholder="Member Email"
+                            key="email"
+                            crud="false"
+                            input-selector="document; #setemailinput"
+                            input-attribute="value"
+                            required />
+                        <a
+                            actions="validate, stripe.subscriptionItems.update, inviteUser, read(document; #membersList)"
+                            class="sibling display:flex position:absolute top:9px right:8px font-size:20px color:green:hover fill:green:hover">
+                            <span class="margin-right:5px font-weight:400"
+                                >Invite
+                            </span>
+                            <i src="./assets/svg/angle-right.svg"></i>
+                        </a>
+                    </floating-label>
+                </div>
+            </form>
+
+            <div
+                path="./"
+                src="./components/datatable-toolbar.html"
+                class="width:100%"></div>
+            <div class="datatable-container">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <floating-label>
+                                    <input
+                                        type="text"
+                                        filter-selector="document; tbody[render-selector]"
+                                        filter-key="firstname"
+                                        filter-operator="$regex"
+                                        filter-regex-flag="i"
+                                        state_id="datatable"
+                                        placeholder="Current Members" />
+                                </floating-label>
+                                <span
+                                    class="position:absolute bottom:18px right:18px float:right">
+                                    <a
+                                        filter-selector="document; tbody[render-selector]"
+                                        filter-sort-key="firstname"
+                                        filter-sort-direction="asc"
+                                        click-value="desc, asc"
+                                        click-attribute="filter-sort-direction"
+                                        state_id="datatable">
+                                        <i
+                                            toggle-attribute="src"
+                                            toggle-value="../assets/svg/sort-down.svg, ../assets/svg/sort-up.svg"
+                                            src="../assets/svg/sort.svg"></i>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody
+                        id="membersList"
+                        array="users"
+                        object="$user_id"
+                        key="members"
+                        render-selector="[template]">
+                        <tr
+                            class="border-bottom:1px_solid_darkgray"
+                            template
+                            object="{{object._id}}"
+                            toggle="selected"
+                            toggle-attribute="class">
+                            <td
+                                class="padding:5px display:flex min-width:200px align-items:center justify-content:space-between">
+                                <div>
+                                    <h4>
+                                        <span
+                                            array="users"
+                                            object="{{members}}"
+                                            key="firstname"></span>
+                                        <span
+                                            array="users"
+                                            object="{{members}}"
+                                            key="lastname"></span>
+                                    </h4>
+                                    <h5
+                                        array="users"
+                                        object="{{members}}"
+                                        key="email">
+                                        {{members}}
+                                    </h5>
+                                </div>
+
+                                <div class="padding:10px">
+                                    <form realtime="false">
+                                        <input
+                                            type="hidden"
+                                            array="users"
+                                            object="$user_id"
+                                            key="subscriptionItemId"
+                                            stripe="subscriptionItems.update"
+                                            stripe-key="$param[0]"
+                                            required />
+
+                                        <input
+                                            type="number"
+                                            stripe="subscriptionItems.update"
+                                            stripe-key="quantity"
+                                            calculate="{(#members)} - 1"
+                                            required
+                                            hidden />
+
+                                        <input
+                                            array="users"
+                                            object="$user_id"
+                                            value="{{members}}"
+                                            key="$pull.members"
+                                            hidden />
+
+                                        <a
+                                            actions="validate, stripe.subscriptionItems.update, save, read(document; #membersList)"
+                                            class="color:#ff4d4d:hover">
+                                            <i
+                                                src="./assets/svg/trash-alt.svg"></i>
+                                        </a>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div filter-on="scroll" filter-previous="[render-selector]"></div> -->
+
+            <div
+                class="position:fixed!important bottom:15px right:15px z-index:2">
+                <div
+                    template="validate, inviteUser"
+                    class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
+                    <span class="{{type}}">{{message}}</span
+                    ><a actions="remove"> X</a>
+                </div>
+            </div>
+
+            <div class="card text-align:center margin-top:50px">
+                <style>
+                    .unsubscribe-button {
+                        border-color: #ff4d4d;
+                        color: #ff4d4d;
+                    }
+
+                    .unsubscribe-button:hover {
+                        background-color: #ff3333;
+                        color: #000;
+                    }
+                </style>
+
+                <h3>Unsubscribe from Our Service</h3>
+                <p class="margin-top:20px">
+                    If you wish to unsubscribe your account and all associated
+                    members, please click the button below. To remove one or
+                    more members, remove the member from the above list.
+                </p>
+                <div class="margin-top:20px">
+                    <form method="post">
+                        <input
+                            id="subscriptionId"
+                            type="hidden"
+                            array="users"
+                            object="$user_id"
+                            key="subscriptionId"
+                            required />
+                        <button
+                            actions="validate, cancelSubscription"
+                            class="unsubscribe-button">
+                            Unsubscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <script src="./account/subscription/index.js"></script>
+        </div>
+    </div>
+</section>

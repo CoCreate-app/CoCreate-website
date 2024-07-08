@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <div
-    class="display:grid gap:15px grid-template-columns:repeat(auto-fill,minmax(290px,1fr))"
+    class="display:grid gap:15px grid-template-columns:repeat(auto-fill,minmax(290px,1fr)) padding:20px margin-top:80px"
     array="organizations"
     object
     filter-sort-key="name"
@@ -52,18 +52,18 @@
             <div class="display:flex gap:10px font-size:20px padding:5px">
                 <button
                     class="padding:10px"
-                    href="https://{{object.host[0]}}/superadmin/signin.html">
-                    Super Admin
+                    href="https://{{object.host[0].name}}/superadmin/signin.html">
+                    Admin
                 </button>
 
                 <button
                     class="padding:10px margin-left:5px"
                     onclick="openTopUpCheckout()">
-                    Add Funds
+                    +Funds
                 </button>
                 <button
                     class="padding:10px margin-left:5px"
-                    href="https://{{object.host[0]}}/superadmin/signin.html">
+                    href="https://{{object.host[0].name}}/superadmin/signin.html">
                     Billing
                 </button>
                 <!-- <button

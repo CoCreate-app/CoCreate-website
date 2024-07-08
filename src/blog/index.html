@@ -1,184 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Blog | CoCreate</title>
+
+        <title>Latest Startup Advice and Insights | CoCreate</title>
         <meta
             name="description"
-            content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
+            content="Discover tips, strategies, and tutorials to quickly launch your startup MVP with CoCreateJS. Our blog provides practical advice and success stories to help you build and optimize your online presence efficiently." />
+        <meta
+            name="keywords"
+            content="startup MVP, CoCreateJS, quick MVP launch, online presence, startup tips, MVP strategies, web application development, startup blog, MVP tutorials, CoCreateJS framework, startup success stories, efficient web development, rapid MVP deployment, entrepreneurial insights, startup optimization" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="CoCreate" />
+        <meta name="generator" content="CoCreate" />
+
+        <!-- Canonical Tag -->
+        <link rel="canonical" href="https://cocreate.app" />
+
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
             href="../assets/favicon.ico" />
-        <meta name="robots" content="index,follow" />
+
+        <!-- Open Graph Tags (Facebook) -->
+        <meta
+            property="og:title"
+            content="Quick MVP Launch for Startups with CoCreateJS" />
+        <meta
+            property="og:description"
+            content="Discover tips, strategies, and tutorials to quickly launch your startup MVP with CoCreateJS. Our blog provides practical advice and success stories to help you build and optimize your online presence efficiently." />
+        <meta property="og:url" content="https://cocreate.app" />
         <meta
             property="og:image"
-            content="https://cdn.cocreate.app/docs/action.png" />
+            content="https://cocreate.app/assets/image.jpg" />
+        <meta property="og:type" content="website" />
+
+        <!-- Twitter Card Tags (Twitter) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="YellowOracle" />
+        <meta
+            name="twitter:title"
+            content="Quick MVP Launch for Startups with CoCreateJS" />
+        <meta
+            name="twitter:description"
+            content="Discover tips, strategies, and tutorials to quickly launch your startup MVP with CoCreateJS. Our blog provides practical advice and success stories to help you build and optimize your online presence efficiently." />
+        <meta
+            name="twitter:image"
+            content="https://cocreate.app/assets/twitter-image.jpg" />
+
+        <!-- Structured Data (Schema Markup) -->
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebPage",
+                "name": "Quick MVP Launch for Startups with CoCreateJS",
+                "description": "Discover tips, strategies, and tutorials to quickly launch your startup MVP with CoCreateJS. Our blog provides practical advice and success stories to help you build and optimize your online presence efficiently.",
+                "url": "https://cocreate.app",
+                "image": "https://cocreate.app/image.jpg",
+                "author": {
+                    "@type": "Organization",
+                    "name": "CoCreate"
+                }
+            }
+        </script>
 
         <link
             rel="stylesheet"
             href="../index.css"
             array="files"
-            object="637bc8fe91249e639db315d9"
+            object="611869abc0e9580010ea635f"
             key="{}"
             type="text/css"
             parse="true" />
-
-        <!--  Custom Style  -->
-        <style type="text/css">
-            .hide-nav ~ #menuR {
-                margin-top: 0px;
-                max-height: -moz-available;
-                max-height: -webkit-fill-available;
-                max-height: fill-available;
-                will-change: transform;
-                transition: background 0.3s,
-                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
-                    background 0.3s;
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
-                    background 0.3s,
-                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-                transform: translateY(0);
-                -webkit-transform: translateY(0);
-            }
-        </style>
         <link rel="manifest" href="../manifest.webmanifest" />
     </head>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-121709453-1");
+    </script>
+
+    <style type="text/css" media="screen">
+        section {
+            padding: 80px 15px;
+        }
+    </style>
 
     <body>
         <!-- Navbar  -->
         <nav
-            class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px"
-            scroll="sticky-nav,hide-nav"
-            scroll-up="10"
-            scroll-down="10"
+            scroll="sticky-nav,"
+            scroll-up="5"
+            scroll-down="5"
             path="../"
             src="../components/navbar.html"></nav>
 
         <!-- SideNav Left-->
         <sidenav
             id="menuL"
-            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+            class="top:0px left:0px width:0px"
             resizable
-            resize-selector="[content_id='content']"
-            resize-property="margin-left"
-            resize-value="width"
+            resize-selector="document; main, document; footer"
+            resize-attribute="style"
+            resize-property="padding-left"
             path="../"
-            src="../components/sidenav.html"></sidenav>
+            src="../components/sidenav.html"
+            session
+            input-selector="[actions][]"
+            input-attribute="href"
+            input-value="../"></sidenav>
 
         <!-- Main Content -->
-        <main class="padding:20px" content_id="content">
-            <!--  Blog Header -->
-            <div
-                class="width:100% display:flex flex-wrap:wrap justify-content:space-between background:#F23A2E border-radius:3px padding:10px_0 margin-bottom:20px">
-                <div class="left-text flex-basis:40% margin:0_20px">
-                    <h3
-                        class="color:#fff letter-spacing:1.4px font-weight:500 font-size:16px@sm font-size:13px@xs padding:5px font-family:tahoma">
-                        LATEST POSTS
-                    </h3>
-                </div>
-            </div>
-
-            <!-- Fetch and Render Blog Posts -->
-            <div
-                class="display:flex flex-wrap:wrap"
-                array="module_activities"
-                filter-limit="12"
-                filter-key="module_id"
-                filter-value="60e7416eb979b40017448c76"
-                filter-sort-key="name"
-                filter-sort-direction="asc"
-                render-selector="[template]">
-                <!-- Blog Post Template -->
+        <main class="height:100vh padding-top:70px">
+            <section class="padding:80px_15px">
+                <!--  Blog Header -->
                 <div
-                    class="card position:relative flex-grow:1 margin-bottom:50px height:470px width:300px max-width:600px margin:10px"
-                    template>
-                    <a
-                        class="height:400px overflow:hidden"
-                        href="../blog/post.html">
-                        <div
-                            class="position:absolute top:20px right:20px background:#e74c3c width:55px height:55px padding:12.5px_0 border-radius:100% color:#ffffff font-weight:700 text-align:center box-sizing:border-box">
-                            <div class="font-size:18px">27</div>
-                            <div
-                                class="font-size:12px text-transform:uppercase">
-                                Mar
-                            </div>
-                        </div>
+                    class="width:100% background:#1f99ff border-radius:3px padding:20px margin-bottom:20px">
+                    <h1 class="font-size:1.5em">
+                        Startup and MVP News Insights
+                    </h1>
+                </div>
 
-                        <!-- Image -->
-                        <img src="images/main-img.jpg" width="100%" />
-                        <!-- Post Content -->
-                        <div
-                            class="post-content position:absolute bottom:0 background:#ffffff width:100% padding:30px">
+                <div class="position:relative padding:10px">
+                    <floating-label>
+                        <input
+                            type="text"
+                            filter-selector="document; #blog-posts"
+                            filter-key="title"
+                            filter-operator="$regex"
+                            filter-regex-flag="i"
+                            state_id="datatable"
+                            placeholder="Search" />
+                    </floating-label>
+                    <span
+                        class="position:absolute bottom:37px right:18px float:right">
+                        <a
+                            filter-selector="document; #blog-posts"
+                            filter-sort-key="title"
+                            filter-sort-direction="asc"
+                            click-value="desc, asc"
+                            click-attribute="filter-sort-direction"
+                            state_id="datatable">
+                            <i
+                                toggle-attribute="src"
+                                toggle-value="../assets/svg/sort-down.svg, ../assets/svg/sort-up.svg"
+                                src="../assets/svg/sort.svg"></i>
+                        </a>
+                    </span>
+                </div>
+
+                <!-- Fetch and Render Blog Posts -->
+                <div
+                    id="blog-posts"
+                    class="display:flex flex-wrap:wrap gap:15px"
+                    array="blog-posts"
+                    object
+                    filter-limit="20"
+                    filter-sort-key="_id"
+                    filter-sort-direction="desc"
+                    render-selector="[template]">
+                    <!-- Blog Post Template -->
+                    <div class="card flex-grow:1 width:300px" template>
+                        <a class="overflow:hidden" href="{{object.url}}">
+                            <!-- Image -->
+                            <img src="{{object.image}}" width="100%" />
+
+                            <!-- Video -->
+                            <!-- <video
+                                width="100%"
+                                controls
+                                poster="{{object.image}}"
+                                onloadeddata="this.previousElementSibling.style.display='none';"
+                                onerror="this.style.display='none';"
+                                src="{{object.video}}"></video>
+ -->
+                            <!-- Post Content -->
                             <div
                                 hover="display:block"
                                 hover-selector=".description">
-                                <h1
-                                    class="font-size:24px margin:0 padding:0_0_10px color:#333333 font-weight:700">
-                                    {{object.name}}
-                                </h1>
                                 <h2
-                                    class="margin:0 padding:0_0_20px color:#e74c3c font-size:20px font-weight:400">
-                                    {{object.short_description}}
+                                    class="font-size:24px margin:0 padding:0_0_10px font-weight:700">
+                                    {{object.title}}
                                 </h2>
                                 <p
-                                    class="description color:#666666 font-size:14px line-height:1.8rem">
-                                    New York, the largest city in the U.S., is
-                                    an architectural marvel with plenty of
-                                    historic monuments, magnificent buildings
-                                    and countless dazzling skyscrapers.
+                                    class="description font-size:14px line-height:1.8rem">
+                                    {{object.description}}
                                 </p>
                             </div>
-                            <div class="margin:30px_0_0 color:#999999">
-                                <span class="margin:0_16px_0_0">
+                            <div
+                                class="display:flex flex-wrap:wrap gap:10px padding:20px_0px">
+                                <span>
                                     <i src="../assets/svg/clock.svg"></i>
-                                    6 mins ago
+                                    <input
+                                        type="date"
+                                        value="{{object.created.on}}"
+                                        value-type="toLocaleDateString"
+                                        onload-next
+                                        onload-attribute="value"
+                                        hidden />
+
+                                    <span href="#"></span>
                                 </span>
-                                <span class="">
-                                    <i src="../assets/svg/comments.svg"></i
-                                    ><a
-                                        class="color:#999999 color:#999999:hover text-decoration:none:hover"
-                                        href="#">
-                                        39 comments</a
-                                    >
+                                <span>
+                                    <a href="{{object.url}}#comments">
+                                        <i src="../assets/svg/comments.svg"></i>
+                                        <span
+                                            array="comments"
+                                            object
+                                            key="$length"
+                                            filter-key="post_id"
+                                            filter-value="{{object._id}}"
+                                            filter-limit
+                                            >0</span
+                                        >
+                                    </a>
                                 </span>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </section>
         </main>
-
-        <!-- SideNav Right -->
-        <sidenav
-            id="menuR"
-            class="top:0px left:0px width:0px"
-            resizable
-            resize-selector="[content_id='content']"
-            resize-property="margin-right"
-            resize-value="width"
-            path="../"
-            src="../components/filters.html"></sidenav>
-
-        <!-- SidNav Right Floating toggle Button -->
-        <button
-            class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4) z-index:10"
-            toggle="width:300px, width:0px"
-            toggle-selector="#menuR"
-            toggle-attribute="style">
-            <i src="../assets/svg/sliders-h.svg"></i>
-        </button>
 
         <!-- Footer -->
         <footer
             id="spreadtheword"
-            content_id="content"
-            class="background-size:cover background-position:center position:relative"
-            style="background-image: url(../assets/banner.png)"
             path="../"
             src="../components/footer.html"></footer>
 

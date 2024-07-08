@@ -1,727 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Blog Post | CoCreate</title>
-        <meta
-            name="description"
-            content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
+
+        <title>{{object.meta-title}}</title>
+        <meta name="description" content="{{object.meta-description}}" />
+        <meta name="keywords" content="{{object.meta-keywords}}" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="{{object.author}}" />
+        <meta name="generator" content="CoCreate" />
+
+        <!-- Canonical Tag -->
+        <link rel="canonical" href="https://cocreate.app" />
+
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
             href="../assets/favicon.ico" />
-        <meta name="robots" content="index,follow" />
+
+        <!-- Open Graph Tags (Facebook) -->
+        <meta property="og:title" content="{{object.meta-title}}" />
+        <meta property="og:description" content="{{object.meta-description}}" />
+        <meta property="og:url" content="https://cocreate.app{{object.url}}" />
         <meta
             property="og:image"
-            content="https://cdn.cocreate.app/docs/action.png" />
+            content="https://cocreate.app{{object.image}}" />
+        <meta property="og:type" content="website" />
+
+        <!-- Twitter Card Tags (Twitter) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="cocreate.app" />
+        <meta name="twitter:title" content="{{object.meta-title}}" />
+        <meta
+            name="twitter:description"
+            content="{{object.meta-description}}" />
+        <meta
+            name="twitter:image"
+            content="https://cocreate.app{{object.image}}" />
+        <meta name="twitter:url" content="https://cocreate.app{{object.url}}" />
+
+        <!-- Structured Data (Schema Markup) -->
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "BlogPosting",
+                "headline": "{{object.meta-title}}",
+                "description": "{{object.description}}",
+                "url": "{{object.url}}",
+                "image": "https://cocreate.app{{object.image}}",
+                "author": {
+                    "@type": "Organization",
+                    "name": "CoCreate"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CoCreate",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://cocreate.app/assets/icons/logo.png"
+                    }
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://cocreate.app"
+                },
+                "datePublished": "{{object.published}}",
+                "dateModified": "{{object.published}}"
+            }
+        </script>
 
         <link
             rel="stylesheet"
             href="../index.css"
             array="files"
-            object="637bc8fe91249e639db315d9"
+            object="611869abc0e9580010ea635f"
             key="{}"
             type="text/css"
             parse="true" />
-
-        <!--  Custom Style  -->
-        <style type="text/css">
-            .hide-nav ~ #menuR {
-                margin-top: 0px;
-                max-height: -moz-available;
-                max-height: -webkit-fill-available;
-                max-height: fill-available;
-                will-change: transform;
-                transition: background 0.3s,
-                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
-                    background 0.3s;
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
-                    background 0.3s,
-                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-                transform: translateY(0);
-                -webkit-transform: translateY(0);
-            }
-        </style>
         <link rel="manifest" href="../manifest.webmanifest" />
     </head>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-121709453-1");
+    </script>
+
+    <style>
+        [liked="[]"] .add-like {
+            display: block;
+        }
+        [liked="[]"] .remove-like {
+            display: none;
+        }
+        [disliked="[]"] .add-dislike {
+            display: block;
+        }
+        [disliked="[]"] .remove-dislike {
+            display: none;
+        }
+    </style>
 
     <body>
         <!-- Navbar  -->
         <nav
-            class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px"
-            scroll="sticky-nav,hide-nav"
-            scroll-up="10"
-            scroll-down="10"
+            scroll="sticky-nav,"
+            scroll-up="5"
+            scroll-down="5"
             path="../"
             src="../components/navbar.html"></nav>
 
         <!-- SideNav Left-->
         <sidenav
             id="menuL"
-            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+            class="top:0px left:0px width:0px"
             resizable
-            resize-selector="[content_id='content']"
-            resize-property="margin-left"
-            resize-value="width"
+            resize-selector="document; main, document; footer"
+            resize-attribute="style"
+            resize-property="padding-left"
             path="../"
-            src="../components/sidenav.html"></sidenav>
+            src="../components/sidenav.html"
+            session
+            input-selector="[actions][]"
+            input-attribute="href"
+            input-value="../"></sidenav>
 
         <!-- Main Content -->
-        <main class="padding:20px" content_id="content">
-            <!-- Blog Posts -->
-            <div class="max-width:800px margin:auto">
+        <main class="padding-top:70px">
+            <section
+                class="width:100% max-width:800px margin:auto padding-top:80px padding-bottom:80px">
                 <!--  Post Category Start  -->
                 <div
-                    class="post-category padding:0_20px home-bar width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
+                    array="blog-posts"
+                    object=""
+                    key="category"
+                    render-selector="[template]"
+                    class="padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap gap:10px">
                     <a
-                        class="display:inline-block margin-right:5px width:100px width:70px@sm border-radius:5px margin-bottom:10px padding:3px_0 text-align:center background:#F23A2E color:#fff color:#ddd:hover font-size:12px@sm"
+                        class="border-radius:5px padding:2px_5px background:#F23A2E color:#fff color:#ddd:hover font-size:12px@sm display:none:empty"
                         href="#"
-                        >Education</a
-                    >
-                    <a
-                        class="display:inline-block width:100px width:70px@sm border-radius:5px margin-bottom:10px padding:3px_0 text-align:center background:#8BC34A color:#fff color:#ddd:hover font-size:12px@sm"
-                        href="#"
-                        >Health</a
+                        >{{object.category}}</a
                     >
                 </div>
 
-                <!--  Post title Start  -->
-                <div
-                    class="post-title padding:0_20px width:100% margin-top:20px margin-top:10px@sm margin-top:10px@xs display:flex flex-wrap:wrap justify-content:flex-start">
-                    <h1
-                        class="color:#333 line-height:40px font-size:37px font-size:25px@sm font-size:25px@xs word-spacing:5px">
-                        Hong Kong Tourism Board Introduce Standard Hygiene
-                        Protocol
-                    </h1>
-                </div>
+                <h1
+                    class="padding:0_20px margin-top:20px font-size:37px font-size:25px@xs@sm word-spacing:5px">
+                    {{object.title}}
+                </h1>
 
-                <!--  Post date &amp; name Start  -->
                 <div
-                    class="post-date padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
-                    <span>By</span>
-                    <a hrf="#" class="font-weight:bold margin:0_10px"
-                        >John Smith -
+                    class="padding:0_20px margin-top:20px display:flex flex-wrap:wrap gap:10px">
+                    <span
+                        >By
+                        <a class="font-weight:bold">{{object.author}}</a></span
+                    >
+                    <input
+                        type="date"
+                        value="{{object.published}}"
+                        value-type="toLocaleDateString"
+                        onload-next
+                        onload-attribute="value"
+                        hidden />
+                    <span></span>
+
+                    <form hidden>
+                        <input
+                            type="number"
+                            array="blog-posts"
+                            object="{{object._id}}"
+                            key="$inc.views"
+                            value="1"
+                            hidden />
+                        <input onload-next onload-attribute="$click" />
+                        <div actions="timeout(2000), save"></div>
+                    </form>
+                    <i src="../assets/svg/eye.svg"></i>
+                    <span array="blog-posts" object="{{object._id}}" key="views"
+                        >{{object.views}}</span
+                    >
+
+                    <a href="#comments">
+                        <i src="../assets/svg/comment-alt.svg"></i>
+                        <span
+                            array="comments"
+                            object
+                            key="$length"
+                            filter-key="post_id"
+                            filter-value="{{object._id}}"
+                            >0</span
+                        >
                     </a>
-                    <span>May 19, 2020</span>
-                    <a class="margin:0_10px" href="#"
-                        ><i src="../assets/svg/eye.svg"></i> 4803</a
-                    >
-                    <a class="margin:0_10px" href="#"
-                        ><i src="../assets/svg/comment-alt.svg"></i> 5</a
-                    >
                 </div>
 
-                <div
-                    class="margin-top:25px margin-bottom:10px width:100% border-bottom:1px_solid_#ddd"></div>
+                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
                 <!--  Social Icon Start  -->
                 <div
-                    class="post-date padding:0_20px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
+                    class="padding:0_20px"
+                    share-network="true"
+                    share-url="$href"
+                    share-title="{{object.title}}"
+                    share-height="600"
+                    share-width="600"
+                    share-media="{{object.image[0].src}}">
                     <div
-                        class="social display:flex flex-wrap:wrap justify-content:flex-start align-items:center">
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#5973A9 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
+                        class="display:flex flex-wrap:wrap gap:20px font-size:18px">
+                        <a href="#" share-network="facebook">
                             <i src="../assets/svg/facebook-f.svg"></i>
                         </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#3DB6E6 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/twitter.svg"></i>
-                        </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#2788BE color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/linkedin-in.svg"></i>
-                        </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#E26757 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/google-plus-g.svg"></i>
-                        </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#E26757 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/envelope.svg"></i>
+                        <a href="#" share-network="twitter"
+                            ><i src="../assets/svg/twitter.svg"></i
+                        ></a>
+                        <a href="#" share-network="linkedin"
+                            ><i src="../assets/svg/linkedin-in.svg"></i
+                        ></a>
+                        <a share>
+                            <i src="../assets/svg/share-alt.svg"></i>
                         </a>
                     </div>
                 </div>
                 <!--  Social Icon End  -->
 
-                <div
-                    class="margin-top:10px margin-bottom:25px width:100% border-bottom:1px_solid_#ddd"></div>
+                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
-                <!--  Post Main Image Start  -->
-                <div
-                    class="post-date padding:0_20px margin-bottom:15px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
-                    <img class="width:100%" src="images/main-img.jpg" />
+                <!--  Post Media -->
+                <div class="padding:0_20px margin-bottom:15px width:100%">
+                    <style>
+                        [src=""] {
+                            display: none;
+                        }
+
+                        .video-container {
+                            max-width: 100%;
+                            margin: 0 auto;
+                        }
+
+                        .iframe-container {
+                            position: relative;
+                            width: 100%;
+                            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                            height: 0;
+                            overflow: hidden;
+                        }
+
+                        .iframe-container iframe {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    </style>
+
+                    <!-- Image -->
+                    <img src="{{object.image}}" width="100%" />
+
+                    <!-- Video -->
+                    <!-- <video
+                        width="100%"
+                        src="{{object.video}}"
+                        controls
+                        poster="{{object.image}}"
+                        onloadeddata="this.previousElementSibling.style.display='none';"
+                        onerror="this.style.display='none';"></video> -->
+
+                    <div class="video-container">
+                        <iframe
+                            id="myVideo"
+                            width="100%"
+                            height="315"
+                            src="{{object.videourl}}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
                 </div>
-                <!--  Post Main Image End  -->
 
-                <!--  Post Main Content Start  -->
+                <!--  Post Content -->
+                <div class="markdown-body padding:0_20px width:100%">
+                    {{object.content}}
+                </div>
                 <div
-                    class="post-date padding:0_20px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
-                    <p
-                        class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                        <b class="font-size:20px color:#000"
-                            >The Hong Kong Tourism Board</b
-                        >
-                        (HKTB) has launched a cleaning certification program for
-                        all the tourist attractions and hotels to ensure
-                        visitors’ safety from COVID-19. HKTB along with the Hong
-                        Kong Quality Assurance Agency (HKQAA) have prepared a
-                        list of hygiene standards for hotels, restaurants, and
-                        tourist hotspots to keep people informed about the
-                        Coronavirus protocol.
-                    </p>
-                    <p
-                        class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                        <b>The protocol aims at</b> providing a standardised
-                        guidelines on hygiene measures for tourism-related
-                        industries. Dr YK Pang, Chairman of the HKTB, said, “The
-                        COVID-19 pandemic has brought a new normal to the
-                        tourism landscape, and public health and safety have
-                        become a priority for visitors. Many international
-                        travel and tourism organisations have already put in
-                        place hygiene and anti-epidemic guidelines, and
-                        standardising hygiene measures for each sector can
-                        spread to visitors the message that different sectors
-                        across Hong Kong value their commitment to hygiene and
-                        safety.”
-                    </p>
+                    class="display:flex margin:20px_0px padding:0_20px gap:5px">
+                    <div
+                        filter-key="likes"
+                        filter-value="$user_id"
+                        filter-next></div>
+                    <input
+                        type="hidden"
+                        array="blog-posts"
+                        object="{{object._id}}"
+                        key="likes"
+                        input-parent
+                        input-attribute="liked" />
 
-                    <q
-                        class="display:block width:100% font-size:20px margin:15px_0 text-align:center"
-                        >The HKQAA will conduct random inspections if the
-                        protocol is being followed</q
+                    <div
+                        filter-key="dislikes"
+                        filter-value="$user_id"
+                        filter-next></div>
+                    <input
+                        type="hidden"
+                        array="blog-posts"
+                        object="{{object._id}}"
+                        key="dislikes"
+                        input-parent
+                        input-attribute="disliked" />
+
+                    <form class="add-like" hidden>
+                        <input
+                            type="hidden"
+                            array="blog-posts"
+                            object="{{object._id}}"
+                            key="$addToSet.likes"
+                            value="$user_id" />
+                        <input
+                            type="hidden"
+                            array="blog-posts"
+                            object="{{object._id}}"
+                            key="$pull.dislikes"
+                            value="$user_id" />
+                        <a actions="save"
+                            ><i src="../assets/svg/thumbs-up.svg"></i
+                        ></a>
+                    </form>
+                    <form class="remove-like">
+                        <input
+                            type="hidden"
+                            array="blog-posts"
+                            object="{{object._id}}"
+                            key="$pull.likes"
+                            value="$user_id" />
+                        <a actions="save"
+                            ><i src="../assets/svg/thumbs-up.svg"></i
+                        ></a>
+                    </form>
+                    <span
+                        array="blog-posts"
+                        object="{{object._id}}"
+                        key="likes.$length"
+                        >{{object.likes.$length}}</span
                     >
 
-                    <p
-                        class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                        <b>The protocol will be</b> applicable on hotels,
-                        restaurants, malls, stores, tourism attractions, and
-                        more. The businesses need to follow these hygiene and
-                        anti-epidemic measures and after they state the
-                        assessment, details of the businesses will be uploaded
-                        on a dedicated website of the HKQAA.
-                    </p>
-                    <p
-                        class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                        This will help visitors and locals too in understanding
-                        which outlet is safe to visit. Meanwhile the HKQAA will
-                        conduct random inspections if the protocol is being
-                        followed.
-                    </p>
-                    <p
-                        class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                        The best part is around 1800 businesses and outlets have
-                        shown interest in registering for the program, including
-                        the Hong Kong Disneyland. Disneyland in Hong Kong was
-                        reopened last month and visitors are required to make
-                        advance reservations to visit. They are also required to
-                        sign a health declaration form, and follow all the
-                        mandatory rules including social distancing and face
-                        masks.
-                    </p>
-                    <p
-                        class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                        Till now, Hong Kong has recorded 5176 confirmed COVID-19
-                        cases and 105 deaths.
-                    </p>
+                    <form class="add-dislike" hidden>
+                        <input
+                            type="hidden"
+                            array="blog-posts"
+                            object="{{object._id}}"
+                            key="$addToSet.dislikes"
+                            value="$user_id" />
+                        <input
+                            type="hidden"
+                            array="blog-posts"
+                            object="{{object._id}}"
+                            key="$pull.likes"
+                            value="$user_id" />
+
+                        <a actions="save"
+                            ><i src="../assets/svg/thumbs-down.svg"></i
+                        ></a>
+                    </form>
+                    <form class="remove-dislike">
+                        <input
+                            type="hidden"
+                            array="blog-posts"
+                            object="{{object._id}}"
+                            key="$pull.dislikes"
+                            value="$user_id" />
+                        <a actions="save"
+                            ><i src="../assets/svg/thumbs-down.svg"></i
+                        ></a>
+                    </form>
+
+                    <span
+                        array="blog-posts"
+                        object="{{object._id}}"
+                        key="dislikes.$length"
+                        >{{object.dislikes.$length}}</span
+                    >
                 </div>
-                <!--  Post Main Content End  -->
 
-                <div
-                    class="margin-top:25px width:100% border-bottom:1px_solid_#ddd"></div>
-
-                <!--  Social Icon &amp; Likes Start  -->
-                <div
-                    class="post-date padding:0_20px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
-                    <div
-                        class="like-btn width:100% padding:15px_0 display:flex flex-wrap:wrap justify-content:flex-start align-items:center">
-                        <a
-                            class="background:#1877F2 font-size:13px padding:3px_10px border-radius:3px color:#fff"
-                            href="#"
-                            ><i class="far fa-thumbs-up"></i> Like
-                            <span>1649</span></a
-                        >
-                    </div>
-
-                    <div
-                        class=""
-                        share-url="https://www.google.com/"
-                        share-text="text"
-                        data-title="title"
-                        share-height="600"
-                        share-width="500"
-                        share-media="media">
-                        <div
-                            class="width:100% display:inline-block text-align-center font-size-21px border-bottom border-color-white">
-                            <ul
-                                class="padding-0px list-style-type:none justify-content-center display:flex">
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background-color:#3C5A99 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        share-network="facebook"
-                                        share-height="400"
-                                        share-width="300"
-                                        title="Share on Facebook"
-                                        ><i
-                                            class="fab fa-facebook-f margin-right:10px footer-icon"></i
-                                        >265</a
-                                    >
-                                </li>
-
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background-color:#55ADEE font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        share-network="twitter"
-                                        share-height="300"
-                                        share-width="200"
-                                        title="Share on Twitter"
-                                        share-text="probando twitter"
-                                        ><i
-                                            class="fab fa-twitter color:#fff margin-right:10px footer-icon"></i
-                                        >123</a
-                                    >
-                                </li>
-
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background:#EA4335 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        title="Share on Google Plus"
-                                        share-network="google"
-                                        share-height="350"
-                                        share-width="150"
-                                        ><i
-                                            class="fab fa-google-plus-g color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
-                                        >113</a
-                                    >
-                                </li>
-
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background:#2867B2 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        title="Share on LinkedIn"
-                                        share-network="linkedin"
-                                        share-height="450"
-                                        share-width="350"
-                                        ><i
-                                            class="fab fa-linkedin-in color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
-                                        >80</a
-                                    >
-                                </li>
-
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background:#BD081C font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        share-network="pintrest"
-                                        share-height="350"
-                                        title="Share on Pinterest"
-                                        share-width="250"
-                                        ><i
-                                            class="fab fa-pinterest-p color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
-                                        >110</a
-                                    >
-                                </li>
-
-                                <li class="margin-top:2px font-weight:600">
-                                    691 Shares
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!--  Social Icon &amp; Likes End  -->
-
-                <div
-                    class="margin-top:15px margin-bottom:25px width:100% border-bottom:1px_solid_#ddd"></div>
+                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
                 <!--  Comment Start  -->
+                <h3 class="padding:0_20px">Comments</h3>
+
+                <input
+                    type="hidden"
+                    filter-next
+                    filter-key="post_id"
+                    filter-value="{{object._id}}" />
                 <div
-                    class="post-comment padding:0_20px margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
-                    <div
-                        class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:15% flex-basis:100%@xs">
-                        <img src="images/blog-post/comment1.jpg" />
-                    </div>
-                    <div
-                        class="text-comment-section flex-basis:70% flex-basis:100%@xs">
-                        <div>
-                            <h2
-                                class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
-                                EVA OLIVIA
-                            </h2>
-                        </div>
-                        <div class="margin-bottom:6px">
-                            <a
-                                class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
-                                href="#"
-                                >http://www.eva-olivia.com</a
-                            >
-                        </div>
-                        <div
-                            class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer
-                                adipiscing elit, sed diam ut laoreet dolore in
-                                iis qui facit eorum claritatem. humanitatis per
-                                seacula quarta decima et quinta decima. Eodem
-                                modo typi, qui nunc nobis videntur parum clari,
-                                fiant sollemnes in futurum.
-                            </p>
-                        </div>
-                        <div>
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"></i
-                            ></a>
+                    id="comments"
+                    class="padding:0_20px margin-bottom:20px margin-top:20px width:100%"
+                    array="comments"
+                    object
+                    filter-limit="20"
+                    render-selector="[template]">
+                    <div template render-as="comment">
+                        <div class="display:flex padding:20px_0">
+                            <!-- Avatar -->
+                            <div
+                                class="avatar round width:30px!important height:30px!important margin-right:10px"
+                                background-color="random">
+                                <span
+                                    class="avatar-name"
+                                    array="users"
+                                    object="{{comment.user_id}}"
+                                    key="name">
+                                </span>
+                                <span class="avatar-image">
+                                    <img
+                                        array="users"
+                                        object="{{comment.user_id}}"
+                                        key="avatar[0].src"
+                                        onerror="this.style.display='none'"
+                                        width="40px" />
+                                </span>
+                            </div>
 
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-twitter"></i
-                            ></a>
+                            <div class="flex-grow:1">
+                                <span
+                                    class="margin-right:10px"
+                                    array="users"
+                                    object="{{comment.user_id}}"
+                                    key="name"></span>
+                                <span>
+                                    <input
+                                        type="date"
+                                        value="{{comment.created.on}}"
+                                        value-type="toLocaleDateString"
+                                        onload-next
+                                        onload-attribute="value"
+                                        hidden />
+                                    <span></span>
+                                </span>
+                                <div
+                                    class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
+                                    <p>{{comment.comment}}</p>
+                                </div>
 
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-youtube"></i
-                            ></a>
+                                <div class="display:flex gap:5px">
+                                    <input
+                                        type="hidden"
+                                        array="comments"
+                                        object="{{comment._id}}"
+                                        key="likes"
+                                        filter-key="likes"
+                                        filter-value="$user_id"
+                                        input-parent
+                                        input-attribute="liked" />
+                                    <input
+                                        type="hidden"
+                                        array="comments"
+                                        object="{{comment._id}}"
+                                        key="dislikes"
+                                        filter-key="dislikes"
+                                        filter-value="$user_id"
+                                        input-parent
+                                        input-attribute="disliked" />
+
+                                    <form class="add-like" hidden>
+                                        <input
+                                            type="hidden"
+                                            array="comments"
+                                            object="{{comment._id}}"
+                                            key="$addToSet.likes"
+                                            value="$user_id" />
+                                        <input
+                                            type="hidden"
+                                            array="comments"
+                                            object="{{comment._id}}"
+                                            key="$pull.dislikes"
+                                            value="$user_id" />
+                                        <a actions="save"
+                                            ><i
+                                                src="../assets/svg/thumbs-up.svg"></i
+                                        ></a>
+                                    </form>
+                                    <form class="remove-like">
+                                        <input
+                                            type="hidden"
+                                            array="comments"
+                                            object="{{comment._id}}"
+                                            key="$pull.likes"
+                                            value="$user_id" />
+                                        <a actions="save"
+                                            ><i
+                                                src="../assets/svg/thumbs-up.svg"></i
+                                        ></a>
+                                    </form>
+                                    <span
+                                        array="comments"
+                                        object="{{comment._id}}"
+                                        key="likes.$length"
+                                        >{{comment.likes.$length}}</span
+                                    >
+
+                                    <form class="add-dislike" hidden>
+                                        <input
+                                            type="hidden"
+                                            array="comments"
+                                            object="{{comment._id}}"
+                                            key="$addToSet.dislikes"
+                                            value="$user_id" />
+                                        <input
+                                            type="hidden"
+                                            array="comments"
+                                            object="{{comment._id}}"
+                                            key="$pull.likes"
+                                            value="$user_id" />
+
+                                        <a actions="save"
+                                            ><i
+                                                src="../assets/svg/thumbs-down.svg"></i
+                                        ></a>
+                                    </form>
+                                    <form class="remove-dislike">
+                                        <input
+                                            type="hidden"
+                                            array="comments"
+                                            object="{{comment._id}}"
+                                            key="$pull.dislikes"
+                                            value="$user_id" />
+                                        <a actions="save"
+                                            ><i
+                                                src="../assets/svg/thumbs-down.svg"></i
+                                        ></a>
+                                    </form>
+
+                                    <span
+                                        array="comments"
+                                        object="{{comment._id}}"
+                                        key="dislikes.$length"
+                                        >{{comment.dislikes.$length}}</span
+                                    >
+                                </div>
+                                <!-- <div class="display:flex gap:5px">
+                                    <form>
+                                        <input
+                                            type="number"
+                                            array="comments"
+                                            object="{{comment._id}}"
+                                            key="$inc.likes"
+                                            value="1"
+                                            hidden />
+                                        <a actions="save"
+                                            ><i
+                                                src="../assets/svg/thumbs-up.svg"></i
+                                        ></a>
+                                    </form>
+                                    <span
+                                        array="comments"
+                                        object="{{comment._id}}"
+                                        key="likes"
+                                        >{{comment.likes}}</span
+                                    >
+                                           <a href="#"
+                                    ><i src="../assets/svg/thumbs-down.svg"></i
+                                ></a> -->
+                            </div>
                         </div>
                     </div>
+                    <!--  Comment End  -->
                 </div>
-                <!--  Comment End  -->
 
-                <!--  Comment Start  -->
-                <div
-                    class="post-comment padding:0_20px margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
-                    <div
-                        class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:15% flex-basis:100%@xs">
-                        <img src="images/blog-post/comment1.jpg" />
-                    </div>
-                    <div
-                        class="text-comment-section flex-basis:70% flex-basis:100%@xs">
-                        <div>
-                            <h2
-                                class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
-                                KEITLINE
-                            </h2>
-                        </div>
-                        <div class="margin-bottom:6px">
-                            <a
-                                class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
-                                href="#"
-                                >http://www.keitline.com</a
-                            >
-                        </div>
-                        <div
-                            class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer
-                                adipiscing elit, sed diam ut laoreet dolore in
-                                iis qui facit eorum claritatem. humanitatis per
-                                seacula quarta decima et quinta decima. Eodem
-                                modo typi, qui nunc nobis videntur parum clari,
-                                fiant sollemnes in futurum.
-                            </p>
-                        </div>
-                        <div>
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"></i
-                            ></a>
-
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-twitter"></i
-                            ></a>
-
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-youtube"></i
-                            ></a>
-                        </div>
-                    </div>
-                </div>
-                <!--  Comment End  -->
+                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
                 <!--  Post COMMENT Start  -->
+                <style>
+                    .createUser {
+                        display: none;
+                    }
+                    div[hasuser="false"] .createUser {
+                        display: block;
+                    }
+                    div[hasuser="false"] #commentAvatar {
+                        display: none;
+                    }
+                    div[hasuser="false"] #commentButton {
+                        display: none;
+                    }
+                </style>
+                <input
+                    type="hidden"
+                    key="_id"
+                    localstorage-get="user_id"
+                    localstorage-if="true"
+                    localstorage-next
+                    localstorage-attribute="hasuser"
+                    localstorage-value="true" />
                 <div
-                    class="post-title padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
-                    <form array="module_activities">
-                        <h3 class="width:100%">LEAVE A REPLY</h3>
-                        <!--  Comment Heading  -->
-
-                        <textarea
-                            rows="10"
-                            col="30"
-                            placeholder="Write Your Comment"
-                            array="{{object.array}}"
-                            object="{{object._id}}"
-                            key="comment"
-                            class="width:70% padding:5px_10px margin-top:30px margin-bottom:20px border:1px_solid_#ddd"></textarea>
-
-                        <input
-                            type="text"
-                            placeholder="Enter Your Name"
-                            array="{{object.array}}"
-                            object="{{object._id}}"
-                            key="name"
-                            class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
-
-                        <input
-                            type="email"
-                            placeholder="Enter Your Email"
-                            array="{{object.array}}"
-                            object="{{object._id}}"
-                            key="email"
-                            class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
-
-                        <input
-                            type="text"
-                            placeholder="Enter Your Website URL"
-                            array="{{object.array}}"
-                            object="{{object._id}}"
-                            key="website"
-                            class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
-
-                        <div class="width:100% margin-bottom:20px">
-                            <input
-                                class="margin-right:10px"
-                                type="checkbox"
-                                key="" /><span class="color:#333"
-                                >Save my name, email, and website in this
-                                browser for the next time I comment</span
-                            >
+                    hasuser="false"
+                    class="padding:0_20px margin-bottom:20px margin-top:20px width:100%">
+                    <form class="createUser" array="users" object="">
+                        <div class="display:flex flex-wrap:wrap gap:20px">
+                            <floating-label class="flex-grow:1">
+                                <input
+                                    type="text"
+                                    array="users"
+                                    object="$user_id"
+                                    key="name"
+                                    placeholder="Name"
+                                    required />
+                            </floating-label>
+                            <floating-label class="flex-grow:1">
+                                <input
+                                    type="email"
+                                    array="users"
+                                    object="$user_id"
+                                    key="email"
+                                    placeholder="Email"
+                                    required />
+                            </floating-label>
                         </div>
+                        <input key="_id" localstorage-set="user_id" hidden />
                         <input
-                            type="submit"
-                            value="Post Comment"
-                            class="display:block background:#111 background:#444:hover cursor:pointer color:#fff padding:10px_30px margin-bottom:20px border:1px_solid_#ddd" />
+                            key="answeredQuestions[]"
+                            value="Discover"
+                            hidden />
+                        <input key="subscription" value="false" hidden />
+                        <input type="checkbox" key="ambassadorTerms" hidden />
+
+                        <a
+                            id="createUserBtn"
+                            click-selector="document; #questions"
+                            click-attribute="read"
+                            click-value="true"
+                            actions="timeout(1000), save, localStorage, action(document, #commentButton)"></a>
                     </form>
+
+                    <form
+                        array="comments"
+                        object=""
+                        class="width:100% margin:20px_0 display:flex flex-direction:column gap:20px">
+                        <input
+                            type="hidden"
+                            key="post_id"
+                            value="{{object._id}}" />
+                        <div class="display:flex">
+                            <!-- Avatar -->
+                            <div
+                                id="commentAvatar"
+                                class="avatar round width:30px!important height:30px!important margin-right:10px">
+                                <span
+                                    array="users"
+                                    object="$user_id"
+                                    key="name"
+                                    class="avatar-name">
+                                </span>
+                                <span class="avatar-image">
+                                    <img
+                                        array="users"
+                                        object="$user_id"
+                                        key="avatar[0].src"
+                                        onerror="this.style.display='none'"
+                                        width="40px" />
+                                </span>
+                            </div>
+
+                            <floating-label class="flex-grow:1">
+                                <textarea
+                                    rows="1"
+                                    placeholder="Add a comment..."
+                                    key="comment"
+                                    required
+                                    auto-rows></textarea>
+                            </floating-label>
+                            <input
+                                type="hidden"
+                                key="user_id"
+                                value="$user_id"
+                                required />
+                        </div>
+
+                        <button
+                            id="commentButton"
+                            actions="validate, save, reset"
+                            class="padding:10px_30px">
+                            Post Comment
+                        </button>
+                    </form>
+
+                    <button
+                        class="createUser width:100% padding:10px_30px"
+                        actions="action(document; #createUserBtn)">
+                        Post Comment
+                    </button>
                 </div>
-                <!--  Post COMMENT End  -->
-
-                <!--  Pre &amp; Next Article Start  -->
-                <div
-                    class="post-title padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
-                    <div
-                        class="padding:30px_15px border:1px_solid_#ddd flex-basis:50%">
-                        <p class="color:#888">Previous Article</p>
-                        <p
-                            class="color:#000 margin-top:10px font-size:20px font-size:12px@xs line-height:27px">
-                            <a class="color:#1877F2:hover" href="#"
-                                >The AI magically removes moving objects from
-                                videos</a
-                            >
-                        </p>
-                    </div>
-                    <div
-                        class="padding:30px_15px border:1px_solid_#ddd flex-basis:50% text-align:right">
-                        <p class="color:#888">Next Article</p>
-                        <p
-                            class="color:#000 margin-top:10px font-size:20px font-size:12px@xs line-height:27px">
-                            <a class="color:#1877F2:hover" href="#"
-                                >How material innovation is changing the world
-                                unbelievably</a
-                            >
-                        </p>
-                    </div>
-                </div>
-                <!--  Pre &amp; Next Article End  -->
-
-                <!---------------------- ----------- Related Articls TABS START ---------- ---------------------->
-
-                <div
-                    class="margin-top:45px width:100% border-bottom:1px_solid_#ddd"></div>
-
-                <div class="tabs-wrapper margin-top:40px flex-basis:100%">
-                    <!------  TABS WRAPPER START ------>
-                    <div class="display:flex flex-wrap:wrap">
-                        <!------  TABS ALL HEADER START ------>
-                        <div
-                            class="padding:0_20px margin-bottom:10px tab"
-                            show="#related-article"
-                            hide="#more-info"
-                            selected-value="active"
-                            selected-group="one">
-                            <a
-                                class="font-size:15px font-weight:600 background:#289DCC border:2px_solid_#289DCC color:#fff padding:5px_20px border-radius:4px background:#1877F2:hover color:#fff:hover transition:0.4s_all_ease"
-                                href="#description"
-                                >RELATED ARTICLE</a
-                            >
-                        </div>
-                        <div
-                            class="padding:0_20px tab"
-                            show="#more-info"
-                            hide="#related-article"
-                            selected-value="selected"
-                            selected-group="one">
-                            <a
-                                class="font-size:15px font-weight:600 border:2px_solid_#F24D43 color:#fff padding:5px_20px border-radius:4px background:#F24D43 background:#FF0000:hover color:#fff color:#fff:hover transition:0.4s_all_ease"
-                                href="#more-info"
-                                >MORE FROM AUTHOR</a
-                            >
-                        </div>
-                    </div>
-
-                    <!------  Related Article STARTS ------>
-
-                    <div
-                        id="related-article"
-                        class="padding:0_20px margin-top:30px display:flex flex-wrap:wrap justify-content:space-between">
-                        <div class="article-1 flex-basis:28%">
-                            <div class="img-section position:relative">
-                                <img
-                                    src="images/blog-post/a1.jpg"
-                                    width="100%" />
-                                <a
-                                    class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
-                                    href="#"
-                                    >Technology</a
-                                >
-                            </div>
-                            <div class="heading">
-                                <h4>
-                                    <a
-                                        class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
-                                        href="#"
-                                        >52 Popular Movie Locations Have Been
-                                        Mapped by Google Maps</a
-                                    >
-                                </h4>
-                            </div>
-                        </div>
-
-                        <div class="article-2 flex-basis:28%">
-                            <div class="img-section position:relative">
-                                <img
-                                    src="images/blog-post/a2.jpg"
-                                    width="100%" />
-                                <a
-                                    class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
-                                    href="#"
-                                    >Travel</a
-                                >
-                            </div>
-                            <div class="heading">
-                                <h4>
-                                    <a
-                                        class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
-                                        href="#"
-                                        >Most Beautiful Things to Do in Sidney
-                                        with Your Boyfriend</a
-                                    >
-                                </h4>
-                            </div>
-                        </div>
-
-                        <div class="article-3 flex-basis:28%">
-                            <div class="img-section position:relative">
-                                <img
-                                    src="images/blog-post/a3.jpg"
-                                    width="100%" />
-                                <a
-                                    class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
-                                    href="#"
-                                    >Technology</a
-                                >
-                            </div>
-                            <div class="heading">
-                                <h4>
-                                    <a
-                                        class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
-                                        href="#"
-                                        >The Whole World is Expecting the Best
-                                        iPhone Ever Created</a
-                                    >
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!------  Related Article END ------>
-
-                    <!------  MORE FROM AUTHOR STARTS ------>
-
-                    <!--<div id="more-info" class="padding:0_20px margin-top:30px display:flex flex-wrap:wrap justify-content:space-between">-->
-                    <!--  <div class="article-1 flex-basis:28%">-->
-                    <!--    <div class="img-section position:relative">-->
-                    <!--      <img src="images/blog-post/a1.jpg" width="100%" />-->
-                    <!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Technology</a>-->
-                    <!--    </div>-->
-                    <!--    <div class="heading">-->
-                    <!--      <h4>-->
-                    <!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">52 Popular Movie Locations Have Been Mapped by Google Maps</a>-->
-                    <!--      </h4>-->
-                    <!--    </div>-->
-                    <!--  </div>-->
-
-                    <!--  <div class="article-2 flex-basis:28%">-->
-                    <!--    <div class="img-section position:relative">-->
-                    <!--      <img src="images/blog-post/a2.jpg" width="100%" />-->
-                    <!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Travel</a>-->
-                    <!--    </div>-->
-                    <!--    <div class="heading">-->
-                    <!--      <h4>-->
-                    <!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">Most Beautiful Things to Do in Sidney with Your Boyfriend</a>-->
-                    <!--      </h4>-->
-                    <!--    </div>-->
-                    <!--  </div>-->
-
-                    <!--  <div class="article-3 flex-basis:28%">-->
-                    <!--    <div class="img-section position:relative">-->
-                    <!--      <img src="images/blog-post/a3.jpg" width="100%" />-->
-                    <!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Technology</a>-->
-                    <!--    </div>-->
-                    <!--    <div class="heading">-->
-                    <!--      <h4>-->
-                    <!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">The Whole World is Expecting the Best iPhone Ever Created</a>-->
-                    <!--      </h4>-->
-                    <!--    </div>-->
-                    <!--  </div>-->
-
-                    <!--</div>-->
-
-                    <!------ MORE FROM AUTHOR ENDS  ------>
-                </div>
-                <!------  TABS WRAPPER END ------>
-
-                <div
-                    class="margin-top:40px margin-bottom:45px width:100% border-bottom:1px_solid_#ddd"></div>
-            </div>
+            </section>
         </main>
-
-        <!-- SideNav Right -->
-        <sidenav
-            id="menuR"
-            class="position:fixed top:0px right:0px overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important height:100vh width:300px width:0px@sm@xs"
-            resizable
-            resize-selector="[content_id='content']"
-            resize-property="margin-right"
-            resize-value="width"
-            path="../"
-            src="../components/filters.html"></sidenav>
-
-        <!-- SidNav Right Floating toggle Button -->
-        <button
-            class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4) z-index:10"
-            toggle="width:300px, width:0px"
-            toggle-selector="#menuR"
-            toggle-attribute="style">
-            <i src="../assets/svg/sliders-h.svg"></i>
-        </button>
 
         <!-- Footer -->
         <footer
             id="spreadtheword"
-            content_id="content"
-            class="background-size:cover background-position:center position:relative"
-            style="background-image: url(../assets/banner.png)"
             path="../"
             src="../components/footer.html"></footer>
 
         <script src="../dist/CoCreate.js"></script>
+        <script>
+            document.addEventListener(
+                "input",
+                function (event) {
+                    if (
+                        event.target.tagName.toLowerCase() !== "textarea" ||
+                        !event.target.hasAttribute("auto-rows")
+                    )
+                        return;
+                    autoResizeTextarea(event.target);
+                },
+                false
+            );
+
+            function autoResizeTextarea(textarea) {
+                const lineHeight = parseInt(
+                    window.getComputedStyle(textarea).lineHeight
+                );
+                textarea.rows = 1;
+                const lines = Math.ceil(textarea.scrollHeight / lineHeight);
+                textarea.rows = lines;
+                console.log("libesss");
+            }
+        </script>
     </body>
 </html>

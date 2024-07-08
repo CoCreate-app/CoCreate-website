@@ -52,7 +52,8 @@
             content_id="content"
             scroll=", hide-nav"
             scroll-up="5"
-            scroll-down="5">
+            scroll-down="5"
+            style="padding-left: 50px">
             <!-- Menu Icon -->
             <a
                 menu-icon
@@ -69,7 +70,7 @@
             <ul
                 class="display:inline-flex direction:rtl overflow:auto font-size:20px align-items:center list-style-type:none width:100% height:50px">
                 <!-- Fullscreen toogle -->
-                <li class="margin-right:15px">
+                <li>
                     <a fullscreen>
                         <i src="../assets/svg/expand.svg"></i>
                         <i src="../assets/svg/compress.svg"></i>
@@ -78,35 +79,33 @@
             </ul>
 
             <!-- Avatar -->
-            <div
-                localstorage-get="user_id"
-                localstorage-key="userId"
-                class="avatar-wrapper margin:5px">
-                <a
-                    class="avatar round"
-                    actions="state"
-                    state-src="./users/form.html"
-                    state_to="main">
-                    <span
+            <a
+                class="avatar round"
+                href="{{path}}account/"
+                state_to="main"
+                state-src="{{path}}profile/">
+                <div
+                    array="users"
+                    object="$user_id"
+                    key="firstname"
+                    class="avatar-name">
+                    <i
+                        class="height:20px"
+                        src="{{path}}assets/svg/sign-in-alt.svg"></i>
+                </div>
+                <div class="avatar-image">
+                    <img
                         array="users"
                         object="$user_id"
-                        key="firstname"
-                        class="avatar-name"></span>
-                    <span class="avatar-image">
-                        <img
-                            array="users"
-                            object="$user_id"
-                            key="avatar"
-                            onerror="this.style.display='none'"
-                            width="40px" />
-                    </span>
-                </a>
+                        key="avatar[0].src"
+                        onerror="this.style.display='none'" />
+                </div>
                 <div
                     class="avatar-status"
                     array="users"
                     object="$user_id"
                     user-status="{'name':'status'}"></div>
-            </div>
+            </a>
         </nav>
 
         <!-- Modal Viewport  -->
@@ -117,11 +116,13 @@
 
         <!-- Main container  -->
         <main
-            class="height:100vh padding:15px"
+            class="height:100vh padding-top:70px"
             content_id="content"
             src="organizations/list.html"
             state_id="main"
-            state-overwrite></main>
+            state-overwrite
+            state-onstoragechange="false"
+            style="padding-left: 50px"></main>
 
         <!-- SideNav  -->
         <sidenav
@@ -150,10 +151,17 @@
                 resize-if="0px"
                 resize-selector="document; [menu-icon][]"></div>
 
-            <div class="display:flex align-items:center padding:10px_12px">
+            <!-- <div class="display:flex align-items:center padding:10px_12px">
                 <img src="../assets/icon.png" height="40px" alt="..." />
                 <span class="margin-left:12px font-size:1.5em">CoCreate</span>
-            </div>
+            </div> -->
+
+            <a
+                href="../"
+                class="display:flex align-items:center gap:10px padding:10px_9px font-size:28px font-weight:bold">
+                <img src="../assets/icon.png" height="50px" alt="icon logo" />
+                <span>Co<span class="color:#1e90ff">Create</span></span>
+            </a>
 
             <div class="padding-right:5px padding-bottom:5px">
                 <ul
@@ -163,12 +171,12 @@
                         <a
                             actions="state"
                             click-selector="document; .menu_icon@xs@sm"
-                            state-src="./users/form.html"
+                            state-src="./profile/index.html"
                             state_to="main"
                             click-closest="sidenav"
                             click-attribute="style"
                             click-value="width:0px"
-                            click-if="<=993px"
+                            click-if="<=575px"
                             click-if-value="$innerWidth"
                             class="display:flex align-items:center">
                             <span
@@ -176,6 +184,26 @@
                                 <i src="../assets/svg/user.svg"></i>
                             </span>
                             <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li
+                        class="display:flex align-items:center justify-content:space-between height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover">
+                        <a
+                            actions="state"
+                            click-selector="document; .menu_icon@xs@sm"
+                            state-src="./members/index.html"
+                            state_to="main"
+                            click-closest="sidenav"
+                            click-attribute="style"
+                            click-value="width:0px"
+                            click-if="<=575px"
+                            click-if-value="$innerWidth"
+                            class="display:flex align-items:center">
+                            <span
+                                class="display:flex justify-content:center justify-content:center width:50px">
+                                <i src="../assets/svg/users.svg"></i>
+                            </span>
+                            <span>Members</span>
                         </a>
                     </li>
 
@@ -189,7 +217,7 @@
                             click-closest="sidenav"
                             click-attribute="style"
                             click-value="width:0px"
-                            click-if="<=993px"
+                            click-if="<=575px"
                             click-if-value="$innerWidth"
                             class="display:flex align-items:center">
                             <span

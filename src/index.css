@@ -51,10 +51,6 @@ i {
     display: flex;
 }
 
-floating-label {
-    margin-bottom: 15px
-}
-
 button {
     font-weight: bold;
     font-size:16px;
@@ -82,7 +78,6 @@ button:hover {
     bottom: 15px;
     right: 15px;
     border: 2px solid #1f99ff;
-    background-color: #f0f0f0;
     color: #1f99ff;
     border-radius: 50%;
     width: 50px;
@@ -163,17 +158,11 @@ sidenav .nav {
     background-color: gainsboro;
 }
 
-.avatar-wrapper {
-    height: 40px;
-    width: 40px;
-    position: relative;
-}
-
 .avatar {
+    --avatar-size: 50px;
+    width: var(--avatar-size);
+    height: var(--avatar-size);
     background-color: #1f99ff;
-    overflow: hidden;
-    width: 40px;
-    height: 40px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -184,7 +173,7 @@ sidenav .nav {
     position: relative;
 }
 
-.avatar.round {
+.avatar.round, .avatar.round > .avatar-image {
     border-radius: 50%;
 }
 
@@ -195,6 +184,7 @@ sidenav .nav {
     left: 0px;
     top: 0px;
     z-index: 2;
+    overflow: hidden;
 }
 
 .avatar>.avatar-image>img {
@@ -216,7 +206,7 @@ sidenav .nav {
 
 .avatar-status {
     position: absolute;
-    left: 30px;
+    right: 0px;
     bottom: 0px;
     display: flex;
     height: 12px;
@@ -225,7 +215,7 @@ sidenav .nav {
     border-radius: 50%;
     z-index: 3;
     background-color: #f44336;
-
+    transform: translate(-10%, 0%);
 }
 
 .avatar-status.on {
@@ -299,6 +289,36 @@ sidenav .nav {
 
 .pricing-table tr:nth-child(even) td {
     background-color: #eee;
+}
+
+.flex-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: auto;
+}
+
+.flex-input-50 {
+    width: 290px;
+    flex-grow: 1;
+}
+
+.input-icon {
+    width: calc(100% - 18px) !important;
+}
+
+.floating-icon {
+    display: flex;
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    font-size: 20px;
+}
+
+@media (max-width: 628px) {
+    .input-300 {
+        width: 100%;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

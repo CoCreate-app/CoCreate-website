@@ -25,6 +25,12 @@
         <link rel="manifest" href="../manifest.webmanifest" />
     </head>
 
+    <style>
+        floating-label {
+            margin-bottom: 20px;
+        }
+    </style>
+
     <body>
         <a href="./index.html" session="true" hidden></a>
 
@@ -39,7 +45,7 @@
         <a
             href="./signup.html"
             title=""
-            class="position:relative z-index:1 float:right margin:30px margin-left:auto color:white"
+            class="position:relative z-index:1 float:right margin:30px margin-left:auto color:white font-size:20px font-weight:400"
             >Sign Up</a
         >
 
@@ -59,7 +65,7 @@
                     </div>
                     <div
                         class="padding:25px background:gainsboro background:#444@dark text-align:left">
-                        <floating-label class="margin-bottom:15px">
+                        <floating-label>
                             <input
                                 type="email"
                                 key="email"
@@ -69,7 +75,7 @@
                                 email />
                         </floating-label>
 
-                        <floating-label class="margin-bottom:15px">
+                        <floating-label>
                             <input
                                 type="password"
                                 key="password"
@@ -96,7 +102,7 @@
                             <h3>Password Recovery</h3>
                         </div>
                         <div
-                            class="float:right width:25% padding-top:5px font-size:70px line-height:100px text-align:right">
+                            class="float:right width:25% padding:10px font-size:70px line-height:100px text-align:right">
                             <i src="../assets/svg/key.svg"></i>
                         </div>
                     </div>
