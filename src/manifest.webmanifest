@@ -1,7 +1,7 @@
 {
     "short_name": "CoCreate",
     "name": "CoCreate",
-    "description": "Build your business in miutes",
+    "description": "Build your business in minutes",
     "protocol_handlers": [
         {
           "protocol": "web+jngl",
@@ -60,7 +60,7 @@
     "start_url": "/",
     "id": "/",
     "background_color": "whitesmoke",
-    "display": "fullscreen",
+    "display": "standalone",
     "theme_color": "#c7c7c7",
     "screenshots": [
         {
