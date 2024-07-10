@@ -1,0 +1,205 @@
+<style>
+    .toolbar-class {
+        position: fixed;
+        pointer-events: none;
+        display: none;
+    }
+    .tools-class {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: white;
+        font-size: 12px;
+    }
+    .span-class {
+        padding: 3px 10px;
+        background: dodgerblue;
+        border: 1px dodgerblue solid;
+    }
+    .div-class {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 3px 10px;
+        background: dodgerblue;
+        border: 1px dodgerblue solid;
+        pointer-events: auto;
+    }
+    .element-outline {
+        height: 100%;
+        width: 100%;
+        border: 2px dodgerblue solid;
+    }
+</style>
+
+<!-- Selected Toolbar -->
+<toolbar
+    toolbar-placement="top"
+    toolbar-selector="editor"
+    toolbar-event="click"
+    class="toolbar-class">
+    <tools class="tools-class">
+        <span class="span-class" tagname></span>
+        <!--<span class="padding:3px background:dodgerblue pointer-events:auto"><i  src="./assets/svg/arrows-alt.svg"></i></span>-->
+        <div class="div-class">
+            <span actions="cloneElement"
+                ><i src="./assets/svg/clone.svg"></i
+            ></span>
+            <span actions="remove" remove-selector="editor"
+                ><i src="./assets/svg/trash-alt.svg"></i
+            ></span>
+            <span actions="previousElement"
+                ><i src="./assets/svg/arrow-up.svg"></i
+            ></span>
+            <span actions="nextElement"
+                ><i src="./assets/svg/arrow-down.svg"></i
+            ></span>
+        </div>
+    </tools>
+    <div class="element-outline"></div>
+</toolbar>
+
+<!-- Hover Toolbar -->
+<toolbar
+    toolbar-placent="top"
+    toolbar-selector="editor"
+    toolbar-event="mouseover"
+    class="toolbar-class">
+    <tools class="tools-class">
+        <span class="span-class" tagname></span>
+    </tools>
+    <div class="element-outline"></div>
+</toolbar>
+<!-- End Hover Toolbar -->
+
+<!-- Collaboration Toolbar -->
+<toolbar
+    toolbar-placent="top"
+    toolbar-selector="editor"
+    toolbar-event="selectionchange"
+    class="toolbar-class">
+    <tools
+        class="display:flex align-items:center gap:10px width:fit-content background:#222 border-radius:5px pointer-events:auto padding:5px_10px font-size:14px height:30px">
+        <div
+            actions="nodeName"
+            node-name="b"
+            node-target="editor"
+            id="bold-button">
+            <i src="./assets/svg/bold.svg"></i>
+        </div>
+        <div
+            actions="nodeName"
+            node-name="i"
+            node-target="editor"
+            id="italic-button">
+            <i src="./assets/svg/italic.svg"></i>
+        </div>
+        <div id="link-button" show="#link" hide="#link">
+            <i src="./assets/svg/link.svg"></i>
+        </div>
+        <div
+            id="link"
+            class="position:absolute display:flex align-items:center transition:0.1s background:inherit height:28px border-radius:5px"
+            hidden>
+            <input type="text" key="" />
+            <div
+                actions="nodeName"
+                node-name="a"
+                node-target="editor"
+                id="link-button-1">
+                <i src="./assets/svg/link.svg"></i>
+            </div>
+            <div hide="#link">
+                <i src="./assets/svg/times.svg"></i>
+            </div>
+        </div>
+
+        <div
+            actions="nodeName"
+            node-name="q"
+            node-target="editor"
+            id="quote-button">
+            <i src="./assets/svg/quote-right.svg"></i>
+        </div>
+        <div
+            id="heading-btn"
+            hover-attribute="class"
+            hover-value="height:0px, height:32px"
+            hover-next>
+            <i src="./assets/svg/heading.svg"></i>
+        </div>
+        <div
+            id="headings"
+            class="position:absolute display:flex align-items:center gap:10px transition:0.1s width:200px background:inherit overflow:hidden height:0px border-radius:5px">
+            <div
+                actions="nodeName"
+                node-name="h1"
+                node-target="editor"
+                id="header-1-button">
+                <i src="./assets/svg/heading.svg"></i><sub>1</sub>
+            </div>
+            <div
+                actions="nodeName"
+                node-name="h2"
+                node-target="editor"
+                id="header-2-button">
+                <i src="./assets/svg/heading.svg"></i><sub>2</sub>
+            </div>
+            <div
+                actions="nodeName"
+                node-name="h3"
+                node-target="editor"
+                id="header-3-button">
+                <i src="./assets/svg/heading.svg"></i><sub>3</sub>
+            </div>
+            <div
+                actions="nodeName"
+                node-name="h4"
+                node-target="editor"
+                id="header-4-button">
+                <i src="./assets/svg/heading.svg"></i><sub>4</sub>
+            </div>
+            <div
+                actions="nodeName"
+                node-name="h5"
+                node-target="editor"
+                id="header-5-button">
+                <i src="./assets/svg/heading.svg"></i><sub>5</sub>
+            </div>
+            <div
+                actions="nodeName"
+                node-name="h6"
+                node-target="editor"
+                id="header-6-button">
+                <i src="./assets/svg/heading.svg"></i><sub>6</sub>
+            </div>
+        </div>
+
+        <div
+            id="show-controls"
+            show="#sidebar-controls"
+            hide="#sidebar-controls">
+            <i src="./assets/svg/ellipsis-v.svg"></i>
+        </div>
+        <div
+            id="sidebar-controls"
+            class="display:flex align-items:center gap:5px"
+            hidden>
+            <div id="image-button">
+                <i src="./assets/svg/camera.svg"></i>
+            </div>
+            <div id="video-button">
+                <i src="./assets/svg/play.svg"></i>
+            </div>
+            <div id="tweet-button">
+                <i src="./assets/svg/twitter.svg"></i>
+            </div>
+            <div id="divider-button">
+                <i src="./assets/svg/minus.svg"></i>
+            </div>
+        </div>
+    </tools>
+    <div class="height:100% width:100% pointer-events:none"></div>
+</toolbar>
+<!-- End Collaboration Toolbar -->
