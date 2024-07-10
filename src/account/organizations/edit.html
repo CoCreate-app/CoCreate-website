@@ -54,7 +54,7 @@
         <div
             click-next
             click-attribute="class"
-            click-value="display:none"
+            click-value="display:flex"
             class="card display:flex padding:10px_15px">
             <span class="flex-grow:1">Domains</span>
 
@@ -69,7 +69,7 @@
             object=""
             key="host"
             render-selector="[template]"
-            class="display:none display:flex flex-direction:column gap:1px">
+            class="display:none flex-direction:column gap:1px">
             <div class="card padding:10px" template>
                 <div class="position:relative">
                     <div
@@ -132,21 +132,25 @@
             array="organizations"
             object=""
             key="storage"
-            render-type="object"
             render-selector="[template]"
             class="display:none">
             <div class="card align-items:center padding:10px" template>
                 <div class="position:relative">
                     <div
                         class="display:flex flex-wrap:wrap gap:20px width:100% box-sizing:border-box padding:5px">
-                        <span class="width:100%"
-                            >Friendly Name: {{storage.key}}</span
-                        >
                         <floating-label class="width:100%">
                             <input
                                 array="organizations"
                                 object=""
-                                key="storage.{{storage.key}}.provider"
+                                key="storage[{{index}}].name"
+                                placeholder="Name"
+                                class="floating-label" />
+                        </floating-label>
+                        <floating-label class="width:100%">
+                            <input
+                                array="organizations"
+                                object=""
+                                key="storage[{{index}}].provider"
                                 placeholder="Provider"
                                 class="floating-label" />
                         </floating-label>
@@ -155,7 +159,7 @@
                             <textarea
                                 array="organizations"
                                 object=""
-                                key="storage.{{storage.key}}.url"
+                                key="storage[{{index}}].url"
                                 placeholder="Url"
                                 class="floating-label"></textarea>
                         </floating-label>
