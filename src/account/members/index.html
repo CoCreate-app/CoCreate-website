@@ -1,101 +1,12 @@
 <!DOCTYPE html>
 
 <section class="centered">
-    <a href="./signin.html" session="false" hidden></a>
+    <a href="../signin.html" session="false" hidden></a>
     <div class="margin:auto">
-        <input
-            id="test"
-            type="hidden"
-            array="users"
-            object="$user_id"
-            key="subscription"
-            input-next
-            input-if="false"
-            input-attribute="$click" />
-        <a actions="state" state_to="mainView" state-src="./checkout/"></a>
-
-        <style>
-            [subscribed="false"] {
-                display: none;
-            }
-        </style>
-
-        <input
-            id="test"
-            type="hidden"
-            array="users"
-            object="$user_id"
-            key="subscription"
-            input-next
-            input-if="true"
-            input-attribute="subscribed" />
-
-        <div
-            class="width:100% max-width:600px"
-            module="stripe"
-            subscribed="false">
-            <form
-                realtime="false"
-                array="users"
-                object="$user_id"
-                class="margin-bottom:20px width:300px width:100%@xs@sm margin-left:auto">
-                <input type="hidden" key="name" />
-                <input
-                    id="subscriptionItemId"
-                    type="hidden"
-                    key="subscriptionItemId"
-                    stripe="subscriptionItems.update"
-                    stripe-key="$param[0]"
-                    required />
-
-                <input
-                    id="members"
-                    type="number"
-                    key="members.$length"
-                    hidden />
-
-                <input
-                    type="number"
-                    stripe="subscriptionItems.update"
-                    stripe-key="quantity"
-                    calculate="{(#members)} + 1"
-                    required
-                    hidden />
-
-                <input type="hidden" key="name" />
-                <input
-                    type="hidden"
-                    key="from"
-                    value="invite@yelloworacle.com" />
-                <input type="hidden" key="origin" value="$origin" />
-                <input type="hidden" key="hostname" value="yelloworacle.com" />
-                <input type="hidden" key="path" value="/invite.html" />
-
-                <div class="position:relative margin-top:5px">
-                    <floating-label>
-                        <input
-                            type="email"
-                            placeholder="Member Email"
-                            key="email"
-                            crud="false"
-                            input-selector="document; #setemailinput"
-                            input-attribute="value"
-                            required />
-                        <a
-                            actions="validate, stripe.subscriptionItems.update, inviteUser, read(document; #membersList)"
-                            class="sibling display:flex position:absolute top:9px right:8px font-size:20px color:green:hover fill:green:hover">
-                            <span class="margin-right:5px font-weight:400"
-                                >Invite
-                            </span>
-                            <i src="./assets/svg/angle-right.svg"></i>
-                        </a>
-                    </floating-label>
-                </div>
-            </form>
 
             <div
-                path="./"
-                src="./components/datatable-toolbar.html"
+                path="../../"
+                src="../../components/datatable-toolbar.html"
                 class="width:100%"></div>
             <div class="datatable-container">
                 <table>
@@ -211,43 +122,6 @@
                     class="card position:fixed!important bottom:15px right:15px padding:10px {{status}}">
                     <span class="{{type}}">{{message}}</span
                     ><a actions="remove"> X</a>
-                </div>
-            </div>
-
-            <div class="card text-align:center margin-top:50px">
-                <style>
-                    .unsubscribe-button {
-                        border-color: #ff4d4d;
-                        color: #ff4d4d;
-                    }
-
-                    .unsubscribe-button:hover {
-                        background-color: #ff3333;
-                        color: #000;
-                    }
-                </style>
-
-                <h3>Unsubscribe from Our Service</h3>
-                <p class="margin-top:20px">
-                    If you wish to unsubscribe your account and all associated
-                    members, please click the button below. To remove one or
-                    more members, remove the member from the above list.
-                </p>
-                <div class="margin-top:20px">
-                    <form method="post">
-                        <input
-                            id="subscriptionId"
-                            type="hidden"
-                            array="users"
-                            object="$user_id"
-                            key="subscriptionId"
-                            required />
-                        <button
-                            actions="validate, cancelSubscription"
-                            class="unsubscribe-button">
-                            Unsubscribe
-                        </button>
-                    </form>
                 </div>
             </div>
 
