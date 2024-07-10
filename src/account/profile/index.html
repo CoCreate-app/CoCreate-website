@@ -41,21 +41,16 @@
     </floating-label>
 
     <floating-label class="width:250px">
-        <!-- <input
-            type="file"
-            key="profile_image"
-            placeholder="Profile Image"
-            class="floating-label" /> -->
         <div
             type="file"
-            key="avatar[0].src"
+            key="avatar"
             accept="image/*"
             placeholder="Profile Image"
             class="floating-label min-height:40px active"
             render-selector="[template]"
             active>
             <div template>
-                <img src="{{avatar[0].src}}" alt="image" width="100%" />
+                <img src="{{avatar.src}}" alt="image" width="100%" />
             </div>
         </div>
     </floating-label>
