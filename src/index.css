@@ -196,6 +196,10 @@ sidenav .nav {
     overflow: hidden;
 }
 
+.avatar>.avatar-image>img:not([src]) {
+    display: none;
+}
+
 .avatar>.avatar-name {
     z-index: 1;
     writing-mode: vertical-rl;
