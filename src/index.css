@@ -158,6 +158,20 @@ sidenav .nav {
     background-color: gainsboro;
 }
 
+sidenav ul li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+sidenav ul li:hover {
+    background: #1f99ff;
+}
+
 .avatar {
     --avatar-size: 50px;
     width: var(--avatar-size);
@@ -323,6 +337,68 @@ sidenav .nav {
     right: 8px;
     font-size: 20px;
 }
+
+.datatable-container {
+    overflow: auto;
+}
+
+.datatable-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.datatable-container tr {
+    border-bottom: 1px solid darkgray;
+}
+
+.datatable-container td {
+    padding: 10px;
+}
+
+.datatable-container .header td {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+}
+
+.datatable-container .header .sort {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    float: right;
+}
+  ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.09);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background: #3790ff;
+      opacity: .08;
+      /*width: 10px;*/
+      /*height: 10px;*/
+  }
+
+  ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.03);
+      width: 5px;
+      height: 5px;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+      background: rgba(0, 0, 0, 0.06);
+      /*width: 10px!important;*/
+      /*height:10px!important;*/
+  }
+
+  /* ::-webkit-scrollbar:hover {
+    width: 10px!important;
+    height:10px!important;
+  } */
 
 @media (max-width: 628px) {
     .input-300 {

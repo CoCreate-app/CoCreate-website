@@ -133,19 +133,18 @@
                     </h1>
                 </div>
 
-                <div class="position:relative padding:10px">
-                    <floating-label>
-                        <input
-                            type="text"
-                            filter-selector="document; #blog-posts"
-                            filter-key="title"
-                            filter-operator="$regex"
-                            filter-regex-flag="i"
-                            state_id="datatable"
-                            placeholder="Search" />
-                    </floating-label>
+                <floating-label>
+                    <input
+                        type="text"
+                        filter-selector="document; #blog-posts"
+                        filter-key="title"
+                        filter-operator="$regex"
+                        filter-regex-flag="i"
+                        state_id="datatable"
+                        placeholder="Search" />
+
                     <span
-                        class="position:absolute bottom:37px right:18px float:right">
+                        class="position:absolute bottom:12px right:12px float:right">
                         <a
                             filter-selector="document; #blog-posts"
                             filter-sort-key="title"
@@ -159,7 +158,7 @@
                                 src="../assets/svg/sort.svg"></i>
                         </a>
                     </span>
-                </div>
+                </floating-label>
 
                 <!-- Fetch and Render Blog Posts -->
                 <div
