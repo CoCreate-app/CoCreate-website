@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<a href="./signin.html" session="false" hidden></a>
+<section class="centered">
+    <form
+        state_id="form-fields"
+        array="payouts"
+        object=""
+        realtime="false"
+        class="flex-form">
+        <div src="../components/form-toolbar.html" class="width:100%"></div>
+
+        <floating-label class="input-300">
+            <input
+                type="text"
+                key="amount"
+                placeholder="Amount"
+                class="floating-label" />
+        </floating-label>
+        <floating-label class="input-300">
+            <input
+                type="text"
+                key="ambasador"
+                placeholder="Ambassador"
+                class="floating-label" />
+        </floating-label>
+
+        <button
+            actions="save, state"
+            state_to="main"
+            state-src="../admin/payouts/datatable.html"
+            class="button-round">
+            <i src="../assets/svg/save.svg"></i>
+        </button>
+    </form>
+</section>

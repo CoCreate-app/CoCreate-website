@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<section class="centered">
+    <div class="datatable-container">
+        <a href="./signin.html" session="false" hidden></a>
+        <div
+            src="../components/datatable-toolbar.html"
+            class="width:100%"></div>
+
+        <table>
+            <tbody class="header">
+                <tr>
+                    <td>
+                        <floating-label>
+                            <input
+                                type="text"
+                                filter-selector="document; tbody[render-selector]"
+                                filter-key="firstname"
+                                filter-operator="$regex"
+                                filter-regex-flag="i"
+                                state_id="datatable"
+                                placeholder="Name"
+                                class="floating-label" />
+                        </floating-label>
+                        <span class="sort">
+                            <a
+                                filter-selector="document; tbody[render-selector]"
+                                filter-sort-key="firstname"
+                                filter-sort-direction="asc"
+                                click-value="desc, asc"
+                                click-attribute="filter-sort-direction"
+                                state_id="datatable">
+                                <i
+                                    toggle-attribute="src"
+                                    toggle-value="../assets/svg/sort-down.svg, ../assets/svg/sort-up.svg"
+                                    src="../assets/svg/sort.svg"></i>
+                            </a>
+                        </span>
+                    </td>
+                    <td>
+                        <floating-label>
+                            <input
+                                type="text"
+                                filter-selector="document; tbody[render-selector]"
+                                filter-key="amount"
+                                state_id="datatable"
+                                placeholder="Amount"
+                                class="floating-label" />
+                        </floating-label>
+                        <span class="sort">
+                            <a
+                                filter-selector="document; tbody[render-selector]"
+                                filter-sort-key="amount"
+                                filter-sort-direction="asc"
+                                click-value="desc, asc"
+                                click-attribute="filter-sort-direction"
+                                state_id="datatable">
+                                <i
+                                    toggle-attribute="src"
+                                    toggle-value="../assets/svg/sort-down.svg, ../assets/svg/sort-up.svg"
+                                    src="../assets/svg/sort.svg"></i>
+                            </a>
+                        </span>
+                    </td>
+                    <td>
+                        <floating-label>
+                            <input
+                                type="text"
+                                filter-selector="document; tbody[render-selector]"
+                                filter-key="_id"
+                                filter-operator="$regex"
+                                filter-regex-flag="i"
+                                state_id="datatable"
+                                placeholder="id"
+                                class="floating-label" />
+                        </floating-label>
+                        <span class="sort">
+                            <a
+                                filter-selector="document; tbody[render-selector]"
+                                filter-sort-key="_id"
+                                filter-sort-direction=""
+                                click-value="desc, asc"
+                                click-attribute="filter-sort-direction"
+                                state_id="datatable">
+                                <i
+                                    toggle-attribute="src"
+                                    toggle-value="../assets/svg/sort-down.svg, ../assets/svg/sort-up.svg"
+                                    src="../assets/svg/sort.svg"></i>
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody
+                array="payments"
+                object
+                filter-sort-key="name"
+                filter-sort-direction="asc"
+                render-selector="[template]">
+                <tr
+                    class="border-bottom:1px_solid_darkgray"
+                    template
+                    object="{{object._id}}"
+                    toggle="selected"
+                    toggle-attribute="class">
+                    <td class="display:flex min-width:200px align-items:center">
+                        <div>
+                            <a
+                                actions="state"
+                                state_to="main"
+                                state-src="../admin/payments/form.html">
+                                <h4
+                                    array="users"
+                                    object="{{object.user_id}}"
+                                    key="email"></h4>
+                                <div
+                                    state_to="form-fields"
+                                    state-object="{{object.user_id}}"></div>
+                            </a>
+                            <h5
+                                array="users"
+                                object="{{object._id}}"
+                                key="email"></h5>
+                        </div>
+                    </td>
+                    <td>
+                        <a
+                            actions="state"
+                            state_to="main"
+                            state-src="../admin/payments/form.html">
+                            {{object.amount}}
+                            <div
+                                state_to="form-fields"
+                                state-object="{{object._id}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a
+                            actions="state"
+                            state_to="main"
+                            state-src="../admin/payments/form.html">
+                            <b>{{object._id}}</b>
+                            <div
+                                state_to="form-fields"
+                                state-object="{{object._id}}"></div>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div filter-on="scroll" filter-previous="[render-selector]"></div>
+
+        <button
+            actions="state"
+            state_to="main"
+            state-src="../admin/payments/form.html"
+            class="button-round">
+            <i src="../assets/svg/plus.svg"></i>
+            <div state_to="form-fields" state-object=""></div>
+        </button>
+    </div>
+</section>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<section class="centered">
+    <form state_id="form-fields" array="ai" object="" class="flex-form">
+        <!-- deleteObject-->
+
+        <div src="../components/form-toolbar.html" class="width:100%"></div>
+
+        <floating-label class="input-300">
+            <input
+                type="text"
+                key="name"
+                placeholder="name"
+                class="floating-label" />
+        </floating-label>
+
+        <floating-label class="input-300">
+            <select
+                id="options"
+                key="type"
+                placeholder="Type"
+                class="floating-label">
+                <option value="system">System</option>
+                <option value="user">User</option>
+            </select>
+        </floating-label>
+        <!-- <floating-label class="input-300">
+            <select
+                id="options"
+                key="module"
+                placeholder="Module"
+                class="floating-label">
+                <option value="oracle">Oracle</option>
+                <option value="blog">Blog</option>
+            </select>
+        </floating-label> -->
+        <!-- <floating-label class="input-300">
+        <input
+            type="number"
+            key="position"
+            placeholder="Position"
+            class="floating-label" />
+    </floating-label> -->
+        <floating-label class="input-600">
+            <textarea
+                type="text"
+                key="content"
+                placeholder="Content"
+                rows="10"
+                class="floating-label"></textarea>
+        </floating-label>
+
+        <button
+            actions="save, state"
+            state_to="main"
+            state-src="../admin/ai/datatable.html"
+            class="button-round">
+            <i src="../assets/svg/save.svg"></i>
+        </button>
+    </form>
+</section>
