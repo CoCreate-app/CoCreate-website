@@ -58,7 +58,7 @@ button {
     transition: background-color 0.3s ease, color 0.3s ease,
         border 0.3s ease;
     border: 2px solid #1f99ff;
-    background-color: inherit;
+    background-color: #fff;
     color: #1f99ff;
     fill: #1f99ff;
     border-radius: 8px;
@@ -88,7 +88,7 @@ button:hover {
 .button-round:hover {
     background-color: #1f99ff;
     color: #000;
-    fill: #1f99ff;
+    fill: #000;
 }
 
 .button-round i {
@@ -118,7 +118,7 @@ footer p {
 }
 
 nav {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     align-items: center;
     gap: 15px;
@@ -366,38 +366,74 @@ sidenav ul li:hover {
     right: 18px;
     float: right;
 }
-  ::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
-  }
 
-  ::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, 0.09);
-  }
+.cocreate-badge {
+    display: inline-block;
+    background-color: #777;
+    font-size: 14px;
+    font-weight: 600;
+    height: fit-content;
+    min-width: fit-content;
+    padding: 0.1em 0.4em;
+    text-align: center;
+    transition: opacity 0.3s linear 0s;
+    -webkit-transition: opacity 0.3s linear 0s;
+    -ms-transition: opacity 0.3s linear 0s;
+    -moz-transition: opacity 0.3s linear 0s;
+    -o-transition: opacity 0.3s linear 0s;
+    vertical-align: middle;
+    visibility: visible;
+    white-space: nowrap;
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-      background: #3790ff;
-      opacity: .08;
-      /*width: 10px;*/
-      /*height: 10px;*/
-  }
+.success {
+    background-color: #70ca63;
+    color: #333;
+}
 
-  ::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.03);
-      width: 5px;
-      height: 5px;
-  }
+.warning {
+    background-color: #fecd33;
+    color: #333;
+}
 
-  ::-webkit-scrollbar-track:hover {
-      background: rgba(0, 0, 0, 0.06);
-      /*width: 10px!important;*/
-      /*height:10px!important;*/
-  }
+.danger,
+.failed {
+    background-color: #f13b48;
+    color: #333;
+}
 
-  /* ::-webkit-scrollbar:hover {
-    width: 10px!important;
-    height:10px!important;
-  } */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.09);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3790ff;
+    opacity: .08;
+    /*width: 10px;*/
+    /*height: 10px;*/
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: rgba(0, 0, 0, 0.06);
+    /*width: 10px!important;*/
+    /*height:10px!important;*/
+}
+
+/* ::-webkit-scrollbar:hover {
+width: 10px!important;
+height:10px!important;
+} */
 
 @media (max-width: 628px) {
     .input-300 {
@@ -435,6 +471,10 @@ sidenav ul li:hover {
 
     footer {
         background-color: #145a8b;
+    }
+    
+    button {
+        background-color: #333;
     }
 
     .alt-section:nth-of-type(even) {
@@ -474,4 +514,8 @@ sidenav ul li:hover {
         background-color: #444;
     }
 
+    code[class*=language-],
+    pre[class*=language-] {
+        background: #222!important;
+    }
 }
