@@ -99,24 +99,13 @@
     <body>
         <!-- Navbar  -->
         <nav
-            class="position:absolute"
+            class="position:absolute width:100%"
             content_id="content"
             scroll="sticky-nav, hide"
             scroll-up="5"
             scroll-down="5"
             path="./"
             src="./components/navbar.html"></nav>
-
-        <!-- SideNav Left-->
-        <sidenav
-            id="menuL"
-            class="top:0px left:0px width:0px"
-            resizable
-            resize-selector="[content_id='content']"
-            resize-property="margin-left"
-            resize-value="width"
-            path="./"
-            src="./components/sidenav.html"></sidenav>
 
         <!-- Modal Viewport/Boundaries -->
         <div
@@ -446,6 +435,16 @@
             path="./"
             src="./components/footer.html"
             class="margin-left:0px!important@xs@sm@md"></footer>
+
+        <!-- Sidenav -->
+        <sidenav
+            id="menuL"
+            class="top:0px left:0px width:0px"
+            resizable
+            resize-selector="[content_id='content']"
+            resize-property="margin-left"
+            path="./"
+            src="./components/sidenav.html"></sidenav>
 
         <button
             href="https://github.com/CoCreate-app/CoCreate-website/tree/master/src/index.html?message=docs%3A%20describe%20your%20change..."
