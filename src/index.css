@@ -137,7 +137,7 @@ nav.hide {
 }
 
 .sticky-nav {
-    position: sticky;
+    position: sticky!important;
     background: inherit;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
     height: auto;
