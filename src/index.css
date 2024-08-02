@@ -403,6 +403,18 @@ sidenav ul li:hover {
     color: #333;
 }
 
+.hide-preview .playground-preview {
+    display: none;
+}
+
+.hide-code .playground-code {
+    display: none;
+}
+
+.hide-preview .playground-code {
+    height: 100% !important;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
