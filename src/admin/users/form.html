@@ -2,167 +2,167 @@
 <a href="./signin.html" session="false" hidden></a>
 
 <section class="centered">
-    <style>
-        textarea {
-            resize: vertical;
-        }
-    </style>
-    <form
-        state_id="form-fields"
-        array="users"
-        object=""
-        realtime="false"
-        class="flex-form">
-        <div
-            class="display:flex justify-content:space-between align-items:center font-size:20px width:100%">
-            <a
-                actions="state"
-                state_to="main"
-                state-src="../admin/users/datatable.html"
-                ><i src="../assets/svg/angle-left.svg"></i
-            ></a>
-            <div
-                class="display:flex align-items:center transition:0.3s"
-                hover-selector=".options"
-                hover-attribute="class"
-                hover-value="display:flex!important">
-                <div class="display:none options">
-                    <a
-                        actions="delete, action(next;)"
-                        array="keys"
-                        crud="false"
-                        read="false"
-                        class="padding:0px_10px">
-                        <i src="../assets/svg/trash-alt.svg"></i>
-                    </a>
-                    <a
-                        actions="delete, state"
-                        array="users"
-                        crud="false"
-                        read="false"
-                        state_to="main"
-                        state-src="../admin/users/datatable.html"
-                        hidden>
-                        <i src="../assets/svg/trash-alt.svg"></i>
-                    </a>
-                    <a
-                        actions="save, state"
-                        state_to="main"
-                        state-src="../admin/users/datatable.html"
-                        class="padding:0px_10px">
-                        <i src="../assets/svg/save.svg"></i>
-                    </a>
-                </div>
-                <a class="padding-left:10px"
-                    ><i src="../assets/svg/ellipsis-v.svg"></i
-                ></a>
-            </div>
-        </div>
+	<style>
+		textarea {
+			resize: vertical;
+		}
+	</style>
+	<form
+		state_id="form-fields"
+		array="users"
+		object=""
+		realtime="false"
+		class="flex-form">
+		<div
+			class="display:flex justify-content:space-between align-items:center font-size:20px width:100%">
+			<a
+				actions="state"
+				state_to="main"
+				state-src="../admin/users/datatable.html"
+				><i src="../assets/svg/angle-left.svg"></i
+			></a>
+			<div
+				class="display:flex align-items:center transition:0.3s"
+				hover-selector=".options"
+				hover-attribute="class"
+				hover-value="display:flex!important">
+				<div class="display:none options">
+					<a
+						actions="delete, action(next;)"
+						array="keys"
+						crud="false"
+						read="false"
+						class="padding:0px_10px">
+						<i src="../assets/svg/trash-alt.svg"></i>
+					</a>
+					<a
+						actions="delete, state"
+						array="users"
+						crud="false"
+						read="false"
+						state_to="main"
+						state-src="../admin/users/datatable.html"
+						hidden>
+						<i src="../assets/svg/trash-alt.svg"></i>
+					</a>
+					<a
+						actions="save, state"
+						state_to="main"
+						state-src="../admin/users/datatable.html"
+						class="padding:0px_10px">
+						<i src="../assets/svg/save.svg"></i>
+					</a>
+				</div>
+				<a class="padding-left:10px"
+					><i src="../assets/svg/ellipsis-v.svg"></i
+				></a>
+			</div>
+		</div>
 
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="firstname"
-                placeholder="First Name"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="lastname"
-                placeholder="Last Name"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="name"
-                placeholder="Name"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="email"
-                placeholder="Email"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="tel"
-                key="phone"
-                placeholder="Phone"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="password"
-                key="password"
-                placeholder="password"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="memberAccount"
-                placeholder="memberAccount"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="number"
-                key="members"
-                placeholder="members"
-                class="floating-label" />
-        </floating-label>
+		<floating-label class="input-300">
+			<input
+				type="text"
+				key="firstname"
+				placeholder="First Name"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="input-300">
+			<input
+				type="text"
+				key="lastname"
+				placeholder="Last Name"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="input-300">
+			<input
+				type="text"
+				key="name"
+				placeholder="Name"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="input-300">
+			<input
+				type="text"
+				key="email"
+				placeholder="Email"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="input-300">
+			<input
+				type="tel"
+				key="phone"
+				placeholder="Phone"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="input-300">
+			<input
+				type="password"
+				key="password"
+				placeholder="password"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="input-300">
+			<input
+				type="text"
+				key="memberAccount"
+				placeholder="memberAccount"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="input-300">
+			<input
+				type="number"
+				key="members"
+				placeholder="members"
+				class="floating-label" />
+		</floating-label>
 
-        <floating-label class="input-600">
-            <textarea
-                key="answeredQuestions"
-                value-type="json"
-                rows="1"
-                auto-rows
-                placeholder="Answered Questions"
-                class="floating-label"></textarea>
-        </floating-label>
-        <floating-label class="input-600">
-            <textarea
-                key="questions"
-                value-type="json"
-                placeholder="questions"
-                rows="1"
-                auto-rows
-                class="floating-label"></textarea>
-        </floating-label>
-        <floating-label class="input-600">
-            <textarea
-                key="careers"
-                value-type="json"
-                placeholder="Careers"
-                rows="1"
-                auto-rows
-                class="floating-label"></textarea>
-        </floating-label>
+		<floating-label class="input-600">
+			<textarea
+				key="answeredQuestions"
+				value-type="json"
+				rows="1"
+				height="auto"
+				placeholder="Answered Questions"
+				class="floating-label"></textarea>
+		</floating-label>
+		<floating-label class="input-600">
+			<textarea
+				key="questions"
+				value-type="json"
+				placeholder="questions"
+				rows="1"
+				height="auto"
+				class="floating-label"></textarea>
+		</floating-label>
+		<floating-label class="input-600">
+			<textarea
+				key="careers"
+				value-type="json"
+				placeholder="Careers"
+				rows="1"
+				height="auto"
+				class="floating-label"></textarea>
+		</floating-label>
 
-        <div class="height:0px width:0px overflow:hidden">
-            <input type="email" name="email" autocomplete="email" />
-            <input type="tel" name="phone" autocomplete="tel" />
-            <input
-                type="password"
-                name="password"
-                autocomplete="current-password" />
-        </div>
+		<div class="height:0px width:0px overflow:hidden">
+			<input type="email" name="email" autocomplete="email" />
+			<input type="tel" name="phone" autocomplete="tel" />
+			<input
+				type="password"
+				name="password"
+				autocomplete="current-password" />
+		</div>
 
-        <button
-            actions="save, state"
-            state_to="main"
-            state-src="../admin/users/datatable.html"
-            class="button-round">
-            <i src="../assets/svg/save.svg"></i>
-        </button>
-    </form>
+		<button
+			actions="save, state"
+			state_to="main"
+			state-src="../admin/users/datatable.html"
+			class="button-round">
+			<i src="../assets/svg/save.svg"></i>
+		</button>
+	</form>
 
-    <!-- <div
+	<!-- <div
         id="questions"
         object
         key="questions"
@@ -175,28 +175,4 @@
             template
             read="false" />
     </div> -->
-
-    <script>
-        document.addEventListener(
-            "input",
-            function (event) {
-                if (
-                    event.target.tagName.toLowerCase() !== "textarea" ||
-                    !event.target.hasAttribute("auto-rows")
-                )
-                    return;
-                autoResizeTextarea(event.target);
-            },
-            false
-        );
-
-        function autoResizeTextarea(textarea) {
-            const lineHeight = parseInt(
-                window.getComputedStyle(textarea).lineHeight
-            );
-            textarea.rows = 1;
-            const lines = Math.ceil(textarea.scrollHeight / lineHeight);
-            textarea.rows = lines;
-        }
-    </script>
 </section>

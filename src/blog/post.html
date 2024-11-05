@@ -1,273 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>{{object.meta-title}}</title>
-        <meta name="description" content="{{object.meta-description}}" />
-        <meta name="keywords" content="{{object.meta-keywords}}" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="{{object.author}}" />
-        <meta name="generator" content="CoCreate" />
+		<title>{{object.meta-title}}</title>
+		<meta name="description" content="{{object.meta-description}}" />
+		<meta name="keywords" content="{{object.meta-keywords}}" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="{{object.author}}" />
+		<meta name="generator" content="CoCreate" />
 
-        <!-- Canonical Tag -->
-        <link rel="canonical" href="https://cocreate.app" />
+		<!-- Canonical Tag -->
+		<link rel="canonical" href="https://cocreate.app" />
 
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../assets/favicon.ico" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon.ico" />
 
-        <!-- Open Graph Tags (Facebook) -->
-        <meta property="og:title" content="{{object.meta-title}}" />
-        <meta property="og:description" content="{{object.meta-description}}" />
-        <meta property="og:url" content="https://cocreate.app{{object.url}}" />
-        <meta
-            property="og:image"
-            content="https://cocreate.app{{object.image}}" />
-        <meta property="og:type" content="website" />
+		<!-- Open Graph Tags (Facebook) -->
+		<meta property="og:title" content="{{object.meta-title}}" />
+		<meta property="og:description" content="{{object.meta-description}}" />
+		<meta property="og:url" content="https://cocreate.app{{object.url}}" />
+		<meta
+			property="og:image"
+			content="https://cocreate.app{{object.image}}" />
+		<meta property="og:type" content="website" />
 
-        <!-- Twitter Card Tags (Twitter) -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="cocreate.app" />
-        <meta name="twitter:title" content="{{object.meta-title}}" />
-        <meta
-            name="twitter:description"
-            content="{{object.meta-description}}" />
-        <meta
-            name="twitter:image"
-            content="https://cocreate.app{{object.image}}" />
-        <meta name="twitter:url" content="https://cocreate.app{{object.url}}" />
+		<!-- Twitter Card Tags (Twitter) -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="cocreate.app" />
+		<meta name="twitter:title" content="{{object.meta-title}}" />
+		<meta
+			name="twitter:description"
+			content="{{object.meta-description}}" />
+		<meta
+			name="twitter:image"
+			content="https://cocreate.app{{object.image}}" />
+		<meta name="twitter:url" content="https://cocreate.app{{object.url}}" />
 
-        <!-- Structured Data (Schema Markup) -->
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "BlogPosting",
-                "headline": "{{object.meta-title}}",
-                "description": "{{object.description}}",
-                "url": "{{object.url}}",
-                "image": "https://cocreate.app{{object.image}}",
-                "author": {
-                    "@type": "Organization",
-                    "name": "CoCreate"
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "CoCreate",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://cocreate.app/assets/icons/logo.png"
-                    }
-                },
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://cocreate.app"
-                },
-                "datePublished": "{{object.published}}",
-                "dateModified": "{{object.published}}"
-            }
-        </script>
+		<!-- Structured Data (Schema Markup) -->
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "BlogPosting",
+				"headline": "{{object.meta-title}}",
+				"description": "{{object.description}}",
+				"url": "{{object.url}}",
+				"image": "https://cocreate.app{{object.image}}",
+				"author": {
+					"@type": "Organization",
+					"name": "CoCreate"
+				},
+				"publisher": {
+					"@type": "Organization",
+					"name": "CoCreate",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://cocreate.app/assets/icons/logo.png"
+					}
+				},
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "https://cocreate.app"
+				},
+				"datePublished": "{{object.published}}",
+				"dateModified": "{{object.published}}"
+			}
+		</script>
 
-        <link
-            rel="stylesheet"
-            href="../index.css"
-            array="files"
-            object="611869abc0e9580010ea635f"
-            key="{}"
-            type="text/css"
-            parse="true" />
-        <link rel="manifest" href="../manifest.webmanifest" />
-    </head>
+		<link
+			rel="stylesheet"
+			href="../index.css"
+			array="files"
+			object="611869abc0e9580010ea635f"
+			key="{}"
+			type="text/css"
+			parse="true" />
+		<link rel="manifest" href="../manifest.webmanifest" />
+	</head>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+	<!-- Google tag (gtag.js) -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
 
-        gtag("config", "UA-121709453-1");
-    </script>
+		gtag("config", "UA-121709453-1");
+	</script>
 
-    <style>
-        [liked="[]"] .add-like {
-            display: block;
-        }
-        [liked="[]"] .remove-like {
-            display: none;
-        }
-        [disliked="[]"] .add-dislike {
-            display: block;
-        }
-        [disliked="[]"] .remove-dislike {
-            display: none;
-        }
-    </style>
+	<style>
+		[liked="[]"] .add-like {
+			display: block;
+		}
+		[liked="[]"] .remove-like {
+			display: none;
+		}
+		[disliked="[]"] .add-dislike {
+			display: block;
+		}
+		[disliked="[]"] .remove-dislike {
+			display: none;
+		}
+	</style>
 
-    <body>
-        <!-- Navbar  -->
-        <nav
-            scroll="sticky-nav,"
-            scroll-up="5"
-            scroll-down="5"
-            path="../"
-            src="../components/navbar.html"></nav>
+	<body>
+		<!-- Navbar  -->
+		<nav
+			scroll="sticky-nav,"
+			scroll-up="5"
+			scroll-down="5"
+			path="../"
+			src="../components/navbar.html"></nav>
 
-        <!-- SideNav Left-->
-        <sidenav
-            id="menuL"
-            class="top:0px left:0px width:0px"
-            resizable
-            resize-selector="document; main, document; footer"
-            resize-attribute="style"
-            resize-property="padding-left"
-            path="../"
-            src="../components/sidenav.html"
-            session
-            input-selector="[actions][]"
-            input-attribute="href"
-            input-value="../"></sidenav>
+		<!-- SideNav Left-->
+		<sidenav
+			id="menuL"
+			class="top:0px left:0px width:0px"
+			resizable
+			resize-selector="document; main, document; footer"
+			resize-attribute="style"
+			resize-property="padding-left"
+			path="../"
+			src="../components/sidenav.html"
+			session
+			input-selector="[actions][]"
+			input-attribute="href"
+			input-value="../"></sidenav>
 
-        <!-- Main Content -->
-        <main class="padding-top:70px">
-            <section
-                class="width:100% max-width:800px margin:auto padding-top:80px padding-bottom:80px">
-                <!--  Post Category Start  -->
-                <div
-                    array="blog-posts"
-                    object=""
-                    key="category"
-                    render-selector="[template]"
-                    class="padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap gap:10px">
-                    <a
-                        class="border-radius:5px padding:2px_5px background:#F23A2E color:#fff color:#ddd:hover font-size:12px@sm display:none:empty"
-                        href="#"
-                        >{{object.category}}</a
-                    >
-                </div>
+		<!-- Main Content -->
+		<main class="padding-top:70px">
+			<section
+				class="width:100% max-width:800px margin:auto padding-top:80px padding-bottom:80px">
+				<!--  Post Category Start  -->
+				<div
+					array="blog-posts"
+					object=""
+					key="category"
+					render-selector="[template]"
+					class="padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap gap:10px">
+					<a
+						class="border-radius:5px padding:2px_5px background:#F23A2E color:#fff color:#ddd:hover font-size:12px@sm display:none:empty"
+						href="#"
+						>{{object.category}}</a
+					>
+				</div>
 
-                <h1
-                    class="padding:0_20px margin-top:20px font-size:37px font-size:25px@xs@sm word-spacing:5px">
-                    {{object.title}}
-                </h1>
+				<h1
+					class="padding:0_20px margin-top:20px font-size:37px font-size:25px@xs@sm word-spacing:5px">
+					{{object.title}}
+				</h1>
 
-                <div
-                    class="padding:0_20px margin-top:20px display:flex flex-wrap:wrap gap:10px">
-                    <span
-                        >By
-                        <a class="font-weight:bold">{{object.author}}</a></span
-                    >
-                    <input
-                        type="date"
-                        value="{{object.published}}"
-                        value-type="toLocaleDateString"
-                        onload-next
-                        onload-attribute="value"
-                        hidden />
-                    <span></span>
+				<div
+					class="padding:0_20px margin-top:20px display:flex flex-wrap:wrap gap:10px">
+					<span
+						>By
+						<a class="font-weight:bold">{{object.author}}</a></span
+					>
+					<input
+						type="date"
+						value="{{object.published}}"
+						value-type="toLocaleDateString"
+						onload-next
+						onload-attribute="value"
+						hidden />
+					<span></span>
 
-                    <form hidden>
-                        <input
-                            type="number"
-                            array="blog-posts"
-                            object="{{object._id}}"
-                            key="$inc.views"
-                            value="1"
-                            hidden />
-                        <input onload-next onload-attribute="$click" />
-                        <div actions="timeout(2000), save"></div>
-                    </form>
-                    <i src="../assets/svg/eye.svg"></i>
-                    <span array="blog-posts" object="{{object._id}}" key="views"
-                        >{{object.views}}</span
-                    >
+					<form hidden>
+						<input
+							type="number"
+							array="blog-posts"
+							object="{{object._id}}"
+							key="$inc.views"
+							value="1"
+							hidden />
+						<input onload-next onload-attribute="$click" />
+						<div actions="timeout(2000), save"></div>
+					</form>
+					<i src="../assets/svg/eye.svg"></i>
+					<span array="blog-posts" object="{{object._id}}" key="views"
+						>{{object.views}}</span
+					>
 
-                    <a href="#comments">
-                        <i src="../assets/svg/comment-alt.svg"></i>
-                        <span
-                            array="comments"
-                            object
-                            key="$length"
-                            filter-key="post_id"
-                            filter-value="{{object._id}}"
-                            >0</span
-                        >
-                    </a>
-                </div>
+					<a href="#comments">
+						<i src="../assets/svg/comment-alt.svg"></i>
+						<span
+							array="comments"
+							object
+							key="$length"
+							filter-key="post_id"
+							filter-value="{{object._id}}"
+							>0</span
+						>
+					</a>
+				</div>
 
-                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
+				<div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
-                <!--  Social Icon Start  -->
-                <div
-                    class="padding:0_20px"
-                    share-network="true"
-                    share-url="$href"
-                    share-title="{{object.title}}"
-                    share-height="600"
-                    share-width="600"
-                    share-media="{{object.image[0].src}}">
-                    <div
-                        class="display:flex flex-wrap:wrap gap:20px font-size:18px">
-                        <a href="#" share-network="facebook">
-                            <i src="../assets/svg/facebook-f.svg"></i>
-                        </a>
-                        <a href="#" share-network="twitter"
-                            ><i src="../assets/svg/twitter.svg"></i
-                        ></a>
-                        <a href="#" share-network="linkedin"
-                            ><i src="../assets/svg/linkedin-in.svg"></i
-                        ></a>
-                        <a share>
-                            <i src="../assets/svg/share-alt.svg"></i>
-                        </a>
-                    </div>
-                </div>
-                <!--  Social Icon End  -->
+				<!--  Social Icon Start  -->
+				<div
+					class="padding:0_20px"
+					share-network="true"
+					share-url="$href"
+					share-title="{{object.title}}"
+					share-height="600"
+					share-width="600"
+					share-media="{{object.image[0].src}}">
+					<div
+						class="display:flex flex-wrap:wrap gap:20px font-size:18px">
+						<a href="#" share-network="facebook">
+							<i src="../assets/svg/facebook-f.svg"></i>
+						</a>
+						<a href="#" share-network="twitter"
+							><i src="../assets/svg/twitter.svg"></i
+						></a>
+						<a href="#" share-network="linkedin"
+							><i src="../assets/svg/linkedin-in.svg"></i
+						></a>
+						<a share>
+							<i src="../assets/svg/share-alt.svg"></i>
+						</a>
+					</div>
+				</div>
+				<!--  Social Icon End  -->
 
-                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
+				<div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
-                <!--  Post Media -->
-                <div class="padding:0_20px margin-bottom:15px width:100%">
-                    <style>
-                        [src=""] {
-                            display: none;
-                        }
+				<!--  Post Media -->
+				<div class="padding:0_20px margin-bottom:15px width:100%">
+					<style>
+						[src=""] {
+							display: none;
+						}
 
-                        .video-container {
-                            max-width: 100%;
-                            margin: 0 auto;
-                        }
+						.video-container {
+							max-width: 100%;
+							margin: 0 auto;
+						}
 
-                        .iframe-container {
-                            position: relative;
-                            width: 100%;
-                            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-                            height: 0;
-                            overflow: hidden;
-                        }
+						.iframe-container {
+							position: relative;
+							width: 100%;
+							padding-bottom: 56.25%; /* 16:9 aspect ratio */
+							height: 0;
+							overflow: hidden;
+						}
 
-                        .iframe-container iframe {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                        }
-                    </style>
+						.iframe-container iframe {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+						}
+					</style>
 
-                    <!-- Image -->
-                    <img src="{{object.image}}" width="100%" />
+					<!-- Image -->
+					<img src="{{object.image}}" width="100%" />
 
-                    <!-- Video -->
-                    <!-- <video
+					<!-- Video -->
+					<!-- <video
                         width="100%"
                         src="{{object.video}}"
                         controls
@@ -275,278 +275,278 @@
                         onloadeddata="this.previousElementSibling.style.display='none';"
                         onerror="this.style.display='none';"></video> -->
 
-                    <div class="video-container">
-                        <iframe
-                            id="myVideo"
-                            width="100%"
-                            height="315"
-                            src="{{object.videourl}}"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
+					<div class="video-container">
+						<iframe
+							id="myVideo"
+							width="100%"
+							height="315"
+							src="{{object.videourl}}"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</div>
+				</div>
 
-                <!--  Post Content -->
-                <div class="markdown-body padding:0_20px width:100%">
-                    {{object.content}}
-                </div>
-                <div
-                    class="display:flex margin:20px_0px padding:0_20px gap:5px">
-                    <div
-                        filter-key="likes"
-                        filter-value="$user_id"
-                        filter-next></div>
-                    <input
-                        type="hidden"
-                        array="blog-posts"
-                        object="{{object._id}}"
-                        key="likes"
-                        input-parent
-                        input-attribute="liked" />
+				<!--  Post Content -->
+				<div class="markdown-body padding:0_20px width:100%">
+					{{object.content}}
+				</div>
+				<div
+					class="display:flex margin:20px_0px padding:0_20px gap:5px">
+					<div
+						filter-key="likes"
+						filter-value="$user_id"
+						filter-next></div>
+					<input
+						type="hidden"
+						array="blog-posts"
+						object="{{object._id}}"
+						key="likes"
+						input-parent
+						input-attribute="liked" />
 
-                    <div
-                        filter-key="dislikes"
-                        filter-value="$user_id"
-                        filter-next></div>
-                    <input
-                        type="hidden"
-                        array="blog-posts"
-                        object="{{object._id}}"
-                        key="dislikes"
-                        input-parent
-                        input-attribute="disliked" />
+					<div
+						filter-key="dislikes"
+						filter-value="$user_id"
+						filter-next></div>
+					<input
+						type="hidden"
+						array="blog-posts"
+						object="{{object._id}}"
+						key="dislikes"
+						input-parent
+						input-attribute="disliked" />
 
-                    <form class="add-like" hidden>
-                        <input
-                            type="hidden"
-                            array="blog-posts"
-                            object="{{object._id}}"
-                            key="$addToSet.likes"
-                            value="$user_id" />
-                        <input
-                            type="hidden"
-                            array="blog-posts"
-                            object="{{object._id}}"
-                            key="$pull.dislikes"
-                            value="$user_id" />
-                        <a actions="save"
-                            ><i src="../assets/svg/thumbs-up.svg"></i
-                        ></a>
-                    </form>
-                    <form class="remove-like">
-                        <input
-                            type="hidden"
-                            array="blog-posts"
-                            object="{{object._id}}"
-                            key="$pull.likes"
-                            value="$user_id" />
-                        <a actions="save"
-                            ><i src="../assets/svg/thumbs-up.svg"></i
-                        ></a>
-                    </form>
-                    <span
-                        array="blog-posts"
-                        object="{{object._id}}"
-                        key="likes.$length"
-                        >{{object.likes.$length}}</span
-                    >
+					<form class="add-like" hidden>
+						<input
+							type="hidden"
+							array="blog-posts"
+							object="{{object._id}}"
+							key="$addToSet.likes"
+							value="$user_id" />
+						<input
+							type="hidden"
+							array="blog-posts"
+							object="{{object._id}}"
+							key="$pull.dislikes"
+							value="$user_id" />
+						<a actions="save"
+							><i src="../assets/svg/thumbs-up.svg"></i
+						></a>
+					</form>
+					<form class="remove-like">
+						<input
+							type="hidden"
+							array="blog-posts"
+							object="{{object._id}}"
+							key="$pull.likes"
+							value="$user_id" />
+						<a actions="save"
+							><i src="../assets/svg/thumbs-up.svg"></i
+						></a>
+					</form>
+					<span
+						array="blog-posts"
+						object="{{object._id}}"
+						key="likes.$length"
+						>{{object.likes.$length}}</span
+					>
 
-                    <form class="add-dislike" hidden>
-                        <input
-                            type="hidden"
-                            array="blog-posts"
-                            object="{{object._id}}"
-                            key="$addToSet.dislikes"
-                            value="$user_id" />
-                        <input
-                            type="hidden"
-                            array="blog-posts"
-                            object="{{object._id}}"
-                            key="$pull.likes"
-                            value="$user_id" />
+					<form class="add-dislike" hidden>
+						<input
+							type="hidden"
+							array="blog-posts"
+							object="{{object._id}}"
+							key="$addToSet.dislikes"
+							value="$user_id" />
+						<input
+							type="hidden"
+							array="blog-posts"
+							object="{{object._id}}"
+							key="$pull.likes"
+							value="$user_id" />
 
-                        <a actions="save"
-                            ><i src="../assets/svg/thumbs-down.svg"></i
-                        ></a>
-                    </form>
-                    <form class="remove-dislike">
-                        <input
-                            type="hidden"
-                            array="blog-posts"
-                            object="{{object._id}}"
-                            key="$pull.dislikes"
-                            value="$user_id" />
-                        <a actions="save"
-                            ><i src="../assets/svg/thumbs-down.svg"></i
-                        ></a>
-                    </form>
+						<a actions="save"
+							><i src="../assets/svg/thumbs-down.svg"></i
+						></a>
+					</form>
+					<form class="remove-dislike">
+						<input
+							type="hidden"
+							array="blog-posts"
+							object="{{object._id}}"
+							key="$pull.dislikes"
+							value="$user_id" />
+						<a actions="save"
+							><i src="../assets/svg/thumbs-down.svg"></i
+						></a>
+					</form>
 
-                    <span
-                        array="blog-posts"
-                        object="{{object._id}}"
-                        key="dislikes.$length"
-                        >{{object.dislikes.$length}}</span
-                    >
-                </div>
+					<span
+						array="blog-posts"
+						object="{{object._id}}"
+						key="dislikes.$length"
+						>{{object.dislikes.$length}}</span
+					>
+				</div>
 
-                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
+				<div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
-                <!--  Comment Start  -->
-                <h3 class="padding:0_20px">Comments</h3>
+				<!--  Comment Start  -->
+				<h3 class="padding:0_20px">Comments</h3>
 
-                <input
-                    type="hidden"
-                    filter-next
-                    filter-key="post_id"
-                    filter-value="{{object._id}}" />
-                <div
-                    id="comments"
-                    class="padding:0_20px margin-bottom:20px margin-top:20px width:100%"
-                    array="comments"
-                    object
-                    filter-limit="20"
-                    render-selector="[template]">
-                    <div template render-as="comment">
-                        <div class="display:flex padding:20px_0">
-                            <!-- Avatar -->
-                            <div
-                                class="avatar round width:30px!important height:30px!important margin-right:10px"
-                                background-color="random">
-                                <span
-                                    class="avatar-name"
-                                    array="users"
-                                    object="{{comment.user_id}}"
-                                    key="name">
-                                </span>
-                                <span class="avatar-image">
-                                    <img
-                                        array="users"
-                                        object="{{comment.user_id}}"
-                                        key="avatar[0].src"
-                                        onerror="this.style.display='none'"
-                                        width="40px" />
-                                </span>
-                            </div>
+				<input
+					type="hidden"
+					filter-next
+					filter-key="post_id"
+					filter-value="{{object._id}}" />
+				<div
+					id="comments"
+					class="padding:0_20px margin-bottom:20px margin-top:20px width:100%"
+					array="comments"
+					object
+					filter-limit="20"
+					render-selector="[template]">
+					<div template render-as="comment">
+						<div class="display:flex padding:20px_0">
+							<!-- Avatar -->
+							<div
+								class="avatar round width:30px!important height:30px!important margin-right:10px"
+								background-color="random">
+								<span
+									class="avatar-name"
+									array="users"
+									object="{{comment.user_id}}"
+									key="name">
+								</span>
+								<span class="avatar-image">
+									<img
+										array="users"
+										object="{{comment.user_id}}"
+										key="avatar[0].src"
+										onerror="this.style.display='none'"
+										width="40px" />
+								</span>
+							</div>
 
-                            <div class="flex-grow:1">
-                                <span
-                                    class="margin-right:10px"
-                                    array="users"
-                                    object="{{comment.user_id}}"
-                                    key="name"></span>
-                                <span>
-                                    <input
-                                        type="date"
-                                        value="{{comment.created.on}}"
-                                        value-type="toLocaleDateString"
-                                        onload-next
-                                        onload-attribute="value"
-                                        hidden />
-                                    <span></span>
-                                </span>
-                                <div
-                                    class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
-                                    <p>{{comment.comment}}</p>
-                                </div>
+							<div class="flex-grow:1">
+								<span
+									class="margin-right:10px"
+									array="users"
+									object="{{comment.user_id}}"
+									key="name"></span>
+								<span>
+									<input
+										type="date"
+										value="{{comment.created.on}}"
+										value-type="toLocaleDateString"
+										onload-next
+										onload-attribute="value"
+										hidden />
+									<span></span>
+								</span>
+								<div
+									class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
+									<p>{{comment.comment}}</p>
+								</div>
 
-                                <div class="display:flex gap:5px">
-                                    <input
-                                        type="hidden"
-                                        array="comments"
-                                        object="{{comment._id}}"
-                                        key="likes"
-                                        filter-key="likes"
-                                        filter-value="$user_id"
-                                        input-parent
-                                        input-attribute="liked" />
-                                    <input
-                                        type="hidden"
-                                        array="comments"
-                                        object="{{comment._id}}"
-                                        key="dislikes"
-                                        filter-key="dislikes"
-                                        filter-value="$user_id"
-                                        input-parent
-                                        input-attribute="disliked" />
+								<div class="display:flex gap:5px">
+									<input
+										type="hidden"
+										array="comments"
+										object="{{comment._id}}"
+										key="likes"
+										filter-key="likes"
+										filter-value="$user_id"
+										input-parent
+										input-attribute="liked" />
+									<input
+										type="hidden"
+										array="comments"
+										object="{{comment._id}}"
+										key="dislikes"
+										filter-key="dislikes"
+										filter-value="$user_id"
+										input-parent
+										input-attribute="disliked" />
 
-                                    <form class="add-like" hidden>
-                                        <input
-                                            type="hidden"
-                                            array="comments"
-                                            object="{{comment._id}}"
-                                            key="$addToSet.likes"
-                                            value="$user_id" />
-                                        <input
-                                            type="hidden"
-                                            array="comments"
-                                            object="{{comment._id}}"
-                                            key="$pull.dislikes"
-                                            value="$user_id" />
-                                        <a actions="save"
-                                            ><i
-                                                src="../assets/svg/thumbs-up.svg"></i
-                                        ></a>
-                                    </form>
-                                    <form class="remove-like">
-                                        <input
-                                            type="hidden"
-                                            array="comments"
-                                            object="{{comment._id}}"
-                                            key="$pull.likes"
-                                            value="$user_id" />
-                                        <a actions="save"
-                                            ><i
-                                                src="../assets/svg/thumbs-up.svg"></i
-                                        ></a>
-                                    </form>
-                                    <span
-                                        array="comments"
-                                        object="{{comment._id}}"
-                                        key="likes.$length"
-                                        >{{comment.likes.$length}}</span
-                                    >
+									<form class="add-like" hidden>
+										<input
+											type="hidden"
+											array="comments"
+											object="{{comment._id}}"
+											key="$addToSet.likes"
+											value="$user_id" />
+										<input
+											type="hidden"
+											array="comments"
+											object="{{comment._id}}"
+											key="$pull.dislikes"
+											value="$user_id" />
+										<a actions="save"
+											><i
+												src="../assets/svg/thumbs-up.svg"></i
+										></a>
+									</form>
+									<form class="remove-like">
+										<input
+											type="hidden"
+											array="comments"
+											object="{{comment._id}}"
+											key="$pull.likes"
+											value="$user_id" />
+										<a actions="save"
+											><i
+												src="../assets/svg/thumbs-up.svg"></i
+										></a>
+									</form>
+									<span
+										array="comments"
+										object="{{comment._id}}"
+										key="likes.$length"
+										>{{comment.likes.$length}}</span
+									>
 
-                                    <form class="add-dislike" hidden>
-                                        <input
-                                            type="hidden"
-                                            array="comments"
-                                            object="{{comment._id}}"
-                                            key="$addToSet.dislikes"
-                                            value="$user_id" />
-                                        <input
-                                            type="hidden"
-                                            array="comments"
-                                            object="{{comment._id}}"
-                                            key="$pull.likes"
-                                            value="$user_id" />
+									<form class="add-dislike" hidden>
+										<input
+											type="hidden"
+											array="comments"
+											object="{{comment._id}}"
+											key="$addToSet.dislikes"
+											value="$user_id" />
+										<input
+											type="hidden"
+											array="comments"
+											object="{{comment._id}}"
+											key="$pull.likes"
+											value="$user_id" />
 
-                                        <a actions="save"
-                                            ><i
-                                                src="../assets/svg/thumbs-down.svg"></i
-                                        ></a>
-                                    </form>
-                                    <form class="remove-dislike">
-                                        <input
-                                            type="hidden"
-                                            array="comments"
-                                            object="{{comment._id}}"
-                                            key="$pull.dislikes"
-                                            value="$user_id" />
-                                        <a actions="save"
-                                            ><i
-                                                src="../assets/svg/thumbs-down.svg"></i
-                                        ></a>
-                                    </form>
+										<a actions="save"
+											><i
+												src="../assets/svg/thumbs-down.svg"></i
+										></a>
+									</form>
+									<form class="remove-dislike">
+										<input
+											type="hidden"
+											array="comments"
+											object="{{comment._id}}"
+											key="$pull.dislikes"
+											value="$user_id" />
+										<a actions="save"
+											><i
+												src="../assets/svg/thumbs-down.svg"></i
+										></a>
+									</form>
 
-                                    <span
-                                        array="comments"
-                                        object="{{comment._id}}"
-                                        key="dislikes.$length"
-                                        >{{comment.dislikes.$length}}</span
-                                    >
-                                </div>
-                                <!-- <div class="display:flex gap:5px">
+									<span
+										array="comments"
+										object="{{comment._id}}"
+										key="dislikes.$length"
+										>{{comment.dislikes.$length}}</span
+									>
+								</div>
+								<!-- <div class="display:flex gap:5px">
                                     <form>
                                         <input
                                             type="number"
@@ -569,168 +569,144 @@
                                            <a href="#"
                                     ><i src="../assets/svg/thumbs-down.svg"></i
                                 ></a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!--  Comment End  -->
-                </div>
+							</div>
+						</div>
+					</div>
+					<!--  Comment End  -->
+				</div>
 
-                <div class="margin:20px border-bottom:1px_solid_#ddd"></div>
+				<div class="margin:20px border-bottom:1px_solid_#ddd"></div>
 
-                <!--  Post COMMENT Start  -->
-                <style>
-                    .createUser {
-                        display: none;
-                    }
-                    div[hasuser="false"] .createUser {
-                        display: block;
-                    }
-                    div[hasuser="false"] #commentAvatar {
-                        display: none;
-                    }
-                    div[hasuser="false"] #commentButton {
-                        display: none;
-                    }
-                </style>
-                <input
-                    type="hidden"
-                    key="_id"
-                    localstorage-get="user_id"
-                    localstorage-if="true"
-                    localstorage-next
-                    localstorage-attribute="hasuser"
-                    localstorage-value="true" />
-                <div
-                    hasuser="false"
-                    class="padding:0_20px margin-bottom:20px margin-top:20px width:100%">
-                    <form class="createUser" array="users" object="">
-                        <div class="display:flex flex-wrap:wrap gap:20px">
-                            <floating-label class="flex-grow:1">
-                                <input
-                                    type="text"
-                                    array="users"
-                                    object="$user_id"
-                                    key="name"
-                                    placeholder="Name"
-                                    required />
-                            </floating-label>
-                            <floating-label class="flex-grow:1">
-                                <input
-                                    type="email"
-                                    array="users"
-                                    object="$user_id"
-                                    key="email"
-                                    placeholder="Email"
-                                    required />
-                            </floating-label>
-                        </div>
-                        <input key="_id" localstorage-set="user_id" hidden />
-                        <input
-                            key="answeredQuestions[]"
-                            value="Discover"
-                            hidden />
-                        <input key="subscription" value="false" hidden />
-                        <input type="checkbox" key="ambassadorTerms" hidden />
+				<!--  Post COMMENT Start  -->
+				<style>
+					.createUser {
+						display: none;
+					}
+					div[hasuser="false"] .createUser {
+						display: block;
+					}
+					div[hasuser="false"] #commentAvatar {
+						display: none;
+					}
+					div[hasuser="false"] #commentButton {
+						display: none;
+					}
+				</style>
+				<input
+					type="hidden"
+					key="_id"
+					localstorage-get="user_id"
+					localstorage-if="true"
+					localstorage-next
+					localstorage-attribute="hasuser"
+					localstorage-value="true" />
+				<div
+					hasuser="false"
+					class="padding:0_20px margin-bottom:20px margin-top:20px width:100%">
+					<form class="createUser" array="users" object="">
+						<div class="display:flex flex-wrap:wrap gap:20px">
+							<floating-label class="flex-grow:1">
+								<input
+									type="text"
+									array="users"
+									object="$user_id"
+									key="name"
+									placeholder="Name"
+									required />
+							</floating-label>
+							<floating-label class="flex-grow:1">
+								<input
+									type="email"
+									array="users"
+									object="$user_id"
+									key="email"
+									placeholder="Email"
+									required />
+							</floating-label>
+						</div>
+						<input key="_id" localstorage-set="user_id" hidden />
+						<input
+							key="answeredQuestions[]"
+							value="Discover"
+							hidden />
+						<input key="subscription" value="false" hidden />
+						<input type="checkbox" key="ambassadorTerms" hidden />
 
-                        <a
-                            id="createUserBtn"
-                            click-selector="document; #questions"
-                            click-attribute="read"
-                            click-value="true"
-                            actions="timeout(1000), save, localStorage, action(document, #commentButton)"></a>
-                    </form>
+						<a
+							id="createUserBtn"
+							click-selector="document; #questions"
+							click-attribute="read"
+							click-value="true"
+							actions="timeout(1000), save, localStorage, action(document, #commentButton)"></a>
+					</form>
 
-                    <form
-                        array="comments"
-                        object=""
-                        class="width:100% margin:20px_0 display:flex flex-direction:column gap:20px">
-                        <input
-                            type="hidden"
-                            key="post_id"
-                            value="{{object._id}}" />
-                        <div class="display:flex">
-                            <!-- Avatar -->
-                            <div
-                                id="commentAvatar"
-                                class="avatar round width:30px!important height:30px!important margin-right:10px">
-                                <span
-                                    array="users"
-                                    object="$user_id"
-                                    key="name"
-                                    class="avatar-name">
-                                </span>
-                                <span class="avatar-image">
-                                    <img
-                                        array="users"
-                                        object="$user_id"
-                                        key="avatar[0].src"
-                                        onerror="this.style.display='none'"
-                                        width="40px" />
-                                </span>
-                            </div>
+					<form
+						array="comments"
+						object=""
+						class="width:100% margin:20px_0 display:flex flex-direction:column gap:20px">
+						<input
+							type="hidden"
+							key="post_id"
+							value="{{object._id}}" />
+						<div class="display:flex">
+							<!-- Avatar -->
+							<div
+								id="commentAvatar"
+								class="avatar round width:30px!important height:30px!important margin-right:10px">
+								<span
+									array="users"
+									object="$user_id"
+									key="name"
+									class="avatar-name">
+								</span>
+								<span class="avatar-image">
+									<img
+										array="users"
+										object="$user_id"
+										key="avatar[0].src"
+										onerror="this.style.display='none'"
+										width="40px" />
+								</span>
+							</div>
 
-                            <floating-label class="flex-grow:1">
-                                <textarea
-                                    rows="1"
-                                    placeholder="Add a comment..."
-                                    key="comment"
-                                    required
-                                    auto-rows></textarea>
-                            </floating-label>
-                            <input
-                                type="hidden"
-                                key="user_id"
-                                value="$user_id"
-                                required />
-                        </div>
+							<floating-label class="flex-grow:1">
+								<textarea
+									rows="1"
+									placeholder="Add a comment..."
+									key="comment"
+									required
+									height="auto"></textarea>
+							</floating-label>
+							<input
+								type="hidden"
+								key="user_id"
+								value="$user_id"
+								required />
+						</div>
 
-                        <button
-                            id="commentButton"
-                            actions="validate, save, reset"
-                            class="padding:10px_30px">
-                            Post Comment
-                        </button>
-                    </form>
+						<button
+							id="commentButton"
+							actions="validate, save, reset"
+							class="padding:10px_30px">
+							Post Comment
+						</button>
+					</form>
 
-                    <button
-                        class="createUser width:100% padding:10px_30px"
-                        actions="action(document; #createUserBtn)">
-                        Post Comment
-                    </button>
-                </div>
-            </section>
-        </main>
+					<button
+						class="createUser width:100% padding:10px_30px"
+						actions="action(document; #createUserBtn)">
+						Post Comment
+					</button>
+				</div>
+			</section>
+		</main>
 
-        <!-- Footer -->
-        <footer
-            id="spreadtheword"
-            path="../"
-            src="../components/footer.html"></footer>
+		<!-- Footer -->
+		<footer
+			id="spreadtheword"
+			path="../"
+			src="../components/footer.html"></footer>
 
-        <script src="../dist/CoCreate.js"></script>
-        <script>
-            document.addEventListener(
-                "input",
-                function (event) {
-                    if (
-                        event.target.tagName.toLowerCase() !== "textarea" ||
-                        !event.target.hasAttribute("auto-rows")
-                    )
-                        return;
-                    autoResizeTextarea(event.target);
-                },
-                false
-            );
-
-            function autoResizeTextarea(textarea) {
-                const lineHeight = parseInt(
-                    window.getComputedStyle(textarea).lineHeight
-                );
-                textarea.rows = 1;
-                const lines = Math.ceil(textarea.scrollHeight / lineHeight);
-                textarea.rows = lines;
-                console.log("libesss");
-            }
-        </script>
-    </body>
+		<script src="../dist/CoCreate.js"></script>
+	</body>
 </html>
