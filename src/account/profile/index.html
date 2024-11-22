@@ -1,61 +1,57 @@
-<!DOCTYPE html>
+<section class="centered">
+	<form array="users" object="$user_id" autocomplete="off" class="flex-form">
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="firstname"
+				id="firstname"
+				placeholder="First name"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="lastname"
+				id="lastname"
+				placeholder="Last name"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="email"
+				id="email"
+				placeholder="Email"
+				class="floating-label"
+				autocomplete="email" />
+		</floating-label>
 
-<form
-    array="users"
-    object="$user_id"
-    autocomplete="off"
-    class="flex-form max-width:800px margin:0px_auto padding:80px_15px">
-    <floating-label class="flex-input-50">
-        <input
-            type="text"
-            key="firstname"
-            id="firstname"
-            placeholder="First name"
-            class="floating-label" />
-    </floating-label>
-    <floating-label class="flex-input-50">
-        <input
-            type="text"
-            key="lastname"
-            id="lastname"
-            placeholder="Last name"
-            class="floating-label" />
-    </floating-label>
-    <floating-label class="flex-input-50">
-        <input
-            type="text"
-            key="email"
-            id="email"
-            placeholder="Email"
-            class="floating-label"
-            autocomplete="email" />
-    </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="password"
+				key="password"
+				placeholder="password"
+				class="floating-label"
+				autocomplete="new-password" />
+		</floating-label>
 
-    <floating-label class="flex-input-50">
-        <input
-            type="password"
-            key="password"
-            placeholder="password"
-            class="floating-label"
-            autocomplete="new-password" />
-    </floating-label>
+		<floating-label class="width:250px">
+			<div
+				type="file"
+				key="avatar"
+				accept="image/*"
+				placeholder="Profile Image"
+				class="floating-label min-height:40px active"
+				render-selector="[template]"
+				active>
+				<div template>
+					<img src="{{avatar.src}}" alt="image" width="100%" />
+				</div>
+			</div>
+		</floating-label>
 
-    <floating-label class="width:250px">
-        <div
-            type="file"
-            key="avatar"
-            accept="image/*"
-            placeholder="Profile Image"
-            class="floating-label min-height:40px active"
-            render-selector="[template]"
-            active>
-            <div template>
-                <img src="{{avatar.src}}" alt="image" width="100%" />
-            </div>
-        </div>
-    </floating-label>
-
-    <button actions="save" class="button-round">
-        <i src="../assets/svg/save.svg"></i>
-    </button>
-</form>
+		<button actions="save">
+			<i src="../assets/svg/save.svg"> Save</i>
+		</button>
+	</form>
+</section>

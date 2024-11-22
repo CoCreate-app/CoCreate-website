@@ -1,175 +1,176 @@
-<!DOCTYPE html>
+<section class="centered">
+	<form array="organizations" object="" state_id="form" class="flex-form">
+		<!-- <input type="text" key="logo" placeholder="Logo" class="floating-label" /> -->
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="name"
+				placeholder="Organization Name"
+				class="floating-label" />
+		</floating-label>
 
-<form
-    array="organizations"
-    realtime="false"
-    object=""
-    state_id="form"
-    class="flex-form max-width:800px margin:0px_auto padding:80px_15px">
-    <!-- <input type="text" key="logo" placeholder="Logo" class="floating-label" /> -->
-    <floating-label class="flex-input-50">
-        <input
-            type="text"
-            key="name"
-            placeholder="Organization Name"
-            class="floating-label" />
-    </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="host[0].name"
+				placeholder="host"
+				value-suffix=".cocreate.app"
+				subdomain
+				required
+				class="floating-label" />
+			<div
+				class="position:absolute top:6px right:8px float:right padding:5px background:whitesmoke background:#222@dark">
+				<span>.cocreate.app</span>
+			</div>
+		</floating-label>
 
-    <floating-label class="flex-input-50">
-        <input
-            type="text"
-            array="organizations"
-            object=""
-            key="host[0].name"
-            placeholder="host"
-            value-suffix=".cocreate.app"
-            subdomain
-            required
-            class="floating-label" />
-        <div
-            class="position:absolute top:6px right:8px float:right padding:5px background:whitesmoke background:#222@dark">
-            <span>.cocreate.app</span>
-        </div>
-    </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="_id"
+				placeholder="Organization Id"
+				class="floating-label"
+				readonly />
+		</floating-label>
 
-    <floating-label class="flex-input-50">
-        <input
-            type="text"
-            key="_id"
-            placeholder="Organization Id"
-            class="floating-label"
-            readonly />
-    </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="organization_id"
+				placeholder="Platform Id"
+				class="floating-label"
+				readonly />
+		</floating-label>
 
-    <floating-label class="flex-input-50">
-        <input
-            type="text"
-            key="organization_id"
-            placeholder="Platform Id"
-            class="floating-label"
-            readonly />
-    </floating-label>
+		<div class="Domains-container width:100%">
+			<div
+				click-next
+				click-attribute="class"
+				click-value="display:flex"
+				class="card display:flex padding:10px_15px">
+				<span class="flex-grow:1">Domains</span>
 
-    <div class="Domains-container width:100%">
-        <div
-            click-next
-            click-attribute="class"
-            click-value="display:flex"
-            class="card display:flex padding:10px_15px">
-            <span class="flex-grow:1">Domains</span>
+				<i
+					toggle-attribute="src"
+					toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
+					src="../assets/svg/angle-down.svg"></i>
+			</div>
 
-            <i
-                toggle-attribute="src"
-                toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
-                src="../assets/svg/angle-down.svg"></i>
-        </div>
+			<div
+				array="organizations"
+				object=""
+				key="host"
+				render-selector="[template]"
+				class="display:none flex-direction:column gap:1px">
+				<div class="card padding:10px" template>
+					<div class="position:relative">
+						<div
+							class="display:flex flex-wrap:wrap gap:20px padding:5px">
+							<floating-label class="width:100%">
+								<input
+									array="organizations"
+									object=""
+									key="host[{{index}}].name"
+									placeholder="Domain"
+									class="floating-label" />
+							</floating-label>
+							<div class="display:flex gap:20px width:100%">
+								<floating-label class="flex-grow:1">
+									<input
+										array="organizations"
+										object=""
+										key="host[{{index}}].storage"
+										placeholder="Storage"
+										class="floating-label" />
+								</floating-label>
+								<floating-label class="flex-grow:1">
+									<input
+										array="organizations"
+										object=""
+										key="host[{{index}}].database"
+										placeholder="Database"
+										class="floating-label" />
+								</floating-label>
+								<floating-label class="flex-grow:1">
+									<input
+										array="organizations"
+										object=""
+										key="host[{{index}}].array"
+										placeholder="Array"
+										class="floating-label" />
+								</floating-label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <div
-            array="organizations"
-            object=""
-            key="host"
-            render-selector="[template]"
-            class="display:none flex-direction:column gap:1px">
-            <div class="card padding:10px" template>
-                <div class="position:relative">
-                    <div
-                        class="display:flex flex-wrap:wrap gap:20px padding:5px">
-                        <floating-label class="width:100%">
-                            <input
-                                array="organizations"
-                                object=""
-                                key="host[{{index}}].name"
-                                placeholder="Domain"
-                                class="floating-label" />
-                        </floating-label>
-                        <div class="display:flex gap:20px width:100%">
-                            <floating-label class="flex-grow:1">
-                                <input
-                                    array="organizations"
-                                    object=""
-                                    key="host[{{index}}].storage"
-                                    placeholder="Storage"
-                                    class="floating-label" />
-                            </floating-label>
-                            <floating-label class="flex-grow:1">
-                                <input
-                                    array="organizations"
-                                    object=""
-                                    key="host[{{index}}].database"
-                                    placeholder="Database"
-                                    class="floating-label" />
-                            </floating-label>
-                            <floating-label class="flex-grow:1">
-                                <input
-                                    array="organizations"
-                                    object=""
-                                    key="host[{{index}}].array"
-                                    placeholder="Array"
-                                    class="floating-label" />
-                            </floating-label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="storage-container width:100%">
+			<div
+				click-next
+				click-attribute="class"
+				click-value="display:none"
+				class="card display:flex padding:10px_15px">
+				<span class="flex-grow:1">Storages</span>
 
-    <div class="storage-container width:100%">
-        <div
-            click-next
-            click-attribute="class"
-            click-value="display:none"
-            class="card display:flex padding:10px_15px">
-            <span class="flex-grow:1">Storages</span>
+				<i
+					toggle-attribute="src"
+					toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
+					src="../assets/svg/angle-down.svg"></i>
+			</div>
 
-            <i
-                toggle-attribute="src"
-                toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
-                src="../assets/svg/angle-down.svg"></i>
-        </div>
+			<div
+				array="organizations"
+				object=""
+				key="storage"
+				render-selector="[template]"
+				class="display:none">
+				<div class="card align-items:center padding:10px" template>
+					<div class="position:relative">
+						<div
+							class="display:flex flex-wrap:wrap gap:20px width:100% box-sizing:border-box padding:5px">
+							<floating-label class="width:100%">
+								<input
+									array="organizations"
+									object=""
+									key="storage[{{index}}].name"
+									placeholder="Name"
+									class="floating-label" />
+							</floating-label>
+							<floating-label class="width:100%">
+								<input
+									array="organizations"
+									object=""
+									key="storage[{{index}}].provider"
+									placeholder="Provider"
+									class="floating-label" />
+							</floating-label>
 
-        <div
-            array="organizations"
-            object=""
-            key="storage"
-            render-selector="[template]"
-            class="display:none">
-            <div class="card align-items:center padding:10px" template>
-                <div class="position:relative">
-                    <div
-                        class="display:flex flex-wrap:wrap gap:20px width:100% box-sizing:border-box padding:5px">
-                        <floating-label class="width:100%">
-                            <input
-                                array="organizations"
-                                object=""
-                                key="storage[{{index}}].name"
-                                placeholder="Name"
-                                class="floating-label" />
-                        </floating-label>
-                        <floating-label class="width:100%">
-                            <input
-                                array="organizations"
-                                object=""
-                                key="storage[{{index}}].provider"
-                                placeholder="Provider"
-                                class="floating-label" />
-                        </floating-label>
-
-                        <floating-label class="width:100%">
-                            <textarea
-                                array="organizations"
-                                object=""
-                                key="storage[{{index}}].url"
-                                placeholder="Url"
-                                class="floating-label"></textarea>
-                        </floating-label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <button actions="save" class="button-round">
-        <i src="../assets/svg/save.svg"></i>
-    </button>
-</form>
+							<floating-label class="width:100%">
+								<textarea
+									array="organizations"
+									object=""
+									key="storage[{{index}}].url"
+									placeholder="Url"
+									class="floating-label"></textarea>
+							</floating-label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button
+			actions="state"
+			state_to="main"
+			state-src="$back"
+			class="cancel margin-left:auto">
+			<i src="../assets/svg/ban.svg"></i>
+			<span class="margin-left:5px"> Cancel</span>
+		</button>
+		<button actions="save">
+			<i src="../assets/svg/save.svg"></i>
+			<span class="margin-left:5px"> Save</span>
+		</button>
+	</form>
+</section>

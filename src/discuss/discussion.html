@@ -1,935 +1,934 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Discussion | CoCreate</title>
-        <meta
-            name="description"
-            content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../assets/favicon.ico" />
-        <meta name="robots" content="index,follow" />
-        <meta
-            property="og:image"
-            content="https://cdn.cocreate.app/docs/action.png" />
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Discussion | CoCreate</title>
+		<meta
+			name="description"
+			content="A Low-code JavaScript framework for building collaborative No-code platforms, apps and UI" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon.ico" />
+		<meta name="robots" content="index,follow" />
+		<meta
+			property="og:image"
+			content="https://cdn.cocreate.app/docs/action.png" />
 
-        <link
-            rel="stylesheet"
-            href="../index.css"
-            array="files"
-            object="637bc8fe91249e639db315d9"
-            key="{}"
-            type="text/css"
-            parse="true" />
+		<link
+			rel="stylesheet"
+			href="../index.css"
+			array="files"
+			object="637bc8fe91249e639db315d9"
+			key="{}"
+			type="text/css"
+			parse="true" />
 
-        <!--  Custom Style  -->
-        <style type="text/css">
-            .hide-nav ~ #menuR {
-                margin-top: 0px;
-                max-height: -moz-available;
-                max-height: -webkit-fill-available;
-                max-height: fill-available;
-                will-change: transform;
-                transition: background 0.3s,
-                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
-                    background 0.3s;
-                transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
-                    background 0.3s,
-                    -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
-                transform: translateY(0);
-                -webkit-transform: translateY(0);
-            }
-        </style>
-        <link rel="manifest" href="../manifest.webmanifest" />
-    </head>
+		<!--  Custom Style  -->
+		<style type="text/css">
+			.hide-nav ~ #menuR {
+				margin-top: 0px;
+				max-height: -moz-available;
+				max-height: -webkit-fill-available;
+				max-height: fill-available;
+				will-change: transform;
+				transition: background 0.3s,
+					-webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+				transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
+					background 0.3s;
+				transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1),
+					background 0.3s,
+					-webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
+				transform: translateY(0);
+				-webkit-transform: translateY(0);
+			}
+		</style>
+		<link rel="manifest" href="../manifest.webmanifest" />
+	</head>
 
-    <body>
-        <!-- Navbar  -->
-        <nav
-            class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px"
-            scroll="sticky-nav,hide-nav"
-            scroll-up="10"
-            scroll-down="10"
-            path="../"
-            src="../components/navbar.html"></nav>
+	<body>
+		<!-- Navbar  -->
+		<nav
+			class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px"
+			scroll="sticky-nav,hide-nav"
+			scroll-up="10"
+			scroll-down="10"
+			path="../"
+			src="../components/navbar.html"></nav>
 
-        <!-- SideNav Left-->
-        <sidenav
-            id="menuL"
-            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
-            resizable
-            resize-selector="[content_id='content']"
-            resize-property="margin-left"
-            resize-value="width"
-            path="../"
-            src="../components/sidenav.html"></sidenav>
+		<!-- SideNav Left-->
+		<sidenav
+			id="menuL"
+			class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+			resizable
+			resize-selector="[content_id='content']"
+			resize-property="margin-left"
+			resize-value="width"
+			path="../"
+			src="../components/sidenav.html"></sidenav>
 
-        <!-- Modal Viewport/Boundaries -->
-        <div
-            class="position:fixed margin-top:50px"
-            content_id="content"
-            id="modal-viewport"></div>
+		<!-- Modal Viewport/Boundaries -->
+		<div
+			class="position:fixed margin-top:50px"
+			content_id="content"
+			id="modal-viewport"></div>
 
-        <!-- Main Content -->
-        <main class="padding:15px" content_id="content">
-            <!-- Discussion -->
-            <div class="max-width:800px margin:auto">
-                <!--  Post Category Start  -->
-                <div class="margin-top:20px display:flex flex-wrap:wrap">
-                    <a
-                        class="margin-right:5px margin-bottom:5px padding:3px_10px background:#F23A2E color:#fff color:#ddd:hover"
-                        href="#"
-                        >Education</a
-                    >
-                    <a
-                        class="margin-right:5px margin-bottom:5px padding:3px_10px background:#8BC34A color:#fff color:#ddd:hover"
-                        href="#"
-                        >Technology</a
-                    >
-                </div>
+		<!-- Main Content -->
+		<main class="padding:15px" content_id="content">
+			<!-- Discussion -->
+			<div class="max-width:800px margin:auto">
+				<!--  Post Category Start  -->
+				<div class="margin-top:20px display:flex flex-wrap:wrap">
+					<a
+						class="margin-right:5px margin-bottom:5px padding:3px_10px background:#F23A2E color:#fff color:#ddd:hover"
+						href="#"
+						>Education</a
+					>
+					<a
+						class="margin-right:5px margin-bottom:5px padding:3px_10px background:#8BC34A color:#fff color:#ddd:hover"
+						href="#"
+						>Technology</a
+					>
+				</div>
 
-                <!--  Post title Start  -->
-                <div class="margin-top:20px">
-                    <h1
-                        class="color:#333 line-height:40px font-size:25px@xs@sm word-spacing:5px">
-                        Can I log in with Google and a forum log in too?
-                    </h1>
-                </div>
+				<!--  Post title Start  -->
+				<div class="margin-top:20px">
+					<h1
+						class="color:#333 line-height:40px font-size:25px@xs@sm word-spacing:5px">
+						Can I log in with Google and a forum log in too?
+					</h1>
+				</div>
 
-                <!--  Post date &amp; name Start  -->
-                <div class="margin-top:20px display:flex flex-wrap:wrap">
-                    <span>By</span>
-                    <a hrf="#" class="font-weight:bold margin:0_10px"
-                        >John Smith -
-                    </a>
-                    <span>May 19, 2020</span>
-                    <a class="margin:0_10px" href="#"
-                        ><i src="../assets/svg/eye.svg"></i> 4803</a
-                    >
-                    <a class="margin:0_10px" href="#"
-                        ><i src="../assets/svg/comment-alt.svg"></i> 5</a
-                    >
-                </div>
+				<!--  Post date &amp; name Start  -->
+				<div class="margin-top:20px display:flex flex-wrap:wrap">
+					<span>By</span>
+					<a hrf="#" class="font-weight:bold margin:0_10px"
+						>John Smith -
+					</a>
+					<span>May 19, 2020</span>
+					<a class="margin:0_10px" href="#"
+						><i src="../assets/svg/eye.svg"></i> 4803</a
+					>
+					<a class="margin:0_10px" href="#"
+						><i src="../assets/svg/comment-alt.svg"></i> 5</a
+					>
+				</div>
 
-                <div
-                    class="margin-top:25px margin-bottom:10px border-bottom:1px_solid_#ddd"></div>
+				<div
+					class="margin-top:25px margin-bottom:10px border-bottom:1px_solid_#ddd"></div>
 
-                <!--  Social Icon Start  -->
-                <div
-                    class="post-date width:100% display:flex flex-wrap:wrap justify-content:flex-start">
-                    <div
-                        class="social display:flex flex-wrap:wrap justify-content:flex-start align-items:center">
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#5973A9 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/facebook-f.svg"></i>
-                        </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#3DB6E6 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/twitter.svg"></i>
-                        </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#2788BE color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/linkedin-in.svg"></i>
-                        </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#E26757 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/google-plus-g.svg"></i>
-                        </a>
-                        <a
-                            class="border:1px_solid_#ddd border-radius:50% background-color:#E26757 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
-                            <i src="../assets/svg/envelope.svg"></i>
-                        </a>
-                    </div>
-                </div>
+				<!--  Social Icon Start  -->
+				<div
+					class="post-date width:100% display:flex flex-wrap:wrap justify-content:flex-start">
+					<div
+						class="social display:flex flex-wrap:wrap justify-content:flex-start align-items:center">
+						<a
+							class="border:1px_solid_#ddd border-radius:50% background-color:#5973A9 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
+							<i src="../assets/svg/facebook-f.svg"></i>
+						</a>
+						<a
+							class="border:1px_solid_#ddd border-radius:50% background-color:#3DB6E6 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
+							<i src="../assets/svg/twitter.svg"></i>
+						</a>
+						<a
+							class="border:1px_solid_#ddd border-radius:50% background-color:#2788BE color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
+							<i src="../assets/svg/linkedin-in.svg"></i>
+						</a>
+						<a
+							class="border:1px_solid_#ddd border-radius:50% background-color:#E26757 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
+							<i src="../assets/svg/google-plus-g.svg"></i>
+						</a>
+						<a
+							class="border:1px_solid_#ddd border-radius:50% background-color:#E26757 color:#fff opacity:0.7:hover cursor:pointer:hover margin-right:7px font-size:14px padding:9px_11px">
+							<i src="../assets/svg/envelope.svg"></i>
+						</a>
+					</div>
+				</div>
 
-                <div
-                    class="margin-top:10px margin-bottom:25px width:100% border-bottom:1px_solid_#ddd"></div>
+				<div
+					class="margin-top:10px margin-bottom:25px width:100% border-bottom:1px_solid_#ddd"></div>
 
-                <!-- Main post wrapper -->
-                <div>
-                    <div
-                        class="padding:0_20px margin-bottom:15px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
-                        <div
-                            class="background:#DAB16D color:#fff font-weight:500 font-size:22px text-align:center padding-top:7px padding-right:3px width:40px height:40px border-radius:50%">
-                            J
-                        </div>
-                        <div class="margin-left:15px">
-                            <h3 class="margin-top:10px">John Smith</h3>
-                        </div>
-                    </div>
+				<!-- Main post wrapper -->
+				<div>
+					<div
+						class="padding:0_20px margin-bottom:15px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
+						<div
+							class="background:#DAB16D color:#fff font-weight:500 font-size:22px text-align:center padding-top:7px padding-right:3px width:40px height:40px border-radius:50%">
+							J
+						</div>
+						<div class="margin-left:15px">
+							<h3 class="margin-top:10px">John Smith</h3>
+						</div>
+					</div>
 
-                    <!--  Post Main Image Start  -->
-                    <!--<div class="post-date margin-bottom:15px width:100% display:flex flex-wrap:wrap justify-content:flex-start">-->
-                    <!--  <img class="width:100%" src="images/blog-post/main-img.jpg" />-->
-                    <!--</div>-->
-                    <!--  Post Main Image End  -->
+					<!--  Post Main Image Start  -->
+					<!--<div class="post-date margin-bottom:15px width:100% display:flex flex-wrap:wrap justify-content:flex-start">-->
+					<!--  <img class="width:100%" src="images/blog-post/main-img.jpg" />-->
+					<!--</div>-->
+					<!--  Post Main Image End  -->
 
-                    <!--  Post Main Content Start  -->
-                    <div
-                        class="post-date padding:0_60px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
-                        <p
-                            class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                            <b class="font-size:20px color:#000"
-                                >I’m currently using my Google account</b
-                            >
-                            (with two factor authentication for security) but I
-                            don’t want to log onto certain computers with my
-                            Google account for various paranoid reasons.
-                        </p>
-                        <p
-                            class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                            <b>Can I set up</b> a sign on with Discourse so that
-                            I can type in a normal username/password at the log
-                            in screen and still get into my account?
-                        </p>
+					<!--  Post Main Content Start  -->
+					<div
+						class="post-date padding:0_60px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
+						<p
+							class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
+							<b class="font-size:20px color:#000"
+								>I’m currently using my Google account</b
+							>
+							(with two factor authentication for security) but I
+							don’t want to log onto certain computers with my
+							Google account for various paranoid reasons.
+						</p>
+						<p
+							class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
+							<b>Can I set up</b> a sign on with Discourse so that
+							I can type in a normal username/password at the log
+							in screen and still get into my account?
+						</p>
 
-                        <q
-                            class="display:block width:100% font-size:20px margin:15px_0 text-align:center"
-                            >I understand this may weaken my account security,
-                            but better that than to not have access to the
-                            forum, or to weaken my Google account!</q
-                        >
+						<q
+							class="display:block width:100% font-size:20px margin:15px_0 text-align:center"
+							>I understand this may weaken my account security,
+							but better that than to not have access to the
+							forum, or to weaken my Google account!</q
+						>
 
-                        <p
-                            class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                            <b>The protocol will be</b> Can I set up a sign on
-                            with Discourse so that I can type in a normal
-                            username/password at the log in screen and still get
-                            into my account?
-                        </p>
-                        <p
-                            class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                            This will help visitors and locals too in
-                            understanding which outlet is safe to visit.
-                            Meanwhile the HKQAA will conduct random inspections
-                            if the protocol is being followed.
-                        </p>
-                        <p
-                            class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
-                            The best part is around 1800 businesses and outlets
-                            have shown interest in registering for the program,
-                            including the Hong Kong Disneyland. Disneyland in
-                            Hong Kong was reopened last month and visitors are
-                            required to make advance reservations to visit. They
-                            are also required to sign a health declaration form,
-                            and follow all the mandatory rules including social
-                            distancing and face masks.
-                        </p>
-                    </div>
+						<p
+							class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
+							<b>The protocol will be</b> Can I set up a sign on
+							with Discourse so that I can type in a normal
+							username/password at the log in screen and still get
+							into my account?
+						</p>
+						<p
+							class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
+							This will help visitors and locals too in
+							understanding which outlet is safe to visit.
+							Meanwhile the HKQAA will conduct random inspections
+							if the protocol is being followed.
+						</p>
+						<p
+							class="margin:20px letter-spacing:1.3px word-spacing:5px line-height:27px">
+							The best part is around 1800 businesses and outlets
+							have shown interest in registering for the program,
+							including the Hong Kong Disneyland. Disneyland in
+							Hong Kong was reopened last month and visitors are
+							required to make advance reservations to visit. They
+							are also required to sign a health declaration form,
+							and follow all the mandatory rules including social
+							distancing and face masks.
+						</p>
+					</div>
 
-                    <!--  Post date, creator, like start  -->
-                    <div
-                        class="padding:0_20px margin-top:15px width:100% display:flex flex-wrap:wrap">
-                        <div
-                            class="display:flex flex-basis:75% background:#F8F8F8 border:1px_solid_#ddd padding:5px_10px">
-                            <div class="margin-right:15px">
-                                <p class="font-size:14px">Created</p>
-                                <a
-                                    title="John smith"
-                                    class="background:#DAB16D color:#fff color:#fff:hover border-radius:50% font-size:14px display:inline-block width:30px height:30px padding-top:6px padding-right:2px text-align:center"
-                                    href="#"
-                                    >J</a
-                                >
-                                <span class="margin-top:3px font-size:14px"
-                                    >Feb '19</span
-                                >
-                            </div>
+					<!--  Post date, creator, like start  -->
+					<div
+						class="padding:0_20px margin-top:15px width:100% display:flex flex-wrap:wrap">
+						<div
+							class="display:flex flex-basis:75% background:#F8F8F8 border:1px_solid_#ddd padding:5px_10px">
+							<div class="margin-right:15px">
+								<p class="font-size:14px">Created</p>
+								<a
+									title="John smith"
+									class="background:#DAB16D color:#fff color:#fff:hover border-radius:50% font-size:14px display:inline-block width:30px height:30px padding-top:6px padding-right:2px text-align:center"
+									href="#"
+									>J</a
+								>
+								<span class="margin-top:3px font-size:14px"
+									>Feb '19</span
+								>
+							</div>
 
-                            <div class="margin-right:10px">
-                                <p class="font-size:14px">Last Reply</p>
-                                <a
-                                    title="Adam davis"
-                                    class="background:#DAB434 color:#fff color:#fff:hover border-radius:50% font-size:14px display:inline-block width:30px height:30px padding-top:6px padding-right:1px text-align:center"
-                                    href="#"
-                                    >A</a
-                                >
-                                <span class="margin-top:3px font-size:14px"
-                                    >may '19</span
-                                >
-                            </div>
+							<div class="margin-right:10px">
+								<p class="font-size:14px">Last Reply</p>
+								<a
+									title="Adam davis"
+									class="background:#DAB434 color:#fff color:#fff:hover border-radius:50% font-size:14px display:inline-block width:30px height:30px padding-top:6px padding-right:1px text-align:center"
+									href="#"
+									>A</a
+								>
+								<span class="margin-top:3px font-size:14px"
+									>may '19</span
+								>
+							</div>
 
-                            <div class="margin-right:10px">
-                                <p class="margin-bottom:3px text-align:center">
-                                    34
-                                </p>
-                                <a
-                                    class="font-size:14px text-align:center"
-                                    href="#"></a>
-                                <span class="margin-top:3px font-size:14px"
-                                    >Replies</span
-                                >
-                            </div>
+							<div class="margin-right:10px">
+								<p class="margin-bottom:3px text-align:center">
+									34
+								</p>
+								<a
+									class="font-size:14px text-align:center"
+									href="#"></a>
+								<span class="margin-top:3px font-size:14px"
+									>Replies</span
+								>
+							</div>
 
-                            <div class="margin-right:10px">
-                                <p class="margin-bottom:3px text-align:center">
-                                    345
-                                </p>
-                                <a
-                                    class="font-size:14px text-align:center"
-                                    href="#"></a>
-                                <span class="margin-top:3px font-size:14px"
-                                    >Views</span
-                                >
-                            </div>
+							<div class="margin-right:10px">
+								<p class="margin-bottom:3px text-align:center">
+									345
+								</p>
+								<a
+									class="font-size:14px text-align:center"
+									href="#"></a>
+								<span class="margin-top:3px font-size:14px"
+									>Views</span
+								>
+							</div>
 
-                            <div class="margin-right:10px">
-                                <p class="margin-bottom:3px text-align:center">
-                                    57
-                                </p>
-                                <a
-                                    class="font-size:14px text-align:center"
-                                    href="#"></a>
-                                <span class="margin-top:3px font-size:14px"
-                                    >users</span
-                                >
-                            </div>
-                        </div>
+							<div class="margin-right:10px">
+								<p class="margin-bottom:3px text-align:center">
+									57
+								</p>
+								<a
+									class="font-size:14px text-align:center"
+									href="#"></a>
+								<span class="margin-top:3px font-size:14px"
+									>users</span
+								>
+							</div>
+						</div>
 
-                        <div
-                            class="flex-basis:12% background:#F8F8F8 border:1px_solid_#ddd padding:5px_10px">
-                            <a
-                                title="Like the post"
-                                class="color:red:hover transition:0.3s font-size:27px"
-                                href="#"
-                                ><i
-                                    class="height:27px"
-                                    src="../assets/svg/heart.svg"></i
-                            ></a>
-                        </div>
+						<div
+							class="flex-basis:12% background:#F8F8F8 border:1px_solid_#ddd padding:5px_10px">
+							<a
+								title="Like the post"
+								class="color:red:hover transition:0.3s font-size:27px"
+								href="#"
+								><i
+									class="height:27px"
+									src="../assets/svg/heart.svg"></i
+							></a>
+						</div>
 
-                        <div
-                            class="flex-basis:10% background:#F8F8F8 background:#eee:hover cursor:pointer border:1px_solid_#ddd padding:5px_10px">
-                            <div class="font-size:27px">
-                                <a href="#"
-                                    ><i src="../assets/svg/angle-down.svg"></i
-                                ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div
+							class="flex-basis:10% background:#F8F8F8 background:#eee:hover cursor:pointer border:1px_solid_#ddd padding:5px_10px">
+							<div class="font-size:27px">
+								<a href="#"
+									><i src="../assets/svg/angle-down.svg"></i
+								></a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <!--<div class="margin-top:25px width:100%  border-bottom:1px_solid_#ddd"></div>-->
+				<!--<div class="margin-top:25px width:100%  border-bottom:1px_solid_#ddd"></div>-->
 
-                <!--  Social Icon &amp; Likes Start  -->
-                <div
-                    class="post-date margin-top:20px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
-                    <div
-                        class=""
-                        share-url="https://www.google.com/"
-                        share-text="text"
-                        data-title="title"
-                        share-height="600"
-                        share-width="500"
-                        share-media="media">
-                        <div
-                            class="width:100% display:inline-block text-align-center font-size-21px border-bottom border-color-white">
-                            <ul
-                                class="padding-0px list-style-type:none justify-content-center display:flex">
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background-color:#3C5A99 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        share-network="facebook"
-                                        share-height="400"
-                                        share-width="300"
-                                        title="Share on Facebook"
-                                        ><i
-                                            class="fab fa-facebook-f margin-right:10px footer-icon"></i
-                                        >265</a
-                                    >
-                                </li>
+				<!--  Social Icon &amp; Likes Start  -->
+				<div
+					class="post-date margin-top:20px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
+					<div
+						class=""
+						share-url="https://www.google.com/"
+						share-text="text"
+						data-title="title"
+						share-height="600"
+						share-width="500"
+						share-media="media">
+						<div
+							class="width:100% display:inline-block text-align-center font-size-21px border-bottom border-color-white">
+							<ul
+								class="padding-0px list-style-type:none justify-content-center display:flex">
+								<li class="margin-right:15px">
+									<a
+										href="#"
+										class="share display:inline-block background-color:#3C5A99 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
+										share-network="facebook"
+										share-height="400"
+										share-width="300"
+										title="Share on Facebook"
+										><i
+											class="fab fa-facebook-f margin-right:10px footer-icon"></i
+										>265</a
+									>
+								</li>
 
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background-color:#55ADEE font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        share-network="twitter"
-                                        share-height="300"
-                                        share-width="200"
-                                        title="Share on Twitter"
-                                        share-text="probando twitter"
-                                        ><i
-                                            class="fab fa-twitter color:#fff margin-right:10px footer-icon"></i
-                                        >123</a
-                                    >
-                                </li>
+								<li class="margin-right:15px">
+									<a
+										href="#"
+										class="share display:inline-block background-color:#55ADEE font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
+										share-network="twitter"
+										share-height="300"
+										share-width="200"
+										title="Share on Twitter"
+										share-text="probando twitter"
+										><i
+											class="fab fa-twitter color:#fff margin-right:10px footer-icon"></i
+										>123</a
+									>
+								</li>
 
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background:#EA4335 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        title="Share on Google Plus"
-                                        share-network="google"
-                                        share-height="350"
-                                        share-width="150"
-                                        ><i
-                                            class="fab fa-google-plus-g color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
-                                        >113</a
-                                    >
-                                </li>
+								<li class="margin-right:15px">
+									<a
+										href="#"
+										class="share display:inline-block background:#EA4335 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
+										title="Share on Google Plus"
+										share-network="google"
+										share-height="350"
+										share-width="150"
+										><i
+											class="fab fa-google-plus-g color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
+										>113</a
+									>
+								</li>
 
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background:#2867B2 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        title="Share on LinkedIn"
-                                        share-network="linkedin"
-                                        share-height="450"
-                                        share-width="350"
-                                        ><i
-                                            class="fab fa-linkedin-in color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
-                                        >80</a
-                                    >
-                                </li>
+								<li class="margin-right:15px">
+									<a
+										href="#"
+										class="share display:inline-block background:#2867B2 font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
+										title="Share on LinkedIn"
+										share-network="linkedin"
+										share-height="450"
+										share-width="350"
+										><i
+											class="fab fa-linkedin-in color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
+										>80</a
+									>
+								</li>
 
-                                <li class="margin-right:15px">
-                                    <a
-                                        href="#"
-                                        class="share display:inline-block background:#BD081C font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
-                                        share-network="pintrest"
-                                        share-height="350"
-                                        title="Share on Pinterest"
-                                        share-width="250"
-                                        ><i
-                                            class="fab fa-pinterest-p color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
-                                        >110</a
-                                    >
-                                </li>
+								<li class="margin-right:15px">
+									<a
+										href="#"
+										class="share display:inline-block background:#BD081C font-size:13px padding:3px_10px border-radius:3px color:#fff color:#fff:hover opacity:0.8:hover"
+										share-network="pintrest"
+										share-height="350"
+										title="Share on Pinterest"
+										share-width="250"
+										><i
+											class="fab fa-pinterest-p color:#fff margin-right:10px color:#fff:hover opacity:0.8:hover footer-icon"></i
+										>110</a
+									>
+								</li>
 
-                                <li class="margin-top:2px font-weight:600">
-                                    691 Shares
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+								<li class="margin-top:2px font-weight:600">
+									691 Shares
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div
-                class="margin-top:15px margin-bottom:25px width:100% border-bottom:1px_solid_#ddd"></div>
+			<div
+				class="margin-top:15px margin-bottom:25px width:100% border-bottom:1px_solid_#ddd"></div>
 
-            <!--  Comment Start  -->
-            <div
-                class="post-comment margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
-                <div
-                    class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
-                    <a
-                        title="eva olivia"
-                        class="background:#00B355 color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
-                        href="#"
-                        >E</a
-                    >
-                </div>
-                <div
-                    class="text-comment-section flex-basis:70% flex-basis:100%@xs">
-                    <div>
-                        <h2
-                            class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
-                            EVA OLIVIA
-                        </h2>
-                    </div>
-                    <div class="margin-bottom:6px">
-                        <a
-                            class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
-                            href="#"
-                            >http://www.eva-olivia.com</a
-                        >
-                    </div>
-                    <div
-                        class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit, sed diam ut laoreet dolore in iis qui facit
-                            eorum claritatem. humanitatis per seacula quarta
-                            decima et quinta decima. Eodem modo typi, qui nunc
-                            nobis videntur parum clari, fiant sollemnes in
-                            futurum.
-                        </p>
-                    </div>
-                    <div
-                        class="display:flex flex-wrap:wrap justify-content:space-between width:100% margin-top:30px padding-bottom:10px border-bottom:1px_solid_#ddd">
-                        <div>
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"></i
-                            ></a>
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-twitter"></i
-                            ></a>
-                            <a href="#"
-                                ><i
-                                    class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-youtube"></i
-                            ></a>
-                        </div>
-                        <div>
-                            <a title="Love this comment" href="#"
-                                ><i
-                                    class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px far fa-heart"></i
-                            ></a>
-                            <a title="Reply to this comment" href="#"
-                                ><i
-                                    class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px font-size:16px fas fa-reply"></i
-                            ></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<!--  Comment Start  -->
+			<div
+				class="post-comment margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
+				<div
+					class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
+					<a
+						title="eva olivia"
+						class="background:#00B355 color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
+						href="#"
+						>E</a
+					>
+				</div>
+				<div
+					class="text-comment-section flex-basis:70% flex-basis:100%@xs">
+					<div>
+						<h2
+							class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
+							EVA OLIVIA
+						</h2>
+					</div>
+					<div class="margin-bottom:6px">
+						<a
+							class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
+							href="#"
+							>http://www.eva-olivia.com</a
+						>
+					</div>
+					<div
+						class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing
+							elit, sed diam ut laoreet dolore in iis qui facit
+							eorum claritatem. humanitatis per seacula quarta
+							decima et quinta decima. Eodem modo typi, qui nunc
+							nobis videntur parum clari, fiant sollemnes in
+							futurum.
+						</p>
+					</div>
+					<div
+						class="display:flex flex-wrap:wrap justify-content:space-between width:100% margin-top:30px padding-bottom:10px border-bottom:1px_solid_#ddd">
+						<div>
+							<a href="#"
+								><i
+									class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"></i
+							></a>
+							<a href="#"
+								><i
+									class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-twitter"></i
+							></a>
+							<a href="#"
+								><i
+									class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-youtube"></i
+							></a>
+						</div>
+						<div>
+							<a title="Love this comment" href="#"
+								><i
+									class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px far fa-heart"></i
+							></a>
+							<a title="Reply to this comment" href="#"
+								><i
+									class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px font-size:16px fas fa-reply"></i
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <!--  Comment reply Start  -->
-            <div
-                class="post-comment padding:0_40px margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
-                <div
-                    class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
-                    <a
-                        title="John smith"
-                        class="background:#DAB16D color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
-                        href="#"
-                        >J</a
-                    >
-                </div>
-                <div
-                    class="text-comment-section flex-basis:70% flex-basis:100%@xs">
-                    <div>
-                        <h2
-                            class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
-                            JOHN SMITH
-                        </h2>
-                    </div>
-                    <div class="margin-bottom:6px">
-                        <a
-                            class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
-                            href="#"
-                            >http://www.johnsmith.com</a
-                        >
-                    </div>
-                    <div
-                        class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit, sed diam ut laoreet dolore in iis qui facit
-                            eorum claritatem. humanitatis per seacula quarta
-                            decima et quinta decima. Eodem modo typi, qui nunc
-                            nobis videntur parum clari, fiant sollemnes in
-                            futurum.
-                        </p>
-                    </div>
-                    <div>
-                        <a
-                            href="#"
-                            class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
-                            ><i src="../assets/svg/facebook-f.svg"></i
-                        ></a>
-                        <a
-                            href="#"
-                            class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"
-                            ><i src="../assets/svg/twitter.svg"></i
-                        ></a>
-                        <a
-                            href="#"
-                            class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"
-                            ><i src="../assets/svg/youtube.svg"></i
-                        ></a>
-                    </div>
-                </div>
-            </div>
+			<!--  Comment reply Start  -->
+			<div
+				class="post-comment padding:0_40px margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
+				<div
+					class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
+					<a
+						title="John smith"
+						class="background:#DAB16D color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
+						href="#"
+						>J</a
+					>
+				</div>
+				<div
+					class="text-comment-section flex-basis:70% flex-basis:100%@xs">
+					<div>
+						<h2
+							class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
+							JOHN SMITH
+						</h2>
+					</div>
+					<div class="margin-bottom:6px">
+						<a
+							class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
+							href="#"
+							>http://www.johnsmith.com</a
+						>
+					</div>
+					<div
+						class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing
+							elit, sed diam ut laoreet dolore in iis qui facit
+							eorum claritatem. humanitatis per seacula quarta
+							decima et quinta decima. Eodem modo typi, qui nunc
+							nobis videntur parum clari, fiant sollemnes in
+							futurum.
+						</p>
+					</div>
+					<div>
+						<a
+							href="#"
+							class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
+							><i src="../assets/svg/facebook-f.svg"></i
+						></a>
+						<a
+							href="#"
+							class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"
+							><i src="../assets/svg/twitter.svg"></i
+						></a>
+						<a
+							href="#"
+							class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px fab fa-facebook-f"
+							><i src="../assets/svg/youtube.svg"></i
+						></a>
+					</div>
+				</div>
+			</div>
 
-            <!--  Comment Start  -->
-            <div
-                class="post-comment margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
-                <div
-                    class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
-                    <a
-                        title="adam davis"
-                        class="background:#289DCC color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
-                        href="#"
-                        >A</a
-                    >
-                </div>
-                <div
-                    class="text-comment-section flex-basis:70% flex-basis:100%@xs">
-                    <div>
-                        <h2
-                            class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
-                            ADAM DAVIS
-                        </h2>
-                    </div>
-                    <div class="margin-bottom:6px">
-                        <a
-                            class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
-                            href="#"
-                            >http://www.adam-davis.com</a
-                        >
-                    </div>
-                    <div
-                        class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit, sed diam ut laoreet dolore in iis qui facit
-                            eorum claritatem. humanitatis per seacula quarta
-                            decima et quinta decima. Eodem modo typi, qui nunc
-                            nobis videntur parum clari, fiant sollemnes in
-                            futurum.
-                        </p>
-                    </div>
-                    <div
-                        class="display:flex flex-wrap:wrap justify-content:space-between width:100% margin-top:30px padding-bottom:10px border-bottom:1px_solid_#ddd">
-                        <div>
-                            <a
-                                href="#"
-                                class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
-                                ><i src="../assets/svg/facebook-f.svg"></i
-                            ></a>
-                            <a
-                                href="#"
-                                class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
-                                ><i src="../assets/svg/twitter.svg"></i
-                            ></a>
-                            <a
-                                href="#"
-                                class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
-                                ><i src="../assets/svg/youtube.svg"></i
-                            ></a>
-                        </div>
-                        <div>
-                            <a title="Love this comment" href="#"
-                                ><i
-                                    class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px far fa-heart"></i
-                            ></a>
-                            <a title="Reply to this comment" href="#"
-                                ><i
-                                    class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px font-size:16px fas fa-reply"></i
-                            ></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<!--  Comment Start  -->
+			<div
+				class="post-comment margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
+				<div
+					class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
+					<a
+						title="adam davis"
+						class="background:#289DCC color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
+						href="#"
+						>A</a
+					>
+				</div>
+				<div
+					class="text-comment-section flex-basis:70% flex-basis:100%@xs">
+					<div>
+						<h2
+							class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
+							ADAM DAVIS
+						</h2>
+					</div>
+					<div class="margin-bottom:6px">
+						<a
+							class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
+							href="#"
+							>http://www.adam-davis.com</a
+						>
+					</div>
+					<div
+						class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing
+							elit, sed diam ut laoreet dolore in iis qui facit
+							eorum claritatem. humanitatis per seacula quarta
+							decima et quinta decima. Eodem modo typi, qui nunc
+							nobis videntur parum clari, fiant sollemnes in
+							futurum.
+						</p>
+					</div>
+					<div
+						class="display:flex flex-wrap:wrap justify-content:space-between width:100% margin-top:30px padding-bottom:10px border-bottom:1px_solid_#ddd">
+						<div>
+							<a
+								href="#"
+								class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
+								><i src="../assets/svg/facebook-f.svg"></i
+							></a>
+							<a
+								href="#"
+								class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
+								><i src="../assets/svg/twitter.svg"></i
+							></a>
+							<a
+								href="#"
+								class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
+								><i src="../assets/svg/youtube.svg"></i
+							></a>
+						</div>
+						<div>
+							<a title="Love this comment" href="#"
+								><i
+									class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px far fa-heart"></i
+							></a>
+							<a title="Reply to this comment" href="#"
+								><i
+									class="color:#000 color:tomato:hover opacity:0.7:hover margin-top:2px font-size:16px fas fa-reply"></i
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <!--  Comment reply Start  -->
-            <div
-                class="post-comment padding:0_40px margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
-                <div
-                    class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
-                    <a
-                        title="John smith"
-                        class="background:#DAB16D color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
-                        href="#"
-                        >J</a
-                    >
-                </div>
-                <div
-                    class="text-comment-section flex-basis:70% flex-basis:100%@xs">
-                    <div>
-                        <h2
-                            class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
-                            JOHN SMITH
-                        </h2>
-                    </div>
-                    <div class="margin-bottom:6px">
-                        <a
-                            class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
-                            href="#"
-                            >http://www.johnsmith.com</a
-                        >
-                    </div>
-                    <div
-                        class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit, sed diam ut laoreet dolore in iis qui facit
-                            eorum claritatem. humanitatis per seacula quarta
-                            decima et quinta decima. Eodem modo typi, qui nunc
-                            nobis videntur parum clari, fiant sollemnes in
-                            futurum.
-                        </p>
-                    </div>
-                    <div>
-                        <a
-                            href="#"
-                            class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
-                            ><i src="../assets/svg/facebook-f.svg"></i
-                        ></a>
-                        <a
-                            href="#"
-                            class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
-                            ><i src="../assets/svg/twitter.svg"></i
-                        ></a>
-                        <a
-                            href="#"
-                            class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
-                            ><i src="../assets/svg/youtube.svg"></i
-                        ></a>
-                    </div>
-                </div>
-            </div>
+			<!--  Comment reply Start  -->
+			<div
+				class="post-comment padding:0_40px margin-bottom:20px margin-top:20px width:100% display:flex flex-wrap:wrap flex-grow justify-content:flex-start">
+				<div
+					class="img-comment-section margin-right:10px margin-bottom:10px flex-basis:7% flex-basis:100%@xs">
+					<a
+						title="John smith"
+						class="background:#DAB16D color:#fff color:#fff:hover border-radius:50% font-size:18px display:inline-block width:50px height:50px padding-top:14px text-align:center"
+						href="#"
+						>J</a
+					>
+				</div>
+				<div
+					class="text-comment-section flex-basis:70% flex-basis:100%@xs">
+					<div>
+						<h2
+							class="margin-bottom:6px font-size:19px@sm font-size:19px@xs color:#222">
+							JOHN SMITH
+						</h2>
+					</div>
+					<div class="margin-bottom:6px">
+						<a
+							class="color:#000 font-size:14px@sm font-size:13px@xs color:tomato:hover text-decoration:underline"
+							href="#"
+							>http://www.johnsmith.com</a
+						>
+					</div>
+					<div
+						class="margin-bottom:8px font-size:14px@sm font-size:13px@xs">
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing
+							elit, sed diam ut laoreet dolore in iis qui facit
+							eorum claritatem. humanitatis per seacula quarta
+							decima et quinta decima. Eodem modo typi, qui nunc
+							nobis videntur parum clari, fiant sollemnes in
+							futurum.
+						</p>
+					</div>
+					<div>
+						<a
+							href="#"
+							class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
+							><i src="../assets/svg/facebook-f.svg"></i
+						></a>
+						<a
+							href="#"
+							class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
+							><i src="../assets/svg/twitter.svg"></i
+						></a>
+						<a
+							href="#"
+							class="color:#000 opacity:0.7:hover margin-top:2px margin-right:15px font-size:16px"
+							><i src="../assets/svg/youtube.svg"></i
+						></a>
+					</div>
+				</div>
+			</div>
 
-            <div
-                class="display:flex flex-wrap:wrap justify-content:flex-end width:80% margin:30px_0">
-                <!--  Post comment button Start  -->
-                <a
-                    class="background:#289DCC background:#006699:hover transition:0.3s padding:6px_10px color:#fff color:#fff:hover"
-                    href="#">
-                    <i class="fas fa-reply"></i> Post a Comment
-                </a>
-            </div>
+			<div
+				class="display:flex flex-wrap:wrap justify-content:flex-end width:80% margin:30px_0">
+				<!--  Post comment button Start  -->
+				<a
+					class="background:#289DCC background:#006699:hover transition:0.3s padding:6px_10px color:#fff color:#fff:hover"
+					href="#">
+					<i class="fas fa-reply"></i> Post a Comment
+				</a>
+			</div>
 
-            <!--  Post COMMENT Start  -->
-            <div
-                class="post-title width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
-                <form array="module_activities">
-                    <h3 class="width:100%">LEAVE A REPLY</h3>
-                    <!--  Comment Heading  -->
-                    <textarea
-                        rows="10"
-                        col="30"
-                        placeholder="Write Your Comment"
-                        array="{{object.array}}"
-                        object="{{object._id}}"
-                        key="comment"
-                        class="width:70% padding:5px_10px margin-top:30px margin-bottom:20px border:1px_solid_#ddd"></textarea>
-                    <input
-                        type="text"
-                        placeholder="Enter Your Name"
-                        array="{{object.array}}"
-                        object="{{object._id}}"
-                        key="name"
-                        class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
-                    <input
-                        type="email"
-                        placeholder="Enter Your Email"
-                        array="{{object.array}}"
-                        object="{{object._id}}"
-                        key="email"
-                        class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
-                    <input
-                        type="text"
-                        placeholder="Enter Your Website URL"
-                        array="{{object.array}}"
-                        object="{{object._id}}"
-                        key="website"
-                        class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
+			<!--  Post COMMENT Start  -->
+			<div
+				class="post-title width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
+				<form array="module_activities">
+					<h3 class="width:100%">LEAVE A REPLY</h3>
+					<!--  Comment Heading  -->
+					<textarea
+						rows="10"
+						col="30"
+						placeholder="Write Your Comment"
+						array="{{object.array}}"
+						object="{{object._id}}"
+						key="comment"
+						class="width:70% padding:5px_10px margin-top:30px margin-bottom:20px border:1px_solid_#ddd"></textarea>
+					<input
+						type="text"
+						placeholder="Enter Your Name"
+						array="{{object.array}}"
+						object="{{object._id}}"
+						key="name"
+						class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
+					<input
+						type="email"
+						placeholder="Enter Your Email"
+						array="{{object.array}}"
+						object="{{object._id}}"
+						key="email"
+						class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
+					<input
+						type="text"
+						placeholder="Enter Your Website URL"
+						array="{{object.array}}"
+						object="{{object._id}}"
+						key="website"
+						class="width:70% padding:15px_10px margin-bottom:20px border:1px_solid_#ddd" />
 
-                    <div class="width:100% margin-bottom:20px">
-                        <input
-                            class="margin-right:10px"
-                            type="checkbox"
-                            key="" /><span class="color:#333"
-                            >Save my name, email, and website in this browser
-                            for the next time I comment</span
-                        >
-                    </div>
-                    <input
-                        type="submit"
-                        value="Post Comment"
-                        class="display:block background:#111 background:#444:hover cursor:pointer color:#fff padding:10px_30px margin-bottom:20px border:1px_solid_#ddd" />
-                </form>
-            </div>
+					<div class="width:100% margin-bottom:20px">
+						<input
+							class="margin-right:10px"
+							type="checkbox"
+							key="" /><span class="color:#333"
+							>Save my name, email, and website in this browser
+							for the next time I comment</span
+						>
+					</div>
+					<button actions="save" class="margin-bottom:20px">
+						Post Comment
+					</button>
+				</form>
+			</div>
 
-            <!--  Pre &amp; Next Article Start  -->
-            <div
-                class="post-title width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
-                <div
-                    class="padding:30px_15px border:1px_solid_#ddd flex-basis:50%">
-                    <p class="color:#888">Previous Discussion</p>
-                    <p
-                        class="color:#000 margin-top:10px font-size:20px font-size:12px@xs line-height:27px">
-                        <a class="color:#1877F2:hover" href="#"
-                            >The AI magically removes moving objects from
-                            videos</a
-                        >
-                    </p>
-                </div>
-                <div
-                    class="padding:30px_15px border:1px_solid_#ddd flex-basis:50% text-align:right">
-                    <p class="color:#888">Next Discussion</p>
-                    <p
-                        class="color:#000 margin-top:10px font-size:20px font-size:12px@xs line-height:27px">
-                        <a class="color:#1877F2:hover" href="#"
-                            >How material innovation is changing the world
-                            unbelievably</a
-                        >
-                    </p>
-                </div>
-            </div>
+			<!--  Pre &amp; Next Article Start  -->
+			<div
+				class="post-title width:100% margin-top:20px display:flex flex-wrap:wrap justify-content:flex-start">
+				<div
+					class="padding:30px_15px border:1px_solid_#ddd flex-basis:50%">
+					<p class="color:#888">Previous Discussion</p>
+					<p
+						class="color:#000 margin-top:10px font-size:20px font-size:12px@xs line-height:27px">
+						<a class="color:#1877F2:hover" href="#"
+							>The AI magically removes moving objects from
+							videos</a
+						>
+					</p>
+				</div>
+				<div
+					class="padding:30px_15px border:1px_solid_#ddd flex-basis:50% text-align:right">
+					<p class="color:#888">Next Discussion</p>
+					<p
+						class="color:#000 margin-top:10px font-size:20px font-size:12px@xs line-height:27px">
+						<a class="color:#1877F2:hover" href="#"
+							>How material innovation is changing the world
+							unbelievably</a
+						>
+					</p>
+				</div>
+			</div>
 
-            <div class="margin-top:45px border-bottom:1px_solid_#ddd"></div>
-            <!-- Related Articles Tabs -->
-            <div class="tabs-wrapper margin-top:40px flex-basis:100%">
-                <div class="display:flex flex-wrap:wrap">
-                    <div
-                        class="padding:0_20px margin-bottom:10px tab"
-                        show="#related-article"
-                        hide="#more-info"
-                        selected-value="active"
-                        selected-group="one">
-                        <a
-                            class="font-size:15px font-weight:600 background:#289DCC border:2px_solid_#289DCC color:#fff padding:5px_20px border-radius:4px background:#1877F2:hover color:#fff:hover transition:0.4s_all_ease"
-                            href="#description"
-                            >RELATED DISCUSSION</a
-                        >
-                    </div>
-                    <div
-                        class="padding:0_20px tab"
-                        show="#more-info"
-                        hide="#related-article"
-                        selected-value="selected"
-                        selected-group="one">
-                        <a
-                            class="font-size:15px font-weight:600 border:2px_solid_#F24D43 color:#fff padding:5px_20px border-radius:4px background:#F24D43 background:#FF0000:hover color:#fff color:#fff:hover transition:0.4s_all_ease"
-                            href="#more-info"
-                            >MORE FROM AUTHOR</a
-                        >
-                    </div>
-                </div>
+			<div class="margin-top:45px border-bottom:1px_solid_#ddd"></div>
+			<!-- Related Articles Tabs -->
+			<div class="tabs-wrapper margin-top:40px flex-basis:100%">
+				<div class="display:flex flex-wrap:wrap">
+					<div
+						class="padding:0_20px margin-bottom:10px tab"
+						show="#related-article"
+						hide="#more-info"
+						selected-value="active"
+						selected-group="one">
+						<a
+							class="font-size:15px font-weight:600 background:#289DCC border:2px_solid_#289DCC color:#fff padding:5px_20px border-radius:4px background:#1877F2:hover color:#fff:hover transition:0.4s_all_ease"
+							href="#description"
+							>RELATED DISCUSSION</a
+						>
+					</div>
+					<div
+						class="padding:0_20px tab"
+						show="#more-info"
+						hide="#related-article"
+						selected-value="selected"
+						selected-group="one">
+						<a
+							class="font-size:15px font-weight:600 border:2px_solid_#F24D43 color:#fff padding:5px_20px border-radius:4px background:#F24D43 background:#FF0000:hover color:#fff color:#fff:hover transition:0.4s_all_ease"
+							href="#more-info"
+							>MORE FROM AUTHOR</a
+						>
+					</div>
+				</div>
 
-                <!------  Related Article STARTS ------>
-                <div
-                    id="related-article"
-                    class="padding:0_20px margin-top:30px display:flex flex-wrap:wrap justify-content:space-between">
-                    <div class="flex-basis:28%">
-                        <div class="img-section position:relative">
-                            <img src="images/blog-post/a1.jpg" width="100%" />
-                            <a
-                                class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
-                                href="#"
-                                >Technology</a
-                            >
-                        </div>
-                        <div class="heading">
-                            <h4>
-                                <a
-                                    class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
-                                    href="#"
-                                    >52 Popular Movie Locations Have Been Mapped
-                                    by Google Maps</a
-                                >
-                            </h4>
-                        </div>
-                    </div>
+				<!------  Related Article STARTS ------>
+				<div
+					id="related-article"
+					class="padding:0_20px margin-top:30px display:flex flex-wrap:wrap justify-content:space-between">
+					<div class="flex-basis:28%">
+						<div class="img-section position:relative">
+							<img src="images/blog-post/a1.jpg" width="100%" />
+							<a
+								class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
+								href="#"
+								>Technology</a
+							>
+						</div>
+						<div class="heading">
+							<h4>
+								<a
+									class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
+									href="#"
+									>52 Popular Movie Locations Have Been Mapped
+									by Google Maps</a
+								>
+							</h4>
+						</div>
+					</div>
 
-                    <div class="flex-basis:28%">
-                        <div class="img-section position:relative">
-                            <img src="images/blog-post/a2.jpg" width="100%" />
-                            <a
-                                class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
-                                href="#"
-                                >Travel</a
-                            >
-                        </div>
-                        <div class="heading">
-                            <h4>
-                                <a
-                                    class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
-                                    href="#"
-                                    >Most Beautiful Things to Do in Sidney with
-                                    Your Boyfriend</a
-                                >
-                            </h4>
-                        </div>
-                    </div>
+					<div class="flex-basis:28%">
+						<div class="img-section position:relative">
+							<img src="images/blog-post/a2.jpg" width="100%" />
+							<a
+								class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
+								href="#"
+								>Travel</a
+							>
+						</div>
+						<div class="heading">
+							<h4>
+								<a
+									class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
+									href="#"
+									>Most Beautiful Things to Do in Sidney with
+									Your Boyfriend</a
+								>
+							</h4>
+						</div>
+					</div>
 
-                    <div class="article-3 flex-basis:28%">
-                        <div class="img-section position:relative">
-                            <img src="images/blog-post/a3.jpg" width="100%" />
-                            <a
-                                class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
-                                href="#"
-                                >Technology</a
-                            >
-                        </div>
-                        <div class="heading">
-                            <h4>
-                                <a
-                                    class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
-                                    href="#"
-                                    >The Whole World is Expecting the Best
-                                    iPhone Ever Created</a
-                                >
-                            </h4>
-                        </div>
-                    </div>
-                </div>
+					<div class="article-3 flex-basis:28%">
+						<div class="img-section position:relative">
+							<img src="images/blog-post/a3.jpg" width="100%" />
+							<a
+								class="font-size:14px font-size:11px@xs background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0"
+								href="#"
+								>Technology</a
+							>
+						</div>
+						<div class="heading">
+							<h4>
+								<a
+									class="margin:10px_0 font-size:13px@xs color:#289DCC:hover"
+									href="#"
+									>The Whole World is Expecting the Best
+									iPhone Ever Created</a
+								>
+							</h4>
+						</div>
+					</div>
+				</div>
 
-                <!------  MORE FROM AUTHOR STARTS ------>
-                <!--<div id="more-info" class="padding:0_20px margin-top:30px display:flex flex-wrap:wrap justify-content:space-between">-->
-                <!--  <div class="article-1 flex-basis:28%">-->
-                <!--    <div class="img-section position:relative">-->
-                <!--      <img src="images/blog-post/a1.jpg" width="100%" />-->
-                <!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Technology</a>-->
-                <!--    </div>-->
-                <!--    <div class="heading">-->
-                <!--      <h4>-->
-                <!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">52 Popular Movie Locations Have Been Mapped by Google Maps</a>-->
-                <!--      </h4>-->
-                <!--    </div>-->
-                <!--  </div>-->
+				<!------  MORE FROM AUTHOR STARTS ------>
+				<!--<div id="more-info" class="padding:0_20px margin-top:30px display:flex flex-wrap:wrap justify-content:space-between">-->
+				<!--  <div class="article-1 flex-basis:28%">-->
+				<!--    <div class="img-section position:relative">-->
+				<!--      <img src="images/blog-post/a1.jpg" width="100%" />-->
+				<!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Technology</a>-->
+				<!--    </div>-->
+				<!--    <div class="heading">-->
+				<!--      <h4>-->
+				<!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">52 Popular Movie Locations Have Been Mapped by Google Maps</a>-->
+				<!--      </h4>-->
+				<!--    </div>-->
+				<!--  </div>-->
 
-                <!--  <div class="article-2 flex-basis:28%">-->
-                <!--    <div class="img-section position:relative">-->
-                <!--      <img src="images/blog-post/a2.jpg" width="100%" />-->
-                <!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Travel</a>-->
-                <!--    </div>-->
-                <!--    <div class="heading">-->
-                <!--      <h4>-->
-                <!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">Most Beautiful Things to Do in Sidney with Your Boyfriend</a>-->
-                <!--      </h4>-->
-                <!--    </div>-->
-                <!--  </div>-->
+				<!--  <div class="article-2 flex-basis:28%">-->
+				<!--    <div class="img-section position:relative">-->
+				<!--      <img src="images/blog-post/a2.jpg" width="100%" />-->
+				<!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Travel</a>-->
+				<!--    </div>-->
+				<!--    <div class="heading">-->
+				<!--      <h4>-->
+				<!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">Most Beautiful Things to Do in Sidney with Your Boyfriend</a>-->
+				<!--      </h4>-->
+				<!--    </div>-->
+				<!--  </div>-->
 
-                <!--  <div class="article-3 flex-basis:28%">-->
-                <!--    <div class="img-section position:relative">-->
-                <!--      <img src="images/blog-post/a3.jpg" width="100%" />-->
-                <!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Technology</a>-->
-                <!--    </div>-->
-                <!--    <div class="heading">-->
-                <!--      <h4>-->
-                <!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">The Whole World is Expecting the Best iPhone Ever Created</a>-->
-                <!--      </h4>-->
-                <!--    </div>-->
-                <!--  </div>-->
+				<!--  <div class="article-3 flex-basis:28%">-->
+				<!--    <div class="img-section position:relative">-->
+				<!--      <img src="images/blog-post/a3.jpg" width="100%" />-->
+				<!--      <a class="font-size:14px background:#289DCC background:#000:hover color:#fff color:#fff:hover padding:3px_10px position:absolute bottom:2% left:0" href="#">Technology</a>-->
+				<!--    </div>-->
+				<!--    <div class="heading">-->
+				<!--      <h4>-->
+				<!--        <a class="margin:10px_0 color:#289DCC:hover" href="#">The Whole World is Expecting the Best iPhone Ever Created</a>-->
+				<!--      </h4>-->
+				<!--    </div>-->
+				<!--  </div>-->
 
-                <!--</div>-->
-            </div>
+				<!--</div>-->
+			</div>
 
-            <div
-                class="margin-top:40px margin-bottom:45px width:100% border-bottom:1px_solid_#ddd"></div>
-        </main>
+			<div
+				class="margin-top:40px margin-bottom:45px width:100% border-bottom:1px_solid_#ddd"></div>
+		</main>
 
-        <!-- SideNav Right -->
-        <sidenav
-            id="menuR"
-            class="position:fixed top:0px right:0px overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important height:100vh width:300px width:0px@sm@xs"
-            resizable
-            resize-selector="[content_id='content']"
-            resize-property="margin-right"
-            resize-value="width"
-            path="../"
-            src="../components/filters.html"></sidenav>
+		<!-- SideNav Right -->
+		<sidenav
+			id="menuR"
+			class="position:fixed top:0px right:0px overflow:scroll margin-top:70px@md@lg@xl padding-top:30px background:white z-index:6!important height:100vh width:300px width:0px@sm@xs"
+			resizable
+			resize-selector="[content_id='content']"
+			resize-property="margin-right"
+			resize-value="width"
+			path="../"
+			src="../components/filters.html"></sidenav>
 
-        <!-- SidNav Right Floating toggle Button -->
-        <button
-            class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4) z-index:10"
-            toggle="width:300px, width:0px"
-            toggle-selector="#menuR"
-            toggle-attribute="style">
-            <i src="../assets/svg/sliders-h.svg"></i>
-        </button>
+		<!-- SidNav Right Floating toggle Button -->
+		<button
+			class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue color:#fff font-size:1.5rem grow-hover border-radius:50% border-width:0 box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4) z-index:10"
+			toggle="width:300px, width:0px"
+			toggle-selector="#menuR"
+			toggle-attribute="style">
+			<i src="../assets/svg/sliders-h.svg"></i>
+		</button>
 
-        <!-- Footer -->
-        <footer
-            id="spreadtheword"
-            content_id="content"
-            class="background-size:cover background-position:center position:relative"
-            style="background-image: url(../assets/banner.png)"
-            path="../"
-            src="../components/footer.html"></footer>
+		<!-- Footer -->
+		<footer
+			id="spreadtheword"
+			content_id="content"
+			class="background-size:cover background-position:center position:relative"
+			style="background-image: url(../assets/banner.png)"
+			path="../"
+			src="../components/footer.html"></footer>
 
-        <script src="../dist/CoCreate.js"></script>
-    </body>
+		<script src="../dist/CoCreate.js"></script>
+	</body>
 </html>

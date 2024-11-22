@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<a href="./signin.html" session="false" hidden></a>
-
 <section class="centered">
 	<style>
 		textarea {
 			resize: vertical;
 		}
 	</style>
-	<form
-		state_id="form-fields"
-		array="users"
-		object=""
-		realtime="false"
-		class="flex-form">
+	<form state_id="form-fields" array="users" object="" class="flex-form">
 		<div
 			class="display:flex justify-content:space-between align-items:center font-size:20px width:100%">
 			<a
@@ -59,56 +51,49 @@
 			</div>
 		</div>
 
-		<floating-label class="input-300">
+		<floating-label class="width:290px">
 			<input
 				type="text"
 				key="firstname"
 				placeholder="First Name"
 				class="floating-label" />
 		</floating-label>
-		<floating-label class="input-300">
+		<floating-label class="width:290px">
 			<input
 				type="text"
 				key="lastname"
 				placeholder="Last Name"
 				class="floating-label" />
 		</floating-label>
-		<floating-label class="input-300">
-			<input
-				type="text"
-				key="name"
-				placeholder="Name"
-				class="floating-label" />
-		</floating-label>
-		<floating-label class="input-300">
+		<floating-label class="width:290px">
 			<input
 				type="text"
 				key="email"
 				placeholder="Email"
 				class="floating-label" />
 		</floating-label>
-		<floating-label class="input-300">
+		<floating-label class="width:290px">
 			<input
 				type="tel"
 				key="phone"
 				placeholder="Phone"
 				class="floating-label" />
 		</floating-label>
-		<floating-label class="input-300">
+		<floating-label class="width:290px">
 			<input
 				type="password"
 				key="password"
 				placeholder="password"
 				class="floating-label" />
 		</floating-label>
-		<floating-label class="input-300">
+		<floating-label class="width:290px">
 			<input
 				type="text"
 				key="memberAccount"
 				placeholder="memberAccount"
 				class="floating-label" />
 		</floating-label>
-		<floating-label class="input-300">
+		<floating-label class="width:290px">
 			<input
 				type="number"
 				key="members"
@@ -116,35 +101,7 @@
 				class="floating-label" />
 		</floating-label>
 
-		<floating-label class="input-600">
-			<textarea
-				key="answeredQuestions"
-				value-type="json"
-				rows="1"
-				height="auto"
-				placeholder="Answered Questions"
-				class="floating-label"></textarea>
-		</floating-label>
-		<floating-label class="input-600">
-			<textarea
-				key="questions"
-				value-type="json"
-				placeholder="questions"
-				rows="1"
-				height="auto"
-				class="floating-label"></textarea>
-		</floating-label>
-		<floating-label class="input-600">
-			<textarea
-				key="careers"
-				value-type="json"
-				placeholder="Careers"
-				rows="1"
-				height="auto"
-				class="floating-label"></textarea>
-		</floating-label>
-
-		<div class="height:0px width:0px overflow:hidden">
+		<div class="height:0px width:100% overflow:hidden">
 			<input type="email" name="email" autocomplete="email" />
 			<input type="tel" name="phone" autocomplete="tel" />
 			<input

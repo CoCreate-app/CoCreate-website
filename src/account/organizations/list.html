@@ -1,160 +1,159 @@
 <!DOCTYPE html>
 
 <div
-    class="display:grid gap:15px grid-template-columns:repeat(auto-fill,minmax(290px,1fr)) padding:20px margin-top:80px"
-    array="organizations"
-    object
-    filter-sort-key="name"
-    filter-sort-direction="asc"
-    filter-limit="20"
-    render-selector="[template]">
-    <div
-        class="card align-items:center grid-column-end:span_1 box-shadow-hover padding:10px"
-        template
-        object="{{object._id}}"
-        toggle="selected">
-        <div class="position:relative">
-            <div
-                class="display:flex position:absolute right:-15px top:-15px align-items:center transition:0.3s"
-                hover-selector=".options"
-                hover-attribute="class"
-                hover-value="display:flex!important">
-                <div class="display:none options">
-                    <div
-                        actions="delete"
-                        array="{{object.array}}"
-                        object="{{object._id}}"
-                        class="padding:10px">
-                        <i src="../assets/svg/trash-alt.svg"></i>
-                    </div>
-                </div>
-                <div class="padding:10px">
-                    <i
-                        class="height:20px display:block"
-                        src="../assets/svg/ellipsis-v.svg"></i>
-                </div>
-            </div>
+	class="display:grid gap:15px grid-template-columns:repeat(auto-fill,minmax(290px,1fr)) padding:20px margin-top:80px"
+	array="organizations"
+	object
+	filter-sort-key="name"
+	filter-sort-direction="asc"
+	filter-limit="20"
+	render-selector="[template]">
+	<div
+		class="card align-items:center grid-column-end:span_1 box-shadow-hover padding:10px"
+		template
+		object="{{object._id}}"
+		toggle="selected">
+		<div
+			class="display:flex gap:10px flex-direction:column position:relative">
+			<div
+				class="display:flex position:absolute right:-10px top:-10px align-items:center transition:0.3s"
+				hover-selector=".options"
+				hover-attribute="class"
+				hover-value="display:flex!important">
+				<div class="display:none options">
+					<div
+						actions="delete"
+						array="organizations"
+						object="{{object._id}}"
+						class="padding:10px">
+						<i src="../assets/svg/trash-alt.svg"></i>
+					</div>
+				</div>
+				<div class="padding:10px">
+					<i
+						class="height:20px display:block"
+						src="../assets/svg/ellipsis-v.svg"></i>
+				</div>
+			</div>
 
-            <div class="width:100% box-sizing:border-box padding:5px">
-                <a
-                    actions="state"
-                    state-src="./organizations/edit.html"
-                    state_to="main"
-                    class="font-size:25px">
-                    <span>{{object.name}}</span>
-                    <div state-object="{{object._id}}" state_to="form"></div>
-                </a>
-                <div class="font-size:14px">
-                    <div>Id: {{object._id}}</div>
-                    <div>Balance: ${{object.balance}}</div>
-                </div>
-            </div>
-            <div class="display:flex gap:10px font-size:20px padding:5px">
-                <button
-                    class="padding:10px"
-                    href="https://{{object.host[0].name}}/superadmin/signin.html">
-                    Admin
-                </button>
+			<div class="display:flex flex-direction:column gap:5px width:100%">
+				<a
+					actions="state"
+					state-src="./organizations/edit.html"
+					state_to="main"
+					class="font-size:25px">
+					<span>{{object.name}}</span>
+					<div state-object="{{object._id}}" state_to="form"></div>
+				</a>
+				<div class="font-size:14px">Id: {{object._id}}</div>
+				<div class="font-size:14px">Balance: ${{object.balance}}</div>
+			</div>
+			<div class="display:flex gap:10px font-size:20px">
+				<button
+					class="padding:10px"
+					href="https://{{object.host[0].name}}/superadmin/signin.html">
+					Admin
+				</button>
 
-                <button
-                    class="padding:10px margin-left:5px"
-                    onclick="openTopUpCheckout()">
-                    +Funds
-                </button>
-                <button
-                    class="padding:10px margin-left:5px"
-                    href="https://{{object.host[0].name}}/superadmin/signin.html">
-                    Billing
-                </button>
-                <!-- <button
+				<button
+					class="padding:10px margin-left:5px"
+					onclick="openTopUpCheckout()">
+					+Funds
+				</button>
+				<button
+					class="padding:10px margin-left:5px"
+					href="https://{{object.host[0].name}}/superadmin/signin.html">
+					Billing
+				</button>
+				<!-- <button
                     class="padding:5px margin-left:5px"
                     href="https://{{object.host[0]}}/superadmin/signin.html">
                     Invite
                 </button> -->
-            </div>
-        </div>
-        <div>
-            <p>{{object.description}}</p>
-        </div>
-    </div>
+			</div>
+		</div>
+		<div>
+			<p>{{object.description}}</p>
+		</div>
+	</div>
 </div>
 
 <button class="button-round">
-    <a actions="state" state-src="./organizations/create.html" state_to="main">
-        <i src="../assets/svg/plus.svg"></i>
-    </a>
+	<a actions="state" state-src="./organizations/create.html" state_to="main">
+		<i src="../assets/svg/plus.svg"></i>
+	</a>
 </button>
 
 <script type="text/javascript">
-    Paddle.Environment.set("sandbox");
-    Paddle.Initialize({
-        token: "test_a2311fb79f18067408db808e40d", // replace with a client-side token
-        // prints events to console for debugging
-        eventCallback: function (data) {
-            console.log(data);
-        },
-    });
+	Paddle.Environment.set("sandbox");
+	Paddle.Initialize({
+		token: "test_a2311fb79f18067408db808e40d", // replace with a client-side token
+		// prints events to console for debugging
+		eventCallback: function (data) {
+			console.log(data);
+		}
+	});
 
-    // define customer details
+	// define customer details
 
-    // open checkout
-    function openTopUpCheckout() {
-        let customer = {
-            email: "sam@example.com",
-            address: {
-                countryCode: "US",
-                postalCode: "10021",
-            },
-        };
+	// open checkout
+	function openTopUpCheckout() {
+		let customer = {
+			email: "sam@example.com",
+			address: {
+				countryCode: "US",
+				postalCode: "10021"
+			}
+		};
 
-        Paddle.Checkout.open({
-            items: [
-                {
-                    priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
-                    quantity: 1,
-                },
-            ],
-            customer,
-        });
+		Paddle.Checkout.open({
+			items: [
+				{
+					priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
+					quantity: 1
+				}
+			],
+			customer
+		});
 
-        // let amount = document.getElementById("customAmount").value;
-        // if (amount) {
-        //     Paddle.Checkout.open({
-        //         items: [
-        //             {
-        //                 priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
-        //                 price: {
-        //                     unit_price: amount,
-        //                     quantity: 1,
-        //                     product_id: "pro_01hxscnt9dng3c207a10gcfasy",
-        //                     rice: amount,
-        //                 },
-        //             },
-        //         ],
-        //         customer,
-        //     });
-        // } else {
-        //     alert("Please enter a valid amount.");
-        // }
-    }
+		// let amount = document.getElementById("customAmount").value;
+		// if (amount) {
+		//     Paddle.Checkout.open({
+		//         items: [
+		//             {
+		//                 priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
+		//                 price: {
+		//                     unit_price: amount,
+		//                     quantity: 1,
+		//                     product_id: "pro_01hxscnt9dng3c207a10gcfasy",
+		//                     rice: amount,
+		//                 },
+		//             },
+		//         ],
+		//         customer,
+		//     });
+		// } else {
+		//     alert("Please enter a valid amount.");
+		// }
+	}
 
-    function openDomainCheckout() {
-        let customer = {
-            email: "sam@example.com",
-            address: {
-                countryCode: "US",
-                postalCode: "10021",
-            },
-        };
+	function openDomainCheckout() {
+		let customer = {
+			email: "sam@example.com",
+			address: {
+				countryCode: "US",
+				postalCode: "10021"
+			}
+		};
 
-        Paddle.Checkout.open({
-            items: [
-                {
-                    priceId: "pri_01hxs52mg8v24kz5myf4mz3hnn",
-                    quantity: 1,
-                },
-            ],
-            customer,
-        });
-    }
+		Paddle.Checkout.open({
+			items: [
+				{
+					priceId: "pri_01hxs52mg8v24kz5myf4mz3hnn",
+					quantity: 1
+				}
+			],
+			customer
+		});
+	}
 </script>

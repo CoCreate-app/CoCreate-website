@@ -1,444 +1,441 @@
-<!DOCTYPE html>
-<a href="./signin.html" session="false" hidden></a>
-
 <section class="centered flex-direction:column">
-    <form
-        id="blog-form"
-        state_id="form-fields"
-        array="blog-posts"
-        object=""
-        class="flex-form max-width:800px">
-        <div src="../components/form-toolbar.html" class="width:100%"></div>
+	<form
+		id="blog-form"
+		state_id="form-fields"
+		array="blog-posts"
+		object=""
+		class="flex-form max-width:800px">
+		<div src="../components/form-toolbar.html" class="width:100%"></div>
 
-        <floating-label class="flex-input-50">
-            <input
-                type="text"
-                key="author"
-                placeholder="Author Name"
-                value="CoCreate"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="flex-input-50">
-            <input placeholder="Published On" readonly />
-            <input
-                type="datetime"
-                key="published"
-                value-type="toLocaleString"
-                placeholder="Published On"
-                input-previous
-                input-attribute="value"
-                hidden />
-        </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="author"
+				placeholder="Author Name"
+				value="CoCreate"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input placeholder="Published On" readonly />
+			<input
+				type="datetime"
+				key="published"
+				value-type="toLocaleString"
+				placeholder="Published On"
+				input-previous
+				input-attribute="value"
+				hidden />
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <input
-                type="text"
-                key="title"
-                placeholder="Title"
-                input-selector="document; .title[]"
-                input-attribute="value"
-                class="floating-label input-icon" />
+		<floating-label class="width:100%">
+			<input
+				type="text"
+				key="title"
+				placeholder="Title"
+				input-selector="document; .title[]"
+				input-attribute="value"
+				class="floating-label input-icon" />
 
-            <a
-                actions="action(document; #generate-post)"
-                click-selector="i[src]"
-                click-attribute="src"
-                click-value="../assets/svg/spinner.svg"
-                class="floating-icon">
-                <i
-                    id="#clickIcon"
-                    src="../assets/svg/wand-magic-sparkles.svg"
-                    class="width:20px height:20px"></i>
-            </a>
-            <div
-                id="generated-icon"
-                click-previous="i"
-                click-attribute="src"
-                click-value="../assets/svg/check-circle.svg"></div>
-        </floating-label>
+			<a
+				actions="action(document; #generate-post)"
+				click-selector="i[src]"
+				click-attribute="src"
+				click-value="../assets/svg/spinner.svg"
+				class="floating-icon">
+				<i
+					id="#clickIcon"
+					src="../assets/svg/wand-magic-sparkles.svg"
+					class="width:20px height:20px"></i>
+			</a>
+			<div
+				id="generated-icon"
+				click-previous="i"
+				click-attribute="src"
+				click-value="../assets/svg/check-circle.svg"></div>
+		</floating-label>
 
-        <input
-            type="hidden"
-            key="url"
-            value-replaceall=" "
-            value-replacement="-"
-            value-prefix="/blog/"
-            value-suffix=".html"
-            class="title" />
+		<input
+			type="hidden"
+			key="url"
+			value-replaceall=" "
+			value-replacement="-"
+			value-prefix="/blog/"
+			value-suffix=".html"
+			class="title" />
 
-        <floating-label class="flex-input-50">
-            <input
-                id="imageurl"
-                key="image"
-                filter-key="pathname"
-                filter-next
-                placeholder="Image Url"
-                class="floating-label input-icon" />
-            <a
-                actions="action(document; #generate-image)"
-                click-selector="i[src]"
-                click-attribute="src"
-                click-value="../assets/svg/spinner.svg"
-                class="floating-icon right:35px!important">
-                <i
-                    src="../assets/svg/wand-magic-sparkles.svg"
-                    class="width:20px height:20px"></i>
-            </a>
-            <div
-                id="imageGenerated"
-                click-previous="i"
-                click-attribute="src"
-                click-value="../assets/svg/check-circle.svg"></div>
+		<floating-label class="width:290px">
+			<input
+				id="imageurl"
+				key="image"
+				filter-key="pathname"
+				filter-next
+				placeholder="Image Url"
+				class="floating-label input-icon" />
+			<a
+				actions="action(document; #generate-image)"
+				click-selector="i[src]"
+				click-attribute="src"
+				click-value="../assets/svg/spinner.svg"
+				class="floating-icon right:35px!important">
+				<i
+					src="../assets/svg/wand-magic-sparkles.svg"
+					class="width:20px height:20px"></i>
+			</a>
+			<div
+				id="imageGenerated"
+				click-previous="i"
+				click-attribute="src"
+				click-value="../assets/svg/check-circle.svg"></div>
 
-            <a
-                id="imagefile"
-                type="file"
-                array="files"
-                object="ObjectId()"
-                key="{}"
-                accept="image/*"
-                class="floating-icon"
-                read="false"
-                upsert="true"
-                render-selector="[template]"
-                skip-attribute>
-                <div template file_id="{{object.id}}">
-                    <input
-                        file="pathname"
-                        value="/assets{{object.pathname}}"
-                        onload-selector="document; #imageurl"
-                        onload-attribute="value"
-                        onload-if="!$template"
-                        hidden />
-                    <input file="directory" value="/assets" hidden />
-                    <input file="path" value="/assets" hidden />
-                    <input file="public" value="true" hidden />
-                    <input file="host[]" value="*" hidden />
-                </div>
+			<a
+				id="imagefile"
+				type="file"
+				array="files"
+				object="ObjectId()"
+				key="{}"
+				accept="image/*"
+				class="floating-icon"
+				read="false"
+				upsert="true"
+				render-selector="[template]"
+				skip-attribute>
+				<div template file_id="{{object.id}}">
+					<input
+						file="pathname"
+						value="/assets{{object.pathname}}"
+						onload-selector="document; #imageurl"
+						onload-attribute="value"
+						onload-if="!$template"
+						hidden />
+					<input file="directory" value="/assets" hidden />
+					<input file="path" value="/assets" hidden />
+					<input file="public" value="true" hidden />
+					<input file="host[]" value="*" hidden />
+				</div>
 
-                <i src="../assets/svg/plus.svg"></i>
-            </a>
-        </floating-label>
-        <floating-label class="flex-input-50">
-            <input
-                id="videourl"
-                key="video"
-                filter-key="pathname"
-                filter-next
-                placeholder="Video Url"
-                class="floating-label input-icon" />
-            <a
-                id="videofile"
-                type="file"
-                array="files"
-                object="ObjectId()"
-                key="{}"
-                accept="video/*"
-                class="floating-icon"
-                read="false"
-                upsert="true"
-                render-selector="[template]"
-                skip-attribute>
-                <div template file_id="{{object.id}}">
-                    <input
-                        file="pathname"
-                        value="/assets{{object.pathname}}"
-                        onload-selector="document; #videourl"
-                        onload-attribute="value"
-                        onload-if="!$template"
-                        hidden />
-                    <input file="directory" value="/assets" hidden />
-                    <input file="path" value="/assets" hidden />
-                    <input file="public" value="true" hidden />
-                    <input file="host[]" value="*" hidden />
-                </div>
+				<i src="../assets/svg/plus.svg"></i>
+			</a>
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				id="videourl"
+				key="video"
+				filter-key="pathname"
+				filter-next
+				placeholder="Video Url"
+				class="floating-label input-icon" />
+			<a
+				id="videofile"
+				type="file"
+				array="files"
+				object="ObjectId()"
+				key="{}"
+				accept="video/*"
+				class="floating-icon"
+				read="false"
+				upsert="true"
+				render-selector="[template]"
+				skip-attribute>
+				<div template file_id="{{object.id}}">
+					<input
+						file="pathname"
+						value="/assets{{object.pathname}}"
+						onload-selector="document; #videourl"
+						onload-attribute="value"
+						onload-if="!$template"
+						hidden />
+					<input file="directory" value="/assets" hidden />
+					<input file="path" value="/assets" hidden />
+					<input file="public" value="true" hidden />
+					<input file="host[]" value="*" hidden />
+				</div>
 
-                <i src="../assets/svg/plus.svg"></i>
-            </a>
-        </floating-label>
+				<i src="../assets/svg/plus.svg"></i>
+			</a>
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <textarea
-                key="description"
-                input-selector="document; .description"
-                input-attribute="value"
-                placeholder="Description"
-                class="floating-label"></textarea>
-        </floating-label>
+		<floating-label class="width:100%">
+			<textarea
+				key="description"
+				input-selector="document; .description"
+				input-attribute="value"
+				placeholder="Description"
+				class="floating-label"></textarea>
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <editor
-                id="content"
-                contenteditable="true"
-                key="content"
-                realtime="true"
-                placeholder="Content"
-                input-selector="document; .content"
-                input-attribute="value"
-                class="floating-label markdown-body"></editor>
-        </floating-label>
+		<floating-label class="width:100%">
+			<editor
+				id="content"
+				contenteditable="true"
+				key="content"
+				realtime="true"
+				placeholder="Content"
+				input-selector="document; .content"
+				input-attribute="value"
+				class="floating-label markdown-body"></editor>
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <select
-                key="category"
-                class="floating-label"
-                placeholder="Category">
-                <option value="">Select Category</option>
-                <option value="education">education</option>
-            </select>
-        </floating-label>
+		<floating-label class="width:100%">
+			<select
+				key="category"
+				class="floating-label"
+				placeholder="Category">
+				<option value="">Select Category</option>
+				<option value="education">education</option>
+			</select>
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <input
-                type="text"
-                key="tags"
-                placeholder="Tags (comma-separated)"
-                class="floating-label" />
-        </floating-label>
+		<floating-label class="width:100%">
+			<input
+				type="text"
+				key="tags"
+				placeholder="Tags (comma-separated)"
+				class="floating-label" />
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <input
-                type="text"
-                key="meta-title"
-                placeholder="Meta Title"
-                class="floating-label" />
-        </floating-label>
+		<floating-label class="width:100%">
+			<input
+				type="text"
+				key="meta-title"
+				placeholder="Meta Title"
+				class="floating-label" />
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <textarea
-                key="meta-keywords"
-                placeholder="Meta Keywords"
-                class="floating-label"></textarea>
-        </floating-label>
+		<floating-label class="width:100%">
+			<textarea
+				key="meta-keywords"
+				placeholder="Meta Keywords"
+				class="floating-label"></textarea>
+		</floating-label>
 
-        <floating-label class="width:100%">
-            <textarea
-                key="meta-description"
-                placeholder="Meta Description"
-                class="floating-label"></textarea>
-        </floating-label>
+		<floating-label class="width:100%">
+			<textarea
+				key="meta-description"
+				placeholder="Meta Description"
+				class="floating-label"></textarea>
+		</floating-label>
 
-        <input
-            key="_id"
-            input-selector="document; #publishform"
-            input-attribute="object"
-            hidden />
-        <input type="datetime" key="published" value="$now" hidden />
+		<input
+			key="_id"
+			input-selector="document; #publishform"
+			input-attribute="object"
+			hidden />
+		<input type="datetime" key="published" value="$now" hidden />
 
-        <button
-            actions="save, state"
-            state_to="main"
-            state-src="../admin/blog/datatable.html"
-            class="button-round">
-            <i src="../assets/svg/save.svg"></i>
-        </button>
+		<button
+			actions="save, state"
+			state_to="main"
+			state-src="../admin/blog/datatable.html"
+			class="button-round">
+			<i src="../assets/svg/save.svg"></i>
+		</button>
 
-        <a
-            id="postPublished"
-            click-selector="document; #published-icon"
-            click-attribute="src"
-            click-value="../assets/svg/check-circle.svg"
-            hidden></a>
+		<a
+			id="postPublished"
+			click-selector="document; #published-icon"
+			click-attribute="src"
+			click-value="../assets/svg/check-circle.svg"
+			hidden></a>
 
-        <button
-            class="padding:10px_30px font-size:20px"
-            click-selector="i[src]"
-            click-attribute="src"
-            click-value="../assets/svg/spinner.svg"
-            actions="click, save, timeout(1000), render(document; #publish), timeout(1000), action(document; #sethtml), timeout(1000), action(document; #savefile), action(document; #postPublished)">
-            Publish
-            <i
-                id="published-icon"
-                src="../assets/svg/paper-plane.svg"
-                class="display:inline"></i>
-        </button>
-    </form>
+		<button
+			class="font-size:20px"
+			click-selector="i[src]"
+			click-attribute="src"
+			click-value="../assets/svg/spinner.svg"
+			actions="click, save, timeout(1000), render(document; #publish), timeout(1000), action(document; #sethtml), timeout(1000), action(document; #savefile), action(document; #postPublished)">
+			Publish
+			<i
+				id="published-icon"
+				src="../assets/svg/paper-plane.svg"
+				class="display:inline"></i>
+		</button>
+	</form>
 
-    <!-- Get ObjectId from blobpost and reuse for file  -->
-    <form id="publishform" array="files" object="" upsert="true" hidden>
-        <input
-            key="name"
-            value-replaceall=" "
-            value-replacement="-"
-            value-suffix=".html"
-            input-next
-            input-attribute="value"
-            class="title" />
-        <input key="pathname" value-prefix="/blog/" />
-        <input key="path" value="/blog" />
-        <input key="directory" value="blog" />
-        <input key="content-type" value="text/html" />
-        <input key="$addToSet.host" value="*" />
-        <input key="public" value="true" />
+	<!-- Get ObjectId from blobpost and reuse for file  -->
+	<form id="publishform" array="files" object="" upsert="true" hidden>
+		<input
+			key="name"
+			value-replaceall=" "
+			value-replacement="-"
+			value-suffix=".html"
+			input-next
+			input-attribute="value"
+			class="title" />
+		<input key="pathname" value-prefix="/blog/" />
+		<input key="path" value="/blog" />
+		<input key="directory" value="blog" />
+		<input key="content-type" value="text/html" />
+		<input key="$addToSet.host" value="*" />
+		<input key="public" value="true" />
 
-        <div id="publish" render-next render="object"></div>
-        <div
-            id="sethtml"
-            src="./blog/post.html"
-            value-type="text"
-            click-next
-            click-attribute="value"></div>
+		<div id="publish" render-next render="object"></div>
+		<div
+			id="sethtml"
+			src="./blog/post.html"
+			value-type="text"
+			click-next
+			click-attribute="value"></div>
 
-        <textarea key="src"></textarea>
-        <button id="savefile" actions="save" hidden>Publish Post</button>
-    </form>
+		<textarea key="src"></textarea>
+		<button id="savefile" actions="save" hidden>Publish Post</button>
+	</form>
 
-    <form>
-        <input
-            openai="chat.completions.create"
-            openai-key="model"
-            value="gpt-4-1106-preview"
-            hidden />
+	<form>
+		<input
+			openai="chat.completions.create"
+			openai-key="model"
+			value="gpt-4-1106-preview"
+			hidden />
 
-        <input
-            openai="chat.completions.create"
-            openai-key="messages[0].role"
-            value="system"
-            hidden />
-        <textarea
-            array="ai"
-            object
-            key="content"
-            filter-key="name"
-            filter-value="Blog Details"
-            openai="chat.completions.create"
-            openai-key="messages[0].content"
-            hidden></textarea>
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[0].role"
+			value="system"
+			hidden />
+		<textarea
+			array="ai"
+			object
+			key="content"
+			filter-key="name"
+			filter-value="Blog Details"
+			openai="chat.completions.create"
+			openai-key="messages[0].content"
+			hidden></textarea>
 
-        <input
-            openai="chat.completions.create"
-            openai-key="messages[1].role"
-            value="user"
-            hidden />
-        <input
-            class="title"
-            openai="chat.completions.create"
-            openai-key="messages[1].content"
-            hidden />
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[1].role"
+			value="user"
+			hidden />
+		<input
+			class="title"
+			openai="chat.completions.create"
+			openai-key="messages[1].content"
+			hidden />
 
-        <input
-            openai="chat.completions.create"
-            openai-key="messages[2].role"
-            value="user"
-            hidden />
-        <input
-            class="content"
-            openai="chat.completions.create"
-            openai-key="messages[2].content"
-            hidden />
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[2].role"
+			value="user"
+			hidden />
+		<input
+			class="content"
+			openai="chat.completions.create"
+			openai-key="messages[2].content"
+			hidden />
 
-        <textarea
-            id="input"
-            openai="chat.completions.create"
-            openai-key="choices[0].message.content"
-            openai-request="false"
-            input-selector="document; #blog-form"
-            input-attribute="value"
-            value-type="json"
-            value-replace="/```json\n|\n```/g"
-            hidden></textarea>
+		<textarea
+			id="input"
+			openai="chat.completions.create"
+			openai-key="choices[0].message.content"
+			openai-request="false"
+			input-selector="document; #blog-form"
+			input-attribute="value"
+			value-type="json"
+			value-replace="/```json\n|\n```/g"
+			hidden></textarea>
 
-        <a
-            id="generate-details"
-            actions="openai.chat.completions.create, action(document; #generated-icon)"></a>
-    </form>
+		<a
+			id="generate-details"
+			actions="openai.chat.completions.create, action(document; #generated-icon)"></a>
+	</form>
 
-    <form>
-        <input
-            openai="chat.completions.create"
-            openai-key="model"
-            value="gpt-4-1106-preview"
-            hidden />
+	<form>
+		<input
+			openai="chat.completions.create"
+			openai-key="model"
+			value="gpt-4-1106-preview"
+			hidden />
 
-        <input
-            openai="chat.completions.create"
-            openai-key="messages[0].role"
-            value="system"
-            hidden />
-        <textarea
-            array="ai"
-            object
-            key="content"
-            filter-key="name"
-            filter-value="Blog Post"
-            openai="chat.completions.create"
-            openai-key="messages[0].content"
-            hidden></textarea>
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[0].role"
+			value="system"
+			hidden />
+		<textarea
+			array="ai"
+			object
+			key="content"
+			filter-key="name"
+			filter-value="Blog Post"
+			openai="chat.completions.create"
+			openai-key="messages[0].content"
+			hidden></textarea>
 
-        <input
-            openai="chat.completions.create"
-            openai-key="messages[1].role"
-            value="user"
-            hidden />
-        <input
-            class="title"
-            openai="chat.completions.create"
-            openai-key="messages[1].content"
-            hidden />
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[1].role"
+			value="user"
+			hidden />
+		<input
+			class="title"
+			openai="chat.completions.create"
+			openai-key="messages[1].content"
+			hidden />
 
-        <input
-            openai="chat.completions.create"
-            openai-key="messages[2].role"
-            value="user"
-            hidden />
-        <input
-            class="description"
-            openai="chat.completions.create"
-            openai-key="messages[2].content"
-            hidden />
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[2].role"
+			value="user"
+			hidden />
+		<input
+			class="description"
+			openai="chat.completions.create"
+			openai-key="messages[2].content"
+			hidden />
 
-        <textarea
-            id="input"
-            openai="chat.completions.create"
-            openai-key="choices[0].message.content"
-            openai-request="false"
-            marked
-            input-selector="document; #content"
-            input-attribute="value"
-            hidden></textarea>
-        <a
-            id="generate-post"
-            actions="openai.chat.completions.create, action(document; #generate-details), action(document; #generate-image)"></a>
-    </form>
+		<textarea
+			id="input"
+			openai="chat.completions.create"
+			openai-key="choices[0].message.content"
+			openai-request="false"
+			marked
+			input-selector="document; #content"
+			input-attribute="value"
+			hidden></textarea>
+		<a
+			id="generate-post"
+			actions="openai.chat.completions.create, action(document; #generate-details), action(document; #generate-image)"></a>
+	</form>
 
-    <form api="openai">
-        <input
-            openai="images.generate"
-            openai-key="model"
-            value="dall-e-3"
-            hidden />
+	<form api="openai">
+		<input
+			openai="images.generate"
+			openai-key="model"
+			value="dall-e-3"
+			hidden />
 
-        <textarea
-            class="title"
-            openai="images.generate"
-            openai-key="prompt"
-            value-prefix="generate an image for a blogpost related to the following topic: "
-            hidden></textarea>
-        <input
-            type="number"
-            openai="images.generate"
-            openai-key="n"
-            value="1"
-            hidden />
-        <input
-            openai="images.generate"
-            openai-key="size"
-            value="1024x1024"
-            hidden />
+		<textarea
+			class="title"
+			openai="images.generate"
+			openai-key="prompt"
+			value-prefix="generate an image for a blogpost related to the following topic: "
+			hidden></textarea>
+		<input
+			type="number"
+			openai="images.generate"
+			openai-key="n"
+			value="1"
+			hidden />
+		<input
+			openai="images.generate"
+			openai-key="size"
+			value="1024x1024"
+			hidden />
 
-        <!-- <img src="" class="max-width:100% height:auto" /> -->
-        <input
-            openai="images.generate"
-            openai-key="data[0].url"
-            openai-request="false"
-            import-url-selector="document; #imagefile"
-            import-url
-            hidden />
+		<!-- <img src="" class="max-width:100% height:auto" /> -->
+		<input
+			openai="images.generate"
+			openai-key="data[0].url"
+			openai-request="false"
+			import-url-selector="document; #imagefile"
+			import-url
+			hidden />
 
-        <a
-            id="generate-image"
-            actions="openai.images.generate, importUrl, action(document; #imageGenerated)"></a>
-    </form>
+		<a
+			id="generate-image"
+			actions="openai.images.generate, importUrl, action(document; #imageGenerated)"></a>
+	</form>
 
-    <div src="../components/toolbar.html" value-type="outerHTML"></div>
+	<div src="../components/toolbar.html" value-type="outerHTML"></div>
 </section>
