@@ -1,93 +1,97 @@
-<!DOCTYPE html>
-<a href="./signin.html" session="false" hidden></a>
 <section class="centered">
-    <form
-        state_id="form-fields"
-        array="organizations"
-        object=""
-        realtime="false"
-        class="flex-form">
-        <div
-            class="display:flex justify-content:space-between align-items:center font-size:20px width:100%">
-            <a
-                actions="state"
-                state_to="main"
-                state-src="../admin/organizations/datatable.html"
-                ><i src="../assets/svg/angle-left.svg"></i
-            ></a>
-            <div
-                class="display:flex align-items:center transition:0.3s"
-                hover-selector=".options"
-                hover-attribute="class"
-                hover-value="display:flex!important">
-                <div class="display:none options">
-                    <a
-                        actions="delete, action(next;)"
-                        array="keys"
-                        crud="false"
-                        read="false"
-                        class="padding:0px_10px">
-                        <i src="../assets/svg/trash-alt.svg"></i>
-                    </a>
-                    <a
-                        actions="delete, state"
-                        array="organizations"
-                        crud="false"
-                        read="false"
-                        state_to="main"
-                        state-src="../admin/organizations/datatable.html"
-                        hidden>
-                        <i src="../assets/svg/trash-alt.svg"></i>
-                    </a>
-                    <a
-                        actions="save, state"
-                        state_to="main"
-                        state-src="../admin/organizations/datatable.html"
-                        class="padding:0px_10px">
-                        <i src="../assets/svg/save.svg"></i>
-                    </a>
-                </div>
-                <a class="padding-left:10px"
-                    ><i src="../assets/svg/ellipsis-v.svg"></i
-                ></a>
-            </div>
-        </div>
+	<form
+		state_id="form-fields"
+		array="organizations"
+		object=""
+		class="flex-form">
+		<div
+			class="display:flex justify-content:space-between align-items:center font-size:20px width:100%">
+			<a
+				actions="state"
+				state_to="main"
+				state-src="../admin/organizations/datatable.html"
+				><i src="../assets/svg/angle-left.svg"></i
+			></a>
+			<div
+				class="display:flex align-items:center transition:0.3s"
+				hover-selector=".options"
+				hover-attribute="class"
+				hover-value="display:flex!important">
+				<div class="display:none options">
+					<a
+						actions="delete, action(next;)"
+						array="keys"
+						crud="false"
+						read="false"
+						class="padding:0px_10px">
+						<i src="../assets/svg/trash-alt.svg"></i>
+					</a>
+					<a
+						actions="delete, state"
+						array="organizations"
+						crud="false"
+						read="false"
+						state_to="main"
+						state-src="../admin/organizations/datatable.html"
+						hidden>
+						<i src="../assets/svg/trash-alt.svg"></i>
+					</a>
+					<a
+						actions="save, state"
+						state_to="main"
+						state-src="../admin/organizations/datatable.html"
+						class="padding:0px_10px">
+						<i src="../assets/svg/save.svg"></i>
+					</a>
+				</div>
+				<a class="padding-left:10px"
+					><i src="../assets/svg/ellipsis-v.svg"></i
+				></a>
+			</div>
+		</div>
 
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="name"
-                placeholder="Name"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="email"
-                placeholder="Email"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="tel"
-                key="phone"
-                placeholder="Phone"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="owner"
-                placeholder="owner"
-                class="floating-label" />
-        </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="name"
+				placeholder="Name"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="email"
+				placeholder="Email"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="tel"
+				key="phone"
+				placeholder="Phone"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="owner"
+				placeholder="owner"
+				class="floating-label" />
+		</floating-label>
 
-        <button
-            actions="save, state"
-            state_to="main"
-            state-src="../admin/organizations/datatable.html"
-            class="button-round">
-            <i src="../assets/svg/save.svg"></i>
-        </button>
-    </form>
+		<div class="display:flex gap:20px width:100% margin-top:20px">
+			<button
+				actions="state"
+				state_to="main"
+				state-src="$back"
+				class="red margin-left:auto">
+				<i src="../assets/svg/ban.svg"></i>
+				<span class="margin-left:5px"> Cancel</span>
+			</button>
+			<button actions="save">
+				<i src="../assets/svg/save.svg"></i>
+				<span class="margin-left:5px"> Save</span>
+			</button>
+		</div>
+	</form>
 </section>

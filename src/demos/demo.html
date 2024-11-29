@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<form array="contacts" realtime="false">
-    <input
-        key="name"
-        object
-        state_id="form-fields"
-        state-overwrite
-        placeholder="Name" />
-    <button actions="save, reset">Save</button>
-    <button actions="reset">reset</button>
+<form array="contacts">
+	<input
+		key="name"
+		object
+		state_id="form-fields"
+		state-overwrite
+		placeholder="Name" />
+	<button actions="save, reset">Save</button>
+	<button actions="reset">reset</button>
 </form>
 
 <input filter-key="name" filter-next placeholder="search" />
 
 <div array="contacts" render-selector="[template]">
-    <div template>
-        <a actions="state" state_to="form-fields" state-object="{{object._id}}">
-            <span>{{object.name}}</span>
-            <a
-                actions="deleteObject"
-                array="{{object.array}}"
-                object="{{object._id}}">
-                <i src="/assets/svg/trash-alt.svg"></i>
-            </a>
-        </a>
-    </div>
+	<div template>
+		<a actions="state" state_to="form-fields" state-object="{{object._id}}">
+			<span>{{object.name}}</span>
+			<a
+				actions="deleteObject"
+				array="{{object.array}}"
+				object="{{object._id}}">
+				<i src="/assets/svg/trash-alt.svg"></i>
+			</a>
+		</a>
+	</div>
 </div>
 
 <script src="../dist/CoCreate.js"></script>

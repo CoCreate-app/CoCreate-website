@@ -1,42 +1,40 @@
-<!DOCTYPE html>
 <section class="centered">
-    <form
-        state_id="form-fields"
-        array="subscriptions"
-        object=""
-        realtime="false"
-        class="flex-form">
-        <div src="../components/form-toolbar.html" class="width:100%"></div>
+	<form
+		state_id="form-fields"
+		array="subscriptions"
+		object=""
+		class="flex-form">
+		<div src="../components/form-toolbar.html" class="width:100%"></div>
 
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="name"
-                placeholder="Name"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="status"
-                placeholder="Status"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-600">
-            <textarea
-                type="code"
-                key="fields"
-                placeholder="Fields"
-                rows="10"
-                class="floating-label"></textarea>
-        </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="name"
+				placeholder="Name"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="status"
+				placeholder="Status"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:100%">
+			<textarea
+				type="code"
+				key="fields"
+				placeholder="Fields"
+				rows="10"
+				class="floating-label"></textarea>
+		</floating-label>
 
-        <button
-            actions="save, state"
-            state_to="main"
-            state-src="../admin/subscriptions/datatable.html"
-            class="button-round">
-            <i src="../assets/svg/save.svg"></i>
-        </button>
-    </form>
+		<button
+			actions="save, state"
+			state_to="main"
+			state-src="../admin/subscriptions/datatable.html"
+			class="button-round">
+			<i src="../assets/svg/save.svg"></i>
+		</button>
+	</form>
 </section>

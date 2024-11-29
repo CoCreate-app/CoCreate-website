@@ -1,44 +1,41 @@
-<!DOCTYPE html>
+<div
+	class="width:100%"
+	resize-attribute="menu-icon"
+	resize-value="active"
+	resize-if="300px"
+	resize-selector="document; [menu-icon][]"></div>
+<div
+	class="width:100%"
+	resize-attribute="menu-icon"
+	resize-value="false"
+	resize-if="50px"
+	resize-selector="document; [menu-icon][]"></div>
+<div
+	class="width:100%"
+	resize-attribute="menu-icon"
+	resize-value="false"
+	resize-if="0px"
+	resize-selector="document; [menu-icon][]"></div>
 
-<div
-    class="width:100%"
-    resize-attribute="menu-icon"
-    resize-value="active"
-    resize-if="300px"
-    resize-selector="document; [menu-icon][]"></div>
-<div
-    class="width:100%"
-    resize-attribute="menu-icon"
-    resize-value="false"
-    resize-if="50px"
-    resize-selector="document; [menu-icon][]"></div>
-<div
-    class="width:100%"
-    resize-attribute="menu-icon"
-    resize-value="false"
-    resize-if="0px"
-    resize-selector="document; [menu-icon][]"></div>
+<div class="header">
+	<!-- Logo -->
+	<a
+		href="{{path}}"
+		class="display:flex align-items:center gap:10px font-size:28px font-weight:bold">
+		<img src="{{path}}assets/icon.png" height="50px" alt="icon logo" />
+		<span>Co<span class="color:#1e90ff">Create</span></span>
+	</a>
 
-<div
-    class="nav display:flex justify-content:space-between align-items:center padding:13px">
-    <!-- Logo -->
-    <a
-        href="{{path}}"
-        class="display:flex align-items:center gap:10px font-size:28px font-weight:bold">
-        <img src="{{path}}assets/icon.png" height="50px" alt="icon logo" />
-        <span>Co<span class="color:#1e90ff">Create</span></span>
-    </a>
-
-    <!-- Menu Icon -->
-    <a
-        menu-icon
-        toggle="width:0px,"
-        toggle-selector="document; #menuL"
-        toggle-attribute="style">
-        <span></span>
-        <span></span>
-        <span></span>
-    </a>
+	<!-- Menu Icon -->
+	<a
+		menu-icon
+		toggle="width:0px,"
+		toggle-selector="document; #menuL"
+		toggle-attribute="style">
+		<span></span>
+		<span></span>
+		<span></span>
+	</a>
 </div>
 
 <!-- Search -->
@@ -62,22 +59,19 @@
 </form> -->
 
 <!-- Navigation -->
-<div class="text-transform:uppercase">
-    <!-- <a href="{{path}}js/" class="display:block color:dodgerblue:hover padding:12px_24px">JS</a>
-				<a href="{{path}}css/" class="display:block color:dodgerblue:hover padding:12px_24px">CSS</a> -->
-    <a
-        href="{{path}}blog/"
-        class="display:block color:dodgerblue:hover padding:12px_24px"
-        >Blog</a
-    >
-    <a
-        href="{{path}}docs/"
-        class="display:block color:dodgerblue:hover padding:12px_24px"
-        >Docs</a
-    >
-    <!-- <a href="{{path}}blog/" class="display:block color:dodgerblue:hover padding:12px_24px">Blog</a>
-				<a href="{{path}}discuss/" class="display:block color:dodgerblue:hover padding:12px_24px">Discuss</a>
-				<a href="{{path}}university/" class="display:block color:dodgerblue:hover padding:12px_24px">University</a> -->
-</div>
+<section class="display:flex flex-direction:column gap:20px font-size:20px">
+	<a href="{{path}}demo/" class="color:dodgerblue:hover">Demos</a>
+	<a href="#pricing" class="color:dodgerblue:hover">Pricing</a>
+	<a href="{{path}}docs/" class="color:dodgerblue:hover">Docs</a>
+	<a href="{{path}}blog/" class="color:dodgerblue:hover">Blog</a>
+	<!-- <a href="{{path}}discuss/" class="color:dodgerblue:hover"
+		>Discuss</a
+	> -->
+	<!-- <a
+		href="{{path}}university/"
+		class="color:dodgerblue:hover"
+		>University</a
+	> -->
+</section>
 
 <div resize="right"></div>

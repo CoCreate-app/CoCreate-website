@@ -1,35 +1,35 @@
-<!DOCTYPE html>
-<a href="./signin.html" session="false" hidden></a>
 <section class="centered">
-    <form
-        state_id="form-fields"
-        array="payouts"
-        object=""
-        realtime="false"
-        class="flex-form">
-        <div src="../components/form-toolbar.html" class="width:100%"></div>
+	<form state_id="form-fields" array="payouts" object="" class="flex-form">
+		<div src="../components/form-toolbar.html" class="width:100%"></div>
 
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="amount"
-                placeholder="Amount"
-                class="floating-label" />
-        </floating-label>
-        <floating-label class="input-300">
-            <input
-                type="text"
-                key="ambasador"
-                placeholder="Ambassador"
-                class="floating-label" />
-        </floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="amount"
+				placeholder="Amount"
+				class="floating-label" />
+		</floating-label>
+		<floating-label class="width:290px">
+			<input
+				type="text"
+				key="ambasador"
+				placeholder="Ambassador"
+				class="floating-label" />
+		</floating-label>
 
-        <button
-            actions="save, state"
-            state_to="main"
-            state-src="../admin/payouts/datatable.html"
-            class="button-round">
-            <i src="../assets/svg/save.svg"></i>
-        </button>
-    </form>
+		<div class="display:flex gap:20px width:100% margin-top:20px">
+			<button
+				actions="state"
+				state_to="main"
+				state-src="$back"
+				class="red margin-left:auto">
+				<i src="../assets/svg/ban.svg"></i>
+				<span class="margin-left:5px"> Cancel</span>
+			</button>
+			<button actions="save">
+				<i src="../assets/svg/save.svg"></i>
+				<span class="margin-left:5px"> Save</span>
+			</button>
+		</div>
+	</form>
 </section>

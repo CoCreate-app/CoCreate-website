@@ -1,519 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>admin | CoCreate</title>
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../assets/favicon.ico" />
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>admin | CoCreate</title>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon.ico" />
 
-        <link
-            rel="stylesheet"
-            href="./index.css"
-            array="files"
-            object="637bc8fe91249e639db315d9"
-            key="{}"
-            type="text/css"
-            parse="true" />
+		<link
+			rel="stylesheet"
+			href="./index.css"
+			array="files"
+			object="637bc8fe91249e639db315d9"
+			key="{}"
+			type="text/css"
+			parse="true" />
 
-        <link rel="stylesheet" href="../index.css" type="text/css" />
+		<link rel="stylesheet" href="../index.css" type="text/css" />
 
-        <link rel="manifest" href="../manifest.webmanifest" />
+		<link rel="manifest" href="../manifest.webmanifest" />
 
-        <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-    </head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-    <style type="text/css">
-        ul::-webkit-scrollbar-thumb,
-        ul::-webkit-scrollbar-track {
-            background-color: rgba(0, 0, 0, 0.01);
-        }
+			gtag("config", "UA-121709453-1");
+		</script>
 
-        @media (min-width: 575px) {
-            sidenav#menuL:hover {
-                width: 275px;
-            }
-        }
-        @media (max-width: 574px) {
-            main[content_id="content"] {
-                margin-left: 0px !important;
-            }
-        }
-    </style>
+		<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+	</head>
 
-    <body>
-        <a href="./signin.html" session="false" hidden></a>
-        <!-- Navbar  -->
-        <nav
-            content_id="content"
-            scroll=", hide-nav"
-            scroll-up="5"
-            scroll-down="5"
-            style="padding-left: 50px">
-            <!-- Menu Icon -->
-            <a
-                menu-icon
-                toggle="width:275px,"
-                toggle-selector="document; #menuL"
-                toggle-attribute="style"
-                class="margin-left:20px">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
+	<style type="text/css">
+		ul::-webkit-scrollbar-thumb,
+		ul::-webkit-scrollbar-track {
+			background-color: rgba(0, 0, 0, 0.01);
+		}
 
-            <!-- Horizontal Scroll Nav/Tabs -->
-            <ul
-                class="display:inline-flex direction:rtl overflow:auto font-size:20px align-items:center list-style-type:none width:100% height:50px">
-                <!-- Fullscreen toogle -->
-                <li>
-                    <a fullscreen>
-                        <i src="../assets/svg/expand.svg"></i>
-                        <i src="../assets/svg/compress.svg"></i>
-                    </a>
-                </li>
-            </ul>
+		@media (min-width: 575px) {
+			sidenav#menuL:hover {
+				width: 275px;
+			}
+		}
+	</style>
 
-            <!-- Avatar -->
-            <a
-                class="avatar round"
-                href="{{path}}account/"
-                state_to="main"
-                state-src="{{path}}profile/">
-                <div
-                    array="users"
-                    object="$user_id"
-                    key="firstname"
-                    class="avatar-name">
-                    <i
-                        class="height:20px"
-                        src="../assets/svg/sign-in-alt.svg"></i>
-                </div>
-                <div class="avatar-image">
-                    <img
-                        array="users"
-                        object="$user_id"
-                        key="avatar[0].src"
-                        onerror="this.style.display='none'" />
-                </div>
-                <div
-                    class="avatar-status"
-                    array="users"
-                    object="$user_id"
-                    user-status="{'name':'status'}"></div>
-            </a>
-        </nav>
+	<body>
+		<a href="./signin.html" session="false" hidden></a>
+		<!-- Navbar  -->
+		<nav
+			scroll=", hide-nav"
+			scroll-up="5"
+			scroll-down="5"
+			class="margin-left:0!important@xs"
+			style="margin-left: 50px">
+			<!-- Menu Icon -->
+			<a
+				menu-icon
+				toggle="width:275px,"
+				toggle-selector="document; #menuL"
+				toggle-attribute="style">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
 
-        <!-- Modal Viewport  -->
-        <div
-            class="position:fixed margin-top:50px"
-            content_id="content"
-            id="modal-viewport"></div>
+			<!-- Horizontal Scroll Nav/Tabs -->
+			<div
+				class="display:inline-flex gap:15px direction:rtl overflow:auto align-items:center width:100% height:50px font-size:20px">
+				<!-- Fullscreen toogle -->
+				<a fullscreen>
+					<i src="../assets/svg/expand.svg"></i>
+					<i src="../assets/svg/compress.svg"></i>
+				</a>
 
-        <!-- Main container  -->
-        <main
-            class="height:100vh padding-top:70px"
-            content_id="content"
-            src="organizations/list.html"
-            state_id="main"
-            state-overwrite
-            state-onstoragechange="false"
-            style="padding-left: 50px"></main>
+				<!-- Share -->
+				<a share>
+					<i src="../assets/svg/share-alt.svg"></i>
+				</a>
+			</div>
 
-        <!-- SideNav  -->
-        <sidenav
-            id="menuL"
-            class="top:0px left:0px width:50px width:0px@xs"
-            resizable
-            resize-selector="document; main, document; nav"
-            resize-attribute="style"
-            resize-property="padding-left">
-            <div
-                class="width:100%"
-                resize-attribute="menu-icon"
-                resize-value="active"
-                resize-if="275px"
-                resize-selector="document; [menu-icon][]"></div>
-            <div
-                class="width:100%"
-                resize-attribute="menu-icon"
-                resize-value="false"
-                resize-if="50px"
-                resize-selector="document; [menu-icon][]"></div>
-            <div
-                class="width:100%"
-                resize-attribute="menu-icon"
-                resize-value="false"
-                resize-if="0px"
-                resize-selector="document; [menu-icon][]"></div>
+			<!-- Avatar -->
+			<a
+				class="avatar round"
+				href="./"
+				state_to="main"
+				state-src="./profile/">
+				<div
+					array="users"
+					object="$user_id"
+					key="firstname"
+					class="avatar-name">
+					<i src="../assets/svg/sign-in-alt.svg"></i>
+				</div>
+				<div class="avatar-image">
+					<img
+						array="users"
+						object="$user_id"
+						key="avatar[0].src"
+						onerror="this.style.display='none'" />
+				</div>
+				<div
+					class="avatar-status"
+					array="users"
+					object="$user_id"
+					user-status="{'name':'status'}"></div>
+			</a>
+		</nav>
 
-            <a
-                href="../"
-                class="display:flex align-items:center gap:10px padding:10px_9px font-size:28px font-weight:bold">
-                <img src="../assets/icon.png" height="50px" alt="icon logo" />
-                <span>Co<span class="color:#1e90ff">Create</span></span>
-            </a>
+		<!-- Modal Viewport  -->
+		<div class="position:fixed margin-top:50px" id="modal-viewport"></div>
 
-            <div class="padding-right:5px padding-bottom:5px">
-                <ul
-                    class="overflow:auto display:flex flex-direction:column width:100% height:calc(100vh_-_140px) bottom:10px margin-top:30px margin-right:5px">
-                    <menu id="account" session>
-                        <!-- TODO: if no subscription click redirect to checkout -->
+		<!-- Main container  -->
+		<main
+			class="margin-left:0!important@xs"
+			src="organizations/list.html"
+			path="organizations/"
+			state_id="main"
+			state-overwrite
+			state-onstoragechange="false"
+			style="margin-left: 50px"></main>
 
-                        <h3 class="margin:50px_10px_5px">Account</h3>
-                        <li class="">
-                            <a
-                                actions="state"
-                                click-selector="document; .menu_icon@xs@sm"
-                                state-src="./profile/index.html"
-                                state_to="main"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=575px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center justify-content:center width:50px">
-                                    <i src="../assets/svg/user.svg"></i>
-                                </span>
-                                <span>My Profile</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                click-selector="document; .menu_icon@xs@sm"
-                                state-src="./organizations/list.html"
-                                state_to="main"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=575px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center justify-content:center width:50px">
-                                    <i src="../assets/svg/city.svg"></i>
-                                </span>
-                                <span>Organizations</span>
-                            </a>
-                            <a
-                                actions="state"
-                                click-selector="document; .menu_icon@xs@sm"
-                                state-src="./organizations/create.html"
-                                state_to="main"
-                                class="display:flex align-items:center justify-content:center width:50px">
-                                <i src="../assets/svg/plus.svg"></i>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                click-selector="document; .menu_icon@xs@sm"
-                                state-src="./members/index.html"
-                                state_to="main"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=575px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center justify-content:center width:50px">
-                                    <i src="../assets/svg/users.svg"></i>
-                                </span>
-                                <span>Members</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                state_to="main"
-                                state-src="/ambassador/"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i src="../assets/svg/bullhorn.svg"></i>
-                                </span>
-                                <span>Ambassador</span>
-                            </a>
-                        </li>
+		<!-- SideNav  -->
+		<sidenav
+			id="menuL"
+			class="width:50px width:0px@xs"
+			resizable
+			resize-selector="document; main, document; nav"
+			resize-attribute="style"
+			resize-property="margin-left">
+			<div
+				class="width:100%"
+				resize-attribute="menu-icon"
+				resize-value="active"
+				resize-if="275px"
+				resize-selector="document; [menu-icon][]"></div>
+			<div
+				class="width:100%"
+				resize-attribute="menu-icon"
+				resize-value="false"
+				resize-if="50px"
+				resize-selector="document; [menu-icon][]"></div>
+			<div
+				class="width:100%"
+				resize-attribute="menu-icon"
+				resize-value="false"
+				resize-if="0px"
+				resize-selector="document; [menu-icon][]"></div>
 
-                        <li class="">
-                            <a
-                                share
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i src="../assets/svg/share-alt.svg"></i>
-                                </span>
-                                <span>Share</span>
-                            </a>
-                        </li>
-                    </menu>
+			<div class="header">
+				<!-- Logo -->
+				<a
+					href="../"
+					class="display:flex align-items:center gap:10px font-size:28px font-weight:bold">
+					<img
+						src="../assets/icon.png"
+						height="50px"
+						alt="icon logo" />
+					<span>Co<span class="color:#1e90ff">Create</span></span>
+				</a>
 
-                    <menu id="admin" session>
-                        <input
-                            type="hidden"
-                            id="isadmin"
-                            array="keys"
-                            object="652c8d62a91e10cd4800fffb"
-                            key="key"
-                            input-parent
-                            input-attribute="admin"
-                            input-value="true" />
+				<!-- Menu Icon -->
+				<a
+					menu-icon
+					toggle="width:0px,"
+					toggle-selector="document; #menuL"
+					toggle-attribute="style"
+					class="display:none!important display:block!important@xs">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</div>
 
-                        <h3 class="margin:50px_10px_5px">Admin</h3>
+			<ul
+				class="overflow:auto display:flex flex-direction:column width:100% height:calc(100vh_-_110px)">
+				<menu id="account" session>
+					<!-- TODO: if no subscription click redirect to checkout -->
 
-                        <li class="">
-                            <a
-                                actions="state"
-                                state_to="main"
-                                state-src="../admin/users/datatable.html"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i src="../assets/svg/users.svg"></i>
-                                </span>
-                                <span>Users</span>
-                            </a>
-                            <div
-                                class="float:right width:50px text-align:center">
-                                <a
-                                    actions="state"
-                                    state_to="main"
-                                    state-src="../admin/users/form.html"
-                                    click-closest="sidenav"
-                                    click-attribute="style"
-                                    click-value="width:0px"
-                                    click-if="<=993px"
-                                    click-if-value="$innerWidth"
-                                    class="display:flex justify-content:center align-items:center height:40px">
-                                    <i src="../assets/svg/plus.svg"></i>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                state_to="main"
-                                state-src="../admin/organizations/datatable.html"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i src="../assets/svg/people-roof.svg"></i>
-                                </span>
-                                <span>Organizations</span>
-                            </a>
-                            <div
-                                class="float:right width:50px text-align:center">
-                                <a
-                                    actions="state"
-                                    state_to="main"
-                                    state-src="../admin/organizations/form.html"
-                                    click-closest="sidenav"
-                                    click-attribute="style"
-                                    click-value="width:0px"
-                                    click-if="<=993px"
-                                    click-if-value="$innerWidth"
-                                    class="display:flex justify-content:center align-items:center height:40px">
-                                    <i src="../assets/svg/plus.svg"></i>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                state_to="main"
-                                state-src="../admin/payments/datatable.html"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i src="../assets/svg/credit-card.svg"></i>
-                                </span>
-                                <span>Payments</span>
-                            </a>
-                            <div
-                                class="float:right width:50px text-align:center">
-                                <a
-                                    actions="state"
-                                    state_to="main"
-                                    state-src="../admin/payments/form.html"
-                                    click-closest="sidenav"
-                                    click-attribute="style"
-                                    click-value="width:0px"
-                                    click-if="<=993px"
-                                    click-if-value="$innerWidth"
-                                    class="display:flex justify-content:center align-items:center height:40px">
-                                    <i src="../assets/svg/plus.svg"></i>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                state_to="main"
-                                state-src="../admin/blog/datatable.html"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i src="../assets/svg/blog.svg"></i>
-                                </span>
-                                <span>Blog Posts</span>
-                            </a>
-                            <div
-                                class="float:right width:50px text-align:center">
-                                <a
-                                    actions="state"
-                                    state_to="main"
-                                    state-src="../admin/blog/form.html"
-                                    click-closest="sidenav"
-                                    click-attribute="style"
-                                    click-value="width:0px"
-                                    click-if="<=993px"
-                                    click-if-value="$innerWidth"
-                                    class="display:flex justify-content:center align-items:center height:40px">
-                                    <i src="../assets/svg/plus.svg"></i>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                state_to="main"
-                                state-src="../admin/social/index.html"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i
-                                        src="../assets/svg/share-from-square.svg"></i>
-                                </span>
-                                <span>Social Posts</span>
-                            </a>
-                            <div
-                                class="float:right width:50px text-align:center">
-                                <a
-                                    actions="state"
-                                    state_to="main"
-                                    state-src="../admin/social/form.html"
-                                    click-closest="sidenav"
-                                    click-attribute="style"
-                                    click-value="width:0px"
-                                    click-if="<=993px"
-                                    click-if-value="$innerWidth"
-                                    class="display:flex justify-content:center align-items:center height:40px">
-                                    <i src="../assets/svg/plus.svg"></i>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <a
-                                actions="state"
-                                state_to="main"
-                                state-src="../admin/ai/datatable.html"
-                                click-closest="sidenav"
-                                click-attribute="style"
-                                click-value="width:0px"
-                                click-if="<=993px"
-                                click-if-value="$innerWidth"
-                                class="display:flex align-items:center">
-                                <span
-                                    class="display:flex justify-content:center min-width:50px">
-                                    <i src="../assets/svg/brain.svg"></i>
-                                </span>
-                                <span>AI Settings</span>
-                            </a>
+					<h3>Account</h3>
+					<li>
+						<a
+							actions="state"
+							click-selector="document; .menu_icon@xs@sm"
+							state-src="./profile/index.html"
+							state_to="main"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=575px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center justify-content:center width:50px">
+								<i src="../assets/svg/user.svg"></i>
+							</span>
+							<span>My Profile</span>
+						</a>
+					</li>
+					<li>
+						<a
+							actions="state"
+							click-selector="document; .menu_icon@xs@sm"
+							state-src="./organizations/list.html"
+							state_to="main"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=575px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center justify-content:center width:50px">
+								<i src="../assets/svg/city.svg"></i>
+							</span>
+							<span>Organizations</span>
+						</a>
+						<a
+							actions="state"
+							click-selector="document; .menu_icon@xs@sm"
+							state-src="./organizations/create.html"
+							state_to="main"
+							class="display:flex align-items:center justify-content:center width:50px">
+							<i src="../assets/svg/plus.svg"></i>
+						</a>
+					</li>
+					<li>
+						<a
+							actions="state"
+							click-selector="document; .menu_icon@xs@sm"
+							state-src="./members/index.html"
+							state-path="./members/"
+							state_to="main"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=575px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center justify-content:center width:50px">
+								<i src="../assets/svg/users.svg"></i>
+							</span>
+							<span>Members</span>
+						</a>
+					</li>
+					<li>
+						<a
+							actions="state"
+							state_to="main"
+							state-src="/ambassador/"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=993px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center min-width:50px">
+								<i src="../assets/svg/bullhorn.svg"></i>
+							</span>
+							<span>Ambassador</span>
+						</a>
+					</li>
+				</menu>
 
-                            <div
-                                class="float:right width:50px text-align:center">
-                                <a
-                                    actions="state"
-                                    state_to="main"
-                                    state-src="../admin/ai/form.html"
-                                    click-closest="sidenav"
-                                    click-attribute="style"
-                                    click-value="width:0px"
-                                    click-if="<=993px"
-                                    click-if-value="$innerWidth"
-                                    class="display:flex justify-content:center align-items:center height:40px">
-                                    <i src="../assets/svg/plus.svg"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </menu>
-                </ul>
+				<menu id="admin" session>
+					<input
+						type="hidden"
+						id="isadmin"
+						array="keys"
+						object="645be06f200770138f1a7f54"
+						key="key"
+						input-parent
+						input-attribute="admin"
+						input-value="true" />
+					<h3>Admin</h3>
 
-                <!-- sidenav Footer -->
-                <div
-                    class="line-height:40px min-height:40px height:40px overflow:hidden white-space:nowrap position:absolute bottom:0px width:100%">
-                    <a
-                        actions="signOut"
-                        href="./signin.html"
-                        class="display:flex align-items:center">
-                        <span
-                            class="display:flex justify-content:center min-width:50px">
-                            <i src="../assets/svg/sign-out-alt.svg"></i>
-                        </span>
-                        <span>Sign Out</span>
-                    </a>
-                </div>
-            </div>
-            <div resize="right"></div>
-        </sidenav>
+					<li>
+						<a
+							actions="state"
+							state_to="main"
+							state-src="../admin/users/datatable.html"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=993px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center min-width:50px">
+								<i src="../assets/svg/users.svg"></i>
+							</span>
+							<span>Users</span>
+						</a>
+						<div class="float:right width:50px text-align:center">
+							<a
+								actions="state"
+								state_to="main"
+								state-src="../admin/users/form.html"
+								click-closest="sidenav"
+								click-attribute="style"
+								click-value="width:0px"
+								click-if="<=993px"
+								click-if-value="$innerWidth"
+								class="display:flex justify-content:center align-items:center height:40px">
+								<i src="../assets/svg/plus.svg"></i>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a
+							actions="state"
+							state_to="main"
+							state-src="../admin/organizations/datatable.html"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=993px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center min-width:50px">
+								<i src="../assets/svg/people-roof.svg"></i>
+							</span>
+							<span>Organizations</span>
+						</a>
+						<div class="float:right width:50px text-align:center">
+							<a
+								actions="state"
+								state_to="main"
+								state-src="../admin/organizations/form.html"
+								click-closest="sidenav"
+								click-attribute="style"
+								click-value="width:0px"
+								click-if="<=993px"
+								click-if-value="$innerWidth"
+								class="display:flex justify-content:center align-items:center height:40px">
+								<i src="../assets/svg/plus.svg"></i>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a
+							actions="state"
+							state_to="main"
+							state-src="../admin/payments/datatable.html"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=993px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center min-width:50px">
+								<i src="../assets/svg/credit-card.svg"></i>
+							</span>
+							<span>Payments</span>
+						</a>
+						<div class="float:right width:50px text-align:center">
+							<a
+								actions="state"
+								state_to="main"
+								state-src="../admin/payments/form.html"
+								click-closest="sidenav"
+								click-attribute="style"
+								click-value="width:0px"
+								click-if="<=993px"
+								click-if-value="$innerWidth"
+								class="display:flex justify-content:center align-items:center height:40px">
+								<i src="../assets/svg/plus.svg"></i>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a
+							actions="state"
+							state_to="main"
+							state-src="../admin/blog/datatable.html"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=993px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center min-width:50px">
+								<i src="../assets/svg/blog.svg"></i>
+							</span>
+							<span>Blog Posts</span>
+						</a>
+						<div class="float:right width:50px text-align:center">
+							<a
+								actions="state"
+								state_to="main"
+								state-src="../admin/blog/form.html"
+								click-closest="sidenav"
+								click-attribute="style"
+								click-value="width:0px"
+								click-if="<=993px"
+								click-if-value="$innerWidth"
+								class="display:flex justify-content:center align-items:center height:40px">
+								<i src="../assets/svg/plus.svg"></i>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a
+							actions="state"
+							state_to="main"
+							state-src="../admin/social/index.html"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=993px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center min-width:50px">
+								<i
+									src="../assets/svg/share-from-square.svg"></i>
+							</span>
+							<span>Social Posts</span>
+						</a>
+						<div class="float:right width:50px text-align:center">
+							<a
+								actions="state"
+								state_to="main"
+								state-src="../admin/social/form.html"
+								click-closest="sidenav"
+								click-attribute="style"
+								click-value="width:0px"
+								click-if="<=993px"
+								click-if-value="$innerWidth"
+								class="display:flex justify-content:center align-items:center height:40px">
+								<i src="../assets/svg/plus.svg"></i>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a
+							actions="state"
+							state_to="main"
+							state-src="../admin/ai/datatable.html"
+							click-closest="sidenav"
+							click-attribute="style"
+							click-value="width:0px"
+							click-if="<=993px"
+							click-if-value="$innerWidth"
+							class="display:flex align-items:center">
+							<span
+								class="display:flex justify-content:center min-width:50px">
+								<i src="../assets/svg/brain.svg"></i>
+							</span>
+							<span>AI Settings</span>
+						</a>
 
-        <div class="position:fixed!important bottom:15px right:15px">
-            <!-- <button actions="install" type="button" hidden>Install</button> -->
+						<div class="float:right width:50px text-align:center">
+							<a
+								actions="state"
+								state_to="main"
+								state-src="../admin/ai/form.html"
+								click-closest="sidenav"
+								click-attribute="style"
+								click-value="width:0px"
+								click-if="<=993px"
+								click-if-value="$innerWidth"
+								class="display:flex justify-content:center align-items:center height:40px">
+								<i src="../assets/svg/plus.svg"></i>
+							</a>
+						</div>
+					</li>
+				</menu>
+			</ul>
 
-            <div
-                template="notification"
-                class="card position:relative margin-top:10px padding:10px {{status}}">
-                <span class="{{type}}">{{message}}</span>
-                <a actions="remove" class="position:absolute top:5px right:8px">
-                    <i src="../assets/svg/times.svg"></i>
-                </a>
-            </div>
-        </div>
+			<!-- sidenav Footer -->
+			<div
+				class="line-height:40px min-height:40px height:40px width:100% overflow:hidden white-space:nowrap position:absolute bottom:0px">
+				<a
+					actions="signOut"
+					href="./signin.html"
+					class="display:flex align-items:center">
+					<span
+						class="display:flex justify-content:center min-width:50px">
+						<i src="../assets/svg/sign-out-alt.svg"></i>
+					</span>
+					<span>Sign Out</span>
+				</a>
+			</div>
+			<div resize="right"></div>
+		</sidenav>
 
-        <script src="../dist/CoCreate.js"></script>
-    </body>
+		<div class="position:fixed!important bottom:15px right:15px">
+			<!-- <button actions="install" type="button" hidden>Install</button> -->
+
+			<div
+				template="notification"
+				class="card position:relative margin-top:10px padding:10px {{status}}">
+				<span class="{{type}}">{{message}}</span>
+				<a actions="remove" class="position:absolute top:5px right:8px">
+					<i src="../assets/svg/times.svg"></i>
+				</a>
+			</div>
+		</div>
+
+		<div
+			src="../components/ai-chat.html"
+			path="../"
+			filter-key="name"
+			filter-value="Sales Chat"
+			filter-selector="#system-instructions"></div>
+
+		<script src="../dist/CoCreate.js"></script>
+	</body>
 </html>

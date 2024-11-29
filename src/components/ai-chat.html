@@ -1,0 +1,71 @@
+<!DOCTYPE >
+
+<style>
+	/* Chat container */
+	#chat-container {
+		visibility: hidden;
+		background-color: #f5f5f5;
+		position: fixed;
+		bottom: 15px;
+		right: 15px;
+		width: 300px;
+		height: calc(100vh - 85px);
+		border-radius: 10px;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+		overflow: hidden;
+		z-index: 1000;
+	}
+
+	/* Chat header */
+	#chat-header {
+		background-color: #1f99ff;
+		padding: 15px;
+		font-size: 16px;
+	}
+
+	#chat-body {
+		height: calc(100vh - 170px) !important;
+	}
+</style>
+
+<input
+	type="hidden"
+	key="_id"
+	localstorage-get="user_id"
+	localstorage-if="false"
+	localstorage-next="#createUserAI"
+	localstorage-attribute="$click" />
+
+<form array="users" object="" hidden>
+	<input key="_id" localstorage-set="user_id" />
+	<input key="answeredQuestions[]" value="Discover" />
+	<input key="subscription" value="false" />
+	<input type="checkbox" key="ambassadorTerms" />
+	<a id="createUserAI" actions="timeout(1000), save, localStorage"></a>
+</form>
+
+<button
+	id="chat-toggle"
+	click-next
+	click-attribute="style"
+	click-value="visibility:visible,"
+	class="button-round bottom:15px">
+	<i src="{{path}}assets/svg/comment-alt.svg"></i>
+</button>
+
+<div id="chat-container" resizable>
+	<div id="chat-header">
+		Chat with CoCreate
+		<a
+			click-closest="#chat-container"
+			click-attribute="style"
+			click-value="visibility:visible,"
+			class="float:right font-size:20px color:#000:hover">
+			<i src="{{path}}assets/svg/times.svg"></i>
+		</a>
+	</div>
+
+	<div src="{{path}}components/ai.html" path="{{path}}"></div>
+	<div resize="left"></div>
+	<div resize="top"></div>
+</div>

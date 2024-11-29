@@ -1,0 +1,441 @@
+<style>
+	/* Chat messages */
+	#chat-body {
+		display: flex;
+		flex-direction: column;
+		gap: 36px;
+		padding-bottom: 60px;
+		overflow-y: auto;
+		height: calc(100vh - 97px);
+	}
+
+	/* Chat input */
+	#chat-input {
+		display: flex;
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+	}
+
+	#chat-input .messageArea {
+		width: 100%;
+		padding: 10px;
+		border: none;
+		outline: none;
+		resize: none;
+	}
+
+	#chat-input button {
+		background-color: gainsboro;
+		border: none !important;
+		border-radius: 0;
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	/* Messages */
+	.message {
+		word-wrap: break-word;
+		word-break: break-word;
+		border-radius: 8px;
+		margin-right: 10px;
+	}
+
+	.message.user {
+		max-width: 70%;
+		margin-left: auto;
+	}
+
+	.message.user .edit-message {
+		background-color: #292929;
+		border-radius: 50%;
+		height: 40px;
+		min-width: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background-color 0.3s ease, transform 0.3s ease;
+	}
+
+	.message.user .edit-message:hover {
+		background-color: #3a3a3a; /* Slightly lighter on hover */
+		transform: scale(1.1); /* Slight scaling on hover */
+	}
+
+	.message.user .edit-message i {
+		display: block;
+		width: 16px; /* Ensure the icon has a fixed size */
+		height: 16px;
+	}
+
+	.message .user {
+		background-color: #e6e6e6;
+		padding: 10px;
+	}
+
+	.message.user .assitant-tools {
+		display: none;
+	}
+
+	.message.assistant {
+		margin-left: 10px;
+	}
+
+	.message.assistant .edit-message {
+		display: none;
+	}
+
+	.message.assistant .assitant-tools {
+		display: flex;
+		width: 100%;
+		gap: 10px;
+		margin-top: 20px;
+	}
+
+	.message.assistant .assitant-tools a:hover {
+		background-color: #292929;
+	}
+	.message.assistant .assitant-tools a:hover {
+		background-color: #292929;
+	}
+
+	.message.assistant .markdown-body {
+		width: 100%;
+	}
+
+	.message.assistant .markdown-body pre[theme] {
+		border-radius: 0px;
+	}
+
+	.message.assistant .markdown-body textarea[type="code"] {
+		width: 100%;
+		border: none;
+		outline: none;
+		padding: 10px;
+	}
+
+	.message img {
+		width: 40px;
+		height: 40px;
+		display: none;
+		margin-right: 10px;
+	}
+
+	.message.assistant img {
+		display: block;
+	}
+
+	textarea {
+		background-color: #fff;
+	}
+
+	.code-tools {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		background-color: #f0f0f0;
+		padding: 10px;
+	}
+
+	/* Dark mode */
+	@media (prefers-color-scheme: dark) {
+		#chat-container {
+			background-color: #333;
+		}
+		#chat-header {
+			color: #000;
+			fill: #000;
+		}
+
+		#chat-input .messageArea {
+			background-color: #1e1e1e;
+		}
+
+		#chat-input button {
+			background-color: #111;
+		}
+
+		.message .user {
+			background-color: #1a1a1a;
+		}
+		textarea {
+			background-color: #222;
+			color: #fff;
+		}
+		.code-tools {
+			background-color: #292929;
+		}
+	}
+</style>
+
+<div
+	id="chat-body"
+	array="aiConversations"
+	object
+	filter-key="user_id"
+	filter-value="$user_id"
+	filter-limit="5"
+	filter-sort-key="_id"
+	filter-sort-direction="desc"
+	render-selector="[template]"
+	render-reverse="true"
+	scroll-to=""
+	observe-target=".message"
+	observe-attribute="scroll-to"
+	observe-value="bottom"
+	scroll="bottom, false"
+	scroll-element=""
+	scroll-up="10"
+	scroll-attribute="observe-value">
+	<div filter-on="scroll" filter-parent></div>
+
+	<div
+		template
+		class="message {{object.role}}"
+		hover-selector=".edit-user-message"
+		hover-attribute="hidden"
+		hover-value="">
+		<div class="display:flex gap:5px width:100%">
+			<!-- Edit Message -->
+			<!-- <div class="edit-user-message" click-parent="" hidden>
+                    <div class="edit-message">
+                        <i src="{{path}}assets/svg/pencil-alt.svg"></i>
+                    </div>
+                </div> -->
+
+			<div class="display:flex width:100% {{object.role}}">
+				<img
+					src="{{path}}assets/icons/icon-1240-1240.png"
+					alt="AI Icon" />
+				<form class="width:100%">
+					<div
+						class="markdown-body"
+						array="aiConversations"
+						object="{{object._id}}"
+						key="html"
+						read="false"
+						value-type="html"
+						value-remove-selector=".code-tools">
+						{{object.html}}
+					</div>
+
+					<!-- User Save and cancel -->
+					<!-- <div class="display:flex gap:15px padding:15px">
+                            <a>Send</a>
+                            <a>Cancel</a>
+                        </div> -->
+
+					<!-- Assistant tools -->
+					<!-- Copy as markdown, html or text -->
+					<!-- <div class="assitant-tools">
+                            <a>
+                                <i src="{{path}}assets/svg/clone.svg"></i>
+                            </a>
+                        </div> -->
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div
+	observe-target=".message.assistant textarea[type='code']"
+	observe-selector="document; .message.assistant codearea:not(.message.assistant .code-tools + codearea)[]"
+	observe-insert-adjacent="beforebegin"
+	hidden>
+	<div class="code-tools">
+		<div
+			class="display:flex justify-content:flex-end align-items:center gap:10px">
+			<a>
+				<i src="{{path}}assets/svg/clone.svg"></i>
+			</a>
+			<a
+				toggle-next
+				toggle-attribute="hidden"
+				toggle-value=""
+				click-closest=".code-container textarea"
+				click-attribute="readonly"
+				click-value="">
+				<i src="{{path}}assets/svg/edit.svg"></i>
+			</a>
+			<span hidden>
+				<a
+					toggle-closest=".code-container textarea"
+					toggle-attribute="readonly"
+					toggle-value=""
+					click-closest=".markdown-body"
+					click-attribute="$save">
+					<i src="{{path}}assets/svg/save.svg"></i>
+				</a>
+				<a
+					toggle-closest=".code-container textarea"
+					toggle-attribute="readonly"
+					toggle-value=""
+					click-parent
+					click-attribute="hidden"
+					click-value="">
+					<i src="{{path}}assets/svg/ban.svg"></i>
+				</a>
+			</span>
+			<a
+				toggle-closest=".code-container codearea *[]"
+				toggle-attribute="hidden"
+				toggle-value="">
+				<i src="{{path}}assets/svg/eye.svg"></i>
+			</a>
+		</div>
+		<div class="display:flex align-items:center gap:10px">
+			<select input-next input-attribute="click-insert-adjacent">
+				<option value="beforebegin">beforebegin</option>
+				<option value="afterbegin" selected>afterbegin</option>
+				<option value="beforeend">beforeend</option>
+				<option value="afterend">afterend</option>
+				<option value="replace">replace</option>
+			</select>
+			<!-- <a
+				class="display:flex align-items:center gap:5px"
+				attribute="innerText"
+				attribute-selector="iframe;"
+				actions="attributes"> -->
+			<a
+				class="display:flex align-items:center gap:5px"
+				click-selector="document; iframe; $clickedElement"
+				click-value-selector="document; .code-container textarea"
+				click-insert-adjacent="afterbegin">
+				<i src="{{path}}assets/svg/chevron-right.svg"></i>
+			</a>
+		</div>
+	</div>
+</div>
+
+<form id="chat-input" api="openai">
+	<input
+		openai="chat.completions.create"
+		openai-key="model"
+		value="gpt-4o-mini"
+		hidden />
+
+	<input
+		openai="chat.completions.create"
+		openai-key="messages[0].role"
+		value="system"
+		hidden />
+	<textarea
+		id="system-instructions"
+		array="ai"
+		object
+		key="content"
+		filter-limit
+		save="false"
+		openai="chat.completions.create"
+		openai-key="messages[0].content"
+		reset="object"
+		skip-attribute
+		hidden></textarea>
+
+	<previousConversation>
+		<input
+			filter-key="user_id"
+			filter-value="$user_id"
+			filter-sort-key="_id"
+			filter-sort-direction="desc"
+			filter-next
+			hidden />
+
+		<!-- TODO: Needs to merge with with message array -->
+		<textarea
+			id="messagetest"
+			array="aiConversations"
+			object
+			key="{}"
+			save="false"
+			value-type="array"
+			openai="chat.completions.create"
+			openai-key="messages[]"
+			reset="object"
+			skip-attribute
+			hidden></textarea>
+	</previousConversation>
+
+	<input
+		array="aiConversations"
+		object
+		key="user_id"
+		value="$user_id"
+		hidden />
+
+	<input
+		array="aiConversations"
+		object
+		key="role"
+		openai="chat.completions.create"
+		openai-key="messages[a].role"
+		value="user"
+		hidden />
+	<span
+		class="userMessage"
+		array="aiConversations"
+		object
+		key="html"
+		reset="object"
+		hidden></span>
+
+	<span
+		class="userMessage"
+		array="aiConversations"
+		object
+		key="content"
+		openai="chat.completions.create"
+		openai-key="messages[a].content"
+		reset="object"
+		hidden></span>
+
+	<textarea
+		placeholder="Message CoCreate"
+		input-parent=".userMessage[]"
+		input-attribute="value"
+		input-if="true"
+		rows="1"
+		height="auto"
+		class="messageArea"
+		onkeydown="if (event.key === 'Enter') this.nextElementSibling.click()"></textarea>
+
+	<button
+		id="send-message"
+		actions="save, click, reset, openai.chat.completions.create, action(document; #aiAction)"
+		click-selector="document; #chat-body"
+		click-attribute="observe-value"
+		click-value="bottom">
+		<i src="{{path}}assets/svg/paper-plane.svg"></i>
+	</button>
+
+	<textarea
+		openai="chat.completions.create"
+		openai-key="choices[0].message.content"
+		openai-request="false"
+		input-selector="document; .aiContent[]"
+		input-attribute="value"
+		hidden></textarea>
+</form>
+
+<form
+	id="assistant-message"
+	array="aiConversations"
+	object
+	hidden
+	class="position:fixed top:0 left:0 background-color:black">
+	<input key="user_id" value="$user_id" update="false" />
+	<input key="role" value="assistant" update="false" />
+	<input key="eid" />
+	<div class="aiContent" component key="content"></div>
+	<div
+		class="aiContent"
+		component
+		key="html"
+		marked
+		marked-code="<div class='code-container'><codearea><textarea type='code' lang='${code.lang}' class='code-editor' value='${code.text}' height='auto' input-next input-attribute='value'
+            input-events='input, onload' readonly></textarea><iframe class='preview' width='100%' height='auto' hidden></iframe></codearea></div>"></div>
+
+	<!-- <div id="aiContent" component key="content"></div> -->
+	<a id="aiAction" actions="timeout(1000), save, reset"></a>
+</form>
