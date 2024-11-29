@@ -66,7 +66,7 @@
 		<!-- SideNav Left-->
 		<sidenav
 			id="menuL"
-			class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+			class="width:0px"
 			resizable
 			resize-selector="[content_id='content']"
 			resize-property="margin-left"
@@ -75,13 +75,10 @@
 			src="../components/sidenav.html"></sidenav>
 
 		<!-- Modal Viewport/Boundaries -->
-		<div
-			class="position:fixed margin-top:50px"
-			content_id="content"
-			id="modal-viewport"></div>
+		<div class="position:fixed margin-top:50px" id="modal-viewport"></div>
 
 		<!-- Main Content -->
-		<main class="width:auto" content_id="content">
+		<main>
 			<section class="padding-top:80px padding-bottom:40px">
 				<div class="max-width:90% margin:0px_auto">
 					<div
@@ -164,8 +161,7 @@
 									src="/assets/on-board-video.webm" />
 							</video>
 						</div>
-						<div
-							class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
+						<div class="flex-grow:1 width:300px">
 							<h1
 								class="font-size:1.5rem text-transform:uppercase">
 								Micro Component Architecture
@@ -197,8 +193,7 @@
 									src="/assets/cards.webm" />
 							</video>
 						</div>
-						<div
-							class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
+						<div class="flex-grow:1 width:300px">
 							<h1
 								class="font-size:1.5rem text-transform:uppercase">
 								Collaborative Headless CMS
@@ -234,8 +229,7 @@
 									src="/assets/on-board-video.webm" />
 							</video>
 						</div>
-						<div
-							class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
+						<div class="flex-grow:1 width:300px">
 							<h1
 								class="font-size:1.5rem text-transform:uppercase">
 								Fully Customizable Admin Panel
@@ -266,8 +260,7 @@
 									src="/assets/cards.webm" />
 							</video>
 						</div>
-						<div
-							class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
+						<div class="flex-grow:1 width:300px">
 							<h1
 								class="font-size:1.5rem text-transform:uppercase">
 								Collaborative Drag-n-Drop Builder
@@ -298,8 +291,7 @@
 									src="/assets/on-board-video.webm" />
 							</video>
 						</div>
-						<div
-							class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
+						<div class="flex-grow:1 width:300px">
 							<h1
 								class="font-size:1.5rem text-transform:uppercase">
 								Thirdparty API Intergration
@@ -321,7 +313,7 @@
 			<button
 				href="https://github.com/CoCreate-app/CoCreate-website/tree/master/src/css/index.html?message=docs%3A%20describe%20your%20change..."
 				target="_blank"
-				class="display:flex justify-content:center align-items:center position:fixed bottom:15px right:15px height:50px width:50px border-radius:50% box-shadow:0px_2px_10px_0px_rgba(0,_0,_0,_0.4)">
+				class="button-round">
 				<i src="../assets/svg/pencil-alt.svg"></i>
 			</button>
 		</main>
@@ -329,7 +321,6 @@
 		<!-- Footer -->
 		<footer
 			id="spreadtheword"
-			content_id="content"
 			class="background-size:cover background-position:center position:relative"
 			style="background-image: url(../assets/banner.png)"
 			array="files"

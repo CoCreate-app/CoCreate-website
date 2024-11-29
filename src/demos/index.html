@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title>Interactive Demos Built with CoCreateJS</title>
+		<meta
+			name="description"
+			content="Explore interactive demos showcasing the power of CoCreateJS. Build dynamic web applications using HTML5 and JavaScript APIs, including demos for web app builder, email newsletter, AI chat, and more." />
+		<meta
+			name="keywords"
+			content="CoCreateJS demos, dynamic web apps, web app builder demo, email newsletter demo, AI chat demo, Kanban demo, invoicing demo, photo editor demo, HTML5 APIs, JavaScript APIs, CoCreate framework, interactive demos, modern web development" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="CoCreate" />
+		<meta name="generator" content="CoCreate" />
+
+		<!-- Canonical Tag -->
+		<link rel="canonical" href="https://cocreate.app/demos" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon.ico" />
+
+		<!-- Open Graph Tags (Facebook) -->
+		<meta
+			property="og:title"
+			content="Interactive Demos Built with CoCreateJS" />
+		<meta
+			property="og:description"
+			content="Explore interactive demos showcasing the power of CoCreateJS. Build dynamic web applications using HTML5 and JavaScript APIs, including demos for web app builder, email newsletter, AI chat, and more." />
+		<meta property="og:url" content="https://cocreate.app/demos" />
+		<meta
+			property="og:image"
+			content="https://cocreate.app/assets/demos-image.jpg" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card Tags (Twitter) -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="CoCreate" />
+		<meta
+			name="twitter:title"
+			content="Interactive Demos Built with CoCreateJS" />
+		<meta
+			name="twitter:description"
+			content="Explore interactive demos showcasing the power of CoCreateJS. Build dynamic web applications using HTML5 and JavaScript APIs, including demos for web app builder, email newsletter, AI chat, and more." />
+		<meta
+			name="twitter:image"
+			content="https://cocreate.app/assets/twitter-demos.jpg" />
+
+		<!-- Structured Data (Schema Markup) -->
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "WebPage",
+				"name": "Interactive Demos Built with CoCreateJS",
+				"description": "Explore interactive demos showcasing the power of CoCreateJS. Build dynamic web applications using HTML5 and JavaScript APIs, including demos for web app builder, email newsletter, AI chat, and more.",
+				"url": "https://cocreate.app/demos",
+				"image": "https://cocreate.app/assets/demos-image.jpg",
+				"author": {
+					"@type": "Organization",
+					"name": "CoCreate"
+				}
+			}
+		</script>
+
+		<link
+			rel="stylesheet"
+			href="../index.css"
+			array="files"
+			object="611869abc0e9580010ea635f"
+			key="{}"
+			type="text/css"
+			parse="true" />
+		<link rel="manifest" href="../manifest.webmanifest" />
+
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-121709453-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "UA-121709453-1");
+		</script>
+	</head>
+
+	<body>
+		<!-- Navbar -->
+		<nav
+			scroll="sticky-nav,"
+			scroll-up="5"
+			scroll-down="5"
+			path="../"
+			src="../components/navbar.html"></nav>
+
+		<!-- SideNav Left-->
+		<sidenav
+			id="menuL"
+			class="width:0px"
+			resizable
+			resize-selector="document; main, document; footer"
+			resize-attribute="style"
+			resize-property="padding-left"
+			path="../"
+			src="../components/sidenav.html"
+			session
+			input-selector="[actions][]"
+			input-attribute="href"
+			input-value="../"></sidenav>
+
+		<!-- Main Content -->
+		<main class="height:100vh">
+			<section>
+				<!-- Demos Header -->
+				<div
+					class="width:100% background:#1f99ff border-radius:3px padding:20px margin-bottom:20px">
+					<h1 class="font-size:1.5em">
+						Explore Interactive Demos Built with CoCreateJS
+					</h1>
+					<!-- <p>
+						Discover how CoCreateJS uses HTML5 and JavaScript APIs
+						to build dynamic web applications. Try the web app
+						builder, email newsletter, AI chat, Kanban, invoicing,
+						photo editor, and more.
+					</p> -->
+				</div>
+
+				<floating-label>
+					<input
+						type="text"
+						filter-selector="document; #demos-list"
+						filter-key="title"
+						filter-operator="$regex"
+						filter-regex-flag="i"
+						state_id="datatable"
+						placeholder="Search Demos" />
+
+					<span class="floating-icon">
+						<a
+							filter-selector="document; #demos-list"
+							filter-sort-key="title"
+							filter-sort-direction="asc"
+							click-value="desc, asc"
+							click-attribute="filter-sort-direction"
+							state_id="datatable">
+							<i
+								toggle-attribute="src"
+								toggle-value="../assets/svg/sort-down.svg, ../assets/svg/sort-up.svg"
+								src="../assets/svg/sort.svg"></i>
+						</a>
+					</span>
+				</floating-label>
+
+				<!-- Fetch and Render Demos -->
+				<div
+					id="demos-list"
+					class="display:flex flex-wrap:wrap gap:15px"
+					array="demos"
+					object
+					filter-limit="20"
+					filter-sort-key="_id"
+					filter-sort-direction="desc"
+					render-selector="[template]">
+					<!-- Demo Template -->
+					<div class="card flex-grow:1 width:300px" template>
+						<a class="overflow:hidden" href="{{object.url}}">
+							<!-- Image -->
+							<img
+								src="{{object.image}}"
+								width="100%"
+								alt="{{object.title}}" />
+
+							<!-- Demo Content -->
+							<div
+								hover="display:block"
+								hover-selector=".description">
+								<h2
+									class="font-size:24px margin:0 padding:0_0_10px font-weight:700">
+									{{object.title}}
+								</h2>
+								<p
+									class="description font-size:14px line-height:1.8rem">
+									{{object.description}}
+								</p>
+							</div>
+							<span class="button">Try Demo</span>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer
+			id="spreadtheword"
+			path="../"
+			src="../components/footer.html"></footer>
+
+		<script src="../dist/CoCreate.js"></script>
+	</body>
+</html>

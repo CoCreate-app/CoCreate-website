@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <section class="centered">
 	<form state_id="form-fields" array="ai" object="" class="flex-form">
 		<!-- deleteObject-->
@@ -49,12 +48,19 @@
 				class="floating-label"></textarea>
 		</floating-label>
 
-		<button
-			actions="save, state"
-			state_to="main"
-			state-src="../admin/ai/datatable.html"
-			class="button-round">
-			<i src="../assets/svg/save.svg"></i>
-		</button>
+		<div class="display:flex gap:20px width:100% margin-top:20px">
+			<button
+				actions="state"
+				state_to="main"
+				state-src="$back"
+				class="red margin-left:auto">
+				<i src="../assets/svg/ban.svg"></i>
+				<span class="margin-left:5px"> Cancel</span>
+			</button>
+			<button actions="save">
+				<i src="../assets/svg/save.svg"></i>
+				<span class="margin-left:5px"> Save</span>
+			</button>
+		</div>
 	</form>
 </section>

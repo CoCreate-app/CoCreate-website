@@ -223,11 +223,17 @@
 		<input type="datetime" key="published" value="$now" hidden />
 
 		<button
-			actions="save, state"
+			actions="state"
 			state_to="main"
-			state-src="../admin/blog/datatable.html"
-			class="button-round">
+			state-src="$back"
+			class="red margin-left:auto">
+			<i src="../assets/svg/ban.svg"></i>
+			<span class="margin-left:5px"> Cancel</span>
+		</button>
+
+		<button actions="save">
 			<i src="../assets/svg/save.svg"></i>
+			<span class="margin-left:5px"> Save</span>
 		</button>
 
 		<a
@@ -238,16 +244,13 @@
 			hidden></a>
 
 		<button
-			class="font-size:20px"
+			class="green"
 			click-selector="i[src]"
 			click-attribute="src"
 			click-value="../assets/svg/spinner.svg"
 			actions="click, save, timeout(1000), render(document; #publish), timeout(1000), action(document; #sethtml), timeout(1000), action(document; #savefile), action(document; #postPublished)">
-			Publish
-			<i
-				id="published-icon"
-				src="../assets/svg/paper-plane.svg"
-				class="display:inline"></i>
+			<i id="published-icon" src="../assets/svg/paper-plane.svg"></i>
+			<span class="margin-left:5px">Publish</span>
 		</button>
 	</form>
 

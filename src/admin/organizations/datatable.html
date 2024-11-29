@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <section class="centered">
-	<div class="datatable-container">
-		<a href="./signin.html" session="false" hidden></a>
-		<div
-			src="../components/datatable-toolbar.html"
-			class="width:100%"></div>
+	<div
+		src="../components/datatable-toolbar.html"
+		path="../admin/organizations/form.html"
+		class="width:100%"></div>
 
+	<div class="datatable-container">
 		<table>
 			<tbody class="header">
 				<tr>
@@ -35,8 +34,7 @@
 							</a>
 						</floating-label>
 					</td>
-					<td
-						class="position:sticky top:0 padding:10px min-width:150px">
+					<td class="min-width:150px">
 						<floating-label>
 							<input
 								type="text"
@@ -144,14 +142,5 @@
 		</table>
 
 		<div filter-on="scroll" filter-previous="[render-selector]"></div>
-
-		<button
-			actions="state"
-			state_to="main"
-			state-src="../admin/organizations/form.html"
-			class="button-round">
-			<i src="../assets/svg/plus.svg"></i>
-			<div state_to="form-fields" state-object=""></div>
-		</button>
 	</div>
 </section>

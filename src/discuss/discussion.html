@@ -62,7 +62,7 @@
 		<!-- SideNav Left-->
 		<sidenav
 			id="menuL"
-			class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+			class="width:0px"
 			resizable
 			resize-selector="[content_id='content']"
 			resize-property="margin-left"
@@ -71,13 +71,10 @@
 			src="../components/sidenav.html"></sidenav>
 
 		<!-- Modal Viewport/Boundaries -->
-		<div
-			class="position:fixed margin-top:50px"
-			content_id="content"
-			id="modal-viewport"></div>
+		<div class="position:fixed margin-top:50px" id="modal-viewport"></div>
 
 		<!-- Main Content -->
-		<main class="padding:15px" content_id="content">
+		<main class="padding:15px">
 			<!-- Discussion -->
 			<div class="max-width:800px margin:auto">
 				<!--  Post Category Start  -->
@@ -320,7 +317,6 @@
 				<div
 					class="post-date margin-top:20px width:100% display:flex flex-wrap:wrap justify-content:flex-start">
 					<div
-						class=""
 						share-url="https://www.google.com/"
 						share-text="text"
 						data-title="title"
@@ -923,7 +919,6 @@
 		<!-- Footer -->
 		<footer
 			id="spreadtheword"
-			content_id="content"
 			class="background-size:cover background-position:center position:relative"
 			style="background-image: url(../assets/banner.png)"
 			path="../"

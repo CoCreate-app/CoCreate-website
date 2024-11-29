@@ -1,15 +1,10 @@
-<!DOCTYPE html>
 <section class="centered">
-	<div class="datatable-container">
-		<a href="./signin.html" session="false" hidden></a>
-		<div
-			src="../components/datatable-toolbar.html"
-			class="width:100%"></div>
-		<!-- <div
-        filter-sort-key="position"
-        filter-sort-direction="asc"
-        filter-next="[array='ai']"></div> -->
+	<div
+		src="../components/datatable-toolbar.html"
+		path="../admin/ai/form.html"
+		class="width:100%"></div>
 
+	<div class="datatable-container">
 		<table>
 			<tbody class="header">
 				<tr>
@@ -105,14 +100,5 @@
 				</tr>
 			</tbody>
 		</table>
-
-		<button
-			actions="state"
-			state_to="main"
-			state-src="../admin/ai/form.html"
-			class="button-round">
-			<i src="../assets/svg/plus.svg"></i>
-			<div state_to="form-fields" state-object=""></div>
-		</button>
 	</div>
 </section>

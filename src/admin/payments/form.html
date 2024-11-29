@@ -16,57 +16,98 @@
 				placeholder="Last Name"
 				class="floating-label" />
 		</floating-label>
+
+		<floating-label class="width:100%">
+			<input
+				type="text"
+				key="description"
+				placeholder="Description"
+				class="floating-label" />
+		</floating-label>
+
+		<floating-label class="width:290px">
+			<input
+				type="number"
+				key="amount"
+				placeholder="Amount"
+				class="floating-label" />
+		</floating-label>
+
+		<floating-label class="width:290px">
+			<select key="status" placeholder="Status" class="floating-label">
+				<option label="Succesful" value="succesful">Succesful</option>
+				<option label="Refunded" value="refunded">Refunded</option>
+				<option label="Disputed" value="disputed">Disputed</option>
+			</select>
+		</floating-label>
+
+		<floating-label class="width:100%">
+			<select key="contact_id" class="floating-label">
+				<option label="Option1" value="option-1">Option1</option>
+				<option label="Option2" value="option-2">Option2</option>
+				<option label="Option3" value="option-3">Option3</option>
+				<option label="Option4" value="option-4">Option4</option>
+			</select>
+		</floating-label>
+
+		<floating-label class="width:290px">
+			<input
+				type="number"
+				key="app_fee"
+				placeholder="App Fee"
+				class="floating-label" />
+		</floating-label>
+
 		<floating-label class="width:290px">
 			<input
 				type="text"
-				key="email"
-				placeholder="Email"
-				class="floating-label" />
-		</floating-label>
-		<floating-label class="width:290px">
-			<input
-				type="tel"
-				key="phone"
-				placeholder="Phone"
-				class="floating-label" />
-		</floating-label>
-		<floating-label class="width:290px">
-			<input
-				type="password"
-				key="password"
-				placeholder="password"
+				key="destination"
+				placeholder="Destination"
 				class="floating-label" />
 		</floating-label>
 
-		<div class="height:0px width:0px overflow:hidden">
-			<input type="email" name="email" autocomplete="email" />
-			<input type="tel" name="phone" autocomplete="tel" />
-			<input
-				type="password"
-				name="password"
-				autocomplete="current-password" />
-		</div>
-
-		<div
-			id="questions"
-			object
-			key="questions"
-			render-selector="[template]"
-			read="false">
+		<floating-label class="width:290px">
 			<input
 				type="text"
-				key="{{questions.key}}"
-				value="{{questions.value}}"
-				template
-				read="false" />
-		</div>
+				key="charge_id"
+				placeholder="Charge Id"
+				class="floating-label" />
+		</floating-label>
 
-		<button
-			actions="save, state"
-			state_to="main"
-			state-src="../admin/payments/datatable.html"
-			class="button-round">
-			<i src="../assets/svg/save.svg"></i>
-		</button>
+		<floating-label class="width:290px">
+			<select key="vendor_id" placeholder="Vendor" class="floating-label">
+				<option label="Option 1" value="option-1">Option 1</option>
+				<option label="Option 2" value="option-2">Option 2</option>
+				<option label="Option 3" value="option-3">Option 3</option>
+				<option label="Option 4" value="option-4">Option 4</option>
+			</select>
+		</floating-label>
+
+		<floating-label class="width:100%">
+			<select
+				key="related_to"
+				placeholder="Related To"
+				class="floating-label">
+				<option label="Option 1" value="option-1">Option 1</option>
+				<option label="Option 2" value="option-2">Option 2</option>
+				<option label="Option 3" value="option-3">Option 3</option>
+				<option label="Option 4" value="option-4">Option 4</option>
+			</select>
+		</floating-label>
+
+		<div class="display:flex gap:20px width:100% margin-top:20px">
+			<button
+				actions="state"
+				state_to="main"
+				state-src="$back"
+				class="red margin-left:auto">
+				<i src="../assets/svg/ban.svg"></i>
+				<span class="margin-left:5px"> Cancel</span>
+			</button>
+			<button actions="save">
+				<i src="../assets/svg/save.svg"></i>
+				<span class="margin-left:5px"> Save</span>
+			</button>
+		</div>
 	</form>
 </section>

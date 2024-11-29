@@ -1,6 +1,32 @@
 <section class="centered">
 	<form array="organizations" object="" state_id="form" class="flex-form">
-		<!-- <input type="text" key="logo" placeholder="Logo" class="floating-label" /> -->
+		<div
+			class="display:flex justify-content:center width:100% margin-bottom:30px">
+			<div
+				type="file"
+				key="logo"
+				accept="image/*"
+				placeholder="Profile Image"
+				class="display:flex align-items:center justify-content:center position:relative border-radius:50% overflow:hidden width:250px height:250px border:2px_solid border-color:#fff@dark"
+				render-selector="[template]"
+				active>
+				<i
+					class="position:absolute height:185px width:185px top:35px"
+					src="../../assets/svg/building.svg"></i>
+
+				<div
+					class="position:relative background:#fff background:#333@dark"
+					template>
+					<img
+						src="{{logo.src}}"
+						alt="image"
+						width="100%"
+						height="100%"
+						class="object-fit:cover" />
+				</div>
+			</div>
+		</div>
+
 		<floating-label class="width:290px">
 			<input
 				type="text"
@@ -9,7 +35,7 @@
 				class="floating-label" />
 		</floating-label>
 
-		<floating-label class="width:290px">
+		<!-- <floating-label class="width:290px">
 			<input
 				type="text"
 				key="host[0].name"
@@ -22,7 +48,7 @@
 				class="position:absolute top:6px right:8px float:right padding:5px background:whitesmoke background:#222@dark">
 				<span>.cocreate.app</span>
 			</div>
-		</floating-label>
+		</floating-label> -->
 
 		<floating-label class="width:290px">
 			<input
@@ -42,64 +68,90 @@
 				readonly />
 		</floating-label>
 
-		<div class="Domains-container width:100%">
+		<div class="domain-container width:100%">
 			<div
-				click-next
-				click-attribute="class"
-				click-value="display:flex"
-				class="card display:flex padding:10px_15px">
-				<span class="flex-grow:1">Domains</span>
-
-				<i
+				class="card display:flex align-items:center gap:10px padding:10px">
+				<div
+					click-closest=".domain-container #domain-list"
+					click-attribute="hidden"
+					click-value=""
+					toggle-selector=":first-child"
 					toggle-attribute="src"
-					toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
-					src="../assets/svg/angle-down.svg"></i>
+					toggle-value="../assets/svg/angle-down.svg, ../assets/svg/angle-right.svg"
+					class="display:flex align-items:center gap:10px flex-grow:1">
+					<i src="../assets/svg/angle-right.svg"></i>
+					<span>Domains</span>
+				</div>
+				<a actions="action(document; #createHost)">
+					<i src="../assets/svg/plus.svg"></i>
+				</a>
 			</div>
 
 			<div
+				id="domain-list"
 				array="organizations"
 				object=""
 				key="host"
+				filter-limit
 				render-selector="[template]"
-				class="display:none flex-direction:column gap:1px">
+				class="display:flex flex-direction:column gap:1px"
+				hidden>
 				<div class="card padding:10px" template>
-					<div class="position:relative">
+					<div
+						class="display:flex align-items:center justify-content:flex-end margin-bottom:10px">
 						<div
-							class="display:flex flex-wrap:wrap gap:20px padding:5px">
-							<floating-label class="width:100%">
+							class="display:flex align-items:center gap:10px transition:0.3s"
+							hover-selector=".options"
+							hover-attribute="class"
+							hover-value="display:inline-flex!important">
+							<div class="display:none options">
+								<a
+									actions="click, timeout(1000), action(document; #deleteHost)"
+									click-selector="document; #deleteHostKey"
+									click-attribute="key"
+									click-value="$unset.host[{{index}}]"
+									class="padding:5px margin-left:auto">
+									<i src="../assets/svg/trash.svg"></i>
+								</a>
+							</div>
+							<i src="../assets/svg/ellipsis-v.svg"></i>
+						</div>
+					</div>
+
+					<div class="display:flex flex-wrap:wrap gap:20px">
+						<floating-label class="width:100%">
+							<input
+								array="organizations"
+								object=""
+								key="host[{{index}}].name"
+								placeholder="Domain"
+								class="floating-label" />
+						</floating-label>
+						<div class="display:flex gap:20px width:100%">
+							<floating-label class="flex-grow:1">
 								<input
 									array="organizations"
 									object=""
-									key="host[{{index}}].name"
-									placeholder="Domain"
+									key="host[{{index}}].storage"
+									placeholder="Storage"
 									class="floating-label" />
 							</floating-label>
-							<div class="display:flex gap:20px width:100%">
-								<floating-label class="flex-grow:1">
-									<input
-										array="organizations"
-										object=""
-										key="host[{{index}}].storage"
-										placeholder="Storage"
-										class="floating-label" />
-								</floating-label>
-								<floating-label class="flex-grow:1">
-									<input
-										array="organizations"
-										object=""
-										key="host[{{index}}].database"
-										placeholder="Database"
-										class="floating-label" />
-								</floating-label>
-								<floating-label class="flex-grow:1">
-									<input
-										array="organizations"
-										object=""
-										key="host[{{index}}].array"
-										placeholder="Array"
-										class="floating-label" />
-								</floating-label>
-							</div>
+							<floating-label class="flex-grow:1">
+								<input
+									array="organizations"
+									object=""
+									key="host[{{index}}].database"
+									placeholder="Database"
+									class="floating-label" />
+							</floating-label>
+							<floating-label class="flex-grow:1">
+								<input
+									array="organizations"
+									object=""
+									key="host[{{index}}].array"
+									placeholder="Array"
+									class="floating-label" />
+							</floating-label>
 						</div>
 					</div>
 				</div>
@@ -108,69 +160,120 @@
 
 		<div class="storage-container width:100%">
 			<div
-				click-next
-				click-attribute="class"
-				click-value="display:none"
-				class="card display:flex padding:10px_15px">
-				<span class="flex-grow:1">Storages</span>
-
-				<i
+				class="card display:flex align-items:center gap:10px padding:10px">
+				<div
+					click-closest=".storage-container #storage-list"
+					click-attribute="hidden"
+					click-value=""
+					toggle-selector=":first-child"
 					toggle-attribute="src"
-					toggle-value="../assets/svg/angle-up.svg, ../assets/svg/angle-down.svg"
-					src="../assets/svg/angle-down.svg"></i>
+					toggle-value="../assets/svg/angle-down.svg, ../assets/svg/angle-right.svg"
+					class="display:flex align-items:center gap:10px flex-grow:1">
+					<i src="../assets/svg/angle-right.svg"></i>
+					<span>Storages</span>
+				</div>
+				<a actions="action(document; #createStorage)">
+					<i src="../assets/svg/plus.svg"></i>
+				</a>
 			</div>
 
 			<div
+				id="storage-list"
 				array="organizations"
 				object=""
 				key="storage"
+				filter-limit
 				render-selector="[template]"
-				class="display:none">
+				class="display:flex flex-direction:column gap:1px"
+				hidden>
 				<div class="card align-items:center padding:10px" template>
-					<div class="position:relative">
+					<div
+						class="display:flex align-items:center justify-content:flex-end margin-bottom:10px">
 						<div
-							class="display:flex flex-wrap:wrap gap:20px width:100% box-sizing:border-box padding:5px">
-							<floating-label class="width:100%">
-								<input
-									array="organizations"
-									object=""
-									key="storage[{{index}}].name"
-									placeholder="Name"
-									class="floating-label" />
-							</floating-label>
-							<floating-label class="width:100%">
-								<input
-									array="organizations"
-									object=""
-									key="storage[{{index}}].provider"
-									placeholder="Provider"
-									class="floating-label" />
-							</floating-label>
-
-							<floating-label class="width:100%">
-								<textarea
-									array="organizations"
-									object=""
-									key="storage[{{index}}].url"
-									placeholder="Url"
-									class="floating-label"></textarea>
-							</floating-label>
+							class="display:flex align-items:center gap:10px transition:0.3s"
+							hover-selector=".options"
+							hover-attribute="class"
+							hover-value="display:inline-flex!important">
+							<div class="display:none options">
+								<a
+									actions="click, timeout(1000), action(document; #deleteStorage)"
+									click-selector="document; #deleteStorageKey"
+									click-attribute="key"
+									click-value="$unset.storage[{{index}}]">
+									<i src="../assets/svg/trash.svg"></i>
+								</a>
+							</div>
+							<i src="../assets/svg/ellipsis-v.svg"></i>
 						</div>
+					</div>
+
+					<div class="display:flex flex-wrap:wrap gap:20px">
+						<floating-label class="width:100%">
+							<input
+								array="organizations"
+								object=""
+								key="storage[{{index}}].name"
+								placeholder="Name"
+								class="floating-label" />
+						</floating-label>
+						<floating-label class="width:100%">
+							<input
+								array="organizations"
+								object=""
+								key="storage[{{index}}].provider"
+								placeholder="Provider"
+								class="floating-label" />
+						</floating-label>
+
+						<floating-label class="width:100%">
+							<textarea
+								array="organizations"
+								object=""
+								key="storage[{{index}}].url"
+								placeholder="Url"
+								class="floating-label"></textarea>
+						</floating-label>
 					</div>
 				</div>
 			</div>
 		</div>
-		<button
-			actions="state"
-			state_to="main"
-			state-src="$back"
-			class="cancel margin-left:auto">
-			<i src="../assets/svg/ban.svg"></i>
-			<span class="margin-left:5px"> Cancel</span>
-		</button>
-		<button actions="save">
-			<i src="../assets/svg/save.svg"></i>
-			<span class="margin-left:5px"> Save</span>
-		</button>
+		<div class="display:flex gap:20px width:100% margin-top:20px">
+			<button
+				actions="state"
+				state_to="main"
+				state-src="$back"
+				class="red margin-left:auto">
+				<i src="../assets/svg/ban.svg"></i>
+				<span class="margin-left:5px"> Cancel</span>
+			</button>
+			<button actions="save">
+				<i src="../assets/svg/save.svg"></i>
+				<span class="margin-left:5px"> Save</span>
+			</button>
+		</div>
+	</form>
+
+	<form array="organizations" object="" state_id="form">
+		<input type="hidden" key="$push.host" value-type="object" value="{}" />
+		<a id="createHost" actions="save"> </a>
+	</form>
+
+	<form array="organizations" object="" state_id="form">
+		<input id="deleteHostKey" type="hidden" key="" />
+		<a id="deleteHost" actions="save"></a>
+	</form>
+
+	<form array="organizations" object="" state_id="form">
+		<input
+			type="hidden"
+			key="$push.storage"
+			value-type="object"
+			value="{}" />
+		<a id="createStorage" actions="save"> </a>
+	</form>
+
+	<form array="organizations" object="" state_id="form">
+		<input id="deleteStorageKey" type="hidden" key="" />
+		<a id="deleteStorage" actions="save"></a>
 	</form>
 </section>

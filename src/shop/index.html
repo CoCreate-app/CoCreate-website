@@ -81,7 +81,7 @@
         <!-- SideNav Left-->
         <sidenav
             id="menuL"
-            class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+            class="width:0px"
             resizable
             resize-selector="[content_id='content']"
             resize-property="margin-left"
@@ -92,11 +92,11 @@
         <!-- Modal Viewport/Boundaries -->
         <div
             class="position:fixed margin-top:50px"
-            content_id="content"
+            "
             id="modal-viewport"></div>
 
         <!-- Main Content -->
-        <main class="padding:20px" content_id="content">
+        <main class="padding:20px" >
             <!--  Product Header -->
             <div
                 class="width:100% display:flex flex-wrap:wrap justify-content:space-between background:#F23A2E border-radius:3px padding:10px_0 margin-bottom:20px">
@@ -131,7 +131,7 @@
             <!--  Banner -->
             <div class="height:330px position:relative margin-top:20px">
                 <img
-                    class=""
+                    
                     width="100%"
                     height="330px"
                     src="images/product-list/rsz_banner-product-list.jpg" />
@@ -220,7 +220,7 @@
                         ><i
                             class="font-size:21px color:#222 margin-top:4px fas fa-th"></i
                     ></a>
-                    <a class="" title="List" href="#"
+                    <a  title="List" href="#"
                         ><i
                             class="font-size:21px color:#222 margin-top:4px fas fa-list"></i
                     ></a>
@@ -300,9 +300,9 @@
                             key="color">
                             blue
                         </p>
-                        <p class="" value="{{object.price}}">$59</p>
+                        <p  value="{{object.price}}">$59</p>
                         <p
-                            class=""
+                            
                             object="_id"
                             key="description"
                             value="description"></p>
@@ -340,7 +340,7 @@
         <!-- Footer -->
         <footer
             id="spreadtheword"
-            content_id="content"
+            "
             class="background-size:cover background-position:center position:relative"
             style="background-image: url(../assets/banner.png)"
             path="../"

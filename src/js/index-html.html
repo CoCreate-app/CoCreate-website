@@ -56,7 +56,7 @@
 		<!-- Navbar  -->
 		<nav
 			class="nav display:flex align-items:center background:whitesmoke padding-top:10px padding-bottom:10px"
-			content_id="content"
+			"
 			scroll="sticky-nav,hide-nav"
 			scroll-up="10"
 			scroll-down="10"
@@ -66,7 +66,7 @@
 		<!-- SideNav Left-->
 		<sidenav
 			id="menuL"
-			class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px"
+			class="width:0px"
 			resizable
 			resize-selector="[content_id='content']"
 			resize-property="margin-left"
@@ -77,11 +77,11 @@
 		<!-- Modal Viewport/Boundaries -->
 		<div
 			class="position:fixed margin-top:50px"
-			content_id="content"
+			"
 			id="modal-viewport"></div>
 
 		<!-- Main Content -->
-		<main class="width:auto" content_id="content">
+		<main>
 			<section
 				class="padding-top:80px padding-bottom:40px"
 				classkey="test">
@@ -204,7 +204,7 @@
 							</video>
 						</div>
 						<div
-							class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
+							class="flex-grow:1 width:300px ">
 							<h1
 								class="font-size:1.5rem text-transform:uppercase">
 								Micro Component Architecture
@@ -242,7 +242,7 @@
 							</video>
 						</div>
 						<div
-							class="flex-grow:1 width:300px padding-left:15px padding-right:15px">
+							class="flex-grow:1 width:300px ">
 							<h1
 								class="font-size:1.5rem text-transform:uppercase">
 								Collaborative Headless CMS
@@ -274,7 +274,7 @@
 		<!-- Footer -->
 		<footer
 			id="spreadtheword"
-			content_id="content"
+			"
 			class="background-size:cover background-position:center position:relative"
 			style="background-image: url(../assets/banner.png)"
 			path="../"
