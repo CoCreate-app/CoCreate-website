@@ -9,9 +9,6 @@ module.exports = {
     "directories": [
         {
             "entry": "./src",
-            "exclude": [
-                "demos"
-            ],
             "array": "files",
             "object": {
                 "name": "{{name}}",
