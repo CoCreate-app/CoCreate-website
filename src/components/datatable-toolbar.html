@@ -7,51 +7,41 @@
 		></a> -->
 		<input
 			type="checkbox"
-			class="height:16px width:16px"
+			class="height:16px width:16px margin-left:14px"
 			input-attribute="class"
 			input-value="selected"
 			input-selector="document; tbody[array] [render-clone][] " />
 	</div>
 
-	<div class="display:flex align-items:center gap:10px">
+	<div class="display:flex align-items:center gap:15px">
 		<div
 			class="display:flex align-items:center transition:0.3s"
 			hover-selector=".options"
 			hover-attribute="class"
 			hover-value="display:flex!important">
-			<div class="display:none options">
+			<div class="display:none gap:15px options">
 				<!-- <a
 					actions="delete"
 					delete-selector="document; tbody[array]"
-					class="padding:0px_10px">
+					>
 					<i src="../assets/svg/trash-alt.svg"></i>
 				</a> -->
 				<a
 					actions="export"
 					export-selector="document; tbody[array]"
-					export-type="csv"
-					class="padding:0px_10px">
+					export-type="csv">
 					<i src="../assets/svg/file-csv.svg"></i>
 				</a>
-				<a
-					actions="export"
-					export-selector="document; tbody[array]"
-					class="padding:0px_10px">
+				<a actions="export" export-selector="document; tbody[array]">
 					<i src="../assets/svg/file-download.svg"></i>
 				</a>
-				<a actions="import" array="users" class="padding:0px_10px">
+				<a actions="import" array="users">
 					<i src="../assets/svg/file-upload.svg"></i>
 				</a>
-				<a
-					actions="copy"
-					copy-selector="tbody"
-					class="padding:0px_10px">
+				<a actions="copy" copy-selector="tbody">
 					<i src="../assets/svg/copy.svg"></i>
 				</a>
-				<a
-					actions="print"
-					print-closest="nav; parent; tbody"
-					class="padding:0px_10px">
+				<a actions="print" print-closest="nav; parent; tbody">
 					<i src="../assets/svg/print.svg"></i>
 				</a>
 			</div>
