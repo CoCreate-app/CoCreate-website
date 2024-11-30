@@ -9,7 +9,7 @@
 		}
 	],
 	"orientation": "portrait-primary",
-	"start_url": "/",
+	"start_url": "/account/signin.html",
 	"id": "/",
 	"display": "standalone",
 	"background_color": "#333",
