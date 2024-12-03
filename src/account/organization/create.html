@@ -13,7 +13,7 @@
 			<input
 				type="text"
 				key="_id"
-				placeholder="Existing organization ID (optional)"
+				placeholder="Existing organization_id (optional)"
 				class="floating-label" />
 		</floating-label>
 
@@ -52,13 +52,13 @@
 			<button
 				actions="save, state"
 				state_to="main"
-				state-src="./organizations/edit.html">
+				state-src="./organization/update.html">
 				<i src="../assets/svg/save.svg"></i>
 				<span class="margin-left:5px"> Save</span>
 				<div
 					array="organizations"
 					state-object=""
-					state_to="form"></div>
+					state_to="currentOrg"></div>
 			</button>
 		</div>
 	</form>
