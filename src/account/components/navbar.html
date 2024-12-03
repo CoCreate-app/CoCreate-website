@@ -1,0 +1,73 @@
+<!-- Menu Icon -->
+<a
+	menu-icon
+	toggle="width:275px,"
+	toggle-selector="document; #menuL"
+	toggle-attribute="style">
+	<span></span>
+	<span></span>
+	<span></span>
+</a>
+
+<!-- Horizontal Scroll Nav/Tabs -->
+<div
+	class="display:inline-flex gap:15px direction:rtl overflow:auto align-items:center width:100% height:50px font-size:20px">
+	<!-- Fullscreen toogle -->
+	<a fullscreen>
+		<i src="../assets/svg/expand.svg"></i>
+		<i src="../assets/svg/compress.svg"></i>
+	</a>
+
+	<!-- Share -->
+	<a share>
+		<i src="../assets/svg/share-alt.svg"></i>
+	</a>
+</div>
+
+<!-- Avatar -->
+<a
+	class="avatar round"
+	toggle="dropdown"
+	toggle-next
+	toggle-attribute="hidden"
+	toggle-value="">
+	<div array="users" object="$user_id" key="firstname" class="avatar-name">
+		<i src="../assets/svg/sign-in-alt.svg"></i>
+	</div>
+	<div class="avatar-image">
+		<img
+			array="users"
+			object="$user_id"
+			key="avatar[0].src"
+			onerror="this.style.display='none'" />
+	</div>
+	<div
+		class="avatar-status"
+		array="users"
+		object="$user_id"
+		user-status="{'name':'status'}"></div>
+</a>
+
+<div
+	id="profile-dropdown"
+	class="display:flex flex-direction:column gap:10px position:absolute top:70px right:15px overflow:auto background:white background:#222@dark border:1px-solid-#ccc border-radius:5px padding:15px"
+	hidden>
+	<a
+		actions="state"
+		state-src="./profile/index.html"
+		state_to="main"
+		click-parent
+		click-attribute="hidden"
+		click-value=""
+		class="display:flex align-items:center gap:10px">
+		<i src="../assets/svg/user.svg"></i>
+		<span>Profile</span>
+	</a>
+	<a
+		actions="signOut"
+		href="./signin.html"
+		class="display:flex align-items:center gap:10px">
+		<i src="../assets/svg/sign-out-alt.svg"></i>
+		<span>Sign Out</span>
+	</a>
+</div>
