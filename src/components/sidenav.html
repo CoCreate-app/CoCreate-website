@@ -17,12 +17,15 @@
 	resize-if="0px"
 	resize-selector="document; [menu-icon][]"></div>
 
-<div class="header">
+<div class="header height:70px">
 	<!-- Logo -->
 	<a
 		href="{{path}}"
-		class="display:flex align-items:center gap:10px font-size:28px font-weight:bold">
-		<img src="{{path}}assets/icon.png" height="50px" alt="icon logo" />
+		class="display:flex align-items:center gap:5px font-size:28px font-weight:bold">
+		<img
+			src="{{path}}assets/icons/icon-192x192.png"
+			height="50px"
+			alt="icon logo" />
 		<span>Co<span class="color:#1e90ff">Create</span></span>
 	</a>
 
@@ -31,7 +34,8 @@
 		menu-icon
 		toggle="width:0px,"
 		toggle-selector="document; #menuL"
-		toggle-attribute="style">
+		toggle-attribute="style"
+		class="margin-right:10px">
 		<span></span>
 		<span></span>
 		<span></span>
@@ -60,8 +64,8 @@
 
 <!-- Navigation -->
 <section class="display:flex flex-direction:column gap:20px font-size:20px">
-	<a href="{{path}}demo/" class="color:dodgerblue:hover">Demos</a>
-	<a href="#pricing" class="color:dodgerblue:hover">Pricing</a>
+	<a href="{{path}}demos/" class="color:dodgerblue:hover">Demos</a>
+	<a href="{{path}}#pricing" class="color:dodgerblue:hover">Pricing</a>
 	<a href="{{path}}docs/" class="color:dodgerblue:hover">Docs</a>
 	<a href="{{path}}blog/" class="color:dodgerblue:hover">Blog</a>
 	<!-- <a href="{{path}}discuss/" class="color:dodgerblue:hover"
