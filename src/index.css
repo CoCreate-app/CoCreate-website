@@ -172,8 +172,9 @@ footer p {
 	fill: inherit;
 }
 
-[hidden] {
-	display: none;
+[hidden],
+.hidden {
+	display: none !important;
 }
 
 .show[selected] {
@@ -221,7 +222,6 @@ sidenav .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 13px 9px;
 	background-color: gainsboro;
 }
 
@@ -235,13 +235,24 @@ sidenav ul li {
 	justify-content: space-between;
 	width: 100%;
 	height: 40px;
-	line-height: 40px;
 	overflow: hidden;
 	white-space: nowrap;
 }
 
 sidenav ul li:hover {
 	background: #1f99ff;
+}
+
+sidenav ul li a {
+	display: flex;
+	align-items: center;
+}
+
+sidenav .icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 51px;
 }
 
 .avatar {
@@ -490,11 +501,13 @@ sidenav ul li:hover {
 	background: rgba(0, 0, 0, 0.06);
 }
 
-/* @media (max-width: 768px) {
-	section.centered {
-		padding: 0px 10px;
+@media (max-width: 575px) {
+	nav,
+	main,
+	footer {
+		margin-left: 0px !important;
 	}
-} */
+}
 
 @media (prefers-color-scheme: dark) {
 	body {
