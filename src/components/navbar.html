@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <!-- Menu Icon -->
 <a
 	class="display:none@md@lg@xl"
@@ -56,7 +54,7 @@
 	</ul> -->
 
 	<a href="{{path}}demos/" class="color:dodgerblue:hover">Demos</a>
-	<a href="#pricing" class="color:dodgerblue:hover">Pricing</a>
+	<a href="{{path}}#pricing" class="color:dodgerblue:hover">Pricing</a>
 	<a href="{{path}}docs/" class="color:dodgerblue:hover">Docs</a>
 	<a href="{{path}}blog/" class="color:dodgerblue:hover">Blog</a>
 	<!-- <a href="{{path}}discuss/" class="color:dodgerblue:hover"
@@ -100,6 +98,7 @@
 		display: none;
 	}
 </style>
+
 <!-- Avatar -->
 <div class="avatar round">
 	<div array="users" object="$user_id" key="firstname" class="avatar-name">
@@ -115,10 +114,11 @@
 			<a href="{{path}}account/signin.html"> </a>
 		</div>
 		<a
-			href="{{path}}account/"
-			state_to="main"
-			state-src="{{path}}profile/"
 			class="signin"
+			toggle="dropdown"
+			toggle-closest="nav #profile-dropdown"
+			toggle-attribute="hidden"
+			toggle-value=""
 			session>
 		</a>
 	</div>
@@ -127,4 +127,29 @@
 		array="users"
 		object="$user_id"
 		user-status="{'name':'status'}"></div>
+</div>
+
+<div
+	id="profile-dropdown"
+	class="display:flex flex-direction:column gap:15px position:absolute top:70px right:15px width:125px overflow:auto font-size:16px background:white background:#222@dark border:1px-solid-#ccc border-radius:5px padding:15px"
+	hidden>
+	<a
+		actions="state"
+		state-src="{{path}}profile/index.html"
+		state_to="main"
+		href="{{path}}account/"
+		click-parent
+		click-attribute="hidden"
+		click-value=""
+		class="display:flex align-items:center gap:10px">
+		<i src="{{path}}assets/svg/user.svg"></i>
+		<span>Profile</span>
+	</a>
+	<a
+		actions="signOut"
+		href="{{path}}account/signin.html"
+		class="display:flex align-items:center gap:10px">
+		<i src="{{path}}assets/svg/sign-out-alt.svg"></i>
+		<span>Sign Out</span>
+	</a>
 </div>
