@@ -1,0 +1,141 @@
+<!-- Stripe -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Stripe
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<cocreate-select
+				class="floating-label"
+				placeholder="stripe"
+				attribute="stripe"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="createCustomer.email"
+						><span>email</span></cc-option
+					>
+					<cc-option value="createCustomer.description"
+						><span>description</span></cc-option
+					>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="floating-label"
+				placeholder="actions"
+				attribute="actions"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="createCustomer"
+						><span>createCustomer</span></cc-option
+					>
+					<cc-option value="getBalance"
+						><span>getBalance</span></cc-option
+					>
+				</ul>
+			</cocreate-select>
+		</div>
+	</div>
+</div>
+
+<!--Sendgrd -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Sendgrid
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<cocreate-select
+				class="floating-label"
+				id="sendgrid"
+				placeholder="sendgrid"
+				attribute="sendgrid"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="">
+						<span>none</span>
+					</cc-option>
+					<cc-option value="sendEmail.to">
+						<span>to</span>
+					</cc-option>
+					<cc-option value="sendEmail.from"
+						><span>from</span></cc-option
+					>
+					<cc-option value="sendEmail.subject"
+						><span>subject</span></cc-option
+					>
+					<cc-option value="sendEmail.html"
+						><span>html</span></cc-option
+					>
+					<cc-option value="sendEmail.text"
+						><span>text</span></cc-option
+					>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="floating-label"
+				placeholder="actions"
+				attribute="actions"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="sendEmail"
+						><span>sendEmail</span></cc-option
+					>
+					<cc-option value="domainAuthentication"
+						><span>domainAuthentication</span></cc-option
+					>
+				</ul>
+			</cocreate-select>
+		</div>
+	</div>
+</div>

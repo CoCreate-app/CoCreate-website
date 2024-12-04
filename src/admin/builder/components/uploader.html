@@ -1,0 +1,20 @@
+<form class="padding-top:10px">
+    <floating-label>
+        <div
+            type="file"
+            array="files"
+            object=""
+            key="{}"
+            placeholder="Files"
+            class="floating-label min-height:40px active"
+            render-selector="[template]"
+            multiple
+            active>
+            <div template>
+                <img src="{{object.src}}" alt="image" width="100%" />
+            </div>
+        </div>
+    </floating-label>
+
+    <button class="margin-top:30px" actions="upload">Upload</button>
+</form>

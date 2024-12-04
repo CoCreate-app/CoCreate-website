@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<a href="./signin.html" session="false" hidden></a>
+
+<section class="centered flex-direction:column">
+	<form
+		id="email-campaigns"
+		state_id="form-fields"
+		array="email-campaigns"
+		object=""
+		class="flex-form max-width:660px">
+		<!-- Toolbar Component -->
+		<div
+			path="./"
+			src="./components/form-toolbar.html"
+			class="width:100%"></div>
+
+		<!-- Frendily Name -->
+		<floating-label class="input-300">
+			<input
+				type="type"
+				key="name"
+				placeholder="Email Name"
+				class="floating-label" />
+		</floating-label>
+
+		<!-- Schedule Field (Optional) -->
+		<floating-label class="input-300">
+			<input
+				type="datetime-local"
+				key="schedule"
+				placeholder="Schedule Send Time"
+				class="floating-label" />
+		</floating-label>
+
+		<!-- Contact list Field -->
+		<floating-label class="input-300">
+			<select id="contactList" key="recipients" class="floating-label">
+				<option value="" disabled selected>
+					Select Recipient Type
+				</option>
+				<option value="newsletter">Newsletter</option>
+				<option value="all">All</option>
+				<option value="subscribed">Subscribed</option>
+				<option value="not-subscribed">Not Subscribed</option>
+			</select>
+		</floating-label>
+
+		<!-- Template Field -->
+		<floating-label class="input-300">
+			<select id="tempalte" key="template" class="floating-label">
+				<option value="" disabled selected>Select Template</option>
+				<option value="newsletter">Newsletter</option>
+				<option value="subscribed">Subscribed</option>
+				<option value="not-subscribed">Not Subscribed</option>
+			</select>
+		</floating-label>
+
+		<!-- Subject Field -->
+		<floating-label class="input-600">
+			<input
+				type="text"
+				key="subject"
+				placeholder="Email Subject"
+				class="floating-label" />
+		</floating-label>
+
+		<!-- Title Field -->
+		<floating-label class="input-600">
+			<input
+				type="text"
+				key="title"
+				placeholder="Title"
+				input-selector="document; .title[]"
+				input-attribute="value"
+				class="floating-label input-icon" />
+
+			<a
+				actions="action(document; #generate-email)"
+				click-selector="i[src]"
+				click-attribute="src"
+				click-value="./assets/svg/spinner.svg"
+				class="floating-icon">
+				<i
+					id="#clickIcon"
+					src="./assets/svg/wand-magic-sparkles.svg"
+					class="width:20px height:20px"></i>
+			</a>
+			<div
+				id="generated-icon"
+				click-previous="i"
+				click-attribute="src"
+				click-value="./assets/svg/check-circle.svg"></div>
+		</floating-label>
+
+		<!-- Preheader Field -->
+		<floating-label class="input-600">
+			<input
+				type="text"
+				key="preheader"
+				placeholder="Preheader"
+				input-selector="document; .preheader"
+				input-attribute="value"
+				class="floating-label" />
+		</floating-label>
+
+		<!-- Header Field -->
+		<floating-label class="input-600">
+			<input
+				type="text"
+				key="header"
+				placeholder="Header"
+				class="floating-label" />
+		</floating-label>
+
+		<!-- Subtitle Field -->
+		<floating-label class="input-600">
+			<input
+				type="text"
+				key="subtitle"
+				placeholder="Subtitle"
+				class="floating-label" />
+		</floating-label>
+		<!-- Content Field -->
+		<!-- <floating-label class="input-600">
+			<textarea
+				id="email-content"
+				contenteditable="true"
+				key="content"
+				placeholder="Email Content"
+				class="floating-label"
+				height="auto"></textarea>
+		</floating-label> -->
+		<style>
+			.playground-code,
+			.playground-preview {
+				display: none;
+			}
+			.playground.code .playground-code,
+			.playground.preview .playground-preview {
+				display: block;
+			}
+		</style>
+		<floating-label class="input-600">
+			<div
+				class="playground preview display:flex flex-direction:column position:relative overflow:hidden border-radius:2px width:auto height:600px padding:0px!important">
+				<div class="playground-code position:relative height:100%">
+					<textarea
+						id="content"
+						class="content"
+						key="content"
+						hidden></textarea>
+
+					<a
+						id="renderAction"
+						actions="render(document; #renderEmail), timeout(1000), action(document; #sethtml)"
+						hidden></a>
+					<div id="renderEmail" render-next render="object"></div>
+					<div
+						id="sethtml"
+						src="./admin/email-campaigns/templates/newsletter.html"
+						value-type="text"
+						click-selector="document; #html"
+						click-attribute="value"
+						hidden></div>
+
+					<textarea
+						id="html"
+						type="code"
+						lang="html"
+						key="html"
+						realtime="true"
+						class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
+				</div>
+
+				<div
+					class="playground-preview position:relative width:100% height:100%">
+					<iframe
+						class="preview"
+						width="100%"
+						height="100%"
+						frameborder="0"
+						contenteditable
+						key="html"
+						save="false"
+						realtime="true"></iframe>
+				</div>
+
+				<div
+					class="display:flex gap:15px font-size:20px position:absolute top:10px right:10px opacity:0.6">
+					<a
+						click-closest=".playground"
+						click-value="code, preview"
+						click-attribute="class">
+						<i
+							toggle-attribute="src"
+							toggle-value="/assets/svg/eye.svg, /assets/svg/code.svg"
+							src="/assets/svg/code.svg"></i>
+					</a>
+					<a
+						class="margin-right:5px"
+						fullscreen
+						fullscreen-closest=".playground">
+						<i src="/assets/svg/expand.svg"></i>
+						<i src="/assets/svg/compress.svg"></i>
+					</a>
+				</div>
+			</div>
+		</floating-label>
+
+		<!-- <floating-label class="input-600">
+			<iframe
+				id="email-content"
+				contenteditable="true"
+				key="content"
+				realtime="true"
+				placeholder="Email Content"
+				class="floating-label rich-text-editor"
+				height="auto"
+				src="./admin/email-campaigns/templates/newsletter.html"></iframe>
+		</floating-label> -->
+
+		<!-- Hidden Metadata Fields -->
+		<input
+			key="_id"
+			input-selector="document; #sendform"
+			input-attribute="object"
+			hidden />
+		<input type="datetime" key="created_at" value="$now" hidden />
+
+		<!-- Save Button -->
+		<button actions="save">Save <i src="./assets/svg/save.svg"></i></button>
+
+		<a
+			id="emailSent"
+			click-selector="document; #emailSent-icon"
+			click-attribute="src"
+			click-value="./assets/svg/check-circle.svg"
+			hidden></a>
+
+		<!-- Send Newsletter Button -->
+		<button
+			click-selector="i[src]"
+			click-attribute="src"
+			click-value="./assets/svg/spinner.svg"
+			actions="click, save, sendMassEmails, action(document; #emailSent)">
+			Send Emails
+			<i id="emailSent-icon" src="./assets/svg/paper-plane.svg"></i>
+		</button>
+	</form>
+
+	<!-- AI Email Generatation -->
+	<form>
+		<input
+			openai="chat.completions.create"
+			openai-key="model"
+			value="gpt-4o-mini"
+			hidden />
+
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[0].role"
+			value="system"
+			hidden />
+		<textarea
+			array="ai"
+			object
+			key="content"
+			filter-key="name"
+			filter-value="Newsletter"
+			openai="chat.completions.create"
+			openai-key="messages[0].content"
+			hidden></textarea>
+
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[1].role"
+			value="user"
+			hidden />
+		<input
+			class="title"
+			openai="chat.completions.create"
+			openai-key="messages[1].content"
+			hidden />
+
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[2].role"
+			value="user"
+			hidden />
+		<input
+			class="preheader"
+			openai="chat.completions.create"
+			openai-key="messages[2].content"
+			hidden />
+
+		<textarea
+			id="input"
+			openai="chat.completions.create"
+			openai-key="choices[0].message.content"
+			openai-request="false"
+			input-selector="document; .content[]"
+			input-attribute="value"
+			value-replace="/```html\n|\n```/g"
+			hidden></textarea>
+		<!-- <a
+			id="generate-email"
+			actions="openai.chat.completions.create, action(document; #generate-details), action(document; #generate-image)"></a> -->
+		<a
+			id="generate-email"
+			actions="openai.chat.completions.create, action(document; #generate-details)"></a>
+	</form>
+
+	<!-- AI Email Details Generation -->
+	<form>
+		<input
+			openai="chat.completions.create"
+			openai-key="model"
+			value="gpt-4-1106-preview"
+			hidden />
+
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[0].role"
+			value="system"
+			hidden />
+		<textarea
+			array="ai"
+			object
+			key="content"
+			filter-key="name"
+			filter-value="Newsletter Details"
+			openai="chat.completions.create"
+			openai-key="messages[0].content"
+			hidden></textarea>
+
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[1].role"
+			value="user"
+			hidden />
+		<input
+			class="title"
+			openai="chat.completions.create"
+			openai-key="messages[1].content"
+			hidden />
+
+		<input
+			openai="chat.completions.create"
+			openai-key="messages[2].role"
+			value="user"
+			hidden />
+		<input
+			class="content"
+			openai="chat.completions.create"
+			openai-key="messages[2].content"
+			hidden />
+
+		<textarea
+			id="input"
+			openai="chat.completions.create"
+			openai-key="choices[0].message.content"
+			openai-request="false"
+			input-selector="document; #email-campaigns"
+			input-attribute="value"
+			value-type="json"
+			value-replace="/```json\n|\n```/g"
+			hidden></textarea>
+
+		<a
+			id="generate-details"
+			actions="openai.chat.completions.create, timeout(1000), action(document; #renderAction), action(document; #generated-icon)"></a>
+	</form>
+
+	<form api="openai">
+		<input
+			openai="images.generate"
+			openai-key="model"
+			value="dall-e-3"
+			hidden />
+
+		<textarea
+			class="title"
+			openai="images.generate"
+			openai-key="prompt"
+			value-prefix="generate an image for a newsletter related to the following topic: "
+			hidden></textarea>
+		<input
+			type="number"
+			openai="images.generate"
+			openai-key="n"
+			value="1"
+			hidden />
+		<input
+			openai="images.generate"
+			openai-key="size"
+			value="1024x1024"
+			hidden />
+
+		<!-- <img src="" class="max-width:100% height:auto" /> -->
+		<input
+			openai="images.generate"
+			openai-key="data[0].url"
+			openai-request="false"
+			import-url-selector="document; #imagefile"
+			import-url
+			hidden />
+
+		<a
+			id="generate-image"
+			actions="openai.images.generate, importUrl, action(document; #imageGenerated)"></a>
+	</form>
+
+	<div src="./components/toolbar.html" value-type="outerHTML"></div>
+</section>
+
+<script src="./admin/email-campaigns/index.js"></script>

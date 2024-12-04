@@ -252,7 +252,7 @@ sidenav .icon {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 51px;
+	min-width: 51px;
 }
 
 .avatar {

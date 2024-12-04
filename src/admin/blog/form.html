@@ -1,7 +1,9 @@
 <section class="centered flex-direction:column">
 	<form
 		id="blog-form"
-		state_id="form-fields"
+		state_id="adminOrg, form-fields"
+		organization_id=""
+		host=""
 		array="blog-posts"
 		object=""
 		class="flex-form max-width:800px">
@@ -67,7 +69,7 @@
 			<input
 				id="imageurl"
 				key="image"
-				filter-key="pathname"
+				filter-query-key="pathname"
 				filter-next
 				placeholder="Image Url"
 				class="floating-label input-icon" />
@@ -120,7 +122,7 @@
 			<input
 				id="videourl"
 				key="video"
-				filter-key="pathname"
+				filter-query-key="pathname"
 				filter-next
 				placeholder="Video Url"
 				class="floating-label input-icon" />
@@ -299,8 +301,8 @@
 			array="ai"
 			object
 			key="content"
-			filter-key="name"
-			filter-value="Blog Details"
+			filter-query-key="name"
+			filter-query-value="Blog Details"
 			openai="chat.completions.create"
 			openai-key="messages[0].content"
 			hidden></textarea>
@@ -359,8 +361,8 @@
 			array="ai"
 			object
 			key="content"
-			filter-key="name"
-			filter-value="Blog Post"
+			filter-query-key="name"
+			filter-query-value="Blog Post"
 			openai="chat.completions.create"
 			openai-key="messages[0].content"
 			hidden></textarea>

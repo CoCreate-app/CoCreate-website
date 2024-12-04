@@ -13,7 +13,7 @@
 							<input
 								type="text"
 								filter-selector="document; tbody[render-selector]"
-								filter-key="name"
+								filter-query-key="name"
 								filter-operator="$regex"
 								filter-regex-flag="i"
 								state_id="datatable"
@@ -39,7 +39,7 @@
 							<input
 								type="text"
 								filter-selector="document; tbody[render-selector]"
-								filter-key="_id"
+								filter-query-key="_id"
 								filter-operator="$regex"
 								filter-regex-flag="i"
 								state_id="datatable"
@@ -64,6 +64,9 @@
 			</tbody>
 
 			<tbody
+				state_id="adminOrg"
+				organization_id=""
+				host=""
 				array="subscriptions"
 				object
 				filter-sort-key="name"

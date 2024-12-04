@@ -1,0 +1,61 @@
+.left-panel.active,
+.right-panel.active,
+.blocks.active,
+.components.active,
+.editor-panel.active {
+	display: block;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	opacity: 1;
+}
+
+.selected {
+	margin: 0;
+	padding: 0;
+	height: 25px;
+	min-height: 25px;
+}
+
+.builder-tab-round {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	min-height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.builder-tab-round:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.builder-tab-round[selected] {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+[image-type*="image"] {
+	display: block !important;
+}
+
+[video-type*="video"] {
+	display: block !important;
+}
+
+.toolbar-class {
+	position: fixed;
+	pointer-events: none;
+	display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	.builder-tab-round:hover {
+		background: rgba(255, 255, 255, 0.05);
+	}
+
+	.builder-tab-round[selected] {
+		background: rgba(255, 255, 255, 0.15);
+	}
+}

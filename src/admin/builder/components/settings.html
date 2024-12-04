@@ -1,0 +1,60 @@
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Settings
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				type="text"
+				attribute="href"
+				class="floating-label"
+				placeholder="href"
+				id="href"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="src"
+				class="floating-label"
+				placeholder="src"
+				id="src"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="placeholder"
+				class="floating-label"
+				placeholder="placeholder"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>

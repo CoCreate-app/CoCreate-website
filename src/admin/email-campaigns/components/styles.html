@@ -1,0 +1,2268 @@
+<!-- <floating-label class="margin:10px_0px">
+                        <cocreate-select
+                            class="floating-label"
+                            sortable
+                            multiple
+                            placeholder="Classes"
+                            attribute="class"
+                            state_id="builder"
+                            attribute-selector="iframe;"
+                            array=""
+                            object=""
+                            crud="false"
+                            save="false"
+                            read="false"
+                            active>
+                            <input placeholder="Add a new class" />
+                        </cocreate-select>
+                    </floating-label> -->
+
+<!-- Layout -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Layout
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<div>
+				<span>Visibility</span>
+				<div class="display:flex">
+					<div class="card width:50% text-align:center">
+						<input
+							type="radio"
+							class="display:none"
+							id="layout-visible"
+							value="visible" />
+						<span for="layout-visible">Visible</span>
+					</div>
+
+					<div class="card width:50% text-align:center">
+						<input
+							type="radio"
+							class="display:none"
+							id="layout-hidden"
+							value="hidden" />
+						<span for="layout-hidden">Hidden</span>
+					</div>
+				</div>
+			</div>
+			<div>
+				<span>Behaviour</span>
+				<div class="display:flex">
+					<div class="card width:50% text-align:center">
+						<input
+							type="radio"
+							class="display:none"
+							id="layout-fill-parent"
+							value="inherit" />
+						<span for="layout-fill-parent">Fill parent</span>
+					</div>
+
+					<div class="card width:50% text-align:center">
+						<input
+							type="radio"
+							class="display:none"
+							id="layout-fit-content"
+							value="none" />
+						<span for="layout-fit-content">Fit content</span>
+					</div>
+				</div>
+			</div>
+			<div>
+				<span>Vertical Align</span>
+				<div class="display:flex">
+					<div
+						class="card text-align:center width:20% height:90% padding:10px">
+						<input type="radio" id="stretch" class="display:none" />
+						<span for="stretch"
+							><svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								height="30px">
+								<path
+									fill="#000"
+									fill-rule="nonzero"
+									d="M15 19H9V6h6v13zM8 6v13H0v1h24v-1h-8V6h8V5H0v1h8z"></path>
+							</svg>
+						</span>
+					</div>
+					<div
+						class="card text-align:center width:20% height:90% padding:10px">
+						<input
+							type="radio"
+							id="verticaltop"
+							class="display:none" />
+						<span for="top"
+							><svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								height="30px">
+								<path
+									fill="#000"
+									fill-rule="nonzero"
+									d="M18 6H6v13h12V6zM5 6H0V5h24v1h-5v13c0 .6-.4 1-1 1H6a1 1 0 01-1-1V6zm14 6v1H5v-1h14z"></path>
+							</svg>
+						</span>
+					</div>
+					<div
+						class="card text-align:center width:20% height:90% padding:10px">
+						<input
+							type="radio"
+							id="verticalcenter"
+							class="display:none" />
+						<span for="center"
+							><svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								height="30px">
+								<path
+									fill="#000"
+									fill-rule="nonzero"
+									d="M18 6H6v13h12V6zm1 0v13c0 .6-.4 1-1 1H6a1 1 0 01-1-1V6c0-.6.4-1 1-1h12c.6 0 1 .4 1 1zm5 6v1H0v-1h24z"></path>
+							</svg>
+						</span>
+					</div>
+					<div
+						class="card text-align:center width:20% height:90% padding:10px">
+						<input
+							type="radio"
+							id="verticalbottom"
+							class="display:none" />
+						<span for="bottom"
+							><svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								height="30px">
+								<path
+									fill="#000"
+									fill-rule="nonzero"
+									d="M18 19H6V6h12v13zM5 19H0v1h24v-1h-5V6c0-.6-.4-1-1-1H6a1 1 0 00-1 1v13zm14-6v-1H5v1h14z"></path>
+							</svg>
+						</span>
+					</div>
+					<div
+						class="card text-align:center width:20% height:90% padding:10px">
+						<input
+							type="radio"
+							id="baseline"
+							class="display:none" />
+						<span for="baseline"
+							><svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								height="30px">
+								<path
+									fill="#000"
+									fill-rule="evenodd"
+									d="M19 14h1.1a.5.5 0 01.4.8L19 17.3a.5.5 0 01-.8 0l-1.6-2.5a.5.5 0 01.4-.8H18V5.5a.5.5 0 111 0V14zM0 19h24v1H0v-1zM13.4 5l.1 2.9h-.3l-.2-1c-.2-.4-.5-.7-.8-.8-.3-.2-.7-.3-1.2-.3H9.4V15c0 .8 0 1.2.2 1.4.2.3.6.4 1 .4h.4v.3H6v-.3h.4c.5 0 .9-.2 1-.5.2-.2.3-.6.3-1.3V6H5c-.4.2-.6.4-.8.7-.2.3-.4.7-.4 1.3h-.4L3.7 5h9.7z"></path>
+							</svg>
+						</span>
+					</div>
+				</div>
+			</div>
+			<input
+				id="order"
+				class="floating-label z-index:0"
+				placeholder="Order:"
+				attribute="classstyle"
+				attribute-property="order"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Spacing -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Spacing
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="margin-left"
+						class="floating-label z-index:0"
+						placeholder="margin-left:"
+						attribute="classstyle"
+						attribute-property="margin-left"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="margin-left-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#margin-left">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="margin-right"
+						class="floating-label z-index:0"
+						placeholder="margin-right:"
+						attribute="classstyle"
+						attribute-property="margin-right"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="margin-right-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#margin-right">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="margin-top"
+						class="floating-label z-index:0"
+						placeholder="margin-top:"
+						attribute="classstyle"
+						attribute-property="margin-top"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="margin-top-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#margin-top">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="margin-bottom"
+						class="floating-label z-index:0"
+						placeholder="margin-bottom:"
+						attribute="classstyle"
+						attribute-property="margin-bottom"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="margin-bottom-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#margin-bottom">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="padding-left"
+						class="floating-label z-index:0"
+						placeholder="padding-left:"
+						attribute="classstyle"
+						attribute-property="padding-left"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="padding-left-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#padding-left">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="padding-right"
+						class="floating-label z-index:0"
+						placeholder="padding-right:"
+						attribute="classstyle"
+						attribute-property="padding-right"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="padding-right-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#padding-right">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="padding-top"
+						class="floating-label z-index:0"
+						placeholder="padding-top:"
+						attribute="classstyle"
+						attribute-property="padding-top"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="padding-top-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#padding-top">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="padding-bottom"
+						class="floating-label z-index:0"
+						placeholder="padding-bottom:"
+						attribute="classstyle"
+						attribute-property="padding-bottom"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="padding-bottom-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#padding-bottom">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Size -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Size
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="width"
+						class="floating-label z-index:0"
+						placeholder="width:"
+						attribute="classstyle"
+						attribute-property="width"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="width-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="height"
+						class="floating-label z-index:0"
+						placeholder="height:"
+						attribute="classstyle"
+						attribute-property="height"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="height-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#height">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="min-width"
+						class="floating-label z-index:0"
+						placeholder="min-width:"
+						attribute="classstyle"
+						attribute-property="min-width"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:relative width:40px top:-29px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="min-width-unit"
+							class="styleunit remove-none border:none padding:0 min-height:18px!important"
+							attribute="attribute-unit"
+							attribute-selector="#min-width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="min-height"
+						class="floating-label z-index:0"
+						placeholder="min-height:"
+						attribute="classstyle"
+						attribute-property="min-height"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="min-height-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#min-height">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="max-width"
+						class="floating-label z-index:0"
+						placeholder="max-width:"
+						attribute="classstyle"
+						attribute-property="max-width"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="max-width-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#max-width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="max-height"
+						class="floating-label z-index:0"
+						placeholder="max-height:"
+						attribute="classstyle"
+						attribute-property="max-height"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="max-height-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#max-height">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Position -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Position
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="top"
+						class="floating-label z-index:0"
+						placeholder="top:"
+						attribute="classstyle"
+						attribute-property="top"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="top-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#top">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="bottom"
+						class="floating-label z-index:0"
+						placeholder="bottom:"
+						attribute="classstyle"
+						attribute-property="bottom"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="bottom-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#bottom">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="left"
+						class="floating-label z-index:0"
+						placeholder="left:"
+						attribute="classstyle"
+						attribute-property="left"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="left-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#left">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="right"
+						class="floating-label z-index:0"
+						placeholder="right:"
+						attribute="classstyle"
+						attribute-property="right"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="right-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#right">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option template value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Typography -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Typography
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<cocreate-select
+				class="floating-label"
+				id="font-family"
+				placeholder="font-family:"
+				attribute="classstyle"
+				attribute-property="font-family"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<input placeholder="Search" search-selector=".option" />
+				<ul class="options z-index:7">
+					<cc-option value="none"><span>none</span></cc-option>
+					<cc-option value="arial"><span>Arial</span></cc-option>
+					<cc-option value="arialblack"
+						><span>Arial Black</span></cc-option
+					>
+					<cc-option value="brushscriptmt"
+						><span>Brush Script MT</span></cc-option
+					>
+					<cc-option value="comicsansms"
+						><span>Comic Sans MS</span></cc-option
+					>
+					<cc-option value="couriernew"
+						><span>Courier New</span></cc-option
+					>
+					<cc-option value="georgia"><span>Georgia</span></cc-option>
+					<cc-option value="helvetica"
+						><span>Helvetica</span></cc-option
+					>
+					<cc-option value="lucidasansunicode"
+						><span>Lucida Sans Unicode</span></cc-option
+					>
+					<cc-option value="tahoma"><span>Tahoma</span></cc-option>
+					<cc-option value="trebuchetms"
+						><span>Trebuchet MS</span></cc-option
+					>
+					<cc-option value="impact"><span>Impact</span></cc-option>
+					<cc-option value="verdana"><span>Verdana</span></cc-option>
+				</ul>
+			</cocreate-select>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="font-size"
+						class="floating-label z-index:0"
+						placeholder="font-size:"
+						attribute="classstyle"
+						attribute-property="font-size"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="font-size-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#font-size">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						type="number"
+						id="font-weight"
+						class="floating-label z-index:0"
+						placeholder="font-weight:"
+						step="100"
+						attribute="classstyle"
+						attribute-property="font-weight"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+				</floating-label>
+			</div>
+			<div class="floating-label" placeholder="color" active>
+				<div
+					id="color"
+					class="color-picker"
+					attribute="classstyle"
+					attribute-property="color"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					key="color"></div>
+			</div>
+			<cocreate-select
+				id="text-align"
+				class="floating-label"
+				placeholder="text-align:"
+				attribute="classstyle"
+				attribute-property="text-align"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="left">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/align-left.svg"></i>
+					</cc-option>
+					<cc-option value="center">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/align-center.svg"></i>
+					</cc-option>
+					<cc-option value="right">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/align-right.svg"></i>
+					</cc-option>
+					<cc-option value="justify">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/align-justify.svg"></i>
+					</cc-option>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				id="text-decoration"
+				class="floating-label"
+				placeholder="text-decoration:"
+				attribute="classstyle"
+				attribute-property="text-decoration"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="x">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/times.svg"></i>
+					</cc-option>
+					<cc-option value="u">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/underline.svg"></i>
+					</cc-option>
+					<cc-option value="s">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/strikethrough.svg"></i>
+					</cc-option>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="remove-none floating-label"
+				placeholder="font-style:"
+				attribute="classstyle"
+				attribute-property="font-style"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="a">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/font.svg"></i>
+					</cc-option>
+					<cc-option value="em">
+						<i
+							class="height:16px"
+							src="../../../assets/svg/italic.svg"></i>
+					</cc-option>
+				</ul>
+			</cocreate-select>
+		</div>
+	</div>
+</div>
+
+<!-- Border -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Border
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="border-width"
+						class="floating-label z-index:0"
+						placeholder="border-width:"
+						attribute="classstyle"
+						attribute-property="border-width"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="border-width-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="border-width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<cocreate-select
+						class="floating-label"
+						id="border-style"
+						placeholder="border-style:"
+						attribute="classstyle"
+						attribute-property="border-style"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active>
+						<ul class="options z-index:7 margin-top:5px">
+							<cc-option value="none"
+								><span>none</span></cc-option
+							>
+							<cc-option value="solid"
+								><span>solid</span></cc-option
+							>
+							<cc-option value="dotted"
+								><span>dotted</span></cc-option
+							>
+							<cc-option value="dashed"
+								><span>dashed</span></cc-option
+							>
+							<cc-option value="double"
+								><span>double</span></cc-option
+							>
+							<cc-option value="groove"
+								><span>groove</span></cc-option
+							>
+							<cc-option value="ridge"
+								><span>ridge</span></cc-option
+							>
+							<cc-option value="inset"
+								><span>inset</span></cc-option
+							>
+							<cc-option value="outset"
+								><span>outset</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</floating-label>
+			</div>
+			<div class="floating-label" placeholder="border-color" active>
+				<div
+					id="border-color"
+					class="color-picker"
+					attribute="classstyle"
+					attribute-property="border-color"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					key="border-color"></div>
+			</div>
+			<floating-label>
+				<input
+					id="border-radius"
+					class="floating-label z-index:0"
+					placeholder="border-radius:"
+					step="100"
+					attribute="classstyle"
+					attribute-property="border-radius"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active />
+				<div
+					class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+					<cocreate-select
+						id="border-radius-unit"
+						class="styleunit remove-none border:none padding:0 min-height:24px!important"
+						state_id="builder"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						attribute="attribute-unit"
+						attribute-selector="border-radius">
+						<ul
+							class="options overflow:auto padding:0px z-index:7"
+							array="modules"
+							filter-value="5ff747727005da1c27274193"
+							filter-key="_id"
+							filter-operator="$eq"
+							key="units"
+							render-selector=":last-child">
+							<cc-option
+								class="margin:0px padding:3px border-radius:4px"
+								template
+								value="{{units}}"
+								><span value="{{units}}"
+									>{{units}}</span
+								></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</div>
+			</floating-label>
+		</div>
+	</div>
+</div>
+
+<!-- Shadow -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Shadow
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<!--Box Shadow -->
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="offsetx"
+						class="floating-label z-index:0"
+						placeholder="Offset X:"
+						step="100"
+						attribut="classstyle"
+						attribute-property="offsetx"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribut="attribute-unit"
+							attribute-selector="border-width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="offsetv"
+						class="floating-label z-index:0"
+						placeholder="Offset V:"
+						step="100"
+						attribut="classstyle"
+						attribute-property="offsetv"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribut="attribute-unit"
+							attribute-selector="border-width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="blur"
+						class="floating-label z-index:0"
+						placeholder="Blur:"
+						step="100"
+						attribut="classstyle"
+						attribute-property="blur"
+						attribute-unit="px"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribut="attribute-unit"
+							attribute-selector="border-width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="spread"
+						class="floating-label z-index:0"
+						placeholder="Spread:"
+						step="100"
+						attribut="classstyle"
+						attribute-property="spread"
+						attribute-unit="px"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribut="attribute-unit"
+							attribute-selector="border-width">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<input
+				id="fill-color"
+				type="color"
+				class="floating-label z-index:0"
+				placeholder="fill-color:"
+				attribut="classstyle"
+				attribute-property="fill-color"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Background-->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Background
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<div class="floating-label" placeholder="background-color" active>
+				<div
+					id="background-color"
+					class="color-picker"
+					attribute="classstyle"
+					attribute-property="background-color"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"></div>
+			</div>
+			<floating-label>
+				<div
+					type="file"
+					accept="image/*"
+					placeholder="image:"
+					class="floating-label min-height:40px active"
+					render-selector="[template]"
+					attribute="classstyle"
+					attribute-property="background-image"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					render="file"
+					crud="false"
+					save="false"
+					read="false"
+					active>
+					<div template>
+						<img src="{{file.src}}" alt="image" width="100%" />
+					</div>
+				</div>
+			</floating-label>
+
+			<cocreate-select
+				class="floating-label"
+				id="background-repeat"
+				placeholder="background-repeat:"
+				attribute="classstyle"
+				attribute-property="background-repeat"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="none"><span>none</span></cc-option>
+					<cc-option value="repeat"><span>repeat</span></cc-option>
+					<cc-option value="repeat-x"
+						><span>repeat-x</span></cc-option
+					>
+					<cc-option value="repeat-y"
+						><span>repeat-y</span></cc-option
+					>
+					<cc-option value="norepeat"
+						><span>no repeat</span></cc-option
+					>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="floating-label"
+				id="background-position"
+				placeholder="background-position"
+				attribute="classstyle"
+				attribute-property="background-position"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="background-position:none"
+						><span>none</span></cc-option
+					>
+					<cc-option value="background-position:lt"
+						><span>left top</span></cc-option
+					>
+					<cc-option value="background-position:lc"
+						><span>left center</span></cc-option
+					>
+					<cc-option value="background-position:lb"
+						><span>left bottom</span></cc-option
+					>
+					<cc-option value="background-position:rt"
+						><span>right top</span></cc-option
+					>
+					<cc-option value="background-position:rc"
+						><span>right center</span></cc-option
+					>
+					<cc-option value="background-position:rb"
+						><span>right bottom</span></cc-option
+					>
+					<cc-option value="background-position:ct"
+						><span>center top</span></cc-option
+					>
+					<cc-option value="background-position:cc"
+						><span>center center</span></cc-option
+					>
+					<cc-option value="background-position:cb"
+						><span>center bottom</span></cc-option
+					>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="floating-label"
+				id="background-attachment"
+				placeholder="background-attachment:"
+				attribute="classstyle"
+				attribute-property="background-attachment"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="none"><span>none</span></cc-option>
+					<cc-option value="scroll"><span>scroll</span></cc-option>
+					<cc-option value="fixed"><span>fixed</span></cc-option>
+					<cc-option value="local"><span>local</span></cc-option>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="floating-label"
+				id="background-size"
+				placeholder="background-size:"
+				attribute="classstyle"
+				attribute-property="background-size"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="none"><span>none</span></cc-option>
+					<cc-option value="auto"><span>auto</span></cc-option>
+					<cc-option value="cover"><span>cover</span></cc-option>
+					<cc-option value="contain"><span>contain</span></cc-option>
+				</ul>
+			</cocreate-select>
+		</div>
+	</div>
+</div>
+<!-- Extra -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Extra
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				id="opacity"
+				class="floating-label z-index:0"
+				placeholder="opacity:"
+				attribute="classstyle"
+				attribute-property="opacity"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<cocreate-select
+				class="floating-label"
+				id="cursor"
+				placeholder="Cursor:"
+				attribute="classstyle"
+				attribute-property="cursor"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value="none"><span>none</span></cc-option>
+					<cc-option value="auto"><span>Auto</span></cc-option>
+					<cc-option value="default"><span></span>Default</cc-option>
+					<cc-option value="none"><span></span>None</cc-option>
+					<cc-option value="unset"><span></span>Unset</cc-option>
+					<cc-option value="acc-optionas"
+						><span></span>Alias</cc-option
+					>
+					<cc-option value="col-resize"
+						><span>Column resize</span></cc-option
+					>
+					<cc-option value="row-resize"
+						><span>Row resize</span></cc-option
+					>
+					<cc-option value="context-menu"
+						><span>Context menu</span></cc-option
+					>
+					<cc-option value="copy"><span>Copy</span></cc-option>
+					<cc-option value="crosshair"
+						><span></span>Crosshair</cc-option
+					>
+					<cc-option value="n-resize"
+						><span>Resize N</span></cc-option
+					>
+					<cc-option value="ne-resize"
+						><span>Resize NE</span></cc-option
+					>
+					<cc-option value="e-resize"
+						><span>Resize E</span></cc-option
+					>
+					<cc-option value="se-resize"
+						><span>Resize SE</span></cc-option
+					>
+					<cc-option value="s-resize"
+						><span>Resize S</span></cc-option
+					>
+					<cc-option value="sw-resize"
+						><span>Resize SW</span></cc-option
+					>
+					<cc-option value="w-resize"
+						><span>Resize W</span></cc-option
+					>
+					<cc-option value="nw-resize"
+						><span>Resize NW</span></cc-option
+					>
+					<cc-option value="ns-resize"
+						><span>Resize NS</span></cc-option
+					>
+					<cc-option value="nesw-resize"
+						><span>Resize NESW</span></cc-option
+					>
+					<cc-option value="ew-resize"
+						><span>Resize EW</span></cc-option
+					>
+					<cc-option value="nwse-resize"
+						><span>Resize NWSE</span></cc-option
+					>
+					<cc-option value="grab"><span>Grab</span></cc-option>
+					<cc-option value="grabbing"
+						><span>Grabbing</span></cc-option
+					>
+					<cc-option value="help"><span>Help</span></cc-option>
+					<cc-option value="move"><span>Move</span></cc-option>
+					<cc-option value="not-allowed"
+						><span>Not allowed</span></cc-option
+					>
+					<cc-option value="pointer"><span>Pointer</span></cc-option>
+					<cc-option value="progress"
+						><span>Progress</span></cc-option
+					>
+					<cc-option value="text"><span>Text</span></cc-option>
+					<cc-option value="vertical-text"
+						><span>Vertical text</span></cc-option
+					>
+					<cc-option value="zoom-in"><span>Zoom in</span></cc-option>
+					<cc-option value="zoom-out"
+						><span>Zoom out</span></cc-option
+					>
+				</ul>
+			</cocreate-select>
+			<div
+				class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+				<cocreate-select
+					class="floating-label"
+					id="filter"
+					placeholder="FilterType:"
+					attribute="classstyle"
+					attribute-property="filter"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active>
+					<ul class="options z-index:7 margin-top:5px">
+						<cc-option value="none"><span>none</span></cc-option>
+						<cc-option value="blur"><span>blur</span></cc-option>
+						<cc-option value="brightness"
+							><span>brightness</span></cc-option
+						>
+						<cc-option value="contrast"
+							><span>contrast</span></cc-option
+						>
+						<cc-option value="grayscale"
+							><span>grayscale</span></cc-option
+						>
+						<cc-option value="hue-rotate"
+							><span>hue-rotate</span></cc-option
+						>
+						<cc-option value="invert"
+							><span>invert</span></cc-option
+						>
+						<cc-option value="opacity"
+							><span>opacity</span></cc-option
+						>
+						<cc-option value="saturate"
+							><span>saturate</span></cc-option
+						>
+						<cc-option value="sepia"><span>sepia</span></cc-option>
+					</ul>
+				</cocreate-select>
+				<input
+					id="strenth"
+					class="floating-label z-index:0"
+					placeholder="strenth:"
+					step="100"
+					attribut="classstyle"
+					attribute-property="strenth"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active />
+			</div>
+			<div
+				class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+				<cocreate-select
+					class="floating-label"
+					id="transform"
+					placeholder="transform:"
+					attribute="classstyle"
+					attribute-property="transform"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active>
+					<ul class="options z-index:7 margin-top:5px">
+						<cc-option value="none"><span>none</span></cc-option>
+						<cc-option value="translateX"
+							><span>Move X</span></cc-option
+						>
+						<cc-option value="translateY"
+							><span>Move Y</span></cc-option
+						>
+						<cc-option value="translateZ"
+							><span>Move Z</span></cc-option
+						>
+						<cc-option value="scale"><span>Scale</span></cc-option>
+						<cc-option value="scaleX"
+							><span>Scale X</span></cc-option
+						>
+						<cc-option value="scaleY"
+							><span>Scale Y</span></cc-option
+						>
+						<cc-option value="scaleZ"
+							><span>Scale Z</span></cc-option
+						>
+						<cc-option value="rotateX"
+							><span>Rotate X</span></cc-option
+						>
+						<cc-option value="rotateY"
+							><span>Rotate Y</span></cc-option
+						>
+						<cc-option value="rotateZ"
+							><span>Rotate Z</span></cc-option
+						>
+						<cc-option value="skewX"><span>Skew X</span></cc-option>
+						<cc-option value="skewY"><span>Skew Y</span></cc-option>
+					</ul>
+				</cocreate-select>
+				<input
+					id="translate"
+					class="floating-label z-index:0"
+					placeholder="translate:"
+					step="100"
+					attribut="classstyle"
+					attribute-property="translate"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active />
+			</div>
+			<div
+				class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+				<cocreate-select
+					class="floating-label"
+					id="transition-property"
+					placeholder="TransitionProperty:"
+					attribute="classstyle"
+					attribute-property="transition-property"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active>
+					<ul class="options z-index:7 margin-top:5px">
+						<cc-option value="none"><span>none</span></cc-option>
+						<cc-option value="all"><span>All</span></cc-option>
+						<cc-option value="width"><span>Width</span></cc-option>
+						<cc-option value="height"
+							><span>Height</span></cc-option
+						>
+						<cc-option value="background-color"
+							><span>Background color</span></cc-option
+						>
+						<cc-option value="transform"
+							><span>Transform</span></cc-option
+						>
+						<cc-option value="border"
+							><span>Border</span></cc-option
+						>
+						<cc-option value="box-shadow"
+							><span>Box shadow</span></cc-option
+						>
+						<cc-option value="text-shadow"
+							><span>Text shadow</span></cc-option
+						>
+						<cc-option value="opacity"
+							><span>Opacity</span></cc-option
+						>
+						<cc-option value="color"><span>Color</span></cc-option>
+					</ul>
+				</cocreate-select>
+				<div class="display:flex gap:10px">
+					<floating-label class="width:50%">
+						<input
+							id="duration"
+							class="floating-label z-index:0"
+							placeholder="duration:"
+							step="100"
+							attribut="classstyle"
+							attribute-property="duration"
+							state_id="builder"
+							attribute-selector="iframe;"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							active />
+					</floating-label>
+					<floating-label class="width:50%">
+						<cocreate-select
+							class="floating-label"
+							id="easing"
+							placeholder="Easing:"
+							attribut="classstyle"
+							attribute-property="easing"
+							state_id="builder"
+							attribute-selector="iframe;"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							active>
+							<ul class="options z-index:7 margin-top:5px">
+								<cc-option value="none">
+									<span>none</span>
+								</cc-option>
+								<cc-option value="linear">
+									<span>linear</span>
+								</cc-option>
+								<cc-option value="ease">
+									<span>ease</span>
+								</cc-option>
+								<cc-option value="ease-in">
+									<span>ease-in</span>
+								</cc-option>
+								<cc-option value="ease-out">
+									<span>ease-out</span>
+								</cc-option>
+								<cc-option value="ease-in-out">
+									<span>ease-in-out</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</floating-label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,85 @@
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Broadcast
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<cocreate-select
+				class="floating-label"
+				id="state-array"
+				placeholder="broadcast"
+				attribute="state-array"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="true"><span>true</span></cc-option>
+					<cc-option value="false"><span>false</span></cc-option>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="floating-label"
+				id="state-object"
+				placeholder="broadcast-sender"
+				attribute="state-object"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="true"><span>true</span></cc-option>
+					<cc-option value="false"><span>false</span></cc-option>
+				</ul>
+			</cocreate-select>
+			<input
+				attribute="namespace"
+				type="text"
+				class="floating-label"
+				placeholder="namespace"
+				id="namespace"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="room"
+				type="text"
+				class="floating-label"
+				placeholder="room"
+				id="room"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>

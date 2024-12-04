@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<style>
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		opacity: 1;
+	}
+
+	cocreate-select.styleunit selected {
+		margin: 0;
+		text-align: center;
+		background: none;
+	}
+	.pickr {
+		padding: 0px;
+		width: 100%;
+	}
+	.pickr .pcr-button {
+		height: 24px;
+		width: 100%;
+		box-shadow: none !important;
+	}
+	[hidden] {
+		display: none !important;
+	}
+</style>
+
+<div
+	class="width:100%"
+	resize-attribute="style"
+	resize-property="width"
+	resize-if="310px"
+	resize-closest="sidenav"></div>
+
+<div
+	class="width:100%"
+	resize-attribute="menu-icon"
+	resize-value="active"
+	resize-if="310px"
+	resize-selector="document; #btn-right"></div>
+
+<div
+	class="width:100%"
+	resize-attribute="menu-icon"
+	resize-value="false"
+	resize-if="0px"
+	resize-selector="document; #btn-right"></div>
+
+<form
+	id="domEditorPanel"
+	state_id="builder"
+	array=""
+	object=""
+	crud="false"
+	save="false"
+	read="false"
+	class="min-width:310px">
+	<div class="padding-bottom:10px">
+		<div class="display:flex gap:10px padding:10px tabs">
+			<a
+				class="builder-tab-round"
+				selected-attribute="class"
+				selected-value="active"
+				selected-selector="document; #styles"
+				selected-group="editor-panels"
+				selected>
+				<i src="../../../assets/svg/paint-brush.svg"></i>
+			</a>
+			<a
+				class="builder-tab-round"
+				selected-attribute="class"
+				selected-value="active"
+				selected-selector="document; #database"
+				selected-group="editor-panels">
+				<i src="../../../assets/svg/database.svg"></i>
+			</a>
+			<a
+				class="builder-tab-round"
+				selected-attribute="class"
+				selected-value="active"
+				selected-selector="document; #broadcast"
+				selected-group="editor-panels">
+				<i src="../../../assets/svg/broadcast-tower.svg"></i>
+			</a>
+			<a
+				class="builder-tab-round"
+				selected-attribute="class"
+				selected-value="active"
+				selected-selector="document; #logic"
+				selected-group="editor-panels">
+				<i src="../../../assets/svg/brain.svg"></i>
+			</a>
+			<a
+				class="builder-tab-round"
+				selected-attribute="class"
+				selected-value="active"
+				selected-selector="document; #plugins"
+				selected-group="editor-panels">
+				<i src="../../../assets/svg/plug.svg"></i>
+			</a>
+			<a
+				class="builder-tab-round"
+				selected-attribute="class"
+				selected-value="active"
+				selected-selector="document; #settings"
+				selected-group="editor-panels">
+				<i class="height:18px" src="../../../assets/svg/cog.svg"></i>
+			</a>
+		</div>
+
+		<div class="overflow:auto height:calc(100vh_-_60px) padding:10px">
+			<div class="">
+				<!--Styles -->
+				<div
+					id="styles"
+					class="editor-panel display:none active"
+					src="./components/styles.html"></div>
+
+				<!-- Database -->
+				<div
+					id="database"
+					class="editor-panel display:none"
+					src="./components/database.html"></div>
+
+				<!--Broadcast -->
+				<div
+					id="broadcast"
+					class="editor-panel display:none"
+					src="./components/broadcast.html"></div>
+
+				<!--Logic -->
+				<div
+					id="logic"
+					class="editor-panel display:none"
+					src="./components/logic.html"></div>
+
+				<!--Plugins -->
+				<div
+					id="plugins"
+					class="editor-panel display:none"
+					src="./components/plugins.html"></div>
+
+				<!-- Settings -->
+				<div
+					id="settings"
+					class="editor-panel display:none"
+					src="./components/settings.html"></div>
+			</div>
+		</div>
+	</div>
+</form>

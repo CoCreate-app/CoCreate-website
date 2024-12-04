@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<div
+    class="display:flex justify-content:center position:relative margin-bottom:30px">
+    <div
+        class="card width:50% text-align:center padding:5px"
+        selected-attribute="class"
+        selected-value="active"
+        selected-selector="document; #elements"
+        selected-group="components"
+        selected>
+        Elements
+    </div>
+    <div
+        class="card width:50% text-align:center padding:5px"
+        selected-attribute="class"
+        selected-value="active"
+        selected-selector="document; #components"
+        selected-group="components"
+        selected>
+        Components
+    </div>
+    <button
+        class="position:absolute top:13px height:30px width:30px padding:5px grow-hover border-radius:50%">
+        <a
+            actions="state, openModal"
+            modal-src="../marketplace/list.html"
+            modal-width="840px">
+            <i class="height:16px" src="../../../assets/svg/plus.svg"></i>
+        </a>
+    </button>
+</div>
+
+<!-- Block Categories -->
+<div
+    filter-next
+    filter-key="tags"
+    filter-value="6115b5f5442fe32fc88700a6"></div>
+<div
+    id="elements"
+    class="components display:none active"
+    array="tags"
+    object
+    filter-key="module_id"
+    filter-value="5ff747727005da1c27274194"
+    filter-sort-key="position"
+    filter-sort-direction="asc"
+    render-selector=":last-child">
+    <!-- Block Categories Template -->
+    <div
+        template
+        render-as="tag"
+        object="{{tag._id}}"
+        class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+        <div
+            class="padding:5px display:flex align-items:center justify-content:space-between"
+            toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+            toggle-attribute="src"
+            toggle-selector="i"
+            click-attribute="hidden"
+            click-value=""
+            click-parent="[render-selector]">
+            <span>{{tag.name}}</span>
+            <i class="display:flex" src="../../../assets/svg/plus.svg"></i>
+        </div>
+        <!-- Blocks  -->
+        <div
+            class="display:flex flex-wrap:wrap justify-content:center gap:10px text-align:center"
+            array="blocks"
+            object
+            filter-key="category"
+            filter-value="{{tag._id}}"
+            filter-sort-key="position"
+            filter-sort-direction="asc"
+            render-selector=":last-child">
+            <!-- Blocks Template -->
+            <div
+                template
+                render-as="block"
+                class="card position:relative flex-grow:1 width:70px height:75px padding:5px"
+                hover-selector=":first-child"
+                hover-attribute="hidden"
+                hover-value=""
+                object="{{block._id}}">
+                <div
+                    class="position:absolute top:8px right:8px font-size:11px"
+                    hidden>
+                    <a
+                        actions="state, openModal"
+                        modal-src="../blocks/form.html"
+                        state-array="{{block.array}}"
+                        state-object="{{block._id}}"
+                        state_to="form-fields"
+                        modal-width="320px">
+                        <i src="../../../assets/svg/pencil-alt.svg"></i>
+                    </a>
+                </div>
+                <div cloneable="true" class="height:65px padding:5px">
+                    <cloneable-html>{{block.html}}</cloneable-html>
+                    <i value-type="html">{{block.icon}}</i>
+                    <p class="font-size:11px">{{block.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Component Categories -->
+<div
+    filter-next
+    filter-key="tags"
+    filter-value="6200378ea8b6b4001ae57821"></div>
+<div
+    id="components"
+    class="components display:none"
+    array="tags"
+    object
+    filter-key="module_id"
+    filter-value="5ff747727005da1c27274194"
+    filter-sort-key="position"
+    filter-sort-direction="asc"
+    render-selector=":last-child">
+    <!-- Components Categories Template -->
+    <div
+        template
+        render-as="tag"
+        object="{{tag._id}}"
+        class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+        <div
+            class="padding:5px display:flex align-items:center justify-content:space-between"
+            toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+            toggle-attribute="src"
+            toggle-selector="i">
+            <span>{{tag.name}}</span>
+            <i class="display:flex" src="../../../assets/svg/plus.svg"></i>
+        </div>
+        <!-- Components -->
+        <div
+            class="display:flex flex-wrap:wrap justify-content:center gap:10px text-align:center"
+            array="blocks"
+            object
+            filter-key="category"
+            filter-value="{{tag._id}}"
+            filter-sort-key="position"
+            filter-sort-direction="asc"
+            render-selector="[template]">
+            <!-- Components Template -->
+            <div
+                template
+                render-as="component"
+                class="card position:relative flex-grow:1 width:70px height:125px padding:5px"
+                hover-selector=":first-child"
+                hover-attribute="hidden"
+                hover-value="">
+                <div
+                    class="position:absolute top:8px right:8px font-size:11px"
+                    hidden>
+                    <a
+                        actions="state, openModal"
+                        modal-src="../blocks/form.html"
+                        state-array="{{component.array}}"
+                        state-object="{{component._id}}"
+                        state_to="form-fields"
+                        modal-width="320px">
+                        <i src="../../../assets/svg/pencil-alt.svg"></i>
+                    </a>
+                </div>
+                <div
+                    cloneable="true"
+                    cloneable-html="{{component.html}}"
+                    class="height:115px padding:5px">
+                    <i value-type="html">{{component.icon}}</i>
+                    <p class="font-size:11px">{{component.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

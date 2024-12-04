@@ -1,0 +1,824 @@
+<!-- State -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			State
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				attribute="state_to"
+				type="text"
+				class="floating-label"
+				placeholder="state_to"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="state_id"
+				type="text"
+				class="floating-label"
+				placeholder="state_id"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<cocreate-select
+				class="floating-label"
+				placeholder="state-array:"
+				attribute="state-array"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="true"><span>true</span></cc-option>
+					<cc-option value="false"><span>false</span></cc-option>
+				</ul>
+			</cocreate-select>
+			<cocreate-select
+				class="floating-label"
+				placeholder="state-object:"
+				attribute="state-object"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="true"><span>true</span></cc-option>
+					<cc-option value="false"><span>false</span></cc-option>
+				</ul>
+			</cocreate-select>
+			<div class="display:flex gap:10px">
+				<div class="width:50% margin-right:5px">
+					<input
+						attribute="state-prefix"
+						type="text"
+						class="floating-label"
+						placeholder="state-prefix"
+						id="state-prefix"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+				</div>
+				<div class="width:50% margin-left:5px">
+					<input
+						attribute="state-name"
+						type="text"
+						class="floating-label"
+						placeholder="state-name"
+						id="state-name"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+				</div>
+			</div>
+
+			<input
+				attribute="state-value"
+				type="text"
+				class="floating-label"
+				placeholder="state-value"
+				id="state-value"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<cocreate-select
+				class="floating-label"
+				id="state-fetch_object"
+				placeholder="state-fetch_object:"
+				attribute="state-fetch_object"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="true"><span>true</span></cc-option>
+					<cc-option value="false"><span>false</span></cc-option>
+				</ul>
+			</cocreate-select>
+			<input
+				attribute="state-filter-key"
+				type="text"
+				class="floating-label"
+				placeholder="state-filter-key"
+				id="state-filter-key"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="state-filter-value"
+				type="text"
+				class="floating-label"
+				placeholder="state-filter-value"
+				id="state-filter-value"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<cocreate-select
+				class="floating-label"
+				id="state-overwrite"
+				placeholder="state-overwrite"
+				attribute="state-overwrite"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active>
+				<ul class="options z-index:7 margin-top:5px">
+					<cc-option value=""><span>none</span></cc-option>
+					<cc-option value="true"><span>true</span></cc-option>
+					<cc-option value="false"><span>false</span></cc-option>
+				</ul>
+			</cocreate-select>
+		</div>
+	</div>
+</div>
+
+<!-- Conditional Logic -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Conditional Logic
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				attribute="show"
+				type="text"
+				class="floating-label"
+				placeholder="show"
+				id="show"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="hide"
+				type="text"
+				class="floating-label"
+				placeholder="hide"
+				id="hide"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Selected -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Selected
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				attribute="selected-value"
+				type="text"
+				class="floating-label"
+				placeholder="selected-value"
+				id="selected-value"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="selected-attribute"
+				type="text"
+				class="floating-label"
+				placeholder="selected-attribute"
+				id="selected-attribute"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="selected-selector"
+				type="text"
+				class="floating-label"
+				placeholder="selected-selector"
+				id="selected-selector"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="selected-closest"
+				type="text"
+				class="floating-label"
+				placeholder="selected-closest"
+				id="selected-closest"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="selected-group"
+				type="text"
+				class="floating-label"
+				placeholder="selected-group"
+				id="selected-group"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Toggle -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Toggle
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				attribute="toggle"
+				type="text"
+				class="floating-label"
+				placeholder="toggle"
+				id="toggle"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="toggle-attribute"
+				type="text"
+				class="floating-label"
+				placeholder="toggle-attribute"
+				id="toggle-attribute"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="toggle-selector"
+				type="text"
+				class="floating-label"
+				placeholder="toggle-selector"
+				id="toggle-selector"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="toggle-closest"
+				type="text"
+				class="floating-label"
+				placeholder="toggle-closest"
+				id="toggle-closest"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Hover -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Hover
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				type="text"
+				class="floating-label"
+				attribute="hover"
+				placeholder="hover"
+				id="hover"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="hover-attribute"
+				class="floating-label"
+				placeholder="hover-attribute"
+				id="hover-attribute"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="hover-selector"
+				class="floating-label"
+				placeholder="hover-selector"
+				id="hover-selector"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="hover-closest"
+				class="floating-label"
+				placeholder="hover-closest"
+				id="hover-closest"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Scroll -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Scroll
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				type="text"
+				attribute="scroll"
+				class="floating-label"
+				placeholder="scroll"
+				id="scroll"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="scroll-attribute"
+				class="floating-label"
+				placeholder="scroll-attribute"
+				id="scroll-attribute"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="scroll-selector"
+				class="floating-label"
+				placeholder="scroll-selector"
+				id="scroll-selector"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="scroll-closest"
+				class="floating-label"
+				placeholder="scroll-closest"
+				id="scroll-closest"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<input
+						id="scroll-up"
+						class="floating-label z-index:0"
+						placeholder="scroll-up"
+						attribute="scroll-up"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="scroll-up-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#scroll-up">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+				<floating-label class="width:50%">
+					<input
+						id="scroll-down"
+						class="floating-label z-index:0"
+						placeholder="scroll-down:"
+						attribute="scroll-down"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active />
+					<div
+						class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+						<cocreate-select
+							id="scroll-down-unit"
+							class="styleunit remove-none border:none padding:0 min-height:24px!important"
+							state_id="builder"
+							array=""
+							object=""
+							crud="false"
+							save="false"
+							read="false"
+							attribute="attribute-unit"
+							attribute-selector="#scroll-down">
+							<ul
+								class="options overflow:auto padding:0px z-index:7"
+								array="modules"
+								filter-value="5ff747727005da1c27274193"
+								filter-key="_id"
+								filter-operator="$eq"
+								key="units"
+								render-selector=":last-child">
+								<cc-option
+									class="margin:0px padding:3px border-radius:4px"
+									template
+									value="{{units}}">
+									<span value="{{units}}">{{units}}</span>
+								</cc-option>
+							</ul>
+						</cocreate-select>
+					</div>
+				</floating-label>
+			</div>
+			<floating-label>
+				<input
+					id="scroll-position"
+					attribute="scroll-position"
+					class="floating-label z-index:0"
+					placeholder="scroll-position:"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active />
+				<div
+					class="position:absolute width:40px top:8px right:8px float:right cursor:pointer">
+					<cocreate-select
+						id="scroll-position-unit"
+						class="styleunit remove-none border:none padding:0 min-height:24px!important"
+						state_id="builder"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						attribute="attribute-unit"
+						attribute-selector="#scroll-position">
+						<ul class="options z-index:7">
+							<cc-option value="px"
+								><span class="margin:auto">px</span></cc-option
+							>
+							<cc-option value="%"
+								><span class="margin:auto">%</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</div>
+			</floating-label>
+			<input
+				type="text"
+				attribute="scroll-top"
+				class="floating-label"
+				placeholder="scroll-top"
+				id="scroll-top"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="scroll-bottom"
+				class="floating-label"
+				placeholder="scroll-bottom"
+				id="scroll-bottomn"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="scrolling"
+				class="floating-label"
+				placeholder="scrolling"
+				id="scrolling"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				type="text"
+				attribute="scroll-intersect"
+				class="floating-label"
+				placeholder="scroll-intersect"
+				id="scroll-intersect"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Clone -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Clone
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				attribute="clone_id"
+				type="text"
+				class="floating-label"
+				placeholder="clone_id"
+				id="clone_id"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>
+
+<!-- Calculate -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Calculate
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				attribute="calculate"
+				type="text"
+				class="floating-label"
+				placeholder="calculate"
+				id="calculate"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>

@@ -13,7 +13,7 @@
 							<input
 								type="text"
 								filter-selector="document; tbody[render-selector]"
-								filter-key="firstname"
+								filter-query-key="firstname"
 								filter-operator="$regex"
 								filter-regex-flag="i"
 								state_id="datatable"
@@ -39,7 +39,7 @@
 							<input
 								type="text"
 								filter-selector="document; tbody[render-selector]"
-								filter-key="amount"
+								filter-query-key="amount"
 								state_id="datatable"
 								placeholder="Amount"
 								class="floating-label" />
@@ -63,7 +63,7 @@
 							<input
 								type="text"
 								filter-selector="document; tbody[render-selector]"
-								filter-key="_id"
+								filter-query-key="_id"
 								filter-operator="$regex"
 								filter-regex-flag="i"
 								state_id="datatable"
@@ -88,6 +88,9 @@
 			</tbody>
 
 			<tbody
+				state_id="adminOrg"
+				organization_id=""
+				host=""
 				array="payments"
 				object
 				filter-sort-key="name"

@@ -18,11 +18,16 @@
 	resize-selector="document; [menu-icon][]"></div>
 
 <div class="header">
+	<style>
+		.org-toggle [src="../../assets/svg/building.svg"]:first-child {
+			padding: 5px;
+		}
+	</style>
 	<form
 		class="org-toggle display:flex align-items:center gap:5px height:70px"
 		array="organizations"
 		object=""
-		state_id="currentOrg">
+		state_id="accountOrg">
 		<img
 			class="height:50px position:relative"
 			src=""
@@ -58,10 +63,12 @@
 
 		<div
 			template
-			class="display:flex align-items:center gap:11px height:50px cursor:pointer font-size:20px font-weight:bold padding:10px"
-			state_to="currentOrg"
+			class="display:flex align-items:center gap:11px height:50px cursor:pointer font-weight:bold padding:10px"
+			state_to="accountOrg"
 			state-object="{{object._id}}"
 			state-src="{{object.logo[0].src}}"
+			state-organization_id="{{object._id}}"
+			state-host
 			state-overwrite>
 			<img
 				class="org-logo height:30px"
@@ -72,17 +79,42 @@
 				alt="Logo" />
 
 			<span>{{object.name}}</span>
+			<div
+				filter-query-key="host.name"
+				filter-operator="$regex"
+				filter-query-value="^dev\."
+				filter-key="host.$"
+				filter-value="1"
+				filter-next></div>
+
+			<input
+				array="organizations"
+				object="{{object._id}}"
+				key="host[0].name"
+				input-attribute="state-host"
+				input-parent
+				input-next
+				hidden />
+			<div
+				state_to="adminOrg"
+				state-host
+				state-organization_id="{{object._id}}"
+				state-overwrite></div>
 		</div>
 
 		<div
-			class="display:flex align-items:center gap:11px height:50px cursor:pointer font-size:20px font-weight:bold padding:10px"
+			class="display:flex align-items:center gap:11px width:100% height:50px cursor:pointer font-weight:bold white-space:nowrap overflow:hidden"
 			state_to="main"
 			state-src="./organizations/create.html"
-			state-overwrite>
+			state-overwrite
+			click-closest="sidenav"
+			click-attribute="style"
+			click-value="width:0px"
+			click-if="<575px"
+			click-if-value="$innerWidth">
 			<span class="icon">
 				<i src="../assets/svg/plus.svg"></i>
 			</span>
-
 			<span>Create Organization</span>
 		</div>
 	</div>
@@ -104,7 +136,6 @@
 	class="overflow:auto display:flex flex-direction:column width:100% height:calc(100vh_-_110px)">
 	<menu id="account" session>
 		<!-- TODO: if no subscription click redirect to checkout -->
-
 		<h3>Account</h3>
 		<li
 			click-closest="sidenav"
@@ -112,11 +143,11 @@
 			click-value="width:0px"
 			click-if="<575px"
 			click-if-value="$innerWidth">
-			<a actions="state" state-src="./admin" state_to="main">
+			<a actions="state" state-src="./profile/index.html" state_to="main">
 				<span class="icon">
-					<i src="../assets/svg/city.svg"></i>
+					<i src="../assets/svg/user.svg"></i>
 				</span>
-				<span>Admin</span>
+				<span>Profile</span>
 			</a>
 		</li>
 		<li
@@ -158,7 +189,7 @@
 			click-value="width:0px"
 			click-if="<575px"
 			click-if-value="$innerWidth">
-			<a actions="state" state-src="./usage/index.html" state_to="main">
+			<a actions="state" state-src="./coming-soon.html" state_to="main">
 				<span class="icon">
 					<i src="../assets/svg/chart-line.svg"></i>
 				</span>
@@ -171,7 +202,7 @@
 			click-value="width:0px"
 			click-if="<575px"
 			click-if-value="$innerWidth">
-			<a actions="state" state-src="./billing/index.html" state_to="main">
+			<a actions="state" state-src="./coming-soon.html" state_to="main">
 				<span class="icon">
 					<i src="../assets/svg/credit-card.svg"></i>
 				</span>
@@ -451,14 +482,18 @@
 			click-value="width:0px"
 			click-if="<575px"
 			click-if-value="$innerWidth">
-			<a
-				actions="state"
-				state_to="main"
-				state-src="../admin/social/datatable.html">
+			<a actions="state" state_to="main" state-src="./coming-soon.html">
 				<span class="icon">
 					<i src="../assets/svg/share-from-square.svg"></i>
 				</span>
 				<span>Social Posts</span>
+			</a>
+			<a
+				actions="state"
+				state_to="main"
+				state-src="../admin/social-post/form.html"
+				class="display:flex justify-content:center align-items:center height:40px width:50px">
+				<i src="../assets/svg/plus.svg"></i>
 			</a>
 		</li>
 
@@ -472,11 +507,18 @@
 			<a
 				actions="state"
 				state_to="main"
-				state-src="../admin/emails/datatable.html">
+				state-src="../admin/email-campaigns/datatable.html">
 				<span class="icon">
 					<i src="../assets/svg/envelope.svg"></i>
 				</span>
 				<span>Email Campaigns</span>
+			</a>
+			<a
+				actions="state"
+				state_to="main"
+				state-src="../admin/email-campaigns/form.html"
+				class="display:flex justify-content:center align-items:center height:40px width:50px">
+				<i src="../assets/svg/plus.svg"></i>
 			</a>
 		</li>
 

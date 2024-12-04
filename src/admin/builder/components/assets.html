@@ -1,0 +1,107 @@
+<style>
+    [image-type*="image"] {
+        display: block !important;
+    }
+
+    [video-type*="video"] {
+        display: block !important;
+    }
+</style>
+
+<!-- Search Assets-->
+<floating-label>
+    <input
+        type="text"
+        class="floating-label"
+        filter-parent="next;"
+        filter-key="pathname"
+        filter-operator="$regex"
+        filter-regex-flag="i" />
+    <span
+        class="position:relative bottom:22px right:14px float:right font-size:18px">
+        <i src="../../../assets/svg/search.svg"></i>
+    </span>
+</floating-label>
+
+<!-- Assets -->
+<div
+    id="fetch-assets"
+    class="display:flex flex-wrap:wrap justify-content:center gap:10px width:100% text-align:center padding-bottom:20px"
+    array
+    object
+    filter-key="content-type"
+    filter-value="^image|video"
+    filter-operator="$regex"
+    filter-regex-flag="i"
+    filter-sort-key="pathname"
+    filter-sort-direction="asc"
+    render-selector="[template]">
+    <!-- Asset Template -->
+    <div
+        template
+        render="object"
+        class="card position:relative flex-grow:1 width:105px height:90px padding:5px"
+        hover-selector=":first-child"
+        hover-attribute="hidden"
+        hover-value="">
+        <div class="position:absolute top:8px right:8px font-size:11px" hidden>
+            <a
+                actions="state, openModal"
+                modal-src="https://server.cocreate.app/CoCreate-plugins/CoCreate-tui-image-editor/demo/index.html"
+                state-array="files"
+                state-object="{{object._id}}"
+                state_to="form-fields"
+                modal-width="900px">
+                <i src="../../../assets/svg/pencil-alt.svg"></i>
+            </a>
+            <a
+                id="delete"
+                actions="delete"
+                array="files"
+                object="{{object._id}}"
+                class="position:absolute">
+                <i src="../../../assets/svg/trash-alt.svg"></i>
+            </a>
+        </div>
+        <div
+            id="editassets{{object._id}}"
+            class="position:absolute top:8px right:8px font-size:11px display:none"></div>
+        <a
+            actions="attributes"
+            attribute="src"
+            value="{{object.pathname}}"
+            attribute-selector="iframe;">
+            <!-- image -->
+            <div
+                cloneable="true"
+                cloneable-html="<img src='{{object.pathname}}'>"
+                class="padding:5px display:none position:relative"
+                image-type="{{object.content-type}}">
+                <img
+                    width="auto"
+                    height="auto"
+                    src="{{object.pathname}}"
+                    class="max-height:65px max-width:100%" />
+            </div>
+            <!-- Video -->
+            <div
+                cloneable="true"
+                cloneable-html="<video><source src='{{object.pathname}}'></video>"
+                class="padding:5px display:none"
+                video-type="{{object.content-type}}">
+                <video
+                    width="auto"
+                    height="auto"
+                    class="max-height:65px max-width:100%">
+                    <source
+                        array="files"
+                        object="{{object._id}}"
+                        key="path"
+                        src="{{object.pathname}}"
+                        type="{{object.content-type}}" />
+                </video>
+            </div>
+        </a>
+    </div>
+    <div filter-on="scroll" filter-parent class="width:100%">test</div>
+</div>

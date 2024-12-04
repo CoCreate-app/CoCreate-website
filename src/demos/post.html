@@ -195,8 +195,8 @@
 							array="comments"
 							object
 							key="$length"
-							filter-key="post_id"
-							filter-value="{{object._id}}"
+							filter-query-key="post_id"
+							filter-query-value="{{object._id}}"
 							>0</span
 						>
 					</a>
@@ -293,8 +293,8 @@
 				<div
 					class="display:flex margin:20px_0px padding:0_20px gap:5px">
 					<div
-						filter-key="likes"
-						filter-value="$user_id"
+						filter-query-key="likes"
+						filter-query-value="$user_id"
 						filter-next></div>
 					<input
 						type="hidden"
@@ -305,8 +305,8 @@
 						input-attribute="liked" />
 
 					<div
-						filter-key="dislikes"
-						filter-value="$user_id"
+						filter-query-key="dislikes"
+						filter-query-value="$user_id"
 						filter-next></div>
 					<input
 						type="hidden"
@@ -397,8 +397,8 @@
 				<input
 					type="hidden"
 					filter-next
-					filter-key="post_id"
-					filter-value="{{object._id}}" />
+					filter-query-key="post_id"
+					filter-query-value="{{object._id}}" />
 				<div
 					id="comments"
 					class="padding:0_20px margin-bottom:20px margin-top:20px width:100%"
@@ -455,8 +455,8 @@
 										array="comments"
 										object="{{comment._id}}"
 										key="likes"
-										filter-key="likes"
-										filter-value="$user_id"
+										filter-query-key="likes"
+										filter-query-value="$user_id"
 										input-parent
 										input-attribute="liked" />
 									<input
@@ -464,8 +464,8 @@
 										array="comments"
 										object="{{comment._id}}"
 										key="dislikes"
-										filter-key="dislikes"
-										filter-value="$user_id"
+										filter-query-key="dislikes"
+										filter-query-value="$user_id"
 										input-parent
 										input-attribute="disliked" />
 

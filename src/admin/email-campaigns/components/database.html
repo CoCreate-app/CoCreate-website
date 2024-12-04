@@ -1,0 +1,439 @@
+<!-- DataBase -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Database
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<cocreate-select
+						class="floating-label"
+						id="realtime"
+						placeholder="realtime:"
+						attribute="realtime"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active>
+						<ul
+							class="options z-index:7 margin-top:5px"
+							search_id="search_01">
+							<cc-option value=""><span>none</span></cc-option>
+							<cc-option value="true"
+								><span>true</span></cc-option
+							>
+							<cc-option value="false"
+								><span>false</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</floating-label>
+				<floating-label class="width:50%">
+					<cocreate-select
+						class="floating-label"
+						id="cursors"
+						placeholder="cursors:"
+						attribute="cursors"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active>
+						<ul class="options z-index:7 margin-top:5px">
+							<cc-option value=""><span>none</span></cc-option>
+							<cc-option value="true"
+								><span>true</span></cc-option
+							>
+							<cc-option value="false"
+								><span>false</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</floating-label>
+			</div>
+			<div class="">
+				<cocreate-select
+					class="floating-label"
+					id="array"
+					placeholder="array:"
+					attribute="array"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					change
+					change-selector="#object"
+					change-attribute="array"
+					active>
+					<ul
+						array
+						render-selector=":last-child"
+						class="options z-index:7 margin-top:5px">
+						<cc-option
+							class="option"
+							template
+							value="{{array.name}}">
+							<span>{{array.name}}</span>
+						</cc-option>
+					</ul>
+				</cocreate-select>
+			</div>
+			<div class="">
+				<cocreate-select
+					class="floating-label"
+					id="object"
+					placeholder="object:"
+					attribute="object"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active>
+					<ul
+						array=""
+						render-selector=":last-child"
+						class="options z-index:7 margin-top:5px">
+						<cc-option
+							class="option template"
+							template
+							value="{{object._id}}">
+							<span>{{object._id}}</span>
+						</cc-option>
+					</ul>
+				</cocreate-select>
+			</div>
+			<div class="">
+				<input
+					attribute="key"
+					type="text"
+					class="floating-label"
+					placeholder="key"
+					id="key"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active />
+			</div>
+			<div class="">
+				<textarea
+					attribute="value"
+					type="text"
+					class="floating-label"
+					placeholder="value"
+					id="value"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active></textarea>
+			</div>
+			<div class="">
+				<input
+					attribute="value-prefix"
+					type="text"
+					class="floating-label"
+					placeholder="value-prefix"
+					id="value-prefix"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active />
+			</div>
+			<div class="">
+				<input
+					attribute="value-suffix"
+					type="text"
+					class="floating-label"
+					placeholder="value-suffix"
+					id="value-suffix"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active />
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<cocreate-select
+						class="floating-label"
+						id="read"
+						placeholder="read:"
+						attribute="read"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active>
+						<ul class="options z-index:7 margin-top:5px">
+							<cc-option value=""><span>none</span></cc-option>
+							<cc-option value="true"
+								><span>true</span></cc-option
+							>
+							<cc-option value="false"
+								><span>false</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</floating-label>
+				<floating-label class="width:50%">
+					<cocreate-select
+						class="floating-label"
+						id="save"
+						placeholder="save:"
+						attribute="save"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active>
+						<ul class="options z-index:7 margin-top:5px">
+							<cc-option value=""><span>none</span></cc-option>
+							<cc-option value="true"
+								><span>true</span></cc-option
+							>
+							<cc-option value="false"
+								><span>false</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</floating-label>
+			</div>
+			<div class="display:flex gap:10px">
+				<floating-label class="width:50%">
+					<cocreate-select
+						class="floating-label"
+						id="crud"
+						placeholder="crud:"
+						attribute="crud"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active>
+						<ul class="options z-index:7 margin-top:5px">
+							<cc-option value=""><span>none</span></cc-option>
+							<cc-option value="true"
+								><span>true</span></cc-option
+							>
+							<cc-option value="false"
+								><span>false</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</floating-label>
+				<div floating-label="width:50%">
+					<cocreate-select
+						class="floating-label"
+						id="crdt"
+						placeholder="crdt:"
+						attribute="crdt"
+						state_id="builder"
+						attribute-selector="iframe;"
+						array=""
+						object=""
+						crud="false"
+						save="false"
+						read="false"
+						active>
+						<ul class="options z-index:7 margin-top:5px">
+							<cc-option value=""><span>none</span></cc-option>
+							<cc-option value="true"
+								><span>true</span></cc-option
+							>
+							<cc-option value="false"
+								><span>false</span></cc-option
+							>
+						</ul>
+					</cocreate-select>
+				</div>
+			</div>
+			<div class="">
+				<cocreate-select
+					class="floating-label"
+					id="actions"
+					placeholder="actions:"
+					attribute="actions"
+					state_id="builder"
+					attribute-selector="iframe;"
+					array=""
+					object=""
+					crud="false"
+					save="false"
+					read="false"
+					active>
+					<ul class="options z-index:7 margin-top:5px">
+						<cc-option value=""><span>none</span></cc-option>
+						<cc-option value="true"><span>true</span></cc-option>
+						<cc-option value="false"><span>false</span></cc-option>
+					</ul>
+				</cocreate-select>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Filter -->
+<div
+	class="card display:flex flex-direction:column gap:10px padding:10px margin-bottom:10px">
+	<div
+		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
+		toggle-attribute="src"
+		toggle-selector=":scope > :first-child i"
+		click-attribute="hidden"
+		click-value=""
+		click-selector=":scope > :last-child">
+		<div
+			class="display:flex justify-content:space-between align-items:center width:100%">
+			Filter
+			<i src="../../../assets/svg/plus.svg"></i>
+		</div>
+		<div
+			class="display:flex flex-direction:column gap:15px width:100% padding-top:20px">
+			<input
+				attribute="filter-key"
+				type="text"
+				class="floating-label"
+				placeholder="filter-key"
+				id="filter-key"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="filter-value"
+				type="text"
+				class="floating-label"
+				placeholder="filter-value"
+				id="filter-value"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="filter-value-type"
+				type="text"
+				class="floating-label"
+				placeholder="filter-value-type"
+				id="filter-value-type"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="filter-operator"
+				type="text"
+				class="floating-label"
+				placeholder="filter-operator"
+				id="filter-operator"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="filter-sort-name"
+				type="text"
+				class="floating-label"
+				placeholder="filter-sort-name"
+				id="filter-sort-name"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="filter-sort-direction"
+				type="text"
+				class="floating-label"
+				placeholder="filter-sort-direction"
+				id="filter-sort-direction"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+			<input
+				attribute="template_id"
+				type="text"
+				class="floating-label"
+				placeholder="template_id"
+				id="template_id"
+				state_id="builder"
+				attribute-selector="iframe;"
+				array=""
+				object=""
+				crud="false"
+				save="false"
+				read="false"
+				active />
+		</div>
+	</div>
+</div>

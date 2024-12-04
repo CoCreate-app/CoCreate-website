@@ -68,19 +68,6 @@
 		<!-- Modal Viewport  -->
 		<div class="position:fixed margin-top:50px" id="modal-viewport"></div>
 
-		<input
-			class="margin-left:90px"
-			organization_id="652c8d62679eca03e0b116a7"
-			host="dev.yelloworacle.com"
-			array="organizations"
-			object="652c8d62679eca03e0b116a7"
-			key="host[0].name"
-			filter-query-key="host.name"
-			filter-operator="$regex"
-			filter-query-value="^dev\."
-			filter-key="host.$"
-			filter-value="^dev\." />
-
 		<!-- Main container  -->
 		<main
 			src="organizations/list.html"
@@ -118,8 +105,8 @@
 		<div
 			src="../components/ai-chat.html"
 			path="../"
-			filter-key="name"
-			filter-value="Sales Chat"
+			filter-query-key="name"
+			filter-query-value="Sales Chat"
 			filter-selector="#system-instructions"></div>
 
 		<script src="../dist/CoCreate.js"></script>

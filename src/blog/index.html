@@ -131,7 +131,7 @@
 					<input
 						type="text"
 						filter-selector="document; #blog-posts"
-						filter-key="title"
+						filter-query-key="title"
 						filter-operator="$regex"
 						filter-regex-flag="i"
 						state_id="datatable"
@@ -212,8 +212,8 @@
 											array="comments"
 											object
 											key="$length"
-											filter-key="post_id"
-											filter-value="{{object._id}}"
+											filter-query-key="post_id"
+											filter-query-value="{{object._id}}"
 											filter-limit
 											>0</span
 										>

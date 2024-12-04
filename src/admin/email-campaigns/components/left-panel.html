@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<div
+	class="width:100%"
+	resize-attribute="style"
+	resize-property="width"
+	resize-if="310px"
+	resize-closest="sidenav"></div>
+
+<div
+	class="width:100%"
+	resize-attribute="menu-icon"
+	resize-value="active"
+	resize-if="310px"
+	resize-selector="document; #btn-left"></div>
+
+<div
+	class="width:100%"
+	resize-attribute="menu-icon"
+	resize-value="false"
+	resize-if="0px"
+	resize-selector="document; #btn-left"></div>
+
+<div class="min-width:310px">
+	<div class="display:flex gap:10px padding:10px font-size:16px tabs">
+		<a
+			class="builder-tab-round"
+			selected-attribute="class"
+			selected-value="active"
+			selected-selector="document; #vdom"
+			selected-group="left-panels"
+			toggle="#canvas"
+			toggle-selector="document; #vdom"
+			toggle-attribute="vdom-selector">
+			<i src="../../../assets/svg/stream.svg"></i>
+		</a>
+		<a
+			class="builder-tab-round"
+			selected-attribute="class"
+			selected-value="active"
+			selected-selector="document; #assets"
+			selected-group="left-panels"
+			toggle="files"
+			toggle-selector="document; #fetch-assets"
+			toggle-attribute="array">
+			<i
+				class="height:16px"
+				src="../../../assets/svg/photo-video.svg"></i>
+		</a>
+		<a
+			class="builder-tab-round"
+			selected-attribute="class"
+			selected-value="active"
+			selected-selector="document; #files"
+			selected-group="left-panels"
+			click-selector="document; #fetch-files"
+			click-attribute="src"
+			click-value="../builder/components/filetree.html">
+			<i class="height:16px" src="../../../assets/svg/folder.svg"></i>
+		</a>
+		<a
+			class="builder-tab-round"
+			selected-attribute="class"
+			selected-value="active"
+			selected-selector="document; #uploader"
+			selected-group="left-panels">
+			<i
+				class="height:16px"
+				src="../../../assets/svg/cloud-upload-alt.svg"></i>
+		</a>
+		<a
+			class="builder-tab-round"
+			selected-attribute="class"
+			selected-value="active"
+			selected-selector="document; #blocks"
+			selected-group="left-panels">
+			<i class="height:16px" src="../../../assets/svg/th-large.svg"></i>
+		</a>
+		<a
+			class="builder-tab-round"
+			selected-attribute="class"
+			selected-value="active"
+			selected-selector="document; #ai"
+			selected-group="left-panels"
+			selected>
+			<i class="height:16px" src="../../../assets/svg/ai.svg"></i>
+		</a>
+	</div>
+
+	<div class="overflow:auto height:calc(100vh_-_60px)">
+		<!-- AI Web Developer -->
+		<div
+			id="ai"
+			class="left-panel display:none active"
+			path="../../../"
+			filter-key="name"
+			filter-value="Web Developer"
+			filter-selector="#system-instructions"
+			src="../../../components/ai.html"></div>
+
+		<!-- Blocks -->
+		<div
+			id="blocks"
+			class="left-panel display:none position:relative padding:0px_10px"
+			src="../builder/components/blocks.html"></div>
+
+		<!-- Vdom -->
+		<div
+			id="vdom"
+			vdom-selector=""
+			vdom-attribute="src"
+			vdom-attribute="src"
+			dnd-group-key="vdom"
+			class="left-panel display:none padding:0px_10px">
+			vdom
+		</div>
+
+		<!-- uploader -->
+		<div
+			id="uploader"
+			class="left-panel display:none padding:0px_10px"
+			src="../builder/components/uploader.html"></div>
+
+		<!-- Files -->
+		<div id="files" class="left-panel display:none padding:0px_10px">
+			<!-- File Tree -->
+			<div class="padding:5px">
+				<span class=""
+					><i
+						src="../../../assets/svg/caret-down.svg"
+						toggle="../../../assets/svg/caret-right.svg, ../../../assets/svg/caret-down.svg"
+						toggle-attribute="src"></i
+				></span>
+				<span
+					class="margin-left:5px"
+					array="websites"
+					object=""
+					key="name"
+					>Project name</span
+				>
+				<div
+					id="fetch-files"
+					filter-key="path"
+					filter-value="/"
+					filter-operator="$eq"
+					filter-sort-key="name"
+					filter-sort-direction="asc"
+					filter-selector=":scope > div[]"></div>
+			</div>
+		</div>
+
+		<!-- Assets -->
+		<div
+			id="assets"
+			class="left-panel display:none padding:0px_10px"
+			src="../builder/components/assets.html"></div>
+	</div>
+</div>
