@@ -19,8 +19,11 @@
 
 <div class="header">
 	<style>
-		.org-toggle [src="../../assets/svg/building.svg"]:first-child {
+		/* .org-toggle [src="../../assets/svg/building.svg"]:first-child {
 			padding: 5px;
+		} */
+		.org-toggle img {
+			padding: 4px;
 		}
 	</style>
 	<form
@@ -94,6 +97,7 @@
 				input-attribute="state-host"
 				input-parent
 				input-next
+				value-replace="/\[\]/g"
 				hidden />
 			<div
 				state_to="adminOrg"
