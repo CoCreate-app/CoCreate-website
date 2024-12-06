@@ -69,6 +69,13 @@
 			<section
 				class="bg display:flex justify-content:center align-items:center width:100% min-height:100vh">
 				<div class="flex-grow:1 width:300px max-width:400px">
+					<input
+						type="hidden"
+						localstorage-get="user_id"
+						localstorage-if="true"
+						localstorage-next
+						localstorage-attribute="object" />
+
 					<form autocomplete="off" array="users" object="">
 						<!-- <input type="hidden" localstorage-get="user_id" input-attribute="object" input-selector="[array='users']">
 					    <input type="hidden" localstorage-get="organization_id" input-attribute="object" input-selector="[array='organizations']"> -->
@@ -87,7 +94,7 @@
 									id="fistName"
 									type="text"
 									key="firstname"
-									placeholder="First name"
+									placeholder="First Name"
 									autocomplete="off"
 									render-key="fistName"
 									required />
@@ -97,7 +104,7 @@
 									id="lastName"
 									type="text"
 									key="lastname"
-									placeholder="Last name"
+									placeholder="Last Name"
 									autocomplete="off"
 									render-key="lastName"
 									required />
@@ -121,6 +128,18 @@
 									autocomplete="new-password"
 									placeholder="Password"
 									required />
+								<a
+									actions="action(document; #generate-post)"
+									click-previous
+									click-attribute="type"
+									click-value="text, password"
+									class="floating-icon">
+									<i
+										click-attribute="src"
+										click-value="../assets/svg/eye-slash.svg, ../assets/svg/eye.svg"
+										src="../assets/svg/eye.svg"
+										class="width:20px height:20px"></i>
+								</a>
 							</floating-label>
 
 							<floating-label>
@@ -132,6 +151,18 @@
 									name="confirm-password"
 									autocomplete="new-password"
 									required />
+								<a
+									actions="action(document; #generate-post)"
+									click-previous
+									click-attribute="type"
+									click-value="text, password"
+									class="floating-icon">
+									<i
+										click-attribute="src"
+										click-value="../assets/svg/eye-slash.svg, ../assets/svg/eye.svg"
+										src="../assets/svg/eye.svg"
+										class="width:20px height:20px"></i>
+								</a>
 							</floating-label>
 
 							<button
