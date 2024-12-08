@@ -71,15 +71,22 @@
 				<div class="flex-grow:1 width:300px max-width:400px">
 					<input
 						type="hidden"
-						localstorage-get="user_id"
-						localstorage-if="true"
-						localstorage-next
-						localstorage-attribute="object" />
-
-					<form autocomplete="off" array="users" object="">
-						<!-- <input type="hidden" localstorage-get="user_id" input-attribute="object" input-selector="[array='users']">
-					    <input type="hidden" localstorage-get="organization_id" input-attribute="object" input-selector="[array='organizations']"> -->
-
+						array="users"
+						object="$user_id"
+						key="_id"
+						input-next
+						input-if="false"
+						input-attribute="$click"
+						value-dispatch />
+					<div
+						click-attribute="object"
+						click-next
+						click-value="$user_id"></div>
+					<form
+						autocomplete="off"
+						array="users"
+						object=""
+						upsert="true">
 						<div
 							class="display:flex justify-content:space-between padding:20px background:white background:#222@dark">
 							<h3>Sign Up</h3>
@@ -168,7 +175,10 @@
 							<button
 								type="button"
 								actions="validate, signUp, signIn"
-								href="./index.html">
+								href="./index.html"
+								state-src="./organization/create.html"
+								state-path="./usage/"
+								state_to="main">
 								Launch
 							</button>
 							<a href="./signin.html">Have an account?</a>
@@ -181,7 +191,7 @@
 		<div class="position:fixed!important bottom:15px right:15px">
 			<div
 				template="validate, signUp"
-				class="card position:relative margin-top:10px padding:15px {{status}}">
+				class="card position:relative margin-top:10px padding:20px {{status}}">
 				<span class="{{type}}">{{message}}</span>
 				<a actions="remove" class="position:absolute top:4px right:4px">
 					<i src="../assets/svg/times.svg"></i>
