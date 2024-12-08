@@ -172,11 +172,9 @@
 								id="path"
 								name="path"
 								value="/password-reset.html" />
-							<div>
-								<button actions="validate, forgotPassword">
-									Send Email
-								</button>
-							</div>
+							<button actions="validate, forgotPassword">
+								Send Email
+							</button>
 
 							<a show="#signin" hide="#forgotpass">Sign In</a>
 						</div>
@@ -188,7 +186,7 @@
 		<div class="position:fixed!important bottom:15px right:15px">
 			<div
 				template="validate, signIn, forgotPassword"
-				class="card position:relative margin-top:10px padding:15px {{status}}">
+				class="card position:relative margin-top:10px padding:20px {{status}}">
 				<span class="{{type}}">{{message}}</span>
 				<!-- <a
 					onload-action="click"
