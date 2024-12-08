@@ -14,52 +14,64 @@
 				type="text"
 				key="_id"
 				placeholder="Existing organization_id (optional)"
-				class="floating-label" />
+				class="floating-label"
+				input-attribute="state-object"
+				input-closest="section #setObject" />
 		</floating-label>
 
 		<floating-label class="width:100%">
 			<input
 				type="text"
-				key="host"
-				value-type="array"
+				key="host[0].name"
 				placeholder="Domain"
 				value-suffix=".cocreate.app"
 				unique
 				subdomain
 				required
-				class="floating-label" />
+				class="floating-label"
+				input-attribute="state-host"
+				input-closest="section #setOrg" />
 			<div
 				class="position:absolute top:6px right:8px float:right padding:5px background:whitesmoke background:#222@dark">
 				<span>.cocreate.app</span>
 			</div>
 		</floating-label>
 
+		<input id="owner" type="hidden" key="owner" value="$user_id" />
 		<input
-			id="owner"
 			type="hidden"
-			key="owner"
-			localstorage-get="user_id"
-			localstorage-attribute="value" />
-		<div class="display:flex gap:20px width:100% margin-top:20px">
-			<button
-				actions="state"
-				state_to="main"
-				state-src="$back"
-				class="red margin-left:auto">
-				<i src="../assets/svg/ban.svg"></i>
-				<span class="margin-left:5px"> Cancel</span>
-			</button>
-			<button
-				actions="save, state"
-				state_to="main"
-				state-src="./organization/update.html">
-				<i src="../assets/svg/save.svg"></i>
-				<span class="margin-left:5px"> Save</span>
-				<div
-					array="organizations"
-					state-object=""
-					state_to="accountOrg"></div>
-			</button>
-		</div>
+			key="_id"
+			input-attribute="state-organization_id"
+			input-closest="section #setOrg" />
 	</form>
+	<div class="display:flex gap:20px width:100% margin-top:40px">
+		<button
+			actions="state"
+			state_to="main"
+			state-src="$back"
+			class="red margin-left:auto">
+			<i src="../assets/svg/ban.svg"></i>
+			<span class="margin-left:5px"> Cancel</span>
+		</button>
+		<button
+			actions="click, timeout(1000), state"
+			click-attribute="$save"
+			click-closest="section form"
+			state_to="main"
+			state-src="./organization/update.html">
+			<i src="../assets/svg/save.svg"></i>
+			<span class="margin-left:5px"> Save</span>
+			<div
+				id="setObject"
+				state-object=""
+				state_to="accountOrg"
+				state-overwrite></div>
+			<div
+				id="setOrg"
+				state_to="adminOrg"
+				state-host
+				state-organization_id=""
+				state-overwrite></div>
+		</button>
+	</div>
 </section>
