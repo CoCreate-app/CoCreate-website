@@ -177,6 +177,10 @@ footer p {
 	display: none !important;
 }
 
+[template] {
+	display: none;
+}
+
 .show[selected] {
 	display: block !important;
 }
