@@ -28,6 +28,12 @@
 		[organization="false"] {
 			display: none;
 		}
+		[is-hidden="true"] {
+			display: none;
+		}
+		[is-hidden="false"] {
+			display: block;
+		}
 	</style>
 	<div class="display:flex align-items:center width:100% height:70px">
 		<div
@@ -82,8 +88,8 @@
 				src="../assets/svg/chevron-down.svg"
 				toggle="dropdown"
 				toggle-closest=".header .org-dropdown"
-				toggle-attribute="hidden"
-				toggle-value=""></i>
+				toggle-attribute="is-hidden"
+				toggle-value="true, false"></i>
 		</form>
 		<div
 			class="org-dropdown position:absolute top:70px height:calc(100vh_-_110px) width:100% background:whitesmoke background:#222@dark"
@@ -93,9 +99,9 @@
 			filter-sort-direction="asc"
 			filter-limit
 			render-selector="[template]"
-			click-attribute="hidden"
-			click-value=""
-			hidden>
+			click-attribute="is-hidden"
+			click-value="true"
+			is-hidden="true">
 			<div
 				class="orgs max-height:calc(100vh_-_160px) overflow-x:hidden overflow-y:auto">
 				<div
@@ -208,9 +214,9 @@
 				state-src="./organization/update.html"
 				state_to="main">
 				<span class="icon">
-					<i src="../assets/svg/city.svg"></i>
+					<i src="../assets/svg/building.svg"></i>
 				</span>
-				<span class="name">Organization</span>
+				<span class="name">Settings</span>
 			</a>
 		</li>
 		<li
@@ -293,7 +299,7 @@
 				state_to="main"
 				state-src="../admin/organizations/datatable.html">
 				<span class="icon">
-					<i src="../assets/svg/people-roof.svg"></i>
+					<i src="../assets/svg/city.svg"></i>
 				</span>
 				<span class="name">Organizations</span>
 			</a>
@@ -345,7 +351,7 @@
 			<a
 				actions="state"
 				state_to="main"
-				state-src="../admin/domains/datatable.html">
+				state-src="../admin/domains/index.html">
 				<span class="icon">
 					<i src="../assets/svg/domain.svg"></i>
 				</span>
@@ -363,7 +369,7 @@
 			<a
 				actions="state"
 				state_to="main"
-				state-src="../admin/databases/datatable.html">
+				state-src="../admin/databases/index.html">
 				<span class="icon">
 					<i src="../assets/svg/database.svg"></i>
 				</span>
@@ -387,6 +393,15 @@
 				</span>
 				<span class="name">Keys</span>
 			</a>
+			<div class="float:right width:50px text-align:center">
+				<a
+					actions="state"
+					state_to="main"
+					state-src="../admin/keys/form.html"
+					class="display:flex justify-content:center align-items:center height:40px">
+					<i src="../assets/svg/plus.svg"></i>
+				</a>
+			</div>
 		</li>
 
 		<!-- Users -->
@@ -459,6 +474,15 @@
 				</span>
 				<span class="name">Files</span>
 			</a>
+			<div class="float:right width:50px text-align:center">
+				<a
+					actions="state"
+					state_to="main"
+					state-src="../admin/files/form.html"
+					class="display:flex justify-content:center align-items:center height:40px">
+					<i src="../assets/svg/plus.svg"></i>
+				</a>
+			</div>
 		</li>
 
 		<!-- Builder -->
