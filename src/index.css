@@ -226,12 +226,12 @@ sidenav .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: gainsboro;
+	/* background: whitesmoke; */
 }
 
 sidenav ul h3 {
 	overflow: hidden;
-	margin: 50px 0px 5px 10px;
+	margin: 50px 0px 5px 0px;
 }
 
 sidenav ul li {
@@ -256,7 +256,11 @@ sidenav .icon {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-width: 51px;
+	min-width: 50px;
+}
+
+sidenav .name {
+	padding-left: 1px;
 }
 
 .avatar {
@@ -397,6 +401,7 @@ sidenav .icon {
 
 .pricing-table td {
 	background-color: #fafafa;
+	font-weight: 400;
 }
 
 .pricing-table tr:nth-child(even) td {
@@ -459,6 +464,11 @@ sidenav .icon {
 
 .datatable-container .header td:last-child {
 	padding-right: 0px;
+}
+
+.card {
+	background-color: whitesmoke;
+	/* border: 1px solid #333; */
 }
 
 .hide-preview .playground-preview {
@@ -528,10 +538,10 @@ sidenav .icon {
 		background-color: #222;
 	}
 
-	sidenav .header {
+	/* sidenav .header {
 		background-color: #222;
 	}
-
+ */
 	header {
 		background-color: #333;
 	}
