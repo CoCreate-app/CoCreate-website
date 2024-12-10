@@ -17,7 +17,7 @@
 	resize-if="0px"
 	resize-selector="document; [menu-icon][]"></div>
 
-<div class="header">
+<div class="header height:70px">
 	<style>
 		/* .org-toggle [src="../../assets/svg/building.svg"]:first-child {
 			padding: 5px;
@@ -25,88 +25,13 @@
 		.org-toggle img {
 			padding: 4px;
 		}
+		[organization="false"] {
+			display: none;
+		}
 	</style>
-	<form
-		class="org-toggle display:flex align-items:center gap:5px height:70px"
-		array="organizations"
-		object=""
-		state_id="accountOrg">
-		<img
-			class="height:50px position:relative"
-			src=""
-			key="logo[0].src"
-			alt="Logo"
-			onerror="this.src='../../assets/svg/building.svg'" />
-
-		<span
-			class="org-name font-size:22px font-weight:bold"
-			key="name"></span>
-		<i
-			class="height:15px display:inline-block cursor:pointer"
-			src="../assets/svg/chevron-down.svg"
-			toggle="dropdown"
-			toggle-closest=".header #org-dropdown"
-			toggle-attribute="hidden"
-			toggle-value=""></i>
-	</form>
-
-	<div
-		id="org-dropdown"
-		class="display:flex flex-direction:column position:absolute top:70px width:100% overflow:auto height:calc(100vh_-_110px) background:white background:#222@dark border:1px-solid-#ccc border-radius:5px box-shadow"
-		array="organizations"
-		object
-		filter-sort-key="name"
-		filter-sort-direction="asc"
-		filter-limit
-		render-selector="[template]"
-		click-attribute="hidden"
-		click-value=""
-		hidden>
-		<!-- Logo -->
+	<div class="display:flex align-items:center width:100% height:70px">
 		<div
-			template
-			class="display:flex align-items:center gap:11px height:50px cursor:pointer font-weight:bold padding:10px"
-			state_to="accountOrg"
-			state-object="{{object._id}}"
-			state-src="{{object.logo[0].src}}"
-			state-organization_id="{{object._id}}"
-			state-host
-			state-overwrite>
-			<img
-				class="org-logo height:30px"
-				src="../../assets/svg/building.svg"
-				array="organizations"
-				object="{{object._id}}"
-				key="logo[0].src"
-				alt="Logo" />
-
-			<span>{{object.name}}</span>
-			<div
-				filter-query-key="host.name"
-				filter-operator="$regex"
-				filter-query-value="^$subdomain\."
-				filter-key="host.$"
-				filter-value="1"
-				filter-next></div>
-
-			<input
-				array="organizations"
-				object="{{object._id}}"
-				key="host[0].name"
-				input-attribute="state-host"
-				input-parent
-				input-next
-				value-replace="/\[\]/g"
-				hidden />
-			<div
-				state_to="adminOrg"
-				state-host
-				state-organization_id="{{object._id}}"
-				state-overwrite></div>
-		</div>
-
-		<div
-			class="display:flex align-items:center gap:11px width:100% height:50px cursor:pointer font-weight:bold white-space:nowrap overflow:hidden"
+			class="position:absolute display:flex align-items:center width:100% cursor:pointer font-weight:bold white-space:nowrap overflow:hidden"
 			state_to="main"
 			state-src="./organization/create.html"
 			state-overwrite
@@ -116,9 +41,122 @@
 			click-if="<575px"
 			click-if-value="$innerWidth">
 			<span class="icon">
-				<i src="../assets/svg/plus.svg"></i>
+				<button
+					class="round width:30px height:30px"
+					title="Create New Organization">
+					<i src="../assets/svg/plus.svg"></i>
+				</button>
 			</span>
-			<span>Create Organization</span>
+			<span class="name">Create Organization</span>
+		</div>
+
+		<form
+			class="org-toggle position:relative display:flex align-items:center gap:5px width:100% background:whitesmoke background:#222@dark"
+			array="organizations"
+			object=""
+			state_id="accountOrg"
+			organization="false">
+			<img
+				class="height:50px position:relative"
+				src="../../assets/svg/building.svg"
+				key="logo[0].src"
+				alt="Logo"
+				onerror="this.src='../../assets/svg/building.svg'" />
+
+			<span
+				class="org-name font-size:22px font-weight:bold"
+				key="name"
+				input-closest="form"
+				input-attribute="organization"
+				input-value="true">
+				<!-- <div onload-closest="form" onload-attribute="hidden"></div> -->
+				<div
+					observe-target=".org:not([template])"
+					observe-selector="document; .org:not([template])"
+					observe-attribute="$click"
+					hidden></div>
+			</span>
+
+			<i
+				class="height:15px display:inline-block cursor:pointer"
+				src="../assets/svg/chevron-down.svg"
+				toggle="dropdown"
+				toggle-closest=".header .org-dropdown"
+				toggle-attribute="hidden"
+				toggle-value=""></i>
+		</form>
+		<div
+			class="org-dropdown position:absolute top:70px height:calc(100vh_-_110px) width:100% background:whitesmoke background:#222@dark"
+			array="organizations"
+			object
+			filter-sort-key="name"
+			filter-sort-direction="asc"
+			filter-limit
+			render-selector="[template]"
+			hidden>
+			<div
+				class="orgs max-height:calc(100vh_-_160px) overflow-x:hidden overflow-y:auto">
+				<div
+					template
+					class="org display:flex align-items:center gap:11px height:50px cursor:pointer font-weight:bold padding:10px"
+					state_to="accountOrg"
+					state-object="{{object._id}}"
+					state-src="{{object.logo[0].src}}"
+					state-organization_id="{{object._id}}"
+					state-host
+					state-overwrite>
+					<img
+						class="org-logo height:30px"
+						src="../../assets/svg/building.svg"
+						array="organizations"
+						object="{{object._id}}"
+						key="logo[0].src"
+						alt="Logo" />
+
+					<span class="name">{{object.name}}</span>
+					<div
+						filter-query-key="host.name"
+						filter-operator="$regex"
+						filter-query-value="^$subdomain\."
+						filter-key="host.$"
+						filter-value="1"
+						filter-next></div>
+
+					<input
+						array="organizations"
+						object="{{object._id}}"
+						key="host[0].name"
+						input-attribute="state-host"
+						input-parent
+						input-next
+						value-replace="/\[\]/g"
+						hidden />
+					<div
+						state_to="adminOrg"
+						state-host
+						state-organization_id="{{object._id}}"
+						state-overwrite></div>
+				</div>
+			</div>
+			<div
+				class="display:flex align-items:center width:100% height:50px cursor:pointer font-weight:bold white-space:nowrap overflow:hidden"
+				state_to="main"
+				state-src="./organization/create.html"
+				state-overwrite
+				click-closest="sidenav"
+				click-attribute="style"
+				click-value="width:0px"
+				click-if="<575px"
+				click-if-value="$innerWidth">
+				<span class="icon">
+					<button
+						class="round width:30px height:30px"
+						title="Add New Item">
+						<i src="../assets/svg/plus.svg"></i>
+					</button>
+				</span>
+				<span class="name">Create Organization</span>
+			</div>
 		</div>
 	</div>
 
@@ -139,7 +177,11 @@
 	class="overflow:auto display:flex flex-direction:column width:100% height:calc(100vh_-_110px)">
 	<menu id="account" session>
 		<!-- TODO: if no subscription click redirect to checkout -->
-		<h3>Account</h3>
+		<h3 class="display:flex">
+			<span class="icon"> <i src="../assets/svg/ellipsis.svg"></i> </span
+			>Account
+		</h3>
+
 		<li
 			click-closest="sidenav"
 			click-attribute="style"
@@ -150,7 +192,7 @@
 				<span class="icon">
 					<i src="../assets/svg/user.svg"></i>
 				</span>
-				<span>Profile</span>
+				<span class="name">Profile</span>
 			</a>
 		</li>
 		<li
@@ -166,7 +208,7 @@
 				<span class="icon">
 					<i src="../assets/svg/city.svg"></i>
 				</span>
-				<span>Organization</span>
+				<span class="name">Organization</span>
 			</a>
 		</li>
 		<li
@@ -183,7 +225,7 @@
 				<span class="icon">
 					<i src="../assets/svg/users.svg"></i>
 				</span>
-				<span>Members</span>
+				<span class="name">Members</span>
 			</a>
 		</li>
 		<li
@@ -200,7 +242,7 @@
 				<span class="icon">
 					<i src="../assets/svg/chart-line.svg"></i>
 				</span>
-				<span>Usage</span>
+				<span class="name">Usage</span>
 			</a>
 		</li>
 		<li
@@ -217,7 +259,7 @@
 				<span class="icon">
 					<i src="../assets/svg/credit-card.svg"></i>
 				</span>
-				<span>Billing</span>
+				<span class="name">Billing</span>
 			</a>
 		</li>
 	</menu>
@@ -232,8 +274,11 @@
 			input-parent
 			input-attribute="admin"
 			input-value="true" />
-		<h3>Admin</h3>
 
+		<h3 class="display:flex">
+			<span class="icon"> <i src="../assets/svg/ellipsis.svg"></i> </span
+			>Admin
+		</h3>
 		<!-- Organizations -->
 		<li
 			click-closest="sidenav"
@@ -248,7 +293,7 @@
 				<span class="icon">
 					<i src="../assets/svg/people-roof.svg"></i>
 				</span>
-				<span>Organizations</span>
+				<span class="name">Organizations</span>
 			</a>
 			<div class="float:right width:50px text-align:center">
 				<a
@@ -271,13 +316,13 @@
 			<a
 				actions="state"
 				state_to="main"
-				state-src="../admin/servers/datatable.html">
+				state-src="../admin/servers/index.html">
 				<span class="icon">
 					<i src="../assets/svg/server.svg"></i>
 				</span>
-				<span>Servers</span>
+				<span class="name">Servers</span>
 			</a>
-			<div class="float:right width:50px text-align:center">
+			<!-- <div class="float:right width:50px text-align:center">
 				<a
 					actions="state"
 					state_to="main"
@@ -285,7 +330,7 @@
 					class="display:flex justify-content:center align-items:center height:40px">
 					<i src="../assets/svg/plus.svg"></i>
 				</a>
-			</div>
+			</div> -->
 		</li>
 
 		<!-- Domains -->
@@ -302,7 +347,7 @@
 				<span class="icon">
 					<i src="../assets/svg/domain.svg"></i>
 				</span>
-				<span>Domains</span>
+				<span class="name">Domains</span>
 			</a>
 		</li>
 
@@ -320,7 +365,7 @@
 				<span class="icon">
 					<i src="../assets/svg/database.svg"></i>
 				</span>
-				<span>Databases</span>
+				<span class="name">Databases</span>
 			</a>
 		</li>
 
@@ -338,7 +383,7 @@
 				<span class="icon">
 					<i src="../assets/svg/key.svg"></i>
 				</span>
-				<span>Keys</span>
+				<span class="name">Keys</span>
 			</a>
 		</li>
 
@@ -356,7 +401,7 @@
 				<span class="icon">
 					<i src="../assets/svg/users.svg"></i>
 				</span>
-				<span>Users</span>
+				<span class="name">Users</span>
 			</a>
 			<div class="float:right width:50px text-align:center">
 				<a
@@ -383,7 +428,7 @@
 				<span class="icon">
 					<i src="../assets/svg/money-bill-wave.svg"></i>
 				</span>
-				<span>Payments</span>
+				<span class="name">Payments</span>
 			</a>
 			<div class="float:right width:50px text-align:center">
 				<a
@@ -410,7 +455,7 @@
 				<span class="icon">
 					<i src="../assets/svg/folder.svg"></i>
 				</span>
-				<span>Files</span>
+				<span class="name">Files</span>
 			</a>
 		</li>
 
@@ -428,7 +473,7 @@
 				<span class="icon">
 					<i src="../assets/svg/object-group.svg"></i>
 				</span>
-				<span>Builder</span>
+				<span class="name">Builder</span>
 			</a>
 		</li>
 
@@ -446,7 +491,7 @@
 				<span class="icon">
 					<i src="../assets/svg/brain.svg"></i>
 				</span>
-				<span>AI</span>
+				<span class="name">AI</span>
 			</a>
 			<div class="float:right width:50px text-align:center">
 				<a
@@ -473,7 +518,7 @@
 				<span class="icon">
 					<i src="../assets/svg/blog.svg"></i>
 				</span>
-				<span>Blog Posts</span>
+				<span class="name">Blog Posts</span>
 			</a>
 			<div class="float:right width:50px text-align:center">
 				<a
@@ -497,7 +542,7 @@
 				<span class="icon">
 					<i src="../assets/svg/share-from-square.svg"></i>
 				</span>
-				<span>Social Posts</span>
+				<span class="name">Social Posts</span>
 			</a>
 			<a
 				actions="state"
@@ -522,7 +567,7 @@
 				<span class="icon">
 					<i src="../assets/svg/envelope.svg"></i>
 				</span>
-				<span>Email Campaigns</span>
+				<span class="name">Email Campaigns</span>
 			</a>
 			<a
 				actions="state"
@@ -547,7 +592,7 @@
 				<span class="icon">
 					<i src="../assets/svg/magnifying-glass.svg"></i>
 				</span>
-				<span>SEO</span>
+				<span class="name">SEO</span>
 			</a>
 		</li>
 	</menu>
@@ -560,7 +605,7 @@
 		<span class="display:flex justify-content:center min-width:50px">
 			<i src="../assets/svg/sign-out-alt.svg"></i>
 		</span>
-		<span>Sign Out</span>
+		<span class="name">Sign Out</span>
 	</a>
 </div>
 <div resize="right"></div>
