@@ -1,2 +1,134 @@
-<div src="./coming-soon.html"></div>
-<section class="centered"></section>
+<section class="centered">
+	<div
+		src="../components/datatable-toolbar.html"
+		path="../admin/organizations/form.html"
+		class="width:100%"></div>
+
+	<floating-label class="margin-top:10px margin-bottom:10px">
+		<select
+			type="text"
+			placeholder="Array"
+			input-selector="document; #databases"
+			input-attribute="array">
+			<option value="keys">keys</option>
+			<option value="organizations">organizations</option>
+		</select>
+	</floating-label>
+
+	<floating-label class="margin-top:10px margin-bottom:10px">
+		<input
+			type="text"
+			filter-selector="document; #databases"
+			filter-search
+			placeholder="Search" />
+
+		<span class="floating-icon">
+			<a
+				filter-selector="document; #blog-posts"
+				filter-sort-key="_id"
+				filter-sort-direction="asc"
+				click-value="desc, asc"
+				click-attribute="filter-sort-direction">
+				<i
+					toggle-attribute="src"
+					toggle-value="../assets/svg/sort-down.svg, ../assets/svg/sort-up.svg"
+					src="../assets/svg/sort.svg"></i>
+			</a>
+		</span>
+	</floating-label>
+
+	<!-- Fetch and Render Arrays -->
+	<div
+		id="databases"
+		class="display:flex flex-direction:column gap:15px"
+		array="keys"
+		object
+		filter-limit="10"
+		filter-sort-key="_id"
+		filter-sort-direction="desc"
+		render="object"
+		render-selector="[template]">
+		<div
+			class="card width:100% position:relative"
+			template
+			render-reference="false">
+			<textarea
+				type="code"
+				lang="json"
+				height="auto"
+				array="keys"
+				object="{{object._id}}"
+				key="{}"
+				reference="false"
+				line-numbers="true"
+				class="width:100% resize:vertical"
+				readonly>
+{{object}}</textarea
+			>
+			<div
+				class="display:flex align-items:center gap:10px position:absolute top:10px right:10px">
+				<a>
+					<i src="{{path}}assets/svg/clone.svg"></i>
+				</a>
+				<a
+					toggle-next
+					toggle-attribute="hidden"
+					toggle-value=""
+					click-closest=".card textarea"
+					click-attribute="readonly"
+					click-value="">
+					<i src="{{path}}assets/svg/edit.svg"></i>
+				</a>
+				<span hidden>
+					<a
+						toggle-closest=".code-container textarea"
+						toggle-attribute="readonly"
+						toggle-value=""
+						click-closest=".card textarea"
+						click-attribute="$save">
+						<i src="{{path}}assets/svg/save.svg"></i>
+					</a>
+					<a
+						toggle-closest=".card textarea"
+						toggle-attribute="readonly"
+						toggle-value=""
+						click-parent
+						click-attribute="hidden"
+						click-value="">
+						<i src="{{path}}assets/svg/ban.svg"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div
+		id="arrays"
+		array
+		filter-sort-key="name"
+		filter-sort-direction="asc"
+		render-selector="[template='arrays']"
+		filter>
+		<!-- Template -->
+		<li
+			template
+			class="line-height:40px height:40px overflow:hidden white-space:nowrap background:dodgerblue:hover"
+			hover="active">
+			<a
+				actions="state"
+				state-array="{{array.name}}"
+				state_to="array-view"
+				class="display:inline-block padding-left:15px">
+				<span>{{array.name}}</span>
+			</a>
+			<div class="float:right width:50px text-align:center">
+				<a
+					actions="deleteCollection"
+					array="{{array.name}}"
+					class="display:none">
+					<i class="height:18px" src="./assets/svg/trash.svg"></i>
+				</a>
+			</div>
+		</li>
+	</div>
+</section>
