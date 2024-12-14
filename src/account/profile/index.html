@@ -69,7 +69,11 @@
 				<i src="../assets/svg/ban.svg"></i>
 				<span class="margin-left:5px"> Cancel</span>
 			</button>
-			<button actions="save">
+			<button
+				actions="click, save, click, timeout(2000), click"
+				click-selector="i"
+				click-attribute="src"
+				click-value="../assets/svg/spinner.svg, ../assets/svg/check-circle.svg, ../assets/svg/save.svg">
 				<i src="../assets/svg/save.svg"></i>
 				<span class="margin-left:5px"> Save</span>
 			</button>
