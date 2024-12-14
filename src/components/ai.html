@@ -439,3 +439,20 @@
 	<!-- <div id="aiContent" component key="content"></div> -->
 	<a id="aiAction" actions="timeout(1000), save, reset"></a>
 </form>
+
+<!-- If no aiConversation execute -->
+<form array="aiConversations" object hidden>
+	<input key="user_id" value="$user_id" />
+	<input key="role" value="assistant" />
+	<span key="html"><p>Hello! How can I assist you today?</p></span>
+	<span key="content">Hello! How can I assist you today?</span>
+	<input
+		key="$length"
+		filter
+		filter-limit="1"
+		input-next
+		input-attribute="$click"
+		input-if="0"
+		save="false" />
+	<button actions="save"></button>
+</form>
