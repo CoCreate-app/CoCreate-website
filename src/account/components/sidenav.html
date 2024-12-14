@@ -57,11 +57,15 @@
 		</div>
 
 		<form
-			class="org-toggle position:relative display:flex align-items:center gap:5px width:100% background:whitesmoke background:#222@dark"
+			class="org-toggle position:relative display:flex align-items:center gap:5px width:100% background:whitesmoke background:#222@dark cursor:pointer"
 			array="organizations"
 			object=""
 			state_id="accountOrg"
-			organization="false">
+			organization="false"
+			toggle="dropdown"
+			toggle-closest=".header .org-dropdown"
+			toggle-attribute="is-hidden"
+			toggle-value="true, false">
 			<img
 				class="height:50px position:relative"
 				src="../../assets/svg/building.svg"
@@ -75,21 +79,17 @@
 				input-closest="form"
 				input-attribute="organization"
 				input-value="true">
-				<!-- <div onload-closest="form" onload-attribute="hidden"></div> -->
 				<div
 					observe-target=".org:not([template])"
 					observe-selector="document; .org:not([template])"
 					observe-attribute="$click"
+					observe-delay="2000"
 					hidden></div>
 			</span>
 
 			<i
-				class="height:15px display:inline-block cursor:pointer"
-				src="../assets/svg/chevron-down.svg"
-				toggle="dropdown"
-				toggle-closest=".header .org-dropdown"
-				toggle-attribute="is-hidden"
-				toggle-value="true, false"></i>
+				class="height:15px display:inline-block"
+				src="../assets/svg/chevron-down.svg"></i>
 		</form>
 		<div
 			class="org-dropdown position:absolute top:70px height:calc(100vh_-_110px) width:100% background:whitesmoke background:#222@dark"
@@ -112,7 +112,12 @@
 					state-src="{{object.logo[0].src}}"
 					state-organization_id="{{object._id}}"
 					state-host
-					state-overwrite>
+					state-overwrite
+					click-closest="sidenav"
+					click-attribute="style"
+					click-value="width:0px"
+					click-if="<575px"
+					click-if-value="$innerWidth">
 					<img
 						class="org-logo height:30px"
 						src="../../assets/svg/building.svg"
@@ -216,7 +221,7 @@
 				<span class="icon">
 					<i src="../assets/svg/building.svg"></i>
 				</span>
-				<span class="name">Settings</span>
+				<span class="name">Organization Settings</span>
 			</a>
 		</li>
 		<li
