@@ -20,18 +20,6 @@
 			hover-attribute="class"
 			hover-value="display:flex!important">
 			<div class="display:none gap:15px options">
-				<!-- <a
-					actions="delete"
-					delete-selector="document; tbody[array]"
-					>
-					<i src="../assets/svg/trash-alt.svg"></i>
-				</a> -->
-				<a
-					actions="export"
-					export-selector="document; tbody[array]"
-					export-type="csv">
-					<i src="../assets/svg/file-csv.svg"></i>
-				</a>
 				<a actions="export" export-selector="document; tbody[array]">
 					<i src="../assets/svg/file-download.svg"></i>
 				</a>
@@ -49,9 +37,36 @@
 				<i src="../assets/svg/ellipsis.svg"></i>
 			</a>
 		</div>
-		<a actions="delete" delete-selector="document; tbody[array]">
+		<style>
+			[isSelected="false"] {
+				display: none;
+			}
+			[isSelected="true"] {
+				display: block;
+			}
+		</style>
+		<div
+			observe-attributes="class"
+			observe-target="tbody[array] > .selected"
+			observe-attribute="isSelected"
+			observe-value="true"
+			observe-next
+			hidden></div>
+
+		<a
+			actions="delete"
+			delete-selector="document; tbody[array]"
+			isSelected="false">
 			<i src="../assets/svg/trash-alt.svg"></i>
 		</a>
+		<!-- <div
+			observe-attributes="class"
+			observe-target="tbody[array] :not(.selected)"
+			observe-attribute="isSelected"
+			observe-value="false"
+			observe-previous
+			hidden></div>
+ -->
 		<button
 			class="round width:30px height:30px"
 			title="Add New Item"
