@@ -1,86 +1,82 @@
-<!DOCTYPE html>
-
 <div
-    class="margin-left:10px"
-    sortable
-    array="files"
-    object
-    filter-key="content-type"
-    filter-value="text/directory"
-    filter-limit=""
-    render-selector=":last-child">
-    <!--Folder Template -->
-    <div class="" template render="object" object="{{object._id}}">
-        <div
-            toggle-attribute="hidden"
-            toggle-value=""
-            toggle-next
-            click-attribute="src"
-            click-value="../builder/components/filetree.html"
-            click-next>
-            <div
-                class="padding:5px display:flex align-items:center white-space:nowrap"
-                toggle="../../../assets/svg/caret-down.svg, ../../../assets/svg/caret-right.svg"
-                toggle-selector="i"
-                toggle-attribute="src">
-                <i
-                    class="display:flex"
-                    src="../../../assets/svg/caret-right.svg"></i>
-                <span
-                    class="margin-left:5px white-space:nowrap overflow:hidden text-overflow:ellipsis"
-                    array="files"
-                    object="{{object._id}}"
-                    key="name"
-                    >{{object.name}}</span
-                >
-            </div>
-        </div>
-        <div
-            class="margin-left:10px"
-            filter-key="path"
-            filter-value="{{object.pathname}}"
-            filter-operator="$eq"
-            filter-sort-key="name"
-            filter-sort-direction="asc"
-            filter-selector=":scope > div[]"
-            hidden></div>
-    </div>
+	class="margin-left:10px"
+	sortable
+	array="files"
+	object
+	filter-query-key="content-type"
+	filter-query-value="text/directory"
+	filter-limit=""
+	render-selector=":last-child">
+	<!--Folder Template -->
+	<div class="" template render="object" object="{{object._id}}">
+		<div
+			toggle-attribute="hidden"
+			toggle-value=""
+			toggle-next
+			click-attribute="src"
+			click-value="../builder/components/filetree.html"
+			click-next>
+			<div
+				class="padding:5px display:flex align-items:center white-space:nowrap"
+				toggle="../../../assets/svg/caret-down.svg, ../../../assets/svg/caret-right.svg"
+				toggle-selector="i"
+				toggle-attribute="src">
+				<i
+					class="display:flex"
+					src="../../../assets/svg/caret-right.svg"></i>
+				<span
+					class="margin-left:5px white-space:nowrap overflow:hidden text-overflow:ellipsis"
+					array="files"
+					object="{{object._id}}"
+					key="name"
+					>{{object.name}}</span
+				>
+			</div>
+		</div>
+		<div
+			class="margin-left:10px"
+			filter-query-key="path.$eq"
+			filter-query-value="{{object.pathname}}"
+			filter-sort-key="name"
+			filter-sort-direction="asc"
+			filter-selector=":scope > div[]"
+			hidden></div>
+	</div>
 </div>
 <div
-    class="margin-left:10px"
-    sortable
-    array="files"
-    object
-    filter-key="content-type"
-    filter-value="text/directory"
-    filter-operator="$ne"
-    filter-limit=""
-    render-selector="[template]">
-    <!--File Template -->
-    <div
-        class="padding:5px display:flex align-items:center white-space:nowrap"
-        template
-        render="object"
-        object="{{object._id}}"
-        state_to="builder"
-        state-array="files"
-        state-object="{{object._id}}">
-        <span
-            value="{{object.content-type}}"
-            value-exec="/^(image|video|audio)|(?:\/x-)?\/([^\/]+)$/"
-            value-prefix="../../../assets/svg/"
-            value-suffix=".svg"
-            onload-attribute="src"
-            onload-selector="i"
-            onload-if="!$template">
-            <i class="display:flex"></i>
-        </span>
-        <span
-            class="margin-left:5px white-space:nowrap overflow:hidden text-overflow:ellipsis"
-            array="files"
-            object="{{object._id}}"
-            key="name"
-            >{{object.name}}</span
-        >
-    </div>
+	class="margin-left:10px"
+	sortable
+	array="files"
+	object
+	filter-query-key="content-type.$ne"
+	filter-query-value="text/directory"
+	filter-limit=""
+	render-selector="[template]">
+	<!--File Template -->
+	<div
+		class="padding:5px display:flex align-items:center white-space:nowrap"
+		template
+		render="object"
+		object="{{object._id}}"
+		state_to="builder"
+		state-array="files"
+		state-object="{{object._id}}">
+		<span
+			value="{{object.content-type}}"
+			value-exec="/^(image|video|audio)|(?:\/x-)?\/([^\/]+)$/"
+			value-prefix="../../../assets/svg/"
+			value-suffix=".svg"
+			onload-attribute="src"
+			onload-selector="i"
+			onload-if="!$template">
+			<i class="display:flex"></i>
+		</span>
+		<span
+			class="margin-left:5px white-space:nowrap overflow:hidden text-overflow:ellipsis"
+			array="files"
+			object="{{object._id}}"
+			key="name"
+			>{{object.name}}</span
+		>
+	</div>
 </div>

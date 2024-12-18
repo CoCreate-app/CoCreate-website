@@ -13,9 +13,8 @@
 							<input
 								type="text"
 								filter-selector="document; tbody[render-selector]"
-								filter-query-key="firstname"
-								filter-operator="$regex"
-								filter-regex-flag="i"
+								filter-query-key="firstname.$regex"
+								filter-query-options="i"
 								placeholder="Name"
 								class="floating-label" />
 							<a
@@ -59,9 +58,8 @@
 							<input
 								type="text"
 								filter-selector="document; tbody[render-selector]"
-								filter-query-key="_id"
-								filter-operator="$regex"
-								filter-regex-flag="i"
+								filter-query-key="_id.$regex"
+								filter-query-options="i"
 								placeholder="id"
 								class="floating-label" />
 							<a

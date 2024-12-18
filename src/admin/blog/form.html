@@ -224,19 +224,18 @@
 			hidden />
 		<input type="datetime" key="published" value="$now" hidden />
 
-		<button
-			actions="state"
-			state_to="main"
-			state-src="$back"
-			class="red margin-left:auto">
-			<i src="../assets/svg/ban.svg"></i>
-			<span class="margin-left:5px"> Cancel</span>
-		</button>
-
-		<button actions="save">
-			<i src="../assets/svg/save.svg"></i>
-			<span class="margin-left:5px"> Save</span>
-		</button>
+		<div class="display:flex justify-content:space-between width:100%">
+			<button
+				class="margin-top:20px green"
+				click-selector="i[src]"
+				click-attribute="src"
+				click-value="../assets/svg/spinner.svg"
+				actions="click, save, timeout(1000), render(document; #publish), timeout(2000), action(document; #savefile), action(document; #postPublished)">
+				<i id="published-icon" src="../assets/svg/paper-plane.svg"></i>
+				<span class="margin-left:5px">Publish</span>
+			</button>
+			<div src="../components/form-buttons.html" class="width:100%"></div>
+		</div>
 
 		<a
 			id="postPublished"
@@ -244,16 +243,6 @@
 			click-attribute="src"
 			click-value="../assets/svg/check-circle.svg"
 			hidden></a>
-
-		<button
-			class="green"
-			click-selector="i[src]"
-			click-attribute="src"
-			click-value="../assets/svg/spinner.svg"
-			actions="click, save, timeout(1000), render(document; #publish), timeout(1000), action(document; #sethtml), timeout(1000), action(document; #savefile), action(document; #postPublished)">
-			<i id="published-icon" src="../assets/svg/paper-plane.svg"></i>
-			<span class="margin-left:5px">Publish</span>
-		</button>
 	</form>
 
 	<!-- Get ObjectId from blobpost and reuse for file  -->

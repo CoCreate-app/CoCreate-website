@@ -1,0 +1,18 @@
+<div class="display:flex gap:20px width:100% margin-top:20px">
+	<button
+		actions="state"
+		state_to="main"
+		state-src="$back"
+		class="red margin-left:auto">
+		<i src="../assets/svg/ban.svg"></i>
+		<span class="margin-left:5px"> Cancel</span>
+	</button>
+	<button
+		actions="click, save, click, timeout(2000), click"
+		click-selector="i"
+		click-attribute="src"
+		click-value="../assets/svg/spinner.svg, ../assets/svg/check-circle.svg, ../assets/svg/save.svg">
+		<i src="../assets/svg/save.svg"></i>
+		<span class="margin-left:5px">Save</span>
+	</button>
+</div>

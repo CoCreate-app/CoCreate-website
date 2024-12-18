@@ -25,7 +25,10 @@
 		.org-toggle img {
 			padding: 4px;
 		}
-		[organization="false"] {
+		[organization="false"] .org-toggle {
+			display: none;
+		}
+		[organization="true"] .org-create {
 			display: none;
 		}
 		[is-hidden="true"] {
@@ -35,9 +38,11 @@
 			display: block;
 		}
 	</style>
-	<div class="display:flex align-items:center width:100% height:70px">
+	<div
+		class="display:flex align-items:center width:100% height:70px"
+		organization="false">
 		<div
-			class="position:absolute display:flex align-items:center width:100% cursor:pointer font-weight:bold white-space:nowrap overflow:hidden"
+			class="org-create position:absolute display:flex align-items:center width:100% cursor:pointer font-weight:bold white-space:nowrap overflow:hidden"
 			state_to="main"
 			state-src="./organization/create.html"
 			state-overwrite
@@ -61,7 +66,6 @@
 			array="organizations"
 			object=""
 			state_id="accountOrg"
-			organization="false"
 			toggle="dropdown"
 			toggle-closest=".header .org-dropdown"
 			toggle-attribute="is-hidden"
@@ -76,7 +80,7 @@
 			<span
 				class="org-name font-size:22px font-weight:bold"
 				key="name"
-				input-closest="form"
+				input-closest="div[organization]"
 				input-attribute="organization"
 				input-value="true">
 				<div
@@ -128,11 +132,10 @@
 
 					<span class="name">{{object.name}}</span>
 					<div
-						filter-query-key="host.name"
-						filter-operator="$regex"
+						filter-query-key="host.name.$regex"
 						filter-query-value="^$subdomain\."
-						filter-key="host.$"
-						filter-value="1"
+						filter-query-key="host.$"
+						filter-query-value="1"
 						filter-next></div>
 
 					<input
