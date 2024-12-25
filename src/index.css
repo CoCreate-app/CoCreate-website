@@ -460,6 +460,7 @@ sidenav .name {
 .datatable-container .header td {
 	padding: 10px 0px;
 	padding-right: 10px;
+	min-width: 150px;
 }
 
 .datatable-container .header td:last-child {
