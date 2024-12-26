@@ -209,7 +209,7 @@ nav.hide {
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 	height: auto;
 	right: 0;
-	top: 0;
+	top: -1;
 	transform: translateY(0);
 	z-index: 1;
 }
