@@ -64,18 +64,22 @@
 
 <!-- Navigation -->
 <section class="display:flex flex-direction:column gap:20px font-size:20px">
-	<a href="{{path}}demos/" class="color:dodgerblue:hover">Demos</a>
-	<a href="{{path}}#pricing" class="color:dodgerblue:hover">Pricing</a>
-	<a href="{{path}}docs/" class="color:dodgerblue:hover">Docs</a>
-	<a href="{{path}}blog/" class="color:dodgerblue:hover">Blog</a>
-	<!-- <a href="{{path}}discuss/" class="color:dodgerblue:hover"
-		>Discuss</a
-	> -->
-	<!-- <a
-		href="{{path}}university/"
-		class="color:dodgerblue:hover"
-		>University</a
-	> -->
+	<!-- <h3 class="text-transform:capitalize margin:50px_10px_5px">Navigation</h3> -->
+	<a href="{{path}}demos/">Demos</a>
+	<a
+		href="{{path}}#pricing"
+		actions="state"
+		state_to="mainView"
+		state-src="{{path}}home/"
+		click-closest="sidenav"
+		click-attribute="style"
+		click-value="width:0px"
+		click-if="<=993px"
+		click-if-value="$innerWidth"
+		>Pricing</a
+	>
+	<a href="{{path}}docs/index.html">Docs</a>
+	<a href="{{path}}blog/index.html">Blog</a>
 </section>
 
 <div resize="right"></div>
