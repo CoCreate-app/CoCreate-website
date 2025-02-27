@@ -111,7 +111,7 @@
 							<div class="display:none options">
 								<a
 									actions="click, timeout(1000), action(document; #deleteHost)"
-									click-selector="document; #deleteHostKey"
+									click-document="#deleteHostKey"
 									click-attribute="key"
 									click-value="$unset.host[{{index}}]"
 									class="padding:5px margin-left:auto">
@@ -201,7 +201,7 @@
 							<div class="display:none options">
 								<a
 									actions="click, timeout(1000), action(document; #deleteStorage)"
-									click-selector="document; #deleteStorageKey"
+									click-document="#deleteStorageKey"
 									click-attribute="key"
 									click-value="$unset.storage[{{index}}]">
 									<i src="../assets/svg/trash.svg"></i>

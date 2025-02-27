@@ -106,7 +106,7 @@
 			id="menuL"
 			class="width:0px"
 			resizable
-			resize-selector="document; main, document; footer"
+			resize-document="main, document; footer"
 			resize-attribute="style"
 			resize-property="padding-left"
 			path="../"
@@ -136,14 +136,14 @@
 				<floating-label>
 					<input
 						type="text"
-						filter-selector="document; #demos-list"
+						filter-document="#demos-list"
 						filter-query-key="title.$regex"
-						filter-regex-flag="i"
+						filter-query-options="i"
 						placeholder="Search Demos" />
 
 					<span class="floating-icon">
 						<a
-							filter-selector="document; #demos-list"
+							filter-document="#demos-list"
 							filter-sort-key="title"
 							filter-sort-direction="asc"
 							click-value="desc, asc"

@@ -12,13 +12,13 @@
 						<floating-label>
 							<input
 								type="text"
-								filter-selector="document; tbody[render-selector]"
+								filter-document="tbody[render-selector]"
 								filter-query-key="title.$regex"
 								filter-query-options="i"
 								placeholder="Name"
 								class="floating-label" />
 							<a
-								filter-selector="document; tbody[render-selector]"
+								filter-document="tbody[render-selector]"
 								filter-sort-key="title"
 								filter-sort-direction="asc"
 								click-value="desc, asc"
@@ -35,14 +35,14 @@
 						<floating-label>
 							<input
 								type="text"
-								filter-selector="document; tbody[render-selector]"
+								filter-document="tbody[render-selector]"
 								filter-query-key="name.$regex"
 								filter-query-options="i"
 								placeholder="id"
 								class="floating-label" />
 							<span class="sort">
 								<a
-									filter-selector="document; tbody[render-selector]"
+									filter-document="tbody[render-selector]"
 									filter-sort-key="_id"
 									filter-sort-direction=""
 									click-value="asc, desc"

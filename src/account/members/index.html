@@ -13,15 +13,15 @@
 							<floating-label>
 								<input
 									type="text"
-									filter-selector="document; tbody[render-selector]"
+									filter-document="tbody[render-selector]"
 									filter-query-key="firstname.$regex"
-									filter-regex-flag="i"
+									filter-query-options="i"
 									placeholder="Current Members" />
 							</floating-label>
 							<span
 								class="position:absolute bottom:18px right:18px float:right">
 								<a
-									filter-selector="document; tbody[render-selector]"
+									filter-document="tbody[render-selector]"
 									filter-sort-key="firstname"
 									filter-sort-direction="asc"
 									click-value="desc, asc"

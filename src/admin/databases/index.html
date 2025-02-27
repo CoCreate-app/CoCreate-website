@@ -8,7 +8,7 @@
 		<select
 			type="text"
 			placeholder="Array"
-			input-selector="document; #databases"
+			input-document="#databases"
 			input-attribute="array">
 			<option value="keys">keys</option>
 			<option value="organizations">organizations</option>
@@ -18,13 +18,13 @@
 	<floating-label class="margin-top:10px margin-bottom:10px">
 		<input
 			type="text"
-			filter-selector="document; #databases"
+			filter-document="#databases"
 			filter-search
 			placeholder="Search" />
 
 		<span class="floating-icon">
 			<a
-				filter-selector="document; #blog-posts"
+				filter-document="#blog-posts"
 				filter-sort-key="_id"
 				filter-sort-direction="asc"
 				click-value="desc, asc"
@@ -68,7 +68,7 @@
 			<div
 				class="display:flex align-items:center gap:10px position:absolute top:10px right:10px">
 				<a>
-					<i src="{{path}}assets/svg/clone.svg"></i>
+					<i src="$relativePathassets/svg/clone.svg"></i>
 				</a>
 				<a
 					toggle-next
@@ -77,7 +77,7 @@
 					click-closest=".card textarea"
 					click-attribute="readonly"
 					click-value="">
-					<i src="{{path}}assets/svg/edit.svg"></i>
+					<i src="$relativePathassets/svg/edit.svg"></i>
 				</a>
 				<span hidden>
 					<a
@@ -86,7 +86,7 @@
 						toggle-value=""
 						click-closest=".card textarea"
 						click-attribute="$save">
-						<i src="{{path}}assets/svg/save.svg"></i>
+						<i src="$relativePathassets/svg/save.svg"></i>
 					</a>
 					<a
 						toggle-closest=".card textarea"
@@ -95,7 +95,7 @@
 						click-parent
 						click-attribute="hidden"
 						click-value="">
-						<i src="{{path}}assets/svg/ban.svg"></i>
+						<i src="$relativePathassets/svg/ban.svg"></i>
 					</a>
 				</span>
 			</div>

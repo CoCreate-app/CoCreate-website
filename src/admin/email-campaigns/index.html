@@ -44,7 +44,7 @@
 				click="active"
 				click-attribute="menu-icon"
 				toggle="width:310px,width:0px"
-				toggle-selector="document; #menuL"
+				toggle-document="#menuL"
 				toggle-attribute="style">
 				<span></span>
 				<span></span>
@@ -107,7 +107,7 @@
 					class="builder-tab-round"
 					selected-attribute="class"
 					selected-value="max-width:768px"
-					selected-selector="document; .canvas-container"
+					selected-document=".canvas-container"
 					selected-group="screen-size">
 					<i src="../../assets/svg/tablet-alt.svg"></i>
 				</a>
@@ -176,7 +176,7 @@
 				click="active"
 				click-attribute="menu-icon"
 				toggle="width:310px, width:0px"
-				toggle-selector="document; #menuR"
+				toggle-document="#menuR"
 				toggle-attribute="style">
 				<span></span>
 				<span></span>
@@ -214,7 +214,7 @@
 			class="position:absolute top:0px left:0px overflow:hidden height:100vh width:310px width:0px@xs@sm@md z-index:8"
 			resizable
 			resize-attribute="style"
-			resize-selector="document; main, document; nav"
+			resize-document="main, document; nav"
 			resize-property="padding-left">
 			<div src="./components/left-panel.html"></div>
 			<div resize="right"></div>
@@ -226,7 +226,7 @@
 			class="position:absolute top:0px right:0px overflow:hidden height:100vh width:310px width:0px@xs@sm@md z-index:8"
 			resizable
 			resize-attribute="style"
-			resize-selector="document; main, document; nav"
+			resize-document="main, document; nav"
 			resize-property="padding-right">
 			<input type="hidden" attribute="eid" />
 			<div src="./components/right-panel.html"></div>

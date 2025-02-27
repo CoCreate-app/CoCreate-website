@@ -34,7 +34,7 @@
 				type="text"
 				key="title"
 				placeholder="Title"
-				input-selector="document; .title[]"
+				input-document=".title[]"
 				input-attribute="value"
 				class="floating-label input-icon" />
 
@@ -105,7 +105,7 @@
 					<input
 						file="pathname"
 						value="/assets{{object.pathname}}"
-						onload-selector="document; #imageurl"
+						onload-document="#imageurl"
 						onload-attribute="value"
 						onload-if="!$template"
 						hidden />
@@ -142,7 +142,7 @@
 					<input
 						file="pathname"
 						value="/assets{{object.pathname}}"
-						onload-selector="document; #videourl"
+						onload-document="#videourl"
 						onload-attribute="value"
 						onload-if="!$template"
 						hidden />
@@ -159,7 +159,7 @@
 		<floating-label class="width:100%">
 			<textarea
 				key="description"
-				input-selector="document; .description"
+				input-document=".description"
 				input-attribute="value"
 				placeholder="Description"
 				class="floating-label"></textarea>
@@ -172,7 +172,7 @@
 				key="content"
 				realtime="true"
 				placeholder="Content"
-				input-selector="document; .content"
+				input-document=".content"
 				input-attribute="value"
 				class="floating-label markdown-body"></editor>
 		</floating-label>
@@ -219,7 +219,7 @@
 
 		<input
 			key="_id"
-			input-selector="document; #publishform"
+			input-document="#publishform"
 			input-attribute="object"
 			hidden />
 		<input type="datetime" key="published" value="$now" hidden />
@@ -239,7 +239,7 @@
 
 		<a
 			id="postPublished"
-			click-selector="document; #published-icon"
+			click-document="#published-icon"
 			click-attribute="src"
 			click-value="../assets/svg/check-circle.svg"
 			hidden></a>
@@ -323,7 +323,7 @@
 			openai="chat.completions.create"
 			openai-key="choices[0].message.content"
 			openai-request="false"
-			input-selector="document; #blog-form"
+			input-document="#blog-form"
 			input-attribute="value"
 			value-type="json"
 			value-replace="/```json\n|\n```/g"
@@ -384,7 +384,7 @@
 			openai-key="choices[0].message.content"
 			openai-request="false"
 			marked
-			input-selector="document; #content"
+			input-document="#content"
 			input-attribute="value"
 			hidden></textarea>
 		<a
@@ -422,7 +422,7 @@
 			openai="images.generate"
 			openai-key="data[0].url"
 			openai-request="false"
-			import-url-selector="document; #imagefile"
+			import-url-document="#imagefile"
 			import-url
 			hidden />
 

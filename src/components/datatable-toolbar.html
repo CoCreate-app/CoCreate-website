@@ -9,7 +9,7 @@
 			class="height:16px width:16px margin-left:14px"
 			input-attribute="class"
 			input-value="selected"
-			input-selector="document; tbody[array] [render-clone][] " />
+			input-document="tbody[array] [render-clone][] " />
 	</div>
 
 	<div class="display:flex align-items:center gap:15px">
@@ -19,13 +19,13 @@
 			hover-attribute="class"
 			hover-value="display:flex!important">
 			<div class="display:none gap:15px options">
-				<a actions="export" export-selector="document; tbody[array]">
+				<a actions="export" export-document="tbody[array]">
 					<i src="../assets/svg/file-download.svg"></i>
 				</a>
 				<a actions="import" array="users" type="file">
 					<i src="../assets/svg/file-upload.svg"></i>
 				</a>
-				<a actions="clipboard" clipboard-selector="document; table">
+				<a actions="clipboard" clipboard-document="table">
 					<i src="../assets/svg/copy.svg"></i>
 				</a>
 				<a actions="print" print-closest="document; table">
@@ -52,10 +52,7 @@
 			observe-next
 			hidden></div>
 
-		<a
-			actions="delete"
-			delete-selector="document; tbody[array]"
-			isSelected="false">
+		<a actions="delete" delete-document="tbody[array]" isSelected="false">
 			<i src="../assets/svg/trash-alt.svg"></i>
 		</a>
 		<!-- <div
@@ -71,7 +68,7 @@
 			title="Add New Item"
 			actions="state"
 			state_to="main"
-			state-src="{{path}}">
+			state-src="$relativePath">
 			<i src="../assets/svg/plus.svg"></i>
 			<div state_to="form-fields" state-object=""></div>
 		</button>

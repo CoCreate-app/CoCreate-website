@@ -67,7 +67,7 @@
 				type="text"
 				key="title"
 				placeholder="Title"
-				input-selector="document; .title[]"
+				input-document=".title[]"
 				input-attribute="value"
 				class="floating-label input-icon" />
 
@@ -95,7 +95,7 @@
 				type="text"
 				key="preheader"
 				placeholder="Preheader"
-				input-selector="document; .preheader"
+				input-document=".preheader"
 				input-attribute="value"
 				class="floating-label" />
 		</floating-label>
@@ -156,7 +156,7 @@
 						id="sethtml"
 						src="./admin/email-campaigns/templates/newsletter.html"
 						value-type="text"
-						click-selector="document; #html"
+						click-document="#html"
 						click-attribute="value"
 						hidden></div>
 
@@ -219,7 +219,7 @@
 		<!-- Hidden Metadata Fields -->
 		<input
 			key="_id"
-			input-selector="document; #sendform"
+			input-document="#sendform"
 			input-attribute="object"
 			hidden />
 		<input type="datetime" key="created_at" value="$now" hidden />
@@ -229,7 +229,7 @@
 
 		<a
 			id="emailSent"
-			click-selector="document; #emailSent-icon"
+			click-document="#emailSent-icon"
 			click-attribute="src"
 			click-value="./assets/svg/check-circle.svg"
 			hidden></a>
@@ -295,7 +295,7 @@
 			openai="chat.completions.create"
 			openai-key="choices[0].message.content"
 			openai-request="false"
-			input-selector="document; .content[]"
+			input-document=".content[]"
 			input-attribute="value"
 			value-replace="/```html\n|\n```/g"
 			hidden></textarea>
@@ -357,7 +357,7 @@
 			openai="chat.completions.create"
 			openai-key="choices[0].message.content"
 			openai-request="false"
-			input-selector="document; #email-campaigns"
+			input-document="#email-campaigns"
 			input-attribute="value"
 			value-type="json"
 			value-replace="/```json\n|\n```/g"
@@ -398,7 +398,7 @@
 			openai="images.generate"
 			openai-key="data[0].url"
 			openai-request="false"
-			import-url-selector="document; #imagefile"
+			import-url-document="#imagefile"
 			import-url
 			hidden />
 

@@ -1,2 +1,79 @@
 <div src="./coming-soon.html"></div>
-<section class="centered"></section>
+<section class="centered">
+	<button class="padding:10px margin-left:5px" onclick="openTopUpCheckout()">
+		+Funds
+	</button>
+</section>
+<script type="text/javascript">
+	Paddle.Environment.set("sandbox");
+	Paddle.Initialize({
+		token: "test_a2311fb79f18067408db808e40d", // replace with a client-side token
+		// prints events to console for debugging
+		eventCallback: function (data) {
+			console.log(data);
+		}
+	});
+
+	// define customer details
+
+	// open checkout
+	function openTopUpCheckout() {
+		let customer = {
+			email: "sam@example.com",
+			address: {
+				countryCode: "US",
+				postalCode: "10021"
+			}
+		};
+
+		Paddle.Checkout.open({
+			items: [
+				{
+					priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
+					quantity: 1
+				}
+			],
+			customer
+		});
+
+		// let amount = document.getElementById("customAmount").value;
+		// if (amount) {
+		//     Paddle.Checkout.open({
+		//         items: [
+		//             {
+		//                 priceId: "pri_01hxsf5m9nwc9rg9ebfexrh7e4",
+		//                 price: {
+		//                     unit_price: amount,
+		//                     quantity: 1,
+		//                     product_id: "pro_01hxscnt9dng3c207a10gcfasy",
+		//                     rice: amount,
+		//                 },
+		//             },
+		//         ],
+		//         customer,
+		//     });
+		// } else {
+		//     alert("Please enter a valid amount.");
+		// }
+	}
+
+	function openDomainCheckout() {
+		let customer = {
+			email: "sam@example.com",
+			address: {
+				countryCode: "US",
+				postalCode: "10021"
+			}
+		};
+
+		Paddle.Checkout.open({
+			items: [
+				{
+					priceId: "pri_01hxs52mg8v24kz5myf4mz3hnn",
+					quantity: 1
+				}
+			],
+			customer
+		});
+	}
+</script>

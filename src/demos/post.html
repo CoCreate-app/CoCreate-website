@@ -125,7 +125,7 @@
 			id="menuL"
 			class="width:0px"
 			resizable
-			resize-selector="document; main, document; footer"
+			resize-document="main, document; footer"
 			resize-attribute="style"
 			resize-property="padding-left"
 			path="../"
@@ -628,7 +628,7 @@
 
 						<a
 							id="createUserBtn"
-							click-selector="document; #questions"
+							click-document="#questions"
 							click-attribute="read"
 							click-value="true"
 							actions="timeout(1000), save, localStorage, action(document, #commentButton)"></a>

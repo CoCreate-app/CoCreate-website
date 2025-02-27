@@ -3,43 +3,43 @@
 	resize-attribute="menu-icon"
 	resize-value="active"
 	resize-if="300px"
-	resize-selector="document; [menu-icon][]"></div>
+	resize-document="[menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="50px"
-	resize-selector="document; [menu-icon][]"></div>
+	resize-document="[menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="0px"
-	resize-selector="document; [menu-icon][]"></div>
+	resize-document="[menu-icon][]"></div>
 
 <div class="header height:70px">
 	<!-- Logo -->
 	<a
-		href="{{path}}"
+		href="$relativePath"
 		class="display:flex align-items:center gap:5px font-size:28px font-weight:bold">
 		<img
-			src="{{path}}assets/icons/icon-192x192.png"
+			src="$relativePathassets/icons/icon-192x192.png"
 			height="50px"
 			alt="icon logo" />
 		<span>Co<span class="color:#1e90ff">Create</span></span>
 	</a>
 
 	<!-- Menu Icon -->
-	<a
+	<span
 		menu-icon
 		toggle="width:0px,"
-		toggle-selector="document; #menuL"
+		toggle-document="#menuL"
 		toggle-attribute="style"
 		class="margin-right:10px">
 		<span></span>
 		<span></span>
 		<span></span>
-	</a>
+	</span>
 </div>
 
 <!-- Search -->
@@ -57,7 +57,7 @@
             state-key="src"
             modal-width="900px"
             modal-color="#229954">
-            <i src="{{path}}assets/svg/search.svg"></i>
+            <i src="$relativePathassets/svg/search.svg"></i>
         </a>
     </span>
 </form> -->
@@ -65,12 +65,12 @@
 <!-- Navigation -->
 <section class="display:flex flex-direction:column gap:20px font-size:20px">
 	<!-- <h3 class="text-transform:capitalize margin:50px_10px_5px">Navigation</h3> -->
-	<a href="{{path}}demos/">Demos</a>
+	<a href="$relativePathdemos/">Demos</a>
 	<a
-		href="{{path}}#pricing"
+		href="$relativePath#pricing"
 		actions="state"
 		state_to="mainView"
-		state-src="{{path}}home/"
+		state-src="$relativePathhome/"
 		click-closest="sidenav"
 		click-attribute="style"
 		click-value="width:0px"
@@ -78,8 +78,8 @@
 		click-if-value="$innerWidth"
 		>Pricing</a
 	>
-	<a href="{{path}}docs/index.html">Docs</a>
-	<a href="{{path}}blog/index.html">Blog</a>
+	<a href="$relativePathdocs/index.html">Docs</a>
+	<a href="$relativePathblog/index.html">Blog</a>
 </section>
 
 <div resize="right"></div>

@@ -1,20 +1,20 @@
 <!-- Menu Icon -->
-<a
+<span
 	class="display:none@md@lg@xl"
 	toggle="width:300px,"
-	toggle-selector="document; #menuL"
+	toggle-document="#menuL"
 	toggle-attribute="style"
 	menu-icon>
 	<span></span>
 	<span></span>
 	<span></span>
-</a>
+</span>
 
 <!-- Logo -->
 <a
-	href="{{path}}"
+	href="$relativePath"
 	class="display:flex align-items:center gap:10px font-size:28px font-weight:bold">
-	<img src="{{path}}assets/icon.png" height="50px" alt="icon logo" />
+	<img src="$relativePathassets/icon.png" height="50px" alt="icon logo" />
 	<span class="display:none@xs@sm@md"
 		>Co<span class="color:#1e90ff">Create</span></span
 	>
@@ -34,34 +34,34 @@
 		id="products"
 		class="card position:absolute padding:10px list-style:none top:50px background:white display:none">
 		<li class="padding:5px">
-			<a href="{{path}}business-builder" class="color:dodgerblue:hover">
+			<a href="$relativePathbusiness-builder" class="color:dodgerblue:hover">
 				<p class="font-weight:600">CoCreate</p>
 				<p class="font-size:14px">Business Building Platform</p>
 			</a>
 		</li>
 		<li class="padding:5px">
-			<a href="{{path}}" class="color:dodgerblue:hover">
+			<a href="$relativePath" class="color:dodgerblue:hover">
 				<p class="font-weight:600">CoCreateJS</p>
 				<p class="font-size:14px">Collaborative Low Code Framework</p>
 			</a>
 		</li>
 		<li class="padding:5px">
-			<a href="{{path}}css" class="color:dodgerblue:hover">
+			<a href="$relativePathcss" class="color:dodgerblue:hover">
 				<p class="font-weight:600">CoCreateCSS</p>
 				<p class="font-size:14px">Atomic CSS Framework</p>
 			</a>
 		</li>
 	</ul> -->
 
-	<a href="{{path}}demos/" class="color:dodgerblue:hover">Demos</a>
-	<a href="{{path}}#pricing" class="color:dodgerblue:hover">Pricing</a>
-	<a href="{{path}}docs/" class="color:dodgerblue:hover">Docs</a>
-	<a href="{{path}}blog/" class="color:dodgerblue:hover">Blog</a>
-	<!-- <a href="{{path}}discuss/" class="color:dodgerblue:hover"
+	<a href="$relativePathdemos/" class="color:dodgerblue:hover">Demos</a>
+	<a href="$relativePath#pricing" class="color:dodgerblue:hover">Pricing</a>
+	<a href="$relativePathdocs/" class="color:dodgerblue:hover">Docs</a>
+	<a href="$relativePathblog/" class="color:dodgerblue:hover">Blog</a>
+	<!-- <a href="$relativePathdiscuss/" class="color:dodgerblue:hover"
 		>Discuss</a
 	> -->
 	<!-- <a
-		href="{{path}}university/"
+		href="$relativePathuniversity/"
 		class="color:dodgerblue:hover"
 		>University</a
 	> -->
@@ -70,27 +70,26 @@
 <div
 	class="display:flex direction:rtl align-items:center gap:15px width:100%@xs@sm font-size:20px">
 	<!-- fullscreen -->
-	<a fullscreen>
-		<i src="{{path}}assets/svg/expand.svg"></i>
-		<i src="{{path}}assets/svg/compress.svg"></i>
-	</a>
+	<div fullscreen class="display:inline-flex">
+		<i src="$relativePathassets/svg/expand.svg"></i>
+		<i src="$relativePathassets/svg/compress.svg"></i>
+	</div>
 
 	<!-- Social Media -->
 	<a href="https://github.com/CoCreate-app" target="_blank">
-		<i src="{{path}}assets/svg/github.svg"></i>
+		<i src="$relativePathassets/svg/github.svg"></i>
 	</a>
 	<a href="https://twitter.com/CoCreate_App" target="_blank">
-		<i src="{{path}}assets/svg/twitter.svg"></i>
+		<i src="$relativePathassets/svg/twitter.svg"></i>
 	</a>
 	<a href="https://www.facebook.com/CoCreate.apps" target="_blank">
-		<i src="{{path}}assets/svg/facebook.svg"></i>
+		<i src="$relativePathassets/svg/facebook.svg"></i>
 	</a>
 	<a href="https://www.instagram.com/cocreateai/" target="_blank">
-		<i src="{{path}}assets/svg/instagram.svg"></i>
+		<i src="$relativePathassets/svg/instagram.svg"></i>
 	</a>
-	<a share>
-		<i src="{{path}}assets/svg/share-alt.svg"></i>
-	</a>
+
+	<i src="$relativePathassets/svg/share-alt.svg" share></i>
 </div>
 
 <style>
@@ -102,25 +101,25 @@
 <!-- Avatar -->
 <div class="avatar round">
 	<div array="users" object="$user_id" key="firstname" class="avatar-name">
-		<i src="{{path}}assets/svg/sign-in-alt.svg"></i>
+		<i src="$relativePathassets/svg/sign-in-alt.svg"></i>
 	</div>
 	<div class="avatar-image">
 		<img
 			array="users"
 			object="$user_id"
 			key="avatar[0].src"
-			onerror="this.style.display='none'" />
+			onerror="this.style.display='none'"
+			alt="" />
 		<div>
-			<a href="{{path}}account/signin.html"> </a>
+			<a href="$relativePathaccount/signin.html"> </a>
 		</div>
-		<a
+		<div
 			class="signin"
 			toggle="dropdown"
 			toggle-closest="nav #profile-dropdown"
 			toggle-attribute="hidden"
 			toggle-value=""
-			session>
-		</a>
+			session></div>
 	</div>
 	<div
 		class="avatar-status"
@@ -135,21 +134,21 @@
 	hidden>
 	<a
 		actions="state"
-		state-src="{{path}}profile/index.html"
+		state-src="$relativePathprofile/index.html"
 		state_to="main"
-		href="{{path}}account/"
+		href="$relativePathaccount/"
 		click-parent
 		click-attribute="hidden"
 		click-value=""
 		class="display:flex align-items:center gap:10px">
-		<i src="{{path}}assets/svg/user.svg"></i>
+		<i src="$relativePathassets/svg/user.svg"></i>
 		<span>Profile</span>
 	</a>
 	<a
 		actions="signOut"
-		href="{{path}}account/signin.html"
+		href="$relativePathaccount/signin.html"
 		class="display:flex align-items:center gap:10px">
-		<i src="{{path}}assets/svg/sign-out-alt.svg"></i>
+		<i src="$relativePathassets/svg/sign-out-alt.svg"></i>
 		<span>Sign Out</span>
 	</a>
 </div>

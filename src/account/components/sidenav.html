@@ -3,19 +3,19 @@
 	resize-attribute="menu-icon"
 	resize-value="active"
 	resize-if="275px"
-	resize-selector="document; [menu-icon][]"></div>
+	resize-document="[menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="50px"
-	resize-selector="document; [menu-icon][]"></div>
+	resize-document="[menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="0px"
-	resize-selector="document; [menu-icon][]"></div>
+	resize-document="[menu-icon][]"></div>
 
 <div class="header height:70px">
 	<style>
@@ -85,7 +85,7 @@
 				input-value="true">
 				<div
 					observe-target=".org:not([template])"
-					observe-selector="document; .org:not([template])"
+					observe-document=".org:not([template])"
 					observe-attribute="$click"
 					observe-delay="2000"
 					hidden></div>
@@ -113,7 +113,6 @@
 					class="org display:flex align-items:center gap:11px height:50px cursor:pointer font-weight:bold padding:10px"
 					state_to="accountOrg"
 					state-object="{{object._id}}"
-					state-src="{{object.logo[0].src}}"
 					state-organization_id="{{object._id}}"
 					state-host
 					state-overwrite
@@ -180,7 +179,7 @@
 	<a
 		menu-icon
 		toggle="width:0px,"
-		toggle-selector="document; #menuL"
+		toggle-document="#menuL"
 		toggle-attribute="style"
 		class="display:none!important display:block!important@xs margin-right:10px">
 		<span></span>

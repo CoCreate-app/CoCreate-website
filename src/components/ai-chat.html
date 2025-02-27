@@ -37,7 +37,7 @@
 
 <form hidden>
 	<input localstorage-set="user_id" input-attribute="$click" input-next />
-	<a actions="localStorage"></a>
+	<div actions="localStorage"></div>
 </form>
 
 <button
@@ -46,22 +46,22 @@
 	click-attribute="style"
 	click-value="visibility:visible,"
 	class="button-round bottom:15px">
-	<i src="{{path}}assets/svg/comment-alt.svg"></i>
+	<i src="$relativePathassets/svg/comment-alt.svg"></i>
 </button>
 
 <div id="chat-container" resizable>
 	<div id="chat-header">
 		Chat with CoCreate
-		<a
+		<div
 			click-closest="#chat-container"
 			click-attribute="style"
 			click-value="visibility:visible,"
 			class="float:right font-size:20px color:#000:hover">
-			<i src="{{path}}assets/svg/times.svg"></i>
-		</a>
+			<i src="$relativePathassets/svg/times.svg"></i>
+		</div>
 	</div>
 
-	<div src="{{path}}components/ai.html" path="{{path}}"></div>
+	<div src="$relativePathcomponents/ai.html" path="$relativePath"></div>
 	<div resize="left"></div>
 	<div resize="top"></div>
 </div>

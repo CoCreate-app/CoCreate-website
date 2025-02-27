@@ -10,14 +10,14 @@
 	resize-attribute="menu-icon"
 	resize-value="active"
 	resize-if="310px"
-	resize-selector="document; #btn-left"></div>
+	resize-document="#btn-left"></div>
 
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="0px"
-	resize-selector="document; #btn-left"></div>
+	resize-document="#btn-left"></div>
 
 <div class="min-width:310px">
 	<div class="display:flex gap:10px padding:10px font-size:16px tabs">
@@ -25,10 +25,10 @@
 			class="builder-tab-round"
 			selected-attribute="class"
 			selected-value="active"
-			selected-selector="document; #vdom"
+			selected-document="#vdom"
 			selected-group="left-panels"
 			toggle="#canvas"
-			toggle-selector="document; #vdom"
+			toggle-document="#vdom"
 			toggle-attribute="vdom-selector">
 			<i src="../../../assets/svg/stream.svg"></i>
 		</a>
@@ -36,10 +36,10 @@
 			class="builder-tab-round"
 			selected-attribute="class"
 			selected-value="active"
-			selected-selector="document; #assets"
+			selected-document="#assets"
 			selected-group="left-panels"
 			toggle="files"
-			toggle-selector="document; #fetch-assets"
+			toggle-document="#fetch-assets"
 			toggle-attribute="array">
 			<i
 				class="height:16px"
@@ -49,9 +49,9 @@
 			class="builder-tab-round"
 			selected-attribute="class"
 			selected-value="active"
-			selected-selector="document; #files"
+			selected-document="#files"
 			selected-group="left-panels"
-			click-selector="document; #fetch-files"
+			click-document="#fetch-files"
 			click-attribute="src"
 			click-value="../builder/components/filetree.html">
 			<i class="height:16px" src="../../../assets/svg/folder.svg"></i>
@@ -60,7 +60,7 @@
 			class="builder-tab-round"
 			selected-attribute="class"
 			selected-value="active"
-			selected-selector="document; #uploader"
+			selected-document="#uploader"
 			selected-group="left-panels">
 			<i
 				class="height:16px"
@@ -70,7 +70,7 @@
 			class="builder-tab-round"
 			selected-attribute="class"
 			selected-value="active"
-			selected-selector="document; #blocks"
+			selected-document="#blocks"
 			selected-group="left-panels">
 			<i class="height:16px" src="../../../assets/svg/th-large.svg"></i>
 		</a>
@@ -78,7 +78,7 @@
 			class="builder-tab-round"
 			selected-attribute="class"
 			selected-value="active"
-			selected-selector="document; #ai"
+			selected-document="#ai"
 			selected-group="left-panels"
 			selected>
 			<i class="height:16px" src="../../../assets/svg/ai.svg"></i>
