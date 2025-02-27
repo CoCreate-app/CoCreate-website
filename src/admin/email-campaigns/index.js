@@ -68,7 +68,7 @@
 					}
 				}
 
-				document.dispatchEvent(
+				action.element.dispatchEvent(
 					new CustomEvent("sendMassEmails", {
 						detail: {}
 					})
