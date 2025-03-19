@@ -73,7 +73,7 @@
 				class="floating-label input-icon" />
 
 			<a
-				actions="action(document; #generate-email)"
+				actions="action($document #generate-email)"
 				click-selector="i[src]"
 				click-attribute="src"
 				click-value="./assets/svg/spinner.svg"
@@ -150,7 +150,7 @@
 
 					<a
 						id="renderAction"
-						actions="render(document; #renderEmail), timeout(1000), action(document; #sethtml)"
+						actions="render($document #renderEmail), timeout(1000), action($document #sethtml)"
 						hidden></a>
 					<div id="renderEmail" render-next render="object"></div>
 					<div
@@ -240,7 +240,7 @@
 			click-selector="i[src]"
 			click-attribute="src"
 			click-value="./assets/svg/spinner.svg"
-			actions="click, save, sendMassEmails, action(document; #emailSent)">
+			actions="click, save, sendMassEmails, action($document #emailSent)">
 			Send Emails
 			<i id="emailSent-icon" src="./assets/svg/paper-plane.svg"></i>
 		</button>
@@ -302,10 +302,10 @@
 			hidden></textarea>
 		<!-- <a
 			id="generate-email"
-			actions="openai.chat.completions.create, action(document; #generate-details), action(document; #generate-image)"></a> -->
+			actions="openai.chat.completions.create, action($document #generate-details), action($document #generate-image)"></a> -->
 		<a
 			id="generate-email"
-			actions="openai.chat.completions.create, action(document; #generate-details)"></a>
+			actions="openai.chat.completions.create, action($document #generate-details)"></a>
 	</form>
 
 	<!-- AI Email Details Generation -->
@@ -366,7 +366,7 @@
 
 		<a
 			id="generate-details"
-			actions="openai.chat.completions.create, timeout(1000), action(document; #renderAction), action(document; #generated-icon)"></a>
+			actions="openai.chat.completions.create, timeout(1000), action($document #renderAction), action($document #generated-icon)"></a>
 	</form>
 
 	<form api="openai">
@@ -405,7 +405,7 @@
 
 		<a
 			id="generate-image"
-			actions="openai.images.generate, importUrl, action(document; #imageGenerated)"></a>
+			actions="openai.images.generate, importUrl, action($document #imageGenerated)"></a>
 	</form>
 
 	<div src="./components/toolbar.html" value-type="outerHTML"></div>

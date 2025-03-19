@@ -86,7 +86,7 @@
 					<i src="../assets/svg/angle-right.svg"></i>
 					<span>Domains</span>
 				</div>
-				<a actions="action(document; #createHost)">
+				<a actions="action($document #createHost)">
 					<i src="../assets/svg/plus.svg"></i>
 				</a>
 			</div>
@@ -110,7 +110,7 @@
 							hover-value="display:inline-flex!important">
 							<div class="display:none options">
 								<a
-									actions="click, timeout(1000), action(document; #deleteHost)"
+									actions="click, timeout(1000), action($document #deleteHost)"
 									click-document="#deleteHostKey"
 									click-attribute="key"
 									click-value="$unset.host[{{index}}]"
@@ -176,7 +176,7 @@
 					<i src="../assets/svg/angle-right.svg"></i>
 					<span>Storages</span>
 				</div>
-				<a actions="action(document; #createStorage)">
+				<a actions="action($document #createStorage)">
 					<i src="../assets/svg/plus.svg"></i>
 				</a>
 			</div>
@@ -200,7 +200,7 @@
 							hover-value="display:inline-flex!important">
 							<div class="display:none options">
 								<a
-									actions="click, timeout(1000), action(document; #deleteStorage)"
+									actions="click, timeout(1000), action($document #deleteStorage)"
 									click-document="#deleteStorageKey"
 									click-attribute="key"
 									click-value="$unset.storage[{{index}}]">
