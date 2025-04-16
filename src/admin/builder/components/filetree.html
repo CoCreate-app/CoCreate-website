@@ -6,20 +6,20 @@
 	filter-query-key="content-type"
 	filter-query-value="text/directory"
 	filter-limit=""
-	render-selector=":last-child">
+	render-query=":last-child">
 	<!--Folder Template -->
 	<div class="" template render="object" object="{{object._id}}">
 		<div
 			toggle-attribute="hidden"
 			toggle-value=""
-			toggle-next
+			toggle-query="$next"
 			click-attribute="src"
 			click-value="../builder/components/filetree.html"
-			click-next>
+			click-query="$next">
 			<div
 				class="padding:5px display:flex align-items:center white-space:nowrap"
 				toggle="../../../assets/svg/caret-down.svg, ../../../assets/svg/caret-right.svg"
-				toggle-selector="i"
+				toggle-query="i"
 				toggle-attribute="src">
 				<i
 					class="display:flex"
@@ -39,7 +39,7 @@
 			filter-query-value="{{object.pathname}}"
 			filter-sort-key="name"
 			filter-sort-direction="asc"
-			filter-selector=":scope > div[]"
+			filter-query=":scope > div[]"
 			hidden></div>
 	</div>
 </div>
@@ -51,7 +51,7 @@
 	filter-query-key="content-type.$ne"
 	filter-query-value="text/directory"
 	filter-limit=""
-	render-selector="[template]">
+	render-query="[template]">
 	<!--File Template -->
 	<div
 		class="padding:5px display:flex align-items:center white-space:nowrap"
@@ -67,7 +67,7 @@
 			value-prefix="../../../assets/svg/"
 			value-suffix=".svg"
 			onload-attribute="src"
-			onload-selector="i"
+			onload-query="i"
 			onload-if="!$template">
 			<i class="display:flex"></i>
 		</span>

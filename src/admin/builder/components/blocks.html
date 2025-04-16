@@ -4,7 +4,7 @@
 		class="card width:50% text-align:center padding:5px"
 		selected-attribute="class"
 		selected-value="active"
-		selected-document="#elements"
+		selected-query="$document #elements"
 		selected-group="components"
 		selected>
 		Elements
@@ -13,7 +13,7 @@
 		class="card width:50% text-align:center padding:5px"
 		selected-attribute="class"
 		selected-value="active"
-		selected-document="#components"
+		selected-query="$document #components"
 		selected-group="components"
 		selected>
 		Components
@@ -31,7 +31,7 @@
 
 <!-- Block Categories -->
 <div
-	filter-next
+	filter-query="$next"
 	filter-query-key="tags"
 	filter-query-value="6115b5f5442fe32fc88700a6"></div>
 <div
@@ -43,7 +43,7 @@
 	filter-query-value="5ff747727005da1c27274194"
 	filter-sort-key="position"
 	filter-sort-direction="asc"
-	render-selector=":last-child">
+	render-query=":last-child">
 	<!-- Block Categories Template -->
 	<div
 		template
@@ -54,10 +54,10 @@
 			class="padding:5px display:flex align-items:center justify-content:space-between"
 			toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 			toggle-attribute="src"
-			toggle-selector="i"
+			toggle-query="i"
 			click-attribute="hidden"
 			click-value=""
-			click-parent="[render-selector]">
+			click-query="$parent [render-query]">
 			<span>{{tag.name}}</span>
 			<i class="display:flex" src="../../../assets/svg/plus.svg"></i>
 		</div>
@@ -70,13 +70,13 @@
 			filter-query-value="{{tag._id}}"
 			filter-sort-key="position"
 			filter-sort-direction="asc"
-			render-selector=":last-child">
+			render-query=":last-child">
 			<!-- Blocks Template -->
 			<div
 				template
 				render-as="block"
 				class="card position:relative flex-grow:1 width:70px height:75px padding:5px"
-				hover-selector=":first-child"
+				hover-query=":first-child"
 				hover-attribute="hidden"
 				hover-value=""
 				object="{{block._id}}">
@@ -105,7 +105,7 @@
 
 <!-- Component Categories -->
 <div
-	filter-next
+	filter-query="$next"
 	filter-query-key="tags"
 	filter-query-value="6200378ea8b6b4001ae57821"></div>
 <div
@@ -117,7 +117,7 @@
 	filter-query-value="5ff747727005da1c27274194"
 	filter-sort-key="position"
 	filter-sort-direction="asc"
-	render-selector=":last-child">
+	render-query=":last-child">
 	<!-- Components Categories Template -->
 	<div
 		template
@@ -128,7 +128,7 @@
 			class="padding:5px display:flex align-items:center justify-content:space-between"
 			toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 			toggle-attribute="src"
-			toggle-selector="i">
+			toggle-query="i">
 			<span>{{tag.name}}</span>
 			<i class="display:flex" src="../../../assets/svg/plus.svg"></i>
 		</div>
@@ -141,13 +141,13 @@
 			filter-query-value="{{tag._id}}"
 			filter-sort-key="position"
 			filter-sort-direction="asc"
-			render-selector="[template]">
+			render-query="[template]">
 			<!-- Components Template -->
 			<div
 				template
 				render-as="component"
 				class="card position:relative flex-grow:1 width:70px height:125px padding:5px"
-				hover-selector=":first-child"
+				hover-query=":first-child"
 				hover-attribute="hidden"
 				hover-value="">
 				<div

@@ -4,10 +4,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Database
@@ -23,7 +23,7 @@
 						placeholder="realtime:"
 						attribute="realtime"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -50,7 +50,7 @@
 						placeholder="cursors:"
 						attribute="cursors"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -76,19 +76,19 @@
 					placeholder="array:"
 					attribute="array"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
 					save="false"
 					read="false"
 					change
-					change-selector="#object"
+					change-query="#object"
 					change-attribute="array"
 					active>
 					<ul
 						array
-						render-selector=":last-child"
+						render-query=":last-child"
 						class="options z-index:7 margin-top:5px">
 						<cc-option
 							class="option"
@@ -106,7 +106,7 @@
 					placeholder="object:"
 					attribute="object"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -115,7 +115,7 @@
 					active>
 					<ul
 						array=""
-						render-selector=":last-child"
+						render-query=":last-child"
 						class="options z-index:7 margin-top:5px">
 						<cc-option
 							class="option template"
@@ -134,7 +134,7 @@
 					placeholder="key"
 					id="key"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -150,7 +150,7 @@
 					placeholder="value"
 					id="value"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -166,7 +166,7 @@
 					placeholder="value-prefix"
 					id="value-prefix"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -182,7 +182,7 @@
 					placeholder="value-suffix"
 					id="value-suffix"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -198,7 +198,7 @@
 						placeholder="read:"
 						attribute="read"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -223,7 +223,7 @@
 						placeholder="save:"
 						attribute="save"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -250,7 +250,7 @@
 						placeholder="crud:"
 						attribute="crud"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -275,7 +275,7 @@
 						placeholder="crdt:"
 						attribute="crdt"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -301,7 +301,7 @@
 					placeholder="actions:"
 					attribute="actions"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -325,10 +325,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Filter
@@ -343,7 +343,7 @@
 				placeholder="filter-query-key"
 				id="filter-query-key"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -357,7 +357,7 @@
 				placeholder="filter-value"
 				id="filter-value"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -371,7 +371,7 @@
 				placeholder="filter-value-type"
 				id="filter-value-type"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -385,7 +385,7 @@
 				placeholder="filter-operator"
 				id="filter-operator"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -399,7 +399,7 @@
 				placeholder="filter-sort-name"
 				id="filter-sort-name"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -413,7 +413,7 @@
 				placeholder="filter-sort-direction"
 				id="filter-sort-direction"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -427,7 +427,7 @@
 				placeholder="template_id"
 				id="template_id"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"

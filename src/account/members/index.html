@@ -13,7 +13,7 @@
 							<floating-label>
 								<input
 									type="text"
-									filter-document="tbody[render-selector]"
+									filter-query="$document tbody[render-query]"
 									filter-query-key="firstname.$regex"
 									filter-query-options="i"
 									placeholder="Current Members" />
@@ -21,7 +21,7 @@
 							<span
 								class="position:absolute bottom:18px right:18px float:right">
 								<a
-									filter-document="tbody[render-selector]"
+									filter-query="$document tbody[render-query]"
 									filter-sort-key="firstname"
 									filter-sort-direction="asc"
 									click-value="desc, asc"
@@ -40,7 +40,7 @@
 					array="users"
 					object="$user_id"
 					key="members"
-					render-selector="[template]">
+					render-query="[template]">
 					<tr
 						class="border-bottom:1px_solid_darkgray"
 						template
@@ -106,7 +106,7 @@
 				</tbody>
 			</table>
 		</div>
-		<!-- <div filter-on="scroll" filter-previous="[render-selector]"></div> -->
+		<!-- <div filter-on="scroll" filter-query="$previous [render-query]"></div> -->
 
 		<div class="position:fixed!important bottom:15px right:15px z-index:2">
 			<div

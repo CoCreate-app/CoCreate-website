@@ -74,13 +74,13 @@
 						array="users"
 						object="$user_id"
 						key="_id"
-						input-next
+						input-query="$next"
 						input-if="false"
 						input-attribute="$click"
 						value-dispatch />
 					<div
 						click-attribute="object"
-						click-next
+						click-query="$next"
 						click-value="$user_id"></div>
 					<form
 						autocomplete="off"
@@ -136,7 +136,7 @@
 									placeholder="Password"
 									required />
 								<a
-									click-previous
+									click-query="$previous"
 									click-attribute="type"
 									click-value="text, password"
 									class="floating-icon">
@@ -158,7 +158,7 @@
 									autocomplete="new-password"
 									required />
 								<a
-									click-previous
+									click-query="$previous"
 									click-attribute="type"
 									click-value="text, password"
 									class="floating-icon">

@@ -126,13 +126,13 @@
 			id="menuL"
 			class="width:0px"
 			resizable
-			resize-document="main, footer"
+			resize-query="$document main, footer"
 			resize-attribute="style"
 			resize-property="padding-left"
 			path="../"
 			src="../components/sidenav.html"
 			session
-			input-selector="[actions][]"
+			input-query="[actions][]"
 			input-attribute="href"
 			input-value="../"></sidenav>
 
@@ -144,7 +144,7 @@
 					array="blog-posts"
 					object=""
 					key="category"
-					render-selector="[template]"
+					render-query="[template]"
 					class="padding:0_20px width:100% margin-top:20px display:flex flex-wrap:wrap gap:10px">
 					<a
 						class="border-radius:5px padding:2px_5px background:#F23A2E color:#fff color:#ddd:hover font-size:12px@sm display:none:empty"
@@ -168,7 +168,7 @@
 						type="date"
 						value="{{object.published}}"
 						value-type="toLocaleDateString"
-						onload-next
+						onload-query="$next"
 						onload-attribute="value"
 						hidden />
 					<span></span>
@@ -181,7 +181,7 @@
 							key="$inc.views"
 							value="1"
 							hidden />
-						<input onload-next onload-attribute="$click" />
+						<input onload-query="$next" onload-attribute="$click" />
 						<div actions="timeout(2000), save"></div>
 					</form>
 					<i src="../assets/svg/eye.svg"></i>
@@ -295,25 +295,25 @@
 					<div
 						filter-query-key="likes"
 						filter-query-value="$user_id"
-						filter-next></div>
+						filter-query="$next"></div>
 					<input
 						type="hidden"
 						array="blog-posts"
 						object="{{object._id}}"
 						key="likes"
-						input-parent
+						input-query="$parent"
 						input-attribute="liked" />
 
 					<div
 						filter-query-key="dislikes"
 						filter-query-value="$user_id"
-						filter-next></div>
+						filter-query="$next"></div>
 					<input
 						type="hidden"
 						array="blog-posts"
 						object="{{object._id}}"
 						key="dislikes"
-						input-parent
+						input-query="$parent"
 						input-attribute="disliked" />
 
 					<form class="add-like" hidden>
@@ -396,7 +396,7 @@
 
 				<input
 					type="hidden"
-					filter-next
+					filter-query="$next"
 					filter-query-key="post_id"
 					filter-query-value="{{object._id}}" />
 				<div
@@ -405,7 +405,7 @@
 					array="comments"
 					object
 					filter-limit="20"
-					render-selector="[template]">
+					render-query="[template]">
 					<div template render-as="comment">
 						<div class="display:flex padding:20px_0">
 							<!-- Avatar -->
@@ -439,7 +439,7 @@
 										type="date"
 										value="{{comment.created.on}}"
 										value-type="toLocaleDateString"
-										onload-next
+										onload-query="$next"
 										onload-attribute="value"
 										hidden />
 									<span></span>
@@ -457,7 +457,7 @@
 										key="likes"
 										filter-query-key="likes"
 										filter-query-value="$user_id"
-										input-parent
+										input-query="$parent"
 										input-attribute="liked" />
 									<input
 										type="hidden"
@@ -466,7 +466,7 @@
 										key="dislikes"
 										filter-query-key="dislikes"
 										filter-query-value="$user_id"
-										input-parent
+										input-query="$parent"
 										input-attribute="disliked" />
 
 									<form class="add-like" hidden>
@@ -596,7 +596,7 @@
 					key="_id"
 					localstorage-get="user_id"
 					localstorage-if="true"
-					localstorage-next
+					localstorage-query="$next"
 					localstorage-attribute="hasuser"
 					localstorage-value="true" />
 				<div
@@ -629,7 +629,7 @@
 
 						<a
 							id="createUserBtn"
-							click-document="#questions"
+							click-query="$document #questions"
 							click-attribute="read"
 							click-value="true"
 							actions="timeout(1000), save, localStorage, action(document, #commentButton)"></a>

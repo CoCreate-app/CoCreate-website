@@ -9,9 +9,9 @@
 	<button actions="reset">reset</button>
 </form>
 
-<input filter-query-key="name" filter-next placeholder="search" />
+<input filter-query-key="name" filter-query="$next" placeholder="search" />
 
-<div array="contacts" render-selector="[template]">
+<div array="contacts" render-query="[template]">
 	<div template>
 		<a actions="state" state_to="form-fields" state-object="{{object._id}}">
 			<span>{{object.name}}</span>

@@ -12,13 +12,13 @@
 						<floating-label>
 							<input
 								type="text"
-								filter-document="tbody[render-selector]"
+								filter-query="$document tbody[render-query]"
 								filter-query-key="title.$regex"
 								filter-query-options="i"
 								placeholder="Name"
 								class="floating-label" />
 							<a
-								filter-document="tbody[render-selector]"
+								filter-query="$document tbody[render-query]"
 								filter-sort-key="title"
 								filter-sort-direction="asc"
 								click-value="desc, asc"
@@ -35,13 +35,13 @@
 						<floating-label>
 							<input
 								type="text"
-								filter-document="tbody[render-selector]"
+								filter-query="$document tbody[render-query]"
 								filter-query-key="name.$regex"
 								filter-query-options="i"
 								placeholder="id"
 								class="floating-label" />
 							<a
-								filter-document="tbody[render-selector]"
+								filter-query="$document tbody[render-query]"
 								filter-sort-key="_id"
 								filter-sort-direction=""
 								click-value="asc, desc"
@@ -66,7 +66,7 @@
 				filter-limit="20"
 				filter-sort-key="_id"
 				filter-sort-direction="desc"
-				render-selector="[template]">
+				render-query="[template]">
 				<tr
 					class="border-bottom:1px_solid_darkgray"
 					template
@@ -99,6 +99,6 @@
 			</tbody>
 		</table>
 
-		<div filter-on="scroll" filter-previous="[render-selector]"></div>
+		<div filter-on="scroll" filter-query="$previous [render-query]"></div>
 	</div>
 </section>

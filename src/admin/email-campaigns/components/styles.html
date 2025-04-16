@@ -6,7 +6,7 @@
                             placeholder="Classes"
                             attribute="class"
                             state_id="builder"
-                            attribute-selector="iframe;"
+                            attribute-query="iframe;"
                             array=""
                             object=""
                             crud="false"
@@ -23,10 +23,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Layout
@@ -63,9 +63,9 @@
 						<input
 							type="radio"
 							class="display:none"
-							id="layout-fill-parent"
+							id="layout-fill-query="$parent""
 							value="inherit" />
-						<span for="layout-fill-parent">Fill parent</span>
+						<span for="layout-fill-query="$parent"">Fill parent</span>
 					</div>
 
 					<div class="card width:50% text-align:center">
@@ -177,7 +177,7 @@
 				attribute="classstyle"
 				attribute-property="order"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -194,10 +194,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Spacing
@@ -214,7 +214,7 @@
 						attribute="classstyle"
 						attribute-property="margin-left"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -233,14 +233,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#margin-left">
+							attribute-query="#margin-left">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -259,7 +259,7 @@
 						attribute="classstyle"
 						attribute-property="margin-right"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -278,14 +278,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#margin-right">
+							attribute-query="#margin-right">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -306,7 +306,7 @@
 						attribute="classstyle"
 						attribute-property="margin-top"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -325,14 +325,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#margin-top">
+							attribute-query="#margin-top">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -351,7 +351,7 @@
 						attribute="classstyle"
 						attribute-property="margin-bottom"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -370,14 +370,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#margin-bottom">
+							attribute-query="#margin-bottom">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -398,7 +398,7 @@
 						attribute="classstyle"
 						attribute-property="padding-left"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -417,14 +417,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#padding-left">
+							attribute-query="#padding-left">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -443,7 +443,7 @@
 						attribute="classstyle"
 						attribute-property="padding-right"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -462,14 +462,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#padding-right">
+							attribute-query="#padding-right">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -490,7 +490,7 @@
 						attribute="classstyle"
 						attribute-property="padding-top"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -509,14 +509,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#padding-top">
+							attribute-query="#padding-top">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -535,7 +535,7 @@
 						attribute="classstyle"
 						attribute-property="padding-bottom"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -554,14 +554,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#padding-bottom">
+							attribute-query="#padding-bottom">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -583,10 +583,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Size
@@ -603,7 +603,7 @@
 						attribute="classstyle"
 						attribute-property="width"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -622,14 +622,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#width">
+							attribute-query="#width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -648,7 +648,7 @@
 						attribute="classstyle"
 						attribute-property="height"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -667,14 +667,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#height">
+							attribute-query="#height">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -695,7 +695,7 @@
 						attribute="classstyle"
 						attribute-property="min-width"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -708,14 +708,14 @@
 							id="min-width-unit"
 							class="styleunit remove-none border:none padding:0 min-height:18px!important"
 							attribute="attribute-unit"
-							attribute-selector="#min-width">
+							attribute-query="#min-width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -734,7 +734,7 @@
 						attribute="classstyle"
 						attribute-property="min-height"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -753,14 +753,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#min-height">
+							attribute-query="#min-height">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -781,7 +781,7 @@
 						attribute="classstyle"
 						attribute-property="max-width"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -800,14 +800,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#max-width">
+							attribute-query="#max-width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -826,7 +826,7 @@
 						attribute="classstyle"
 						attribute-property="max-height"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -845,14 +845,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#max-height">
+							attribute-query="#max-height">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -874,10 +874,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Position
@@ -894,7 +894,7 @@
 						attribute="classstyle"
 						attribute-property="top"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -913,14 +913,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#top">
+							attribute-query="#top">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -939,7 +939,7 @@
 						attribute="classstyle"
 						attribute-property="bottom"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -958,14 +958,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#bottom">
+							attribute-query="#bottom">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -986,7 +986,7 @@
 						attribute="classstyle"
 						attribute-property="left"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1005,14 +1005,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#left">
+							attribute-query="#left">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -1031,7 +1031,7 @@
 						attribute="classstyle"
 						attribute-property="right"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1050,14 +1050,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#right">
+							attribute-query="#right">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option template value="{{units}}">
 									<span value="{{units}}">{{units}}</span>
 								</cc-option>
@@ -1076,10 +1076,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Typography
@@ -1094,14 +1094,14 @@
 				attribute="classstyle"
 				attribute-property="font-family"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
 				save="false"
 				read="false"
 				active>
-				<input placeholder="Search" search-selector=".option" />
+				<input placeholder="Search" search-query=".option" />
 				<ul class="options z-index:7">
 					<cc-option value="none"><span>none</span></cc-option>
 					<cc-option value="arial"><span>Arial</span></cc-option>
@@ -1141,7 +1141,7 @@
 						attribute="classstyle"
 						attribute-property="font-size"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1160,14 +1160,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="#font-size">
+							attribute-query="#font-size">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -1188,7 +1188,7 @@
 						attribute="classstyle"
 						attribute-property="font-weight"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1204,7 +1204,7 @@
 					attribute="classstyle"
 					attribute-property="color"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -1219,7 +1219,7 @@
 				attribute="classstyle"
 				attribute-property="text-align"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1256,7 +1256,7 @@
 				attribute="classstyle"
 				attribute-property="text-decoration"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1287,7 +1287,7 @@
 				attribute="classstyle"
 				attribute-property="font-style"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1317,10 +1317,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Border
@@ -1337,7 +1337,7 @@
 						attribute="classstyle"
 						attribute-property="border-width"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1356,14 +1356,14 @@
 							save="false"
 							read="false"
 							attribute="attribute-unit"
-							attribute-selector="border-width">
+							attribute-query="border-width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -1382,7 +1382,7 @@
 						attribute="classstyle"
 						attribute-property="border-style"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1428,7 +1428,7 @@
 					attribute="classstyle"
 					attribute-property="border-color"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -1445,7 +1445,7 @@
 					attribute="classstyle"
 					attribute-property="border-radius"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -1464,14 +1464,14 @@
 						save="false"
 						read="false"
 						attribute="attribute-unit"
-						attribute-selector="border-radius">
+						attribute-query="border-radius">
 						<ul
 							class="options overflow:auto padding:0px z-index:7"
 							array="modules"
 							filter-query-value="5ff747727005da1c27274193"
 							filter-query-key="_id.$eq"
 							key="units"
-							render-selector=":last-child">
+							render-query=":last-child">
 							<cc-option
 								class="margin:0px padding:3px border-radius:4px"
 								template
@@ -1494,10 +1494,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Shadow
@@ -1516,7 +1516,7 @@
 						attribut="classstyle"
 						attribute-property="offsetx"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1534,14 +1534,14 @@
 							save="false"
 							read="false"
 							attribut="attribute-unit"
-							attribute-selector="border-width">
+							attribute-query="border-width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -1561,7 +1561,7 @@
 						attribut="classstyle"
 						attribute-property="offsetv"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1579,14 +1579,14 @@
 							save="false"
 							read="false"
 							attribut="attribute-unit"
-							attribute-selector="border-width">
+							attribute-query="border-width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -1609,7 +1609,7 @@
 						attribute-property="blur"
 						attribute-unit="px"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1627,14 +1627,14 @@
 							save="false"
 							read="false"
 							attribut="attribute-unit"
-							attribute-selector="border-width">
+							attribute-query="border-width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -1655,7 +1655,7 @@
 						attribute-property="spread"
 						attribute-unit="px"
 						state_id="builder"
-						attribute-selector="iframe;"
+						attribute-query="iframe;"
 						array=""
 						object=""
 						crud="false"
@@ -1673,14 +1673,14 @@
 							save="false"
 							read="false"
 							attribut="attribute-unit"
-							attribute-selector="border-width">
+							attribute-query="border-width">
 							<ul
 								class="options overflow:auto padding:0px z-index:7"
 								array="modules"
 								filter-query-value="5ff747727005da1c27274193"
 								filter-query-key="_id.$eq"
 								key="units"
-								render-selector=":last-child">
+								render-query=":last-child">
 								<cc-option
 									class="margin:0px padding:3px border-radius:4px"
 									template
@@ -1700,7 +1700,7 @@
 				attribut="classstyle"
 				attribute-property="fill-color"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1717,10 +1717,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Background
@@ -1735,7 +1735,7 @@
 					attribute="classstyle"
 					attribute-property="background-color"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -1748,11 +1748,11 @@
 					accept="image/*"
 					placeholder="image:"
 					class="floating-label min-height:40px active"
-					render-selector="[template]"
+					render-query="[template]"
 					attribute="classstyle"
 					attribute-property="background-image"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					render="file"
@@ -1773,7 +1773,7 @@
 				attribute="classstyle"
 				attribute-property="background-repeat"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1801,7 +1801,7 @@
 				attribute="classstyle"
 				attribute-property="background-position"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1848,7 +1848,7 @@
 				attribute="classstyle"
 				attribute-property="background-attachment"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1869,7 +1869,7 @@
 				attribute="classstyle"
 				attribute-property="background-size"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1892,10 +1892,10 @@
 	<div
 		toggle="../../../assets/svg/minus.svg, ../../../assets/svg/plus.svg"
 		toggle-attribute="src"
-		toggle-selector=":scope > :first-child i"
+		toggle-query=":scope > :first-child i"
 		click-attribute="hidden"
 		click-value=""
-		click-selector=":scope > :last-child">
+		click-query=":scope > :last-child">
 		<div
 			class="display:flex justify-content:space-between align-items:center width:100%">
 			Extra
@@ -1910,7 +1910,7 @@
 				attribute="classstyle"
 				attribute-property="opacity"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -1924,7 +1924,7 @@
 				attribute="classstyle"
 				attribute-property="cursor"
 				state_id="builder"
-				attribute-selector="iframe;"
+				attribute-query="iframe;"
 				array=""
 				object=""
 				crud="false"
@@ -2021,7 +2021,7 @@
 					attribute="classstyle"
 					attribute-property="filter"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -2063,7 +2063,7 @@
 					attribut="classstyle"
 					attribute-property="strenth"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -2080,7 +2080,7 @@
 					attribute="classstyle"
 					attribute-property="transform"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -2129,7 +2129,7 @@
 					attribut="classstyle"
 					attribute-property="translate"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -2146,7 +2146,7 @@
 					attribute="classstyle"
 					attribute-property="transition-property"
 					state_id="builder"
-					attribute-selector="iframe;"
+					attribute-query="iframe;"
 					array=""
 					object=""
 					crud="false"
@@ -2191,7 +2191,7 @@
 							attribut="classstyle"
 							attribute-property="duration"
 							state_id="builder"
-							attribute-selector="iframe;"
+							attribute-query="iframe;"
 							array=""
 							object=""
 							crud="false"
@@ -2207,7 +2207,7 @@
 							attribut="classstyle"
 							attribute-property="easing"
 							state_id="builder"
-							attribute-selector="iframe;"
+							attribute-query="iframe;"
 							array=""
 							object=""
 							crud="false"

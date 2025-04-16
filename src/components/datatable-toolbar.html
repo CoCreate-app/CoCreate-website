@@ -9,26 +9,26 @@
 			class="height:16px width:16px margin-left:14px"
 			input-attribute="class"
 			input-value="selected"
-			input-document="tbody[array] [render-clone][] " />
+			input-query="$document tbody[array] [render-clone][] " />
 	</div>
 
 	<div class="display:flex align-items:center gap:15px">
 		<div
 			class="display:flex align-items:center transition:0.3s"
-			hover-selector=".options"
+			hover-query=".options"
 			hover-attribute="class"
 			hover-value="display:flex!important">
 			<div class="display:none gap:15px options">
-				<a actions="export" export-document="tbody[array]">
+				<a actions="export" export-query="$document tbody[array]">
 					<i src="../assets/svg/file-download.svg"></i>
 				</a>
 				<a actions="import" array="users" type="file">
 					<i src="../assets/svg/file-upload.svg"></i>
 				</a>
-				<a actions="clipboard" clipboard-document="table">
+				<a actions="clipboard" clipboard-query="$document table">
 					<i src="../assets/svg/copy.svg"></i>
 				</a>
-				<a actions="print" print-closest="$document  table">
+				<a actions="print" print-query="$closest $document  table">
 					<i src="../assets/svg/print.svg"></i>
 				</a>
 			</div>
@@ -49,10 +49,13 @@
 			observe-target="tbody[array] > .selected"
 			observe-attribute="isSelected"
 			observe-value="true"
-			observe-next
+			observe-query="$next"
 			hidden></div>
 
-		<a actions="delete" delete-document="tbody[array]" isSelected="false">
+		<a
+			actions="delete"
+			delete-query="$document tbody[array]"
+			isSelected="false">
 			<i src="../assets/svg/trash-alt.svg"></i>
 		</a>
 		<!-- <div
@@ -60,7 +63,7 @@
 			observe-target="tbody[array] :not(.selected)"
 			observe-attribute="isSelected"
 			observe-value="false"
-			observe-previous
+			observe-query="$previous"
 			hidden></div>
  -->
 		<button

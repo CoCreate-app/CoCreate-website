@@ -3,19 +3,19 @@
 	resize-attribute="menu-icon"
 	resize-value="active"
 	resize-if="300px"
-	resize-document="[menu-icon][]"></div>
+	resize-query="$document [menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="50px"
-	resize-document="[menu-icon][]"></div>
+	resize-query="$document [menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="0px"
-	resize-document="[menu-icon][]"></div>
+	resize-query="$document [menu-icon][]"></div>
 
 <div class="header height:70px">
 	<!-- Logo -->
@@ -33,7 +33,7 @@
 	<span
 		menu-icon
 		toggle="width:0px,"
-		toggle-document="#menuL"
+		toggle-query="$document #menuL"
 		toggle-attribute="style"
 		class="margin-right:10px">
 		<span></span>
@@ -71,7 +71,7 @@
 		actions="state"
 		state_to="mainView"
 		state-src="$relativePathhome/"
-		click-closest="sidenav"
+		click-query="$closest sidenav"
 		click-attribute="style"
 		click-value="width:0px"
 		click-if="<=993px"

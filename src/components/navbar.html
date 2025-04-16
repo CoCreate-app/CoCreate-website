@@ -2,7 +2,7 @@
 <span
 	class="display:none@md@lg@xl"
 	toggle="width:300px,"
-	toggle-document="#menuL"
+	toggle-query="$document #menuL"
 	toggle-attribute="style"
 	menu-icon>
 	<span></span>
@@ -27,7 +27,7 @@
 		class="margin-right:25px color:dodgerblue:hover"
 		toggle-attribute="hidden"
 		toggle-value=""
-		toggle-selector="#products"
+		toggle-query="#products"
 		>Products</a
 	>
 	<ul
@@ -116,7 +116,7 @@
 		<div
 			class="signin"
 			toggle="dropdown"
-			toggle-closest="nav #profile-dropdown"
+			toggle-query="$closest nav #profile-dropdown"
 			toggle-attribute="hidden"
 			toggle-value=""
 			session></div>
@@ -137,7 +137,7 @@
 		state-src="$relativePathprofile/index.html"
 		state_to="main"
 		href="$relativePathaccount/"
-		click-parent
+		click-query="$parent"
 		click-attribute="hidden"
 		click-value=""
 		class="display:flex align-items:center gap:10px">

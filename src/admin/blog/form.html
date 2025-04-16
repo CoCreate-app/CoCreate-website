@@ -24,7 +24,7 @@
 				key="published"
 				value-type="toLocaleString"
 				placeholder="Published On"
-				input-previous
+				input-query="$previous"
 				input-attribute="value"
 				hidden />
 		</floating-label>
@@ -34,13 +34,13 @@
 				type="text"
 				key="title"
 				placeholder="Title"
-				input-document=".title[]"
+				input-query="$document .title[]"
 				input-attribute="value"
 				class="floating-label input-icon" />
 
 			<a
 				actions="action($document #generate-post)"
-				click-selector="i[src]"
+				click-query="i[src]"
 				click-attribute="src"
 				click-value="../assets/svg/spinner.svg"
 				class="floating-icon">
@@ -51,7 +51,7 @@
 			</a>
 			<div
 				id="generated-icon"
-				click-previous="i"
+				click-query="$previous i"
 				click-attribute="src"
 				click-value="../assets/svg/check-circle.svg"></div>
 		</floating-label>
@@ -70,12 +70,12 @@
 				id="imageurl"
 				key="image"
 				filter-query-key="pathname"
-				filter-next
+				filter-query="$next"
 				placeholder="Image Url"
 				class="floating-label input-icon" />
 			<a
 				actions="action($document #generate-image)"
-				click-selector="i[src]"
+				click-query="i[src]"
 				click-attribute="src"
 				click-value="../assets/svg/spinner.svg"
 				class="floating-icon right:35px!important">
@@ -85,7 +85,7 @@
 			</a>
 			<div
 				id="imageGenerated"
-				click-previous="i"
+				click-query="$previous i"
 				click-attribute="src"
 				click-value="../assets/svg/check-circle.svg"></div>
 
@@ -99,13 +99,13 @@
 				class="floating-icon"
 				read="false"
 				upsert="true"
-				render-selector="[template]"
+				render-query="[template]"
 				skip-attribute>
 				<div template file_id="{{object.id}}">
 					<input
 						file="pathname"
 						value="/assets{{object.pathname}}"
-						onload-document="#imageurl"
+						onload-query="$document #imageurl"
 						onload-attribute="value"
 						onload-if="!$template"
 						hidden />
@@ -123,7 +123,7 @@
 				id="videourl"
 				key="video"
 				filter-query-key="pathname"
-				filter-next
+				filter-query="$next"
 				placeholder="Video Url"
 				class="floating-label input-icon" />
 			<a
@@ -136,13 +136,13 @@
 				class="floating-icon"
 				read="false"
 				upsert="true"
-				render-selector="[template]"
+				render-query="[template]"
 				skip-attribute>
 				<div template file_id="{{object.id}}">
 					<input
 						file="pathname"
 						value="/assets{{object.pathname}}"
-						onload-document="#videourl"
+						onload-query="$document #videourl"
 						onload-attribute="value"
 						onload-if="!$template"
 						hidden />
@@ -159,7 +159,7 @@
 		<floating-label class="width:100%">
 			<textarea
 				key="description"
-				input-document=".description"
+				input-query="$document .description"
 				input-attribute="value"
 				placeholder="Description"
 				class="floating-label"></textarea>
@@ -172,7 +172,7 @@
 				key="content"
 				realtime="true"
 				placeholder="Content"
-				input-document=".content"
+				input-query="$document .content"
 				input-attribute="value"
 				class="floating-label markdown-body"></editor>
 		</floating-label>
@@ -219,7 +219,7 @@
 
 		<input
 			key="_id"
-			input-document="#publishform"
+			input-query="$document #publishform"
 			input-attribute="object"
 			hidden />
 		<input type="datetime" key="published" value="$now" hidden />
@@ -227,7 +227,7 @@
 		<div class="display:flex justify-content:space-between width:100%">
 			<button
 				class="margin-top:20px green"
-				click-selector="i[src]"
+				click-query="i[src]"
 				click-attribute="src"
 				click-value="../assets/svg/spinner.svg"
 				actions="click, save, timeout(1000), render($document #publish), timeout(2000), action($document #savefile), action($document #postPublished)">
@@ -239,7 +239,7 @@
 
 		<a
 			id="postPublished"
-			click-document="#published-icon"
+			click-query="$document #published-icon"
 			click-attribute="src"
 			click-value="../assets/svg/check-circle.svg"
 			hidden></a>
@@ -252,7 +252,7 @@
 			value-replaceall=" "
 			value-replacement="-"
 			value-suffix=".html"
-			input-next
+			input-query="$next"
 			input-attribute="value"
 			class="title" />
 		<input key="pathname" value-prefix="/blog/" />
@@ -262,12 +262,12 @@
 		<input key="$addToSet.host" value="*" />
 		<input key="public" value="true" />
 
-		<div id="publish" render-next render="object"></div>
+		<div id="publish" render-query="$next" render="object"></div>
 		<div
 			id="sethtml"
 			src="./blog/post.html"
 			value-type="text"
-			click-next
+			click-query="$next"
 			click-attribute="value"></div>
 
 		<textarea key="src"></textarea>
@@ -323,7 +323,7 @@
 			openai="chat.completions.create"
 			openai-key="choices[0].message.content"
 			openai-request="false"
-			input-document="#blog-form"
+			input-query="$document #blog-form"
 			input-attribute="value"
 			value-type="json"
 			value-replace="/```json\n|\n```/g"
@@ -384,7 +384,7 @@
 			openai-key="choices[0].message.content"
 			openai-request="false"
 			marked
-			input-document="#content"
+			input-query="$document #content"
 			input-attribute="value"
 			hidden></textarea>
 		<a
@@ -422,7 +422,7 @@
 			openai="images.generate"
 			openai-key="data[0].url"
 			openai-request="false"
-			import-url-document="#imagefile"
+			import-url-query="$document #imagefile"
 			import-url
 			hidden />
 

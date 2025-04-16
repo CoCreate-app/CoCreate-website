@@ -31,18 +31,24 @@
 	type="hidden"
 	localstorage-get="user_id"
 	localstorage-if="false"
-	localstorage-next
+	localstorage-query="$next"
 	localstorage-attribute="$click" />
-<div click-next="input" click-attribute="value" click-value="$object_id"></div>
+<div
+	click-query="$next input"
+	click-attribute="value"
+	click-value="$object_id"></div>
 
 <form hidden>
-	<input localstorage-set="user_id" input-attribute="$click" input-next />
+	<input
+		localstorage-set="user_id"
+		input-attribute="$click"
+		input-query="$next" />
 	<div actions="localStorage"></div>
 </form>
 
 <button
 	id="chat-toggle"
-	click-next
+	click-query="$next"
 	click-attribute="style"
 	click-value="visibility:visible,"
 	class="button-round bottom:15px">
@@ -53,7 +59,7 @@
 	<div id="chat-header">
 		Chat with CoCreate
 		<div
-			click-closest="#chat-container"
+			click-query="$closest #chat-container"
 			click-attribute="style"
 			click-value="visibility:visible,"
 			class="float:right font-size:20px color:#000:hover">

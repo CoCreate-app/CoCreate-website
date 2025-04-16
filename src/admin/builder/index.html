@@ -44,7 +44,7 @@
 				click="active"
 				click-attribute="menu-icon"
 				toggle="width:310px,width:0px"
-				toggle-document="#menuL"
+				toggle-query="$document #menuL"
 				toggle-attribute="style">
 				<span></span>
 				<span></span>
@@ -98,7 +98,7 @@
 					class="builder-tab-round"
 					selected-attribute="class"
 					selected-value="max-width:100%"
-					selected-selector="$document .canvas-container"
+					selected-query="$document .canvas-container"
 					selected-group="screen-size"
 					selected>
 					<i src="../../assets/svg/desktop.svg"></i>
@@ -107,7 +107,7 @@
 					class="builder-tab-round"
 					selected-attribute="class"
 					selected-value="max-width:768px"
-					selected-document=".canvas-container"
+					selected-query="$document .canvas-container"
 					selected-group="screen-size">
 					<i src="../../assets/svg/tablet-alt.svg"></i>
 				</a>
@@ -115,21 +115,21 @@
 					class="builder-tab-round"
 					selected-attribute="class"
 					selected-value="max-width:375px"
-					selected-selector="$document .canvas-container"
+					selected-query="$document .canvas-container"
 					selected-group="screen-size">
 					<i src="../../assets/svg/mobile-alt.svg"></i>
 				</a>
 
 				<a
 					actions="disableLinks"
-					link-selector="#canvas;"
+					link-query="#canvas;"
 					show="[actions='enableLinks']"
 					hide="[actions='disableLinks']">
 					<i src="../../assets/svg/link.svg"></i>
 				</a>
 				<a
 					actions="enableLinks"
-					link-selector="#canvas;"
+					link-query="#canvas;"
 					class="margin-right:15px color:red"
 					hidden
 					show="[actions='disableLinks']"
@@ -176,7 +176,7 @@
 				click="active"
 				click-attribute="menu-icon"
 				toggle="width:310px, width:0px"
-				toggle-document="#menuR"
+				toggle-query="$document #menuR"
 				toggle-attribute="style">
 				<span></span>
 				<span></span>
@@ -214,7 +214,7 @@
 			class="position:absolute top:0px left:0px overflow:hidden height:100vh width:310px width:0px@xs@sm@md z-index:8"
 			resizable
 			resize-attribute="style"
-			resize-document="main, nav"
+			resize-query="$document main, nav"
 			resize-property="padding-left">
 			<div src="./components/left-panel.html"></div>
 			<div resize="right"></div>
@@ -226,7 +226,7 @@
 			class="position:absolute top:0px right:0px overflow:hidden height:100vh width:310px width:0px@xs@sm@md z-index:8"
 			resizable
 			resize-attribute="style"
-			resize-document="main, nav"
+			resize-query="$document main, nav"
 			resize-property="padding-right">
 			<input type="hidden" attribute="eid" />
 			<div src="./components/right-panel.html"></div>
@@ -236,7 +236,7 @@
 		<!-- Selected Toolbar -->
 		<toolbar
 			toolbar-placement="top"
-			toolbar-selector="iframe;"
+			toolbar-query="iframe;"
 			toolbar-event="click, mouseup"
 			config-key="selectable"
 			class="position:absolute pointer-events:none display:none">
@@ -253,7 +253,7 @@
 					></span>
 					<span
 						actions="remove"
-						remove-selector="iframe;"
+						remove-query="iframe;"
 						class="margin-right:10px"
 						><i src="../../assets/svg/trash-alt.svg"></i
 					></span>
@@ -272,7 +272,7 @@
 		<!-- Hover Toolbar -->
 		<toolbar
 			toolbar-placement="top"
-			toolbar-selector="iframe;"
+			toolbar-query="iframe;"
 			toolbar-event="mouseover"
 			config-key="hoverable"
 			class="position:absolute pointer-events:none display:none">
@@ -290,7 +290,7 @@
 		<!-- Collaboration Toolbar -->
 		<toolbar
 			toolbar-placement="top"
-			toolbar-selector="iframe;"
+			toolbar-query="iframe;"
 			toolbar-event="selectionchange"
 			config-key="editable"
 			class="toolbar-class">
@@ -341,7 +341,7 @@
 					id="heading-btn"
 					hover-attribute="class"
 					hover-value="height:0px, height:32px"
-					hover-next>
+					hover-query="$next">
 					<i src="../../assets/svg/heading.svg"></i>
 				</div>
 				<div
@@ -420,7 +420,7 @@
 		<!-- End Collaboration Toolbar -->
 
 		<!-- element-config -->
-		<script config-selector="iframe; html" array="" object="" key="">
+		<script config-query="iframe; html" array="" object="" key="">
 			[
 				{
 					selector: "*",
@@ -495,7 +495,7 @@
 		</script>
 
 		<!-- element-config Example using html elements and attributes to define config -->
-		<!--<element-config config-selector="iframe; html" array="" object="" key="" style="display:none">-->
+		<!--<element-config config-query="iframe; html" array="" object="" key="" style="display:none">-->
 		<!--    <config selector="*" editable="true" draggable="true" selectable="true" hoverable="true" mouseover="true"></config>-->
 		<!--    <config selector="h1, h2, h3, h4, h5, h6, p, span, blockquote" editable="true" draggable="true" selectable="true" hoverable="true" mouseover="true"></config>-->
 		<!--</element-config>-->

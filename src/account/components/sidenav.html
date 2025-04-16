@@ -3,19 +3,19 @@
 	resize-attribute="menu-icon"
 	resize-value="active"
 	resize-if="275px"
-	resize-document="[menu-icon][]"></div>
+	resize-query="$document [menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="50px"
-	resize-document="[menu-icon][]"></div>
+	resize-query="$document [menu-icon][]"></div>
 <div
 	class="width:100%"
 	resize-attribute="menu-icon"
 	resize-value="false"
 	resize-if="0px"
-	resize-document="[menu-icon][]"></div>
+	resize-query="$document [menu-icon][]"></div>
 
 <div class="header height:70px">
 	<style>
@@ -46,7 +46,7 @@
 			state_to="main"
 			state-src="./organization/create.html"
 			state-overwrite
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -67,7 +67,7 @@
 			object=""
 			state_id="accountOrg"
 			toggle="dropdown"
-			toggle-closest=".header .org-dropdown"
+			toggle-query="$closest .header .org-dropdown"
 			toggle-attribute="is-hidden"
 			toggle-value="true, false">
 			<img
@@ -80,14 +80,14 @@
 			<span
 				class="org-name font-size:22px font-weight:bold"
 				key="name"
-				input-closest="div[organization]"
+				input-query="$closest div[organization]"
 				input-attribute="organization"
 				input-value="true">
 				<div
 					observe-target=".org:not([template])"
-					observe-document=".org:not([template])"
+					observe-query="$document .org:not([template])"
 					observe-attribute="$click"
-					observe-delay="2000"
+					observe-setTimeout="2000"
 					hidden></div>
 			</span>
 
@@ -102,7 +102,7 @@
 			filter-sort-key="name"
 			filter-sort-direction="asc"
 			filter-limit
-			render-selector="[template]"
+			render-query="[template]"
 			click-attribute="is-hidden"
 			click-value="true"
 			is-hidden="true">
@@ -116,7 +116,7 @@
 					state-organization_id="{{object._id}}"
 					state-host
 					state-overwrite
-					click-closest="sidenav"
+					click-query="$closest sidenav"
 					click-attribute="style"
 					click-value="width:0px"
 					click-if="<575px"
@@ -135,15 +135,15 @@
 						filter-query-value="^$subdomain\."
 						filter-query-key="host.$"
 						filter-query-value="1"
-						filter-next></div>
+						filter-query="$next"></div>
 
 					<input
 						array="organizations"
 						object="{{object._id}}"
 						key="host[0].name"
 						input-attribute="state-host"
-						input-parent
-						input-next
+						input-query="$parent"
+						input-query="$next"
 						value-replace="/\[\]/g"
 						hidden />
 					<div
@@ -158,7 +158,7 @@
 				state_to="main"
 				state-src="./organization/create.html"
 				state-overwrite
-				click-closest="sidenav"
+				click-query="$closest sidenav"
 				click-attribute="style"
 				click-value="width:0px"
 				click-if="<575px"
@@ -179,7 +179,7 @@
 	<a
 		menu-icon
 		toggle="width:0px,"
-		toggle-document="#menuL"
+		toggle-query="$document #menuL"
 		toggle-attribute="style"
 		class="display:none!important display:block!important@xs margin-right:10px">
 		<span></span>
@@ -198,7 +198,7 @@
 		</h3>
 
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -211,7 +211,7 @@
 			</a>
 		</li>
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -227,7 +227,7 @@
 			</a>
 		</li>
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -244,7 +244,7 @@
 			</a>
 		</li>
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -261,7 +261,7 @@
 			</a>
 		</li>
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -286,7 +286,7 @@
 			array="keys"
 			object="645be06f200770138f1a7f54"
 			key="key"
-			input-parent
+			input-query="$parent"
 			input-attribute="admin"
 			input-value="true" />
 
@@ -296,7 +296,7 @@
 		</h3>
 		<!-- Organizations -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -323,7 +323,7 @@
 
 		<!-- Servers -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -350,7 +350,7 @@
 
 		<!-- Domains -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -368,7 +368,7 @@
 
 		<!-- Databases -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -387,7 +387,7 @@
 
 		<!-- Keys -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -414,7 +414,7 @@
 
 		<!-- Users -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -441,7 +441,7 @@
 
 		<!-- Payments -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -468,7 +468,7 @@
 
 		<!-- Files -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -495,7 +495,7 @@
 
 		<!-- Builder -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -513,7 +513,7 @@
 
 		<!-- AI -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -540,7 +540,7 @@
 
 		<!-- Blog Posts -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -567,7 +567,7 @@
 
 		<!-- Social Posts -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -589,7 +589,7 @@
 
 		<!-- Email Campaigns -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"
@@ -614,7 +614,7 @@
 
 		<!-- SEO -->
 		<li
-			click-closest="sidenav"
+			click-query="$closest sidenav"
 			click-attribute="style"
 			click-value="width:0px"
 			click-if="<575px"

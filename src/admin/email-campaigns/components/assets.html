@@ -13,7 +13,7 @@
 	<input
 		type="text"
 		class="floating-label"
-		filter-parent="$document "
+		filter-query="$parent $document "
 		filter-query-key="pathname.$regex"
 		filter-query-options="i" />
 	<span
@@ -33,13 +33,13 @@
 	filter-query-options="i"
 	filter-sort-key="pathname"
 	filter-sort-direction="asc"
-	render-selector="[template]">
+	render-query="[template]">
 	<!-- Asset Template -->
 	<div
 		template
 		render="object"
 		class="card position:relative flex-grow:1 width:105px height:90px padding:5px"
-		hover-selector=":first-child"
+		hover-query=":first-child"
 		hover-attribute="hidden"
 		hover-value="">
 		<div class="position:absolute top:8px right:8px font-size:11px" hidden>
@@ -68,7 +68,7 @@
 			actions="attributes"
 			attribute="src"
 			value="{{object.pathname}}"
-			attribute-selector="iframe;">
+			attribute-query="iframe;">
 			<!-- image -->
 			<div
 				cloneable="true"
@@ -101,5 +101,5 @@
 			</div>
 		</a>
 	</div>
-	<div filter-on="scroll" filter-parent class="width:100%">test</div>
+	<div filter-on="scroll" filter-query="$parent" class="width:100%">test</div>
 </div>

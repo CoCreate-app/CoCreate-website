@@ -2,7 +2,7 @@
 <a
 	menu-icon
 	toggle="width:275px,"
-	toggle-document="#menuL"
+	toggle-query="$document #menuL"
 	toggle-attribute="style">
 	<span></span>
 	<span></span>
@@ -28,7 +28,7 @@
 <a
 	class="avatar round"
 	toggle="dropdown"
-	toggle-next
+	toggle-query="$next"
 	toggle-attribute="hidden"
 	toggle-value="">
 	<div array="users" object="$user_id" key="firstname" class="avatar-name">
@@ -56,7 +56,7 @@
 		actions="state"
 		state-src="./profile/index.html"
 		state_to="main"
-		click-parent
+		click-query="$parent"
 		click-attribute="hidden"
 		click-value=""
 		class="display:flex align-items:center gap:10px">

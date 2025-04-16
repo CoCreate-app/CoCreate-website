@@ -16,7 +16,7 @@
 				placeholder="Existing organization_id (optional)"
 				class="floating-label"
 				input-attribute="state-object"
-				input-closest="section #setObject" />
+				input-query="$closest section #setObject" />
 		</floating-label>
 
 		<floating-label class="width:100%">
@@ -30,7 +30,7 @@
 				required
 				class="floating-label"
 				input-attribute="state-host"
-				input-closest="section #setOrg" />
+				input-query="$closest section #setOrg" />
 			<div
 				class="position:absolute top:6px right:8px float:right padding:5px background:whitesmoke background:#222@dark">
 				<span>.cocreate.app</span>
@@ -42,7 +42,7 @@
 			type="hidden"
 			key="_id"
 			input-attribute="state-organization_id"
-			input-closest="section #setOrg" />
+			input-query="$closest section #setOrg" />
 		<input
 			type="hidden"
 			key="logo[0].src"
@@ -60,7 +60,7 @@
 		<button
 			actions="click, timeout(1000), state"
 			click-attribute="$save"
-			click-closest="section form"
+			click-query="$closest section form"
 			state_to="main"
 			state-src="./organization/update.html">
 			<i src="../assets/svg/save.svg"></i>

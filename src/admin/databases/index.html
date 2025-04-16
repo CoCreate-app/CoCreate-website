@@ -8,7 +8,7 @@
 		<select
 			type="text"
 			placeholder="Array"
-			input-document="#databases"
+			input-query="$document #databases"
 			input-attribute="array">
 			<option value="keys">keys</option>
 			<option value="organizations">organizations</option>
@@ -18,13 +18,13 @@
 	<floating-label class="margin-top:10px margin-bottom:10px">
 		<input
 			type="text"
-			filter-document="#databases"
+			filter-query="$document #databases"
 			filter-search
 			placeholder="Search" />
 
 		<span class="floating-icon">
 			<a
-				filter-document="#blog-posts"
+				filter-query="$document #blog-posts"
 				filter-sort-key="_id"
 				filter-sort-direction="asc"
 				click-value="desc, asc"
@@ -47,7 +47,7 @@
 		filter-sort-key="_id"
 		filter-sort-direction="desc"
 		render="object"
-		render-selector="[template]">
+		render-query="[template]">
 		<div
 			class="card width:100% position:relative"
 			template
@@ -71,28 +71,28 @@
 					<i src="$relativePathassets/svg/clone.svg"></i>
 				</a>
 				<a
-					toggle-next
+					toggle-query="$next"
 					toggle-attribute="hidden"
 					toggle-value=""
-					click-closest=".card textarea"
+					click-query="$closest .card textarea"
 					click-attribute="readonly"
 					click-value="">
 					<i src="$relativePathassets/svg/edit.svg"></i>
 				</a>
 				<span hidden>
 					<a
-						toggle-closest=".code-container textarea"
+						toggle-query="$closest .code-container textarea"
 						toggle-attribute="readonly"
 						toggle-value=""
-						click-closest=".card textarea"
+						click-query="$closest .card textarea"
 						click-attribute="$save">
 						<i src="$relativePathassets/svg/save.svg"></i>
 					</a>
 					<a
-						toggle-closest=".card textarea"
+						toggle-query="$closest .card textarea"
 						toggle-attribute="readonly"
 						toggle-value=""
-						click-parent
+						click-query="$parent"
 						click-attribute="hidden"
 						click-value="">
 						<i src="$relativePathassets/svg/ban.svg"></i>
@@ -107,7 +107,7 @@
 		array
 		filter-sort-key="name"
 		filter-sort-direction="asc"
-		render-selector="[template='arrays']"
+		render-query="[template='arrays']"
 		filter>
 		<!-- Template -->
 		<li

@@ -106,13 +106,13 @@
 			id="menuL"
 			class="width:0px"
 			resizable
-			resize-document="main, footer"
+			resize-query="$document main, footer"
 			resize-attribute="style"
 			resize-property="padding-left"
 			path="../"
 			src="../components/sidenav.html"
 			session
-			input-selector="[actions][]"
+			input-query="[actions][]"
 			input-attribute="href"
 			input-value="../"></sidenav>
 
@@ -136,14 +136,14 @@
 				<floating-label>
 					<input
 						type="text"
-						filter-document="#demos-list"
+						filter-query="$document #demos-list"
 						filter-query-key="title.$regex"
 						filter-query-options="i"
 						placeholder="Search Demos" />
 
 					<span class="floating-icon">
 						<a
-							filter-document="#demos-list"
+							filter-query="$document #demos-list"
 							filter-sort-key="title"
 							filter-sort-direction="asc"
 							click-value="desc, asc"
@@ -165,7 +165,7 @@
 					filter-limit="20"
 					filter-sort-key="_id"
 					filter-sort-direction="desc"
-					render-selector="[template]">
+					render-query="[template]">
 					<!-- Demo Template -->
 					<div class="card flex-grow:1 width:300px" template>
 						<a class="overflow:hidden" href="{{object.url}}">
@@ -178,7 +178,7 @@
 							<!-- Demo Content -->
 							<div
 								hover="display:block"
-								hover-selector=".description">
+								hover-query=".description">
 								<h2
 									class="font-size:24px margin:0 padding:0_0_10px font-weight:700">
 									{{object.title}}

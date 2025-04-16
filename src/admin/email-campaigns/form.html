@@ -68,13 +68,13 @@
 				type="text"
 				key="title"
 				placeholder="Title"
-				input-document=".title[]"
+				input-query="$document .title[]"
 				input-attribute="value"
 				class="floating-label input-icon" />
 
 			<a
 				actions="action($document #generate-email)"
-				click-selector="i[src]"
+				click-query="i[src]"
 				click-attribute="src"
 				click-value="./assets/svg/spinner.svg"
 				class="floating-icon">
@@ -85,7 +85,7 @@
 			</a>
 			<div
 				id="generated-icon"
-				click-previous="i"
+				click-query="$previous i"
 				click-attribute="src"
 				click-value="./assets/svg/check-circle.svg"></div>
 		</floating-label>
@@ -96,7 +96,7 @@
 				type="text"
 				key="preheader"
 				placeholder="Preheader"
-				input-document=".preheader"
+				input-query="$document .preheader"
 				input-attribute="value"
 				class="floating-label" />
 		</floating-label>
@@ -152,12 +152,15 @@
 						id="renderAction"
 						actions="render($document #renderEmail), timeout(1000), action($document #sethtml)"
 						hidden></a>
-					<div id="renderEmail" render-next render="object"></div>
+					<div
+						id="renderEmail"
+						render-query="$next"
+						render="object"></div>
 					<div
 						id="sethtml"
 						src="./admin/email-campaigns/templates/newsletter.html"
 						value-type="text"
-						click-document="#html"
+						click-query="$document #html"
 						click-attribute="value"
 						hidden></div>
 
@@ -186,7 +189,7 @@
 				<div
 					class="display:flex gap:15px font-size:20px position:absolute top:10px right:10px opacity:0.6">
 					<a
-						click-closest=".playground"
+						click-query="$closest .playground"
 						click-value="code, preview"
 						click-attribute="class">
 						<i
@@ -197,7 +200,7 @@
 					<a
 						class="margin-right:5px"
 						fullscreen
-						fullscreen-closest=".playground">
+						fullscreen-query="$closest .playground">
 						<i src="/assets/svg/expand.svg"></i>
 						<i src="/assets/svg/compress.svg"></i>
 					</a>
@@ -220,7 +223,7 @@
 		<!-- Hidden Metadata Fields -->
 		<input
 			key="_id"
-			input-document="#sendform"
+			input-query="$document #sendform"
 			input-attribute="object"
 			hidden />
 		<input type="datetime" key="created_at" value="$now" hidden />
@@ -230,14 +233,14 @@
 
 		<a
 			id="emailSent"
-			click-document="#emailSent-icon"
+			click-query="$document #emailSent-icon"
 			click-attribute="src"
 			click-value="./assets/svg/check-circle.svg"
 			hidden></a>
 
 		<!-- Send Newsletter Button -->
 		<button
-			click-selector="i[src]"
+			click-query="i[src]"
 			click-attribute="src"
 			click-value="./assets/svg/spinner.svg"
 			actions="click, save, sendMassEmails, action($document #emailSent)">
@@ -296,7 +299,7 @@
 			openai="chat.completions.create"
 			openai-key="choices[0].message.content"
 			openai-request="false"
-			input-document=".content[]"
+			input-query="$document .content[]"
 			input-attribute="value"
 			value-replace="/```html\n|\n```/g"
 			hidden></textarea>
@@ -358,7 +361,7 @@
 			openai="chat.completions.create"
 			openai-key="choices[0].message.content"
 			openai-request="false"
-			input-document="#email-campaigns"
+			input-query="$document #email-campaigns"
 			input-attribute="value"
 			value-type="json"
 			value-replace="/```json\n|\n```/g"
@@ -399,7 +402,7 @@
 			openai="images.generate"
 			openai-key="data[0].url"
 			openai-request="false"
-			import-url-document="#imagefile"
+			import-url-query="$document #imagefile"
 			import-url
 			hidden />
 

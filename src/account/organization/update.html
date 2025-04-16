@@ -12,7 +12,7 @@
 				accept="image/*"
 				placeholder="Profile Image"
 				class="display:flex align-items:center justify-content:center position:relative border-radius:50% overflow:hidden width:250px height:250px border:2px_solid border-color:#fff@dark"
-				render-selector="[template]"
+				render-query="[template]"
 				active>
 				<i
 					class="position:absolute height:185px width:185px top:35px"
@@ -76,10 +76,10 @@
 			<div
 				class="card display:flex align-items:center gap:10px padding:10px">
 				<div
-					click-closest=".domain-container #domain-list"
+					click-query="$closest .domain-container #domain-list"
 					click-attribute="hidden"
 					click-value=""
-					toggle-selector=":first-child"
+					toggle-query=":first-child"
 					toggle-attribute="src"
 					toggle-value="../assets/svg/angle-down.svg, ../assets/svg/angle-right.svg"
 					class="display:flex align-items:center gap:10px flex-grow:1">
@@ -97,7 +97,7 @@
 				object=""
 				key="host"
 				filter-limit
-				render-selector="[template]"
+				render-query="[template]"
 				class="display:flex flex-direction:column gap:1px"
 				hidden>
 				<div class="card padding:10px" template>
@@ -105,13 +105,13 @@
 						class="display:flex align-items:center justify-content:flex-end margin-bottom:10px">
 						<div
 							class="display:flex align-items:center gap:10px transition:0.3s"
-							hover-selector=".options"
+							hover-query=".options"
 							hover-attribute="class"
 							hover-value="display:inline-flex!important">
 							<div class="display:none options">
 								<a
 									actions="click, timeout(1000), action($document #deleteHost)"
-									click-document="#deleteHostKey"
+									click-query="$document #deleteHostKey"
 									click-attribute="key"
 									click-value="$unset.host[{{index}}]"
 									class="padding:5px margin-left:auto">
@@ -166,10 +166,10 @@
 			<div
 				class="card display:flex align-items:center gap:10px padding:10px">
 				<div
-					click-closest=".storage-container #storage-list"
+					click-query="$closest .storage-container #storage-list"
 					click-attribute="hidden"
 					click-value=""
-					toggle-selector=":first-child"
+					toggle-query=":first-child"
 					toggle-attribute="src"
 					toggle-value="../assets/svg/angle-down.svg, ../assets/svg/angle-right.svg"
 					class="display:flex align-items:center gap:10px flex-grow:1">
@@ -187,7 +187,7 @@
 				object=""
 				key="storage"
 				filter-limit
-				render-selector="[template]"
+				render-query="[template]"
 				class="display:flex flex-direction:column gap:1px"
 				hidden>
 				<div class="card align-items:center padding:10px" template>
@@ -195,13 +195,13 @@
 						class="display:flex align-items:center justify-content:flex-end margin-bottom:10px">
 						<div
 							class="display:flex align-items:center gap:10px transition:0.3s"
-							hover-selector=".options"
+							hover-query=".options"
 							hover-attribute="class"
 							hover-value="display:inline-flex!important">
 							<div class="display:none options">
 								<a
 									actions="click, timeout(1000), action($document #deleteStorage)"
-									click-document="#deleteStorageKey"
+									click-query="$document #deleteStorageKey"
 									click-attribute="key"
 									click-value="$unset.storage[{{index}}]">
 									<i src="../assets/svg/trash.svg"></i>
