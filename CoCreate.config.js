@@ -39,5 +39,8 @@ module.exports = {
                 "demo-code": "{{./src/demos/demo.html}}"
             }
         }
-    ]
+    ],
+    "configPath": "/home/cocreate/CoCreate/CoCreate-website/CoCreate.config.js",
+    "filePath": "/home/cocreate/CoCreate/CoCreate-website/CoCreate.config.js",
+    "hideMessage": false
 };
