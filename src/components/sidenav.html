@@ -20,10 +20,10 @@
 <div class="header height:70px">
 	<!-- Logo -->
 	<a
-		href="$relativePath"
+		href="$relativePath/"
 		class="display:flex align-items:center gap:5px font-size:28px font-weight:bold">
 		<img
-			src="$relativePathassets/icons/icon-192x192.png"
+			src="$relativePath/assets/icons/icon-192x192.png"
 			height="50px"
 			alt="icon logo" />
 		<span>Co<span class="color:#1e90ff">Create</span></span>
@@ -57,7 +57,7 @@
             state-key="src"
             modal-width="900px"
             modal-color="#229954">
-            <i src="$relativePathassets/svg/search.svg"></i>
+            <i src="$relativePath/assets/svg/search.svg"></i>
         </a>
     </span>
 </form> -->
@@ -65,12 +65,12 @@
 <!-- Navigation -->
 <section class="display:flex flex-direction:column gap:20px font-size:20px">
 	<!-- <h3 class="text-transform:capitalize margin:50px_10px_5px">Navigation</h3> -->
-	<a href="$relativePathdemos/">Demos</a>
+	<a href="$relativePath/demos/">Demos</a>
 	<a
-		href="$relativePath#pricing"
+		href="$relativePath/#pricing"
 		actions="state"
 		state_to="mainView"
-		state-src="$relativePathhome/"
+		state-src="$relativePath/home/"
 		click-query="$closest sidenav"
 		click-attribute="style"
 		click-value="width:0px"
@@ -78,8 +78,8 @@
 		click-if-value="$innerWidth"
 		>Pricing</a
 	>
-	<a href="$relativePathdocs/index.html">Docs</a>
-	<a href="$relativePathblog/index.html">Blog</a>
+	<a href="$relativePath/docs/index.html">Docs</a>
+	<a href="$relativePath/blog/index.html">Blog</a>
 </section>
 
 <div resize="right"></div>

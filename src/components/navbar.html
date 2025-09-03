@@ -12,9 +12,9 @@
 
 <!-- Logo -->
 <a
-	href="$relativePath"
+	href="$relativePath/"
 	class="display:flex align-items:center gap:10px font-size:28px font-weight:bold">
-	<img src="$relativePathassets/icon.png" height="50px" alt="icon logo" />
+	<img src="$relativePath/assets/icon.png" height="50px" alt="icon logo" />
 	<span class="display:none@xs@sm@md"
 		>Co<span class="color:#1e90ff">Create</span></span
 	>
@@ -34,34 +34,34 @@
 		id="products"
 		class="card position:absolute padding:10px list-style:none top:50px background:white display:none">
 		<li class="padding:5px">
-			<a href="$relativePathbusiness-builder" class="color:dodgerblue:hover">
+			<a href="$relativePath/business-builder" class="color:dodgerblue:hover">
 				<p class="font-weight:600">CoCreate</p>
 				<p class="font-size:14px">Business Building Platform</p>
 			</a>
 		</li>
 		<li class="padding:5px">
-			<a href="$relativePath" class="color:dodgerblue:hover">
+			<a href="$relativePath/" class="color:dodgerblue:hover">
 				<p class="font-weight:600">CoCreateJS</p>
 				<p class="font-size:14px">Collaborative Low Code Framework</p>
 			</a>
 		</li>
 		<li class="padding:5px">
-			<a href="$relativePathcss" class="color:dodgerblue:hover">
+			<a href="$relativePath/css" class="color:dodgerblue:hover">
 				<p class="font-weight:600">CoCreateCSS</p>
 				<p class="font-size:14px">Atomic CSS Framework</p>
 			</a>
 		</li>
 	</ul> -->
 
-	<a href="$relativePathdemos/" class="color:dodgerblue:hover">Demos</a>
-	<a href="$relativePath#pricing" class="color:dodgerblue:hover">Pricing</a>
-	<a href="$relativePathdocs/" class="color:dodgerblue:hover">Docs</a>
-	<a href="$relativePathblog/" class="color:dodgerblue:hover">Blog</a>
-	<!-- <a href="$relativePathdiscuss/" class="color:dodgerblue:hover"
+	<a href="$relativePath/demos/" class="color:dodgerblue:hover">Demos</a>
+	<a href="$relativePath/#pricing" class="color:dodgerblue:hover">Pricing</a>
+	<a href="$relativePath/docs/" class="color:dodgerblue:hover">Docs</a>
+	<a href="$relativePath/blog/" class="color:dodgerblue:hover">Blog</a>
+	<!-- <a href="$relativePath/discuss/" class="color:dodgerblue:hover"
 		>Discuss</a
 	> -->
 	<!-- <a
-		href="$relativePathuniversity/"
+		href="$relativePath/university/"
 		class="color:dodgerblue:hover"
 		>University</a
 	> -->
@@ -71,25 +71,25 @@
 	class="display:flex direction:rtl align-items:center gap:15px width:100%@xs@sm font-size:20px">
 	<!-- fullscreen -->
 	<div fullscreen class="display:inline-flex">
-		<i src="$relativePathassets/svg/expand.svg"></i>
-		<i src="$relativePathassets/svg/compress.svg"></i>
+		<i src="$relativePath/assets/svg/expand.svg"></i>
+		<i src="$relativePath/assets/svg/compress.svg"></i>
 	</div>
 
 	<!-- Social Media -->
 	<a href="https://github.com/CoCreate-app" target="_blank">
-		<i src="$relativePathassets/svg/github.svg"></i>
+		<i src="$relativePath/assets/svg/github.svg"></i>
 	</a>
 	<a href="https://twitter.com/CoCreate_App" target="_blank">
-		<i src="$relativePathassets/svg/twitter.svg"></i>
+		<i src="$relativePath/assets/svg/twitter.svg"></i>
 	</a>
 	<a href="https://www.facebook.com/CoCreate.apps" target="_blank">
-		<i src="$relativePathassets/svg/facebook.svg"></i>
+		<i src="$relativePath/assets/svg/facebook.svg"></i>
 	</a>
 	<a href="https://www.instagram.com/cocreateai/" target="_blank">
-		<i src="$relativePathassets/svg/instagram.svg"></i>
+		<i src="$relativePath/assets/svg/instagram.svg"></i>
 	</a>
 
-	<i src="$relativePathassets/svg/share-alt.svg" share></i>
+	<i src="$relativePath/assets/svg/share-alt.svg" share></i>
 </div>
 
 <style>
@@ -101,7 +101,7 @@
 <!-- Avatar -->
 <div class="avatar round">
 	<div array="users" object="$user_id" key="firstname" class="avatar-name">
-		<i src="$relativePathassets/svg/sign-in-alt.svg"></i>
+		<i src="$relativePath/assets/svg/sign-in-alt.svg"></i>
 	</div>
 	<div class="avatar-image">
 		<img
@@ -111,7 +111,7 @@
 			onerror="this.style.display='none'"
 			alt="" />
 		<div>
-			<a href="$relativePathaccount/signin.html"> </a>
+			<a href="$relativePath/account/signin.html"> </a>
 		</div>
 		<div
 			class="signin"
@@ -134,21 +134,21 @@
 	hidden>
 	<a
 		actions="state"
-		state-src="$relativePathprofile/index.html"
+		state-src="$relativePath/profile/index.html"
 		state_to="main"
-		href="$relativePathaccount/"
+		href="$relativePath/account/"
 		click-query="$parent"
 		click-attribute="hidden"
 		click-value=""
 		class="display:flex align-items:center gap:10px">
-		<i src="$relativePathassets/svg/user.svg"></i>
+		<i src="$relativePath/assets/svg/user.svg"></i>
 		<span>Profile</span>
 	</a>
 	<a
 		actions="signOut"
-		href="$relativePathaccount/signin.html"
+		href="$relativePath/account/signin.html"
 		class="display:flex align-items:center gap:10px">
-		<i src="$relativePathassets/svg/sign-out-alt.svg"></i>
+		<i src="$relativePath/assets/svg/sign-out-alt.svg"></i>
 		<span>Sign Out</span>
 	</a>
 </div>
