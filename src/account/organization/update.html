@@ -200,7 +200,7 @@
 							hover-value="display:inline-flex!important">
 							<div class="display:none options">
 								<a
-									actions="updateStorage">
+									actions="action($document #createOrganization)">
 									<i src="../assets/svg/trash.svg"></i>
 								</a>
 								<a
@@ -274,18 +274,11 @@
 		<input id="deleteStorageKey" type="hidden" key="" />
 		<a id="deleteStorage" actions="save"></a>
 	</form>
-        <form>
-            <!-- <input type="text" array="organizations" state_id="accountOrg" object key="_id">
-            <input type="text" array="users" object="$user_id" key="_id"> -->
-            <!-- <input type="text" array="users" object="$user_id" key="lastname">
-            <input type="email" array="users" object="$user_id" key="email">
-            <input type="password" array="users" object="$user_id" key="password"> -->
-            <!-- <button actions="createOrganization">Create</button> -->
-        </form>
-	        <form>
-            <input type="text" array="organizations" object key="_id" state_id="accountOrg">
-            <input type="text" array="users" object="$user_id" key="_id">
-            <button actions="createOrganization">Create with</button>
-        </form>
+     
+	<form hidden>
+		<input type="text" array="organizations" object key="_id" state_id="accountOrg">
+		<input type="text" array="users" object="$user_id" key="_id">
+		<a id="createOrganization" actions="createOrganization"></a>
+	</form>
 
 </section>
