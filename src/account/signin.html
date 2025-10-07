@@ -70,55 +70,58 @@
 			<section
 				class="bg display:flex justify-content:center align-items:center width:100% min-height:100vh">
 				<div class="flex-grow:1 max-width:400px">
-					<form array="users" id="signin">
-						<div
-							class="display:flex justify-content:space-between padding:20px background:white background:#222@dark">
-							<h3>Sign In</h3>
-							<i
-								class="font-size:70px"
-								src="../assets/svg/sign-in-alt.svg"></i>
+					<!-- Sign-in form: improved semantics, autocomplete and accessibility -->
+					<form array="users" id="signin" role="form" aria-label="Sign in to CoCreate" autocomplete="on">
+						<div class="display:flex justify-content:space-between padding:20px background:white background:#222@dark">
+							<h1>Sign In</h1>
+							<i class="font-size:70px" src="../assets/svg/sign-in-alt.svg" aria-hidden="true"></i>
 						</div>
-						<div
-							class="padding:20px background:gainsboro background:#444@dark">
+						<div class="padding:20px background:gainsboro background:#444@dark">
 							<floating-label>
 								<input
 									type="email"
+									id="signin-email"
+									name="email"
 									key="email"
 									placeholder="Email"
 									class="floating-label"
 									required
-									email />
+									autocomplete="email"
+									aria-required="true"
+									aria-label="Email address" />
 							</floating-label>
 
 							<floating-label>
 								<input
 									type="password"
+									id="signin-password"
+									name="password"
 									key="password"
 									placeholder="Password"
 									class="floating-label"
-									required />
+									required
+									autocomplete="current-password"
+									aria-required="true"
+									aria-label="Password" />
 								<a
 									click-query="$previous"
 									click-attribute="type"
 									click-value="text, password"
-									class="floating-icon">
+									class="floating-icon"
+									aria-label="Toggle password visibility"
+									role="button">
 									<i
 										click-attribute="src"
 										click-value="../assets/svg/eye-slash.svg, ../assets/svg/eye.svg"
 										src="../assets/svg/eye.svg"
-										class="width:20px height:20px"></i>
+										class="width:20px height:20px"
+										aria-hidden="true"></i>
 								</a>
 							</floating-label>
 
-							<button
-								actions="validate, signIn"
-								href="index.html">
-								Sign In
-							</button>
+							<button type="button" actions="validate, signIn" aria-label="Sign in to CoCreate">Sign In</button>
 
-							<a show="#forgotpass" hide="#signin"
-								>Forgot Password?</a
-							>
+							<a show="#forgotpass" hide="#signin">Forgot Password?</a>
 						</div>
 					</form>
 
@@ -182,20 +185,18 @@
 			</section>
 		</main>
 
-		<div class="position:fixed!important bottom:15px right:15px">
-			<div
-				template="validate, signIn, forgotPassword"
+		<!-- notification card (aria-live) -->
+		<div class="position:fixed!important bottom:15px right:15px" aria-live="polite" role="status" aria-atomic="true">
+			<div template="validate, signIn, forgotPassword"
 				class="card position:relative margin-top:10px padding:20px {{status}}">
 				<span class="{{type}} font-weight:400">{{message}}</span>
-				<!-- <a
-					onload-action="click"
-					actions="timeout(3000), action($next)"></a> -->
-				<a actions="remove" class="position:absolute top:4px right:4px">
-					<i src="../assets/svg/times.svg"></i>
+				<a actions="remove" class="position:absolute top:4px right:4px" aria-label="Dismiss notification">
+					<i src="../assets/svg/times.svg" aria-hidden="true"></i>
 				</a>
 			</div>
 		</div>
 
 		<script src="../dist/CoCreate.js"></script>
 	</body>
+</html>
 </html>
