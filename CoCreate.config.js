@@ -44,6 +44,6 @@ module.exports = {
         }
     ],
     "configPath": "/home/cocreate/CoCreate/CoCreate-website/CoCreate.config.js",
-    "filePath": "/home/cocreate/CoCreate/CoCreate-website/src/account/organization/CoCreate.config.js",
+    "filePath": "/home/cocreate/CoCreate/CoCreate-website/src/dist",
     "hideMessage": false
 };
