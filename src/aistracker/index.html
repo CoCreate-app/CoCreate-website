@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Corporación Control</title>
+    
+    <!-- Modern UI & Maps -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; }
+        .google-font { font-family: 'Google Sans', sans-serif; }
+        #map { height: 100%; width: 100%; background: #e8eaed; z-index: 1; }
+        .drawer-transition { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        /* Ship Marker */
+        .ship-marker { display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .ship-pulse { position: absolute; width: 45px; height: 45px; background: rgba(59, 130, 246, 0.2); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(0.6); opacity: 1; } 100% { transform: scale(1.6); opacity: 0; } }
+        
+        .project-active { border-left: 4px solid #ef4444 !important; background-color: #fef2f2 !important; }
+        .vessel-active { border-left: 4px solid #3b82f6 !important; background-color: #f0f7ff !important; }
+        
+        .leaflet-tile-pane { opacity: 0.9; }
+        #sidebar-scroll::-webkit-scrollbar, #project-search-results::-webkit-scrollbar { width: 4px; }
+        #sidebar-scroll::-webkit-scrollbar-thumb, #project-search-results::-webkit-scrollbar-thumb { background: #dadce0; border-radius: 10px; }
+
+        /* Custom Searchable Dropdown */
+        #project-dropdown-list.hidden { display: none; }
+        .search-item-active { background-color: #f3f4f6; border-left: 3px solid #3b82f6; }
+    </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden">
+
+    <!-- Header -->
+    <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 shrink-0 z-50 shadow-sm">
+        <div class="flex items-center gap-3">
+            <button id="mobile-toggle" class="p-2 hover:bg-gray-100 rounded-full lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <!-- Branding Section -->
+            <div class="flex items-center gap-3">
+                <div class="w-6 h-6 bg-blue-600 rounded-full shadow-sm"></div>
+                <h1 class="google-font text-lg font-bold text-gray-800 whitespace-nowrap">Corporación Control</h1>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="text-right hidden xs:block">
+                <span id="header-project" class="google-font text-sm font-bold text-gray-900 uppercase tracking-tight">LOADING...</span>
+                <div class="flex items-center justify-end gap-1">
+                    <div id="status-dot" class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                    <span id="data-label" class="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">Initializing...</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex relative overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="absolute lg:relative w-[340px] h-full bg-white border-r border-gray-200 z-40 drawer-transition -translate-x-full lg:translate-x-0 flex flex-col shadow-xl lg:shadow-none">
+            
+            <!-- Modern Searchable Project Selector -->
+            <div class="p-5 border-b border-gray-100 bg-gray-50 shrink-0 relative">
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none block mb-2">Automation-Ready Directory</span>
+                
+                <!-- Trigger Button -->
+                <button id="project-trigger" onclick="CocaineJS.toggleProjectList()" class="w-full bg-white border border-gray-200 rounded-xl py-2.5 px-4 flex items-center justify-between hover:border-gray-300 transition-all shadow-sm group">
+                    <div class="text-left overflow-hidden">
+                        <div id="trigger-id" class="text-xs font-bold text-gray-900 truncate">Select Project</div>
+                        <div id="trigger-subtitle" class="text-[10px] text-gray-400 truncate">Procurement & Sourcing Hub...</div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <!-- Searchable List Overlay -->
+                <div id="project-dropdown-list" class="hidden absolute left-5 right-5 top-[85px] bg-white border border-gray-200 rounded-xl shadow-2xl z-[100] overflow-hidden flex flex-col animate-fade-in">
+                    <div class="p-2 bg-gray-50 border-b border-gray-100">
+                        <div class="relative">
+                            <input type="text" id="project-search-input" oninput="CocaineJS.filterProjects(this.value)" placeholder="Search project or manufacturer..." class="w-full bg-white border border-gray-200 rounded-lg py-2 pl-8 pr-3 text-xs focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 absolute left-2.5 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="project-search-results" class="max-h-[220px] overflow-y-auto">
+                        <!-- Results populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div id="sidebar-scroll" class="flex-grow overflow-y-auto">
+                
+                <!-- Vessel List (Contextual) -->
+                <div id="vessel-list-container" class="hidden p-4 space-y-2 border-b border-gray-50">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase mb-1 block">Shipment Assets (By Hub)</span>
+                    <div id="vessel-buttons" class="space-y-2"></div>
+                </div>
+
+                <!-- Unified Details (Intel + Cargo) -->
+                <div id="details-panel" class="hidden animate-fade-in">
+                    <div class="p-4 bg-gray-50 border-b border-gray-100">
+                        <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-3 block">Real-Time Logistics</span>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-[9px] text-gray-400 font-bold uppercase leading-none mb-1">Port Dist.</div>
+                                <b id="intel-dist" class="text-sm text-blue-600">--</b>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="text-[9px] text-gray-400 font-bold uppercase leading-none mb-1">Live ETA</div>
+                                <b id="intel-eta" class="text-sm text-gray-800">--</b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase mb-3 block">Hub Inventory</span>
+                        <div id="vessel-cargo-items" class="space-y-2"></div>
+                    </div>
+                </div>
+
+                <!-- Project Overview Manifest -->
+                <div id="project-overview" class="hidden p-4">
+                    <div class="mb-4 p-3 bg-red-50 border border-red-100 rounded-xl">
+                        <div class="text-[10px] font-bold text-red-600 uppercase">Master Directory: BARIVEN, S.A.</div>
+                        <div class="text-[11px] text-red-800 mt-1">Agency: <b>CoCreate</b></div>
+                    </div>
+                    <span id="overview-title" class="text-[10px] font-bold text-gray-400 uppercase mb-3 block">Combined Spares Manifest</span>
+                    <div id="project-items" class="space-y-2"></div>
+                </div>
+
+            </div>
+
+            <!-- Footer Info -->
+            <div class="p-4 bg-white border-t border-gray-100 shrink-0">
+                <div class="flex items-center justify-between">
+                    <span class="text-[9px] text-gray-400 font-bold uppercase">Client: BARIVEN, S.A.</span>
+                    <button onclick="CocaineJS.connect()" class="text-[9px] text-blue-600 font-bold hover:underline uppercase">Sync API</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Map -->
+        <section class="flex-grow relative overflow-hidden">
+            <div id="map" class="h-full w-full"></div>
+        </section>
+    </main>
+
+    <script>
+        const CocaineJS = {
+            apiKey: "f959210c09a9f2036254436f2f330ae921e303ce",
+            map: null,
+            markers: {},
+            activeProject: null,
+            activeVessel: null,
+            isLive: false,
+            dest: { lat: 10.74, lng: -71.59 }, 
+
+            projects: {
+                "cc-2024": {
+                    id: "CC-2024-001",
+                    name: "Loading Rack Maintenance",
+                    fleet: ["636020661", "211434000"],
+                    subtitle: "Master Procurement: Zulia Hubs"
+                },
+                "pyp-fal": {
+                    id: "PYP-FAL-11.20",
+                    name: "Cardón Refinery Upgrade",
+                    fleet: ["352001161"],
+                    subtitle: "Paraguaná Maintenance Overhaul"
+                }
+            },
+
+            vessels: {
+                "636020661": { 
+                    name: "SC PHILLY", 
+                    emoji: "🚢", 
+                    lat: 11.45, 
+                    lon: -71.12, 
+                    parts: [
+                        {m:"CARTER", n:"CARTER ACOPLE", id:"SM64803", q:3},
+                        {m:"CARTER", n:"CARTER POPPET", id:"210284", q:2},
+                        {m:"CARTER", n:"CARTER RETAINER RING", id:"RS-156-S", q:1},
+                        {m:"CARTER", n:"CARTER EXTERIOR DUST CAP", id:"44660", q:6},
+                        {m:"CARTER", n:"CARTER DRY BREAK ASSY", id:"61154H", q:1},
+                        {m:"ASCO", n:"ASCO KIT DE REPARACION", id:"K302-053-V", q:156},
+                        {m:"ASCO", n:"ASCO SOLENOID VALVE N.O", id:"X8262149V09751", q:52},
+                        {m:"AKRON", n:"AKRON KIT DE SERVICIO", id:"8907", q:7},
+                        {m:"GAMMON", n:"GAMON THERMOMETER", id:"GTP-2127", q:3},
+                        {m:"GAMMON", n:"GAMON CALIBRADOR", id:"GTP-8963", q:2}
+                    ] 
+                },
+                "211434000": { 
+                    name: "MAERSK ELBA", 
+                    emoji: "🛳️", 
+                    lat: 11.82, 
+                    lon: -70.45, 
+                    parts: [
+                        {m:"SMITH", n:"SMITH TURBINA TUNGSTENO", id:"543849-10", q:52},
+                        {m:"SMITH", n:"SMITH UPDATE ACCLOAD III", id:"ALIII-Q-UG2", q:52},
+                        {m:"SMITH", n:"SMITH DIAFRAGMA (BUNA)", id:"507399-001", q:52},
+                        {m:"SMITH", n:"SMITH SOLENOYDE VALV", id:"653068-001", q:78},
+                        {m:"SCULLY", n:"SCULLY RACK SOCKET", id:"08184", q:28},
+                        {m:"SCULLY", n:"SCULLY CABLE 16' W/ PLUG", id:"8170", q:28},
+                        {m:"ROTORK", n:"ROTORK POWER MODULE", id:"33653", q:15},
+                        {m:"ROTORK", n:"ROTORK MAIN PCB MK IV", id:"W80141", q:15},
+                        {m:"LIQUIP", n:"LIQUIP KIT INSTALACION", id:"ATMK2D050501", q:13},
+                        {m:"EMCO", n:"E WHEA COUPLER 4X4 IN", id:"F 800-001", q:52},
+                        {m:"MODICON", n:"MODICO LINE TAP", id:"MA-0185-100", q:1},
+                        {m:"VIKING", n:"SELLO MECAN 9 1-7/16 IN", id:"HSP-1003950", q:6},
+                        {m:"ACEC", n:"ACEC BEARING SLEEVE SPLIT", id:"2PC5843EX.4", q:12},
+                        {m:"THERMO", n:"SENSOR RTD PG075", id:"PG075", q:6}
+                    ] 
+                },
+                "352001161": { 
+                    name: "MSC BERYL", 
+                    emoji: "⛴️", 
+                    lat: 12.15, 
+                    lon: -70.20, 
+                    parts: [
+                        {m:"JOHN CRANE", n:"JOHCRA SELLO", id:"JCV-SP-2375-053", q:6},
+                        {m:"JOHN CRANE", n:"SELLO MECAN 8-B1", id:"3-1/8IN", q:10}
+                    ] 
+                }
+            },
+
+            init() {
+                this.map = L.map('map', { zoomControl: false }).setView([11.8, -70.5], 7);
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom: 19 }).addTo(this.map);
+
+                // Landmark markers
+                const pIcon = L.divIcon({ html: "<div style='width:12px; height:12px; background:#ea4335; border:2px solid #fff; border-radius:50%;'></div>", className:'' });
+                L.marker([10.63, -71.64], {icon: pIcon}).addTo(this.map).bindTooltip("Bajo Grande");
+                L.marker([10.22, -71.12], {icon: pIcon}).addTo(this.map).bindTooltip("San Lorenzo");
+
+                document.getElementById('mobile-toggle').onclick = () => document.getElementById('sidebar').classList.toggle('-translate-x-full');
+
+                window.addEventListener('click', (e) => {
+                    if (!document.getElementById('project-trigger').contains(e.target) && !document.getElementById('project-dropdown-list').contains(e.target)) {
+                        document.getElementById('project-dropdown-list').classList.add('hidden');
+                    }
+                });
+
+                this.selectProject('cc-2024');
+                this.connect();
+                this.startSimulation();
+            },
+
+            toggleProjectList() {
+                const list = document.getElementById('project-dropdown-list');
+                const isHidden = list.classList.toggle('hidden');
+                if (!isHidden) {
+                    this.filterProjects('');
+                    document.getElementById('project-search-input').focus();
+                }
+            },
+
+            filterProjects(query) {
+                const results = document.getElementById('project-search-results');
+                const q = query.toLowerCase();
+                const filteredKeys = Object.keys(this.projects).filter(key => {
+                    const p = this.projects[key];
+                    return p.id.toLowerCase().includes(q) || p.name.toLowerCase().includes(q);
+                });
+
+                results.innerHTML = filteredKeys.map(key => {
+                    const p = this.projects[key];
+                    const isActive = this.activeProject === key;
+                    return `
+                        <div onclick="CocaineJS.selectProject('${key}'); CocaineJS.toggleProjectList();" class="p-3 border-b border-gray-50 cursor-pointer hover:bg-blue-50 transition-colors ${isActive ? 'search-item-active' : ''}">
+                            <div class="text-[10px] font-black text-blue-600 uppercase tracking-tighter leading-none">${p.id}</div>
+                            <div class="text-xs font-bold text-gray-800 mt-1">${p.name}</div>
+                        </div>
+                    `;
+                }).join('');
+            },
+
+            selectProject(projKey) {
+                this.activeProject = projKey;
+                this.activeVessel = null;
+                const proj = this.projects[projKey];
+                
+                document.getElementById('header-project').innerText = proj.id;
+                document.getElementById('trigger-id').innerText = proj.id;
+                document.getElementById('trigger-subtitle').innerText = proj.name;
+                document.getElementById('overview-title').innerText = `Consolidated Project manifest`;
+                
+                document.getElementById('details-panel').classList.add('hidden');
+                document.getElementById('project-overview').classList.remove('hidden');
+                document.getElementById('vessel-list-container').classList.remove('hidden');
+
+                const vButtons = document.getElementById('vessel-buttons');
+                vButtons.innerHTML = proj.fleet.map(mmsi => {
+                    const v = this.vessels[mmsi];
+                    return `
+                        <div id="btn-${mmsi}" onclick="CocaineJS.selectVessel('${mmsi}')" class="p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 flex items-center gap-3 transition-all">
+                            <span class="text-2xl">${v.emoji}</span>
+                            <div class="flex-grow"><div class="text-xs font-bold text-gray-800">${v.name}</div><div class="text-[10px] text-gray-400 italic uppercase">HUB: ${mmsi === '636020661' ? 'MIAMI, FL' : 'HOUSTON, TX'}</div></div>
+                        </div>
+                    `;
+                }).join('');
+
+                const pItems = document.getElementById('project-items');
+                let allParts = [];
+                proj.fleet.forEach(mmsi => allParts = allParts.concat(this.vessels[mmsi].parts));
+                pItems.innerHTML = allParts.map(p => `
+                    <div class="p-3 border border-gray-100 rounded-lg text-[11px] mb-2 shadow-sm bg-gray-50/50">
+                        <div class="flex justify-between font-black text-gray-400 uppercase text-[8px] mb-1"><span>${p.m}</span><span>BARIVEN OEM</span></div>
+                        <b class="text-gray-800 uppercase">${p.n}</b>
+                        <div class="flex justify-between text-gray-400 mt-1"><span>P/N: ${p.id}</span><span class="text-blue-600 font-bold">QTY: ${p.q}</span></div>
+                    </div>
+                `).join('');
+
+                Object.keys(this.markers).forEach(mmsi => {
+                    const inFleet = proj.fleet.includes(mmsi);
+                    if (inFleet) {
+                        this.markers[mmsi].setOpacity(1);
+                        this.markers[mmsi].addTo(this.map);
+                    } else {
+                        if (this.markers[mmsi]) {
+                            this.markers[mmsi].setOpacity(0);
+                            this.map.removeLayer(this.markers[mmsi]);
+                        }
+                    }
+                });
+
+                this.fitMap();
+            },
+
+            selectVessel(mmsi) {
+                this.activeVessel = mmsi;
+                const v = this.vessels[mmsi];
+                const proj = this.projects[this.activeProject];
+
+                document.getElementById('project-overview').classList.add('hidden');
+                document.getElementById('details-panel').classList.remove('hidden');
+                
+                proj.fleet.forEach(id => {
+                    const btn = document.getElementById('btn-'+id);
+                    if (btn) btn.className = `p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 flex items-center gap-3 transition-all ${id === mmsi ? 'vessel-active shadow-md' : ''}`;
+                    if (this.markers[id]) this.markers[id].setOpacity(id === mmsi ? 1 : 0.2);
+                });
+
+                document.getElementById('vessel-cargo-items').innerHTML = v.parts.map(p => `
+                    <div class="p-4 bg-white border border-gray-100 rounded-xl shadow-sm text-xs">
+                        <div class="text-[9px] font-bold text-blue-500 uppercase mb-1">${p.m}</div>
+                        <b class="text-gray-900 uppercase">${p.n}</b>
+                        <div class="flex justify-between mt-2 font-bold"><span class="text-gray-400 tracking-tighter">SKU #${p.id}</span><span class="text-blue-600">QTY: ${p.q}</span></div>
+                    </div>
+                `).join('');
+                
+                if(this.markers[mmsi]) this.map.setView(this.markers[mmsi].getLatLng(), 9);
+            },
+
+            connect() {
+                try {
+                    const ws = new WebSocket("wss://stream.aisstream.io/v0/stream");
+                    ws.onopen = () => {
+                        document.getElementById('data-label').innerText = "Streaming Active";
+                        document.getElementById('status-dot').className = "w-2 h-2 rounded-full bg-green-500 animate-pulse";
+                        ws.send(JSON.stringify({ APIKey: this.apiKey, BoundingBoxes: [[[-90, -180], [90, 180]]], FiltersShipMMSI: Object.keys(this.vessels), FilterMessageTypes: ["PositionReport"] }));
+                    };
+                    ws.onmessage = (e) => {
+                        const d = JSON.parse(e.data);
+                        if(d.MessageType === "PositionReport") {
+                            this.isLive = true;
+                            document.getElementById('data-label').innerText = "Live Sync";
+                            this.update(d.Message.PositionReport, d.MetaData);
+                        }
+                    };
+                    ws.onerror = () => {
+                        document.getElementById('data-label').innerText = "API Restricted";
+                        document.getElementById('status-dot').className = "w-2 h-2 rounded-full bg-blue-500 animate-pulse";
+                    };
+                } catch (e) {}
+            },
+
+            update(pos, meta) {
+                const id = meta.MMSI.toString();
+                if (!this.vessels[id]) return;
+                const lat = pos.Latitude, lng = pos.Longitude, sog = pos.Sog || 12.0;
+
+                if(!this.markers[id]) {
+                    const icon = L.divIcon({ className:'ship-marker', html:`<div class="ship-pulse"></div><span>${this.vessels[id].emoji}</span>`, iconSize:[40,40], iconAnchor:[20,20] });
+                    this.markers[id] = L.marker([lat, lng], {icon:icon}).addTo(this.map).bindTooltip(this.vessels[id].name);
+                    if (!this.projects[this.activeProject].fleet.includes(id)) {
+                        this.markers[id].setOpacity(0);
+                        this.map.removeLayer(this.markers[id]);
+                    }
+                } else {
+                    this.markers[id].setLatLng([lat, lng]);
+                }
+
+                if(this.activeVessel === id) {
+                    const dist = this.map.distance([lat, lng], [this.dest.lat, this.dest.lng]) / 1852;
+                    document.getElementById('intel-dist').innerText = dist.toFixed(1) + " NM";
+                    const eta = new Date(); eta.setHours(eta.getHours() + (dist/12.5));
+                    document.getElementById('intel-eta').innerText = eta.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+                }
+            },
+
+            startSimulation() {
+                Object.keys(this.vessels).forEach(id => {
+                    const v = this.vessels[id];
+                    this.update({Latitude: v.lat, Longitude: v.lon}, {MMSI: id, ShipName: v.name});
+                });
+                setInterval(() => {
+                    if (this.isLive) return;
+                    Object.keys(this.vessels).forEach(id => {
+                        this.vessels[id].lat -= 0.0002;
+                        this.vessels[id].lon -= 0.0001;
+                        this.update({Latitude: this.vessels[id].lat, Longitude: this.vessels[id].lon}, {MMSI: id, ShipName: this.vessels[id].name});
+                    });
+                }, 4000);
+            },
+
+            fitMap() {
+                const projFleet = this.projects[this.activeProject].fleet;
+                const visibleMarkers = projFleet.map(mmsi => this.markers[mmsi]).filter(m => m);
+                if (visibleMarkers.length > 0) {
+                    const group = new L.featureGroup(visibleMarkers);
+                    this.map.fitBounds(group.getBounds(), { padding: [50, 50] });
+                }
+            }
+        };
+
+        window.onload = () => CocaineJS.init();
+    </script>
+</body>
+</html>
